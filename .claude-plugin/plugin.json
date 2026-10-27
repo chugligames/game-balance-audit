@@ -1,7 +1,7 @@
 {
   "name": "game-balance-audit",
-  "description": "Audit a game's balance by simulation, against your goals (ad or purchase revenue and engagement, completion, or tabletop fairness): bots play your game from its code, a rulebook or a running build, and every problem gets three suggestions tested in the simulator and scored on those goals.",
-  "version": "0.2.0",
+  "description": "Audit a game's balance by simulation and exact maths, against your goals (ad or purchase revenue and engagement, completion, or tabletop fairness): from its code, a spreadsheet, a rulebook or a running build, with three tested suggestions per problem.",
+  "version": "0.3.0",
   "author": {
     "name": "Chugli Games",
     "url": "https://chugligames.com"
@@ -20,6 +20,9 @@
     "puzzles",
     "playtesting",
     "monetization",
-    "free-to-play"
+    "free-to-play",
+    "slots",
+    "loot-tables",
+    "probability"
   ]
 }

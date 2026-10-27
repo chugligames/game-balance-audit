@@ -7,11 +7,16 @@ audit in plain words (without naming the planted problems) and grades
 ```bash
 claude plugin eval . --scaffold --allow-tools Bash Write Edit --no-publish --keep-temp
 claude plugin eval . --case market-day --scaffold --allow-tools Bash Write Edit --no-publish
+claude plugin eval . --tag showcase --scaffold --allow-tools Bash Write Edit --no-publish --keep-temp   # the published comparison
 ```
 
 - Each case is a full agent run with simulations (often 20–60 minutes and many turns),
   so a full suite run costs real usage. Start with one case.
-- `--scaffold` runs each case's `scaffold.sh`, which copies `examples/<case>/` in.
+- `--scaffold` runs each case's `scaffold.sh`, which copies `examples/<case>/` in, without its
+  published `audits/`.
+- By default each case also runs **without** the plugin (a no-plugin baseline), so the
+  scores show what the skill adds. Cases tagged `showcase` are the ones whose reports, with
+  and without the skill, are published in `examples/<case>/audits/`.
 - The planted problems, and the numbers an honest audit should find, come from the
   answer-key simulators in `reference/` (one per example, with its `audit.json` and
   results). Those files are not copied into the workspace.
@@ -25,3 +30,5 @@ game by it, not by player comfort alone.
 | match3-mini | "+5 moves" on a loss | level 8 unwinnable (churn, no sale); level 10 not hard; levels 1–4 alike; level 14/15 too hard | `reference/match3-mini` |
 | slide-puzzles | paid, no ads | level 9 unsolvable; level 6 misplaced; level 10 trivial; levels 8 and 11 deceptive (found by the bots, not planted) | `reference/slide-puzzles` |
 | market-day | pitched to publishers | first seat ahead at 2 and 3 players; early selling and saffron dominate; half-time leader wins ~83%; cutting saffron's coins doesn't fix it | `reference/market-day` |
+| tiny-slot | play coins sold in a shop | the sheet says RTP 96%; exactly 449/432 = 103.94% (the sheet treats every reel as reel 1), so spinning creates coins | `reference/tiny-slot` (`exact.py`) |
+| loot-drops | gems sold for money | the Rates screen's 1.6% is really 1.44% (69.50 pulls); "guaranteed within 90" fails 1 streak in 2,426; the epic guarantee holds | `reference/loot-drops` (`exact.py`) |
