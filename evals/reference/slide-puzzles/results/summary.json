@@ -36,7 +36,7 @@
     "metric": "optimal",
     "scenario": "baseline",
     "profile": "expert",
-    "message": "No pushover from level 8 on: mean 9: -1.00, 10: 1.00, target \u2265 6.00 (missed in 2 of 5 levels)",
+    "message": "No pushover from level 8 on: mean 10: 1.00, target \u2265 6.00 (missed in 1 of 5 levels)",
     "evidence": {
      "target": {
       "metric": "optimal",
@@ -50,19 +50,11 @@
      },
      "misses": [
       [
-       9,
-       -1.0
-      ],
-      [
        10,
        1.0
       ]
      ],
      "clear": [
-      [
-       9,
-       -1.0
-      ],
       [
        10,
        1.0
@@ -339,11 +331,11 @@
     "metric": "optimal",
     "scenario": "baseline",
     "profile": "expert",
-    "message": "Shortest solution (moves) goes against the expected direction (rise) by more than 15% at levels 6\u21927 (20.0 \u2192 7.00), 8\u21929 (8.00 \u2192 -1.00)",
+    "message": "Shortest solution (moves) goes against the expected direction (rise) by more than 15% at levels 6\u21927 (20.0 \u2192 7.00), 8\u219210 (8.00 \u2192 1.00)",
     "evidence": {
      "dips": [
       "6\u21927 (20.0 \u2192 7.00)",
-      "8\u21929 (8.00 \u2192 -1.00)"
+      "8\u219210 (8.00 \u2192 1.00)"
      ]
     }
    },
@@ -355,11 +347,11 @@
     "metric": "optimal",
     "scenario": "baseline",
     "profile": "novice",
-    "message": "Shortest solution (moves) goes against the expected direction (rise) by more than 15% at levels 6\u21927 (20.0 \u2192 7.00), 8\u21929 (8.00 \u2192 -1.00)",
+    "message": "Shortest solution (moves) goes against the expected direction (rise) by more than 15% at levels 6\u21927 (20.0 \u2192 7.00), 8\u219210 (8.00 \u2192 1.00)",
     "evidence": {
      "dips": [
       "6\u21927 (20.0 \u2192 7.00)",
-      "8\u21929 (8.00 \u2192 -1.00)"
+      "8\u219210 (8.00 \u2192 1.00)"
      ]
     }
    },
@@ -371,11 +363,11 @@
     "metric": "optimal",
     "scenario": "baseline",
     "profile": "typical",
-    "message": "Shortest solution (moves) goes against the expected direction (rise) by more than 15% at levels 6\u21927 (20.0 \u2192 7.00), 8\u21929 (8.00 \u2192 -1.00)",
+    "message": "Shortest solution (moves) goes against the expected direction (rise) by more than 15% at levels 6\u21927 (20.0 \u2192 7.00), 8\u219210 (8.00 \u2192 1.00)",
     "evidence": {
      "dips": [
       "6\u21927 (20.0 \u2192 7.00)",
-      "8\u21929 (8.00 \u2192 -1.00)"
+      "8\u219210 (8.00 \u2192 1.00)"
      ]
     }
    },
@@ -877,6 +869,19 @@
     "evidence": {
      "length": 5
     }
+   },
+   {
+    "id": "constant:solvable::all",
+    "part": "",
+    "kind": "constant",
+    "severity": "info",
+    "metric": "solvable",
+    "scenario": "fix-L9",
+    "profile": null,
+    "message": "solvable is 1.00 in every row: either it measures nothing here, or something never happens (which may be a finding)",
+    "evidence": {
+     "value": 1.0
+    }
    }
   ],
   "move-L6-last": [
@@ -888,7 +893,7 @@
     "metric": "optimal",
     "scenario": "move-L6-last",
     "profile": "expert",
-    "message": "No pushover from level 8 on: mean 8: -1.00, 9: 1.00, target \u2265 6.00 (missed in 2 of 5 levels)",
+    "message": "No pushover from level 8 on: mean 9: 1.00, target \u2265 6.00 (missed in 1 of 5 levels)",
     "evidence": {
      "target": {
       "metric": "optimal",
@@ -902,19 +907,11 @@
      },
      "misses": [
       [
-       8,
-       -1.0
-      ],
-      [
        9,
        1.0
       ]
      ],
      "clear": [
-      [
-       8,
-       -1.0
-      ],
       [
        9,
        1.0
@@ -1269,10 +1266,10 @@
     "metric": "optimal",
     "scenario": "move-L6-last",
     "profile": "expert",
-    "message": "Shortest solution (moves) goes against the expected direction (rise) by more than 15% at levels 7\u21928 (8.00 \u2192 -1.00)",
+    "message": "Shortest solution (moves) goes against the expected direction (rise) by more than 15% at levels 7\u21929 (8.00 \u2192 1.00)",
     "evidence": {
      "dips": [
-      "7\u21928 (8.00 \u2192 -1.00)"
+      "7\u21929 (8.00 \u2192 1.00)"
      ]
     }
    },
@@ -1284,10 +1281,10 @@
     "metric": "optimal",
     "scenario": "move-L6-last",
     "profile": "novice",
-    "message": "Shortest solution (moves) goes against the expected direction (rise) by more than 15% at levels 7\u21928 (8.00 \u2192 -1.00)",
+    "message": "Shortest solution (moves) goes against the expected direction (rise) by more than 15% at levels 7\u21929 (8.00 \u2192 1.00)",
     "evidence": {
      "dips": [
-      "7\u21928 (8.00 \u2192 -1.00)"
+      "7\u21929 (8.00 \u2192 1.00)"
      ]
     }
    },
@@ -1299,10 +1296,10 @@
     "metric": "optimal",
     "scenario": "move-L6-last",
     "profile": "typical",
-    "message": "Shortest solution (moves) goes against the expected direction (rise) by more than 15% at levels 7\u21928 (8.00 \u2192 -1.00)",
+    "message": "Shortest solution (moves) goes against the expected direction (rise) by more than 15% at levels 7\u21929 (8.00 \u2192 1.00)",
     "evidence": {
      "dips": [
-      "7\u21928 (8.00 \u2192 -1.00)"
+      "7\u21929 (8.00 \u2192 1.00)"
      ]
     }
    },
@@ -1395,41 +1392,6 @@
   ],
   "replace-L10": [
    {
-    "id": "off-target:optimal:No pushover from level 8 on:expert",
-    "part": "No pushover from level 8 on",
-    "kind": "off-target",
-    "severity": "high",
-    "metric": "optimal",
-    "scenario": "replace-L10",
-    "profile": "expert",
-    "message": "No pushover from level 8 on: mean 9: -1.00, target \u2265 6.00 (missed in 1 of 5 levels)",
-    "evidence": {
-     "target": {
-      "metric": "optimal",
-      "profile": "expert",
-      "segments": [
-       8,
-       12
-      ],
-      "min": 6,
-      "label": "No pushover from level 8 on"
-     },
-     "misses": [
-      [
-       9,
-       -1.0
-      ]
-     ],
-     "clear": [
-      [
-       9,
-       -1.0
-      ]
-     ],
-     "borderline": []
-    }
-   },
-   {
     "id": "off-target:solved:Every level can be solved:expert",
     "part": "Every level can be solved",
     "kind": "off-target",
@@ -1516,11 +1478,11 @@
     "metric": "optimal",
     "scenario": "replace-L10",
     "profile": "expert",
-    "message": "Shortest solution (moves) jumps up sharply at levels 5\u21926 (6.00 \u2192 20.0), 9\u219210 (-1.00 \u2192 12.0), more than 3\u00d7 a typical step",
+    "message": "Shortest solution (moves) jumps up sharply at levels 5\u21926 (6.00 \u2192 20.0), 8\u219210 (8.00 \u2192 12.0), more than 3\u00d7 a typical step",
     "evidence": {
      "jumps": [
       "5\u21926 (6.00 \u2192 20.0)",
-      "9\u219210 (-1.00 \u2192 12.0)"
+      "8\u219210 (8.00 \u2192 12.0)"
      ]
     }
    },
@@ -1532,11 +1494,11 @@
     "metric": "optimal",
     "scenario": "replace-L10",
     "profile": "novice",
-    "message": "Shortest solution (moves) jumps up sharply at levels 5\u21926 (6.00 \u2192 20.0), 9\u219210 (-1.00 \u2192 12.0), more than 3\u00d7 a typical step",
+    "message": "Shortest solution (moves) jumps up sharply at levels 5\u21926 (6.00 \u2192 20.0), 8\u219210 (8.00 \u2192 12.0), more than 3\u00d7 a typical step",
     "evidence": {
      "jumps": [
       "5\u21926 (6.00 \u2192 20.0)",
-      "9\u219210 (-1.00 \u2192 12.0)"
+      "8\u219210 (8.00 \u2192 12.0)"
      ]
     }
    },
@@ -1548,11 +1510,11 @@
     "metric": "optimal",
     "scenario": "replace-L10",
     "profile": "typical",
-    "message": "Shortest solution (moves) jumps up sharply at levels 5\u21926 (6.00 \u2192 20.0), 9\u219210 (-1.00 \u2192 12.0), more than 3\u00d7 a typical step",
+    "message": "Shortest solution (moves) jumps up sharply at levels 5\u21926 (6.00 \u2192 20.0), 8\u219210 (8.00 \u2192 12.0), more than 3\u00d7 a typical step",
     "evidence": {
      "jumps": [
       "5\u21926 (6.00 \u2192 20.0)",
-      "9\u219210 (-1.00 \u2192 12.0)"
+      "8\u219210 (8.00 \u2192 12.0)"
      ]
     }
    },
@@ -1693,11 +1655,10 @@
     "metric": "optimal",
     "scenario": "replace-L10",
     "profile": "expert",
-    "message": "Shortest solution (moves) goes against the expected direction (rise) by more than 15% at levels 6\u21927 (20.0 \u2192 7.00), 8\u21929 (8.00 \u2192 -1.00)",
+    "message": "Shortest solution (moves) goes against the expected direction (rise) by more than 15% at levels 6\u21927 (20.0 \u2192 7.00)",
     "evidence": {
      "dips": [
-      "6\u21927 (20.0 \u2192 7.00)",
-      "8\u21929 (8.00 \u2192 -1.00)"
+      "6\u21927 (20.0 \u2192 7.00)"
      ]
     }
    },
@@ -1709,11 +1670,10 @@
     "metric": "optimal",
     "scenario": "replace-L10",
     "profile": "novice",
-    "message": "Shortest solution (moves) goes against the expected direction (rise) by more than 15% at levels 6\u21927 (20.0 \u2192 7.00), 8\u21929 (8.00 \u2192 -1.00)",
+    "message": "Shortest solution (moves) goes against the expected direction (rise) by more than 15% at levels 6\u21927 (20.0 \u2192 7.00)",
     "evidence": {
      "dips": [
-      "6\u21927 (20.0 \u2192 7.00)",
-      "8\u21929 (8.00 \u2192 -1.00)"
+      "6\u21927 (20.0 \u2192 7.00)"
      ]
     }
    },
@@ -1725,11 +1685,10 @@
     "metric": "optimal",
     "scenario": "replace-L10",
     "profile": "typical",
-    "message": "Shortest solution (moves) goes against the expected direction (rise) by more than 15% at levels 6\u21927 (20.0 \u2192 7.00), 8\u21929 (8.00 \u2192 -1.00)",
+    "message": "Shortest solution (moves) goes against the expected direction (rise) by more than 15% at levels 6\u21927 (20.0 \u2192 7.00)",
     "evidence": {
      "dips": [
-      "6\u21927 (20.0 \u2192 7.00)",
-      "8\u21929 (8.00 \u2192 -1.00)"
+      "6\u21927 (20.0 \u2192 7.00)"
      ]
     }
    },
@@ -2006,7 +1965,7 @@
       ],
       "borderline": []
      },
-     "before": 2,
+     "before": 1,
      "after": 1,
      "gauge": "clear misses"
     },
@@ -2378,33 +2337,33 @@
     {
      "metric": "optimal",
      "profile": "novice",
-     "base": 6.583333333333333,
+     "base": 7.2727272727272725,
      "whatif": 7.416666666666667,
-     "change": 0.12658227848101275,
+     "change": 0.019791666666666742,
      "base_first": 3.5,
-     "base_last": 6.0,
+     "base_last": 8.333333333333334,
      "whatif_first": 3.5,
      "whatif_last": 8.5
     },
     {
      "metric": "optimal",
      "profile": "typical",
-     "base": 6.583333333333333,
+     "base": 7.2727272727272725,
      "whatif": 7.416666666666667,
-     "change": 0.12658227848101275,
+     "change": 0.019791666666666742,
      "base_first": 3.5,
-     "base_last": 6.0,
+     "base_last": 8.333333333333334,
      "whatif_first": 3.5,
      "whatif_last": 8.5
     },
     {
      "metric": "optimal",
      "profile": "expert",
-     "base": 6.583333333333333,
+     "base": 7.2727272727272725,
      "whatif": 7.416666666666667,
-     "change": 0.12658227848101275,
+     "change": 0.019791666666666742,
      "base_first": 3.5,
-     "base_last": 6.0,
+     "base_last": 8.333333333333334,
      "whatif_first": 3.5,
      "whatif_last": 8.5
     },
@@ -2604,7 +2563,7 @@
      "metric": "optimal",
      "scenario": "move-L6-last",
      "profile": "expert",
-     "message": "No pushover from level 8 on: mean 8: -1.00, 9: 1.00, target \u2265 6.00 (missed in 2 of 5 levels)",
+     "message": "No pushover from level 8 on: mean 9: 1.00, target \u2265 6.00 (missed in 1 of 5 levels)",
      "evidence": {
       "target": {
        "metric": "optimal",
@@ -2618,19 +2577,11 @@
       },
       "misses": [
        [
-        8,
-        -1.0
-       ],
-       [
         9,
         1.0
        ]
       ],
       "clear": [
-       [
-        8,
-        -1.0
-       ],
        [
         9,
         1.0
@@ -2638,8 +2589,8 @@
       ],
       "borderline": []
      },
-     "before": 2,
-     "after": 2,
+     "before": 1,
+     "after": 1,
      "gauge": "clear misses"
     },
     {
@@ -2945,10 +2896,10 @@
      "metric": "optimal",
      "scenario": "move-L6-last",
      "profile": "expert",
-     "message": "Shortest solution (moves) goes against the expected direction (rise) by more than 15% at levels 7\u21928 (8.00 \u2192 -1.00)",
+     "message": "Shortest solution (moves) goes against the expected direction (rise) by more than 15% at levels 7\u21929 (8.00 \u2192 1.00)",
      "evidence": {
       "dips": [
-       "7\u21928 (8.00 \u2192 -1.00)"
+       "7\u21929 (8.00 \u2192 1.00)"
       ]
      },
      "before": 2,
@@ -2963,10 +2914,10 @@
      "metric": "optimal",
      "scenario": "move-L6-last",
      "profile": "novice",
-     "message": "Shortest solution (moves) goes against the expected direction (rise) by more than 15% at levels 7\u21928 (8.00 \u2192 -1.00)",
+     "message": "Shortest solution (moves) goes against the expected direction (rise) by more than 15% at levels 7\u21929 (8.00 \u2192 1.00)",
      "evidence": {
       "dips": [
-       "7\u21928 (8.00 \u2192 -1.00)"
+       "7\u21929 (8.00 \u2192 1.00)"
       ]
      },
      "before": 2,
@@ -2981,10 +2932,10 @@
      "metric": "optimal",
      "scenario": "move-L6-last",
      "profile": "typical",
-     "message": "Shortest solution (moves) goes against the expected direction (rise) by more than 15% at levels 7\u21928 (8.00 \u2192 -1.00)",
+     "message": "Shortest solution (moves) goes against the expected direction (rise) by more than 15% at levels 7\u21929 (8.00 \u2192 1.00)",
      "evidence": {
       "dips": [
-       "7\u21928 (8.00 \u2192 -1.00)"
+       "7\u21929 (8.00 \u2192 1.00)"
       ]
      },
      "before": 2,
@@ -3100,33 +3051,33 @@
     {
      "metric": "optimal",
      "profile": "novice",
-     "base": 6.583333333333333,
-     "whatif": 6.583333333333333,
+     "base": 7.2727272727272725,
+     "whatif": 7.2727272727272725,
      "change": 0.0,
      "base_first": 3.5,
-     "base_last": 6.0,
+     "base_last": 8.333333333333334,
      "whatif_first": 3.5,
      "whatif_last": 11.25
     },
     {
      "metric": "optimal",
      "profile": "typical",
-     "base": 6.583333333333333,
-     "whatif": 6.583333333333333,
+     "base": 7.2727272727272725,
+     "whatif": 7.2727272727272725,
      "change": 0.0,
      "base_first": 3.5,
-     "base_last": 6.0,
+     "base_last": 8.333333333333334,
      "whatif_first": 3.5,
      "whatif_last": 11.25
     },
     {
      "metric": "optimal",
      "profile": "expert",
-     "base": 6.583333333333333,
-     "whatif": 6.583333333333333,
+     "base": 7.2727272727272725,
+     "whatif": 7.2727272727272725,
      "change": 0.0,
      "base_first": 3.5,
-     "base_last": 6.0,
+     "base_last": 8.333333333333334,
      "whatif_first": 3.5,
      "whatif_last": 11.25
     },
@@ -3232,18 +3183,16 @@
    ]
   },
   "replace-L10": {
-   "fixed": [],
-   "new": [],
-   "still": [
+   "fixed": [
     {
      "id": "off-target:optimal:No pushover from level 8 on:expert",
      "part": "No pushover from level 8 on",
      "kind": "off-target",
      "severity": "high",
      "metric": "optimal",
-     "scenario": "replace-L10",
+     "scenario": "baseline",
      "profile": "expert",
-     "message": "No pushover from level 8 on: mean 9: -1.00, target \u2265 6.00 (missed in 1 of 5 levels)",
+     "message": "No pushover from level 8 on: mean 10: 1.00, target \u2265 6.00 (missed in 1 of 5 levels)",
      "evidence": {
       "target": {
        "metric": "optimal",
@@ -3257,22 +3206,22 @@
       },
       "misses": [
        [
-        9,
-        -1.0
+        10,
+        1.0
        ]
       ],
       "clear": [
        [
-        9,
-        -1.0
+        10,
+        1.0
        ]
       ],
       "borderline": []
-     },
-     "before": 2,
-     "after": 1,
-     "gauge": "clear misses"
-    },
+     }
+    }
+   ],
+   "new": [],
+   "still": [
     {
      "id": "off-target:solved:Every level can be solved:expert",
      "part": "Every level can be solved",
@@ -3372,11 +3321,11 @@
      "metric": "optimal",
      "scenario": "replace-L10",
      "profile": "expert",
-     "message": "Shortest solution (moves) jumps up sharply at levels 5\u21926 (6.00 \u2192 20.0), 9\u219210 (-1.00 \u2192 12.0), more than 3\u00d7 a typical step",
+     "message": "Shortest solution (moves) jumps up sharply at levels 5\u21926 (6.00 \u2192 20.0), 8\u219210 (8.00 \u2192 12.0), more than 3\u00d7 a typical step",
      "evidence": {
       "jumps": [
        "5\u21926 (6.00 \u2192 20.0)",
-       "9\u219210 (-1.00 \u2192 12.0)"
+       "8\u219210 (8.00 \u2192 12.0)"
       ]
      },
      "before": 2,
@@ -3391,11 +3340,11 @@
      "metric": "optimal",
      "scenario": "replace-L10",
      "profile": "novice",
-     "message": "Shortest solution (moves) jumps up sharply at levels 5\u21926 (6.00 \u2192 20.0), 9\u219210 (-1.00 \u2192 12.0), more than 3\u00d7 a typical step",
+     "message": "Shortest solution (moves) jumps up sharply at levels 5\u21926 (6.00 \u2192 20.0), 8\u219210 (8.00 \u2192 12.0), more than 3\u00d7 a typical step",
      "evidence": {
       "jumps": [
        "5\u21926 (6.00 \u2192 20.0)",
-       "9\u219210 (-1.00 \u2192 12.0)"
+       "8\u219210 (8.00 \u2192 12.0)"
       ]
      },
      "before": 2,
@@ -3410,11 +3359,11 @@
      "metric": "optimal",
      "scenario": "replace-L10",
      "profile": "typical",
-     "message": "Shortest solution (moves) jumps up sharply at levels 5\u21926 (6.00 \u2192 20.0), 9\u219210 (-1.00 \u2192 12.0), more than 3\u00d7 a typical step",
+     "message": "Shortest solution (moves) jumps up sharply at levels 5\u21926 (6.00 \u2192 20.0), 8\u219210 (8.00 \u2192 12.0), more than 3\u00d7 a typical step",
      "evidence": {
       "jumps": [
        "5\u21926 (6.00 \u2192 20.0)",
-       "9\u219210 (-1.00 \u2192 12.0)"
+       "8\u219210 (8.00 \u2192 12.0)"
       ]
      },
      "before": 2,
@@ -3576,15 +3525,14 @@
      "metric": "optimal",
      "scenario": "replace-L10",
      "profile": "expert",
-     "message": "Shortest solution (moves) goes against the expected direction (rise) by more than 15% at levels 6\u21927 (20.0 \u2192 7.00), 8\u21929 (8.00 \u2192 -1.00)",
+     "message": "Shortest solution (moves) goes against the expected direction (rise) by more than 15% at levels 6\u21927 (20.0 \u2192 7.00)",
      "evidence": {
       "dips": [
-       "6\u21927 (20.0 \u2192 7.00)",
-       "8\u21929 (8.00 \u2192 -1.00)"
+       "6\u21927 (20.0 \u2192 7.00)"
       ]
      },
      "before": 2,
-     "after": 2,
+     "after": 1,
      "gauge": "dips"
     },
     {
@@ -3595,15 +3543,14 @@
      "metric": "optimal",
      "scenario": "replace-L10",
      "profile": "novice",
-     "message": "Shortest solution (moves) goes against the expected direction (rise) by more than 15% at levels 6\u21927 (20.0 \u2192 7.00), 8\u21929 (8.00 \u2192 -1.00)",
+     "message": "Shortest solution (moves) goes against the expected direction (rise) by more than 15% at levels 6\u21927 (20.0 \u2192 7.00)",
      "evidence": {
       "dips": [
-       "6\u21927 (20.0 \u2192 7.00)",
-       "8\u21929 (8.00 \u2192 -1.00)"
+       "6\u21927 (20.0 \u2192 7.00)"
       ]
      },
      "before": 2,
-     "after": 2,
+     "after": 1,
      "gauge": "dips"
     },
     {
@@ -3614,15 +3561,14 @@
      "metric": "optimal",
      "scenario": "replace-L10",
      "profile": "typical",
-     "message": "Shortest solution (moves) goes against the expected direction (rise) by more than 15% at levels 6\u21927 (20.0 \u2192 7.00), 8\u21929 (8.00 \u2192 -1.00)",
+     "message": "Shortest solution (moves) goes against the expected direction (rise) by more than 15% at levels 6\u21927 (20.0 \u2192 7.00)",
      "evidence": {
       "dips": [
-       "6\u21927 (20.0 \u2192 7.00)",
-       "8\u21929 (8.00 \u2192 -1.00)"
+       "6\u21927 (20.0 \u2192 7.00)"
       ]
      },
      "before": 2,
-     "after": 2,
+     "after": 1,
      "gauge": "dips"
     },
     {
@@ -3736,35 +3682,35 @@
     {
      "metric": "optimal",
      "profile": "novice",
-     "base": 6.583333333333333,
-     "whatif": 7.5,
-     "change": 0.13924050632911397,
+     "base": 7.2727272727272725,
+     "whatif": 8.272727272727273,
+     "change": 0.13750000000000012,
      "base_first": 3.5,
-     "base_last": 6.0,
+     "base_last": 8.333333333333334,
      "whatif_first": 3.5,
-     "whatif_last": 8.75
+     "whatif_last": 12.0
     },
     {
      "metric": "optimal",
      "profile": "typical",
-     "base": 6.583333333333333,
-     "whatif": 7.5,
-     "change": 0.13924050632911397,
+     "base": 7.2727272727272725,
+     "whatif": 8.272727272727273,
+     "change": 0.13750000000000012,
      "base_first": 3.5,
-     "base_last": 6.0,
+     "base_last": 8.333333333333334,
      "whatif_first": 3.5,
-     "whatif_last": 8.75
+     "whatif_last": 12.0
     },
     {
      "metric": "optimal",
      "profile": "expert",
-     "base": 6.583333333333333,
-     "whatif": 7.5,
-     "change": 0.13924050632911397,
+     "base": 7.2727272727272725,
+     "whatif": 8.272727272727273,
+     "change": 0.13750000000000012,
      "base_first": 3.5,
-     "base_last": 6.0,
+     "base_last": 8.333333333333334,
      "whatif_first": 3.5,
-     "whatif_last": 8.75
+     "whatif_last": 12.0
     },
     {
      "metric": "explored",
@@ -3871,6 +3817,20 @@
  "means": {
   "baseline": {
    "novice": {
+    "solvable": {
+     "1": 1.0,
+     "2": 1.0,
+     "3": 1.0,
+     "4": 1.0,
+     "5": 1.0,
+     "6": 1.0,
+     "7": 1.0,
+     "8": 1.0,
+     "9": 0.0,
+     "10": 1.0,
+     "11": 1.0,
+     "12": 1.0
+    },
     "optimal": {
      "1": 2.0,
      "2": 3.0,
@@ -3880,7 +3840,7 @@
      "6": 20.0,
      "7": 7.0,
      "8": 8.0,
-     "9": -1.0,
+     "9": null,
      "10": 1.0,
      "11": 11.0,
      "12": 13.0
@@ -3943,6 +3903,20 @@
     }
    },
    "typical": {
+    "solvable": {
+     "1": 1.0,
+     "2": 1.0,
+     "3": 1.0,
+     "4": 1.0,
+     "5": 1.0,
+     "6": 1.0,
+     "7": 1.0,
+     "8": 1.0,
+     "9": 0.0,
+     "10": 1.0,
+     "11": 1.0,
+     "12": 1.0
+    },
     "optimal": {
      "1": 2.0,
      "2": 3.0,
@@ -3952,7 +3926,7 @@
      "6": 20.0,
      "7": 7.0,
      "8": 8.0,
-     "9": -1.0,
+     "9": null,
      "10": 1.0,
      "11": 11.0,
      "12": 13.0
@@ -4015,6 +3989,20 @@
     }
    },
    "expert": {
+    "solvable": {
+     "1": 1.0,
+     "2": 1.0,
+     "3": 1.0,
+     "4": 1.0,
+     "5": 1.0,
+     "6": 1.0,
+     "7": 1.0,
+     "8": 1.0,
+     "9": 0.0,
+     "10": 1.0,
+     "11": 1.0,
+     "12": 1.0
+    },
     "optimal": {
      "1": 2.0,
      "2": 3.0,
@@ -4024,7 +4012,7 @@
      "6": 20.0,
      "7": 7.0,
      "8": 8.0,
-     "9": -1.0,
+     "9": null,
      "10": 1.0,
      "11": 11.0,
      "12": 13.0
@@ -4089,6 +4077,20 @@
   },
   "fix-L9": {
    "novice": {
+    "solvable": {
+     "1": 1.0,
+     "2": 1.0,
+     "3": 1.0,
+     "4": 1.0,
+     "5": 1.0,
+     "6": 1.0,
+     "7": 1.0,
+     "8": 1.0,
+     "9": 1.0,
+     "10": 1.0,
+     "11": 1.0,
+     "12": 1.0
+    },
     "optimal": {
      "1": 2.0,
      "2": 3.0,
@@ -4161,6 +4163,20 @@
     }
    },
    "typical": {
+    "solvable": {
+     "1": 1.0,
+     "2": 1.0,
+     "3": 1.0,
+     "4": 1.0,
+     "5": 1.0,
+     "6": 1.0,
+     "7": 1.0,
+     "8": 1.0,
+     "9": 1.0,
+     "10": 1.0,
+     "11": 1.0,
+     "12": 1.0
+    },
     "optimal": {
      "1": 2.0,
      "2": 3.0,
@@ -4233,6 +4249,20 @@
     }
    },
    "expert": {
+    "solvable": {
+     "1": 1.0,
+     "2": 1.0,
+     "3": 1.0,
+     "4": 1.0,
+     "5": 1.0,
+     "6": 1.0,
+     "7": 1.0,
+     "8": 1.0,
+     "9": 1.0,
+     "10": 1.0,
+     "11": 1.0,
+     "12": 1.0
+    },
     "optimal": {
      "1": 2.0,
      "2": 3.0,
@@ -4307,6 +4337,20 @@
   },
   "move-L6-last": {
    "novice": {
+    "solvable": {
+     "1": 1.0,
+     "2": 1.0,
+     "3": 1.0,
+     "4": 1.0,
+     "5": 1.0,
+     "6": 1.0,
+     "7": 1.0,
+     "8": 0.0,
+     "9": 1.0,
+     "10": 1.0,
+     "11": 1.0,
+     "12": 1.0
+    },
     "optimal": {
      "1": 2.0,
      "2": 3.0,
@@ -4315,7 +4359,7 @@
      "5": 6.0,
      "6": 7.0,
      "7": 8.0,
-     "8": -1.0,
+     "8": null,
      "9": 1.0,
      "10": 11.0,
      "11": 13.0,
@@ -4379,6 +4423,20 @@
     }
    },
    "typical": {
+    "solvable": {
+     "1": 1.0,
+     "2": 1.0,
+     "3": 1.0,
+     "4": 1.0,
+     "5": 1.0,
+     "6": 1.0,
+     "7": 1.0,
+     "8": 0.0,
+     "9": 1.0,
+     "10": 1.0,
+     "11": 1.0,
+     "12": 1.0
+    },
     "optimal": {
      "1": 2.0,
      "2": 3.0,
@@ -4387,7 +4445,7 @@
      "5": 6.0,
      "6": 7.0,
      "7": 8.0,
-     "8": -1.0,
+     "8": null,
      "9": 1.0,
      "10": 11.0,
      "11": 13.0,
@@ -4451,6 +4509,20 @@
     }
    },
    "expert": {
+    "solvable": {
+     "1": 1.0,
+     "2": 1.0,
+     "3": 1.0,
+     "4": 1.0,
+     "5": 1.0,
+     "6": 1.0,
+     "7": 1.0,
+     "8": 0.0,
+     "9": 1.0,
+     "10": 1.0,
+     "11": 1.0,
+     "12": 1.0
+    },
     "optimal": {
      "1": 2.0,
      "2": 3.0,
@@ -4459,7 +4531,7 @@
      "5": 6.0,
      "6": 7.0,
      "7": 8.0,
-     "8": -1.0,
+     "8": null,
      "9": 1.0,
      "10": 11.0,
      "11": 13.0,
@@ -4525,6 +4597,20 @@
   },
   "replace-L10": {
    "novice": {
+    "solvable": {
+     "1": 1.0,
+     "2": 1.0,
+     "3": 1.0,
+     "4": 1.0,
+     "5": 1.0,
+     "6": 1.0,
+     "7": 1.0,
+     "8": 1.0,
+     "9": 0.0,
+     "10": 1.0,
+     "11": 1.0,
+     "12": 1.0
+    },
     "optimal": {
      "1": 2.0,
      "2": 3.0,
@@ -4534,7 +4620,7 @@
      "6": 20.0,
      "7": 7.0,
      "8": 8.0,
-     "9": -1.0,
+     "9": null,
      "10": 12.0,
      "11": 11.0,
      "12": 13.0
@@ -4597,6 +4683,20 @@
     }
    },
    "typical": {
+    "solvable": {
+     "1": 1.0,
+     "2": 1.0,
+     "3": 1.0,
+     "4": 1.0,
+     "5": 1.0,
+     "6": 1.0,
+     "7": 1.0,
+     "8": 1.0,
+     "9": 0.0,
+     "10": 1.0,
+     "11": 1.0,
+     "12": 1.0
+    },
     "optimal": {
      "1": 2.0,
      "2": 3.0,
@@ -4606,7 +4706,7 @@
      "6": 20.0,
      "7": 7.0,
      "8": 8.0,
-     "9": -1.0,
+     "9": null,
      "10": 12.0,
      "11": 11.0,
      "12": 13.0
@@ -4669,6 +4769,20 @@
     }
    },
    "expert": {
+    "solvable": {
+     "1": 1.0,
+     "2": 1.0,
+     "3": 1.0,
+     "4": 1.0,
+     "5": 1.0,
+     "6": 1.0,
+     "7": 1.0,
+     "8": 1.0,
+     "9": 0.0,
+     "10": 1.0,
+     "11": 1.0,
+     "12": 1.0
+    },
     "optimal": {
      "1": 2.0,
      "2": 3.0,
@@ -4678,7 +4792,7 @@
      "6": 20.0,
      "7": 7.0,
      "8": 8.0,
-     "9": -1.0,
+     "9": null,
      "10": 12.0,
      "11": 11.0,
      "12": 13.0
