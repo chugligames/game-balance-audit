@@ -1,0 +1,60 @@
+
+## Seat win rates, mirror matches (4000 games each)
+n=2 Greedy     seats: 58.1% 41.9%  (fair=50.0%, ±1.5)  mean margin 12.4, ≤3 pts 18%
+n=2 QuickPairs seats: 58.4% 41.6%  (fair=50.0%, ±1.5)  mean margin 11.6, ≤3 pts 21%
+n=2 BigSale    seats: 44.9% 55.1%  (fair=50.0%, ±1.5)  mean margin 17.7, ≤3 pts 12%
+n=2 Saffron    seats: 58.0% 42.0%  (fair=50.0%, ±1.5)  mean margin 11.3, ≤3 pts 20%
+n=2 Denier     seats: 58.6% 41.4%  (fair=50.0%, ±1.5)  mean margin 12.6, ≤3 pts 17%
+n=2 Random     seats: 53.4% 46.6%  (fair=50.0%, ±1.5)  mean margin 14.0, ≤3 pts 16%
+n=3 Greedy     seats: 42.2% 31.9% 25.9%  (fair=33.3%, ±1.5)  mean margin 9.2, ≤3 pts 25%
+n=3 QuickPairs seats: 43.1% 32.9% 24.0%  (fair=33.3%, ±1.5)  mean margin 8.0, ≤3 pts 31%
+n=3 BigSale    seats: 30.1% 40.9% 29.0%  (fair=33.3%, ±1.5)  mean margin 9.9, ≤3 pts 23%
+n=3 Saffron    seats: 42.1% 32.3% 25.6%  (fair=33.3%, ±1.5)  mean margin 8.0, ≤3 pts 32%
+n=3 Denier     seats: 43.6% 30.0% 26.3%  (fair=33.3%, ±1.5)  mean margin 9.5, ≤3 pts 23%
+n=3 Random     seats: 38.9% 31.0% 30.1%  (fair=33.3%, ±1.5)  mean margin 9.5, ≤3 pts 24%
+n=4 Greedy     seats: 36.3% 25.5% 20.1% 18.1%  (fair=25.0%, ±1.3)  mean margin 8.4, ≤3 pts 26%
+n=4 QuickPairs seats: 34.6% 26.1% 21.4% 17.9%  (fair=25.0%, ±1.3)  mean margin 7.0, ≤3 pts 33%
+n=4 BigSale    seats: 23.2% 34.8% 23.5% 18.5%  (fair=25.0%, ±1.3)  mean margin 7.2, ≤3 pts 33%
+n=4 Saffron    seats: 33.6% 26.7% 21.8% 18.0%  (fair=25.0%, ±1.3)  mean margin 6.6, ≤3 pts 35%
+n=4 Denier     seats: 35.1% 24.6% 20.8% 19.5%  (fair=25.0%, ±1.3)  mean margin 8.2, ≤3 pts 26%
+n=4 Random     seats: 28.9% 26.6% 23.1% 21.3%  (fair=25.0%, ±1.3)  mean margin 7.5, ≤3 pts 30%
+
+## One strategy vs a field of Greedy (4000 games each)
+n=2 one X vs 1×Greedy (fair 50%): Random 0%, Greedy 100%, QuickPairs 31%, BigSale 13%, Saffron 29%, Cheap 4%, Denier 46%
+n=3 one X vs 2×Greedy (fair 33%): Random 0%, Greedy 100%, QuickPairs 25%, BigSale 13%, Saffron 24%, Cheap 4%, Denier 30%
+n=4 one X vs 3×Greedy (fair 25%): Random 1%, Greedy 100%, QuickPairs 23%, BigSale 11%, Saffron 22%, Cheap 5%, Denier 23%
+n=2 one X vs 1×Saffron (fair 50%): Random 1%, Greedy 71%, QuickPairs 58%, BigSale 28%, Saffron 100%, Cheap 8%, Denier 67%
+n=3 one X vs 2×Saffron (fair 33%): Random 1%, Greedy 46%, QuickPairs 38%, BigSale 19%, Saffron 100%, Cheap 7%, Denier 42%
+n=4 one X vs 3×Saffron (fair 25%): Random 1%, Greedy 31%, QuickPairs 27%, BigSale 16%, Saffron 100%, Cheap 7%, Denier 28%
+
+## Round robin
+2-player head to head, seat-rotated, row's win rate vs column:
+               Random     Greedy QuickPairs    BigSale    Saffron      Cheap     Denier
+Random              -         0%         0%         4%         0%        38%         0%
+Greedy           100%          -        68%        87%        71%        97%        54%
+QuickPairs       100%        33%          -        81%        58%        94%        37%
+BigSale           96%        13%        21%          -        27%        91%        13%
+Saffron          100%        29%        42%        74%          -        93%        33%
+Cheap             63%         3%         6%         9%         7%          -         4%
+Denier           100%        47%        66%        87%        67%        97%          -
+
+## Coins
+n=2 Greedy mirror: avg total coins/game 105.3, avg winner score 58.8
+n=4 Greedy mirror: avg total coins/game 100.4, avg winner score 35.3
+Coin supply per good: {'Rice': 10, 'Lentils': 12, 'Cloth': 15, 'Spice': 18, 'Saffron': 31} 4-card sale values: {'Rice': 8, 'Lentils': 11, 'Cloth': 14, 'Spice': 18, 'Saffron': 31}
+
+## Strategy search n=2
+63.2% {'pref': {'Rice': 0.26, 'Lentils': 0.3, 'Cloth': 0.74, 'Spice': 1.95, 'Saffron': 1.33}, 'sell_at': 4, 'deny': 0.88, 'race': 2, 'endgame': 1, 'big_hunt': False}
+59.7% {'pref': {'Rice': 0.47, 'Lentils': 0.36, 'Cloth': 1.57, 'Spice': 1.36, 'Saffron': 0.5}, 'sell_at': 4, 'deny': 0.35, 'race': 1, 'endgame': 2, 'big_hunt': False}
+59.0% {'pref': {'Rice': 0.61, 'Lentils': 1.47, 'Cloth': 0.91, 'Spice': 1.21, 'Saffron': 0.63}, 'sell_at': 3, 'deny': 1.15, 'race': 2, 'endgame': 3, 'big_hunt': True}
+57.2% {'pref': {'Rice': 0.61, 'Lentils': 1.74, 'Cloth': 0.61, 'Spice': 1.5, 'Saffron': 0.39}, 'sell_at': 4, 'deny': 1.08, 'race': 1, 'endgame': 1, 'big_hunt': True}
+56.1% {'pref': {'Rice': 0.41, 'Lentils': 1.68, 'Cloth': 0.53, 'Spice': 0.33, 'Saffron': 0.72}, 'sell_at': 4, 'deny': 1.25, 'race': 2, 'endgame': 1, 'big_hunt': True}
+
+## Strategy search n=4
+29.3% {'pref': {'Rice': 0.26, 'Lentils': 0.3, 'Cloth': 0.74, 'Spice': 1.95, 'Saffron': 1.33}, 'sell_at': 4, 'deny': 0.88, 'race': 2, 'endgame': 1, 'big_hunt': False}
+25.6% {'pref': {'Rice': 0.56, 'Lentils': 1.21, 'Cloth': 1.46, 'Spice': 1.37, 'Saffron': 1.67}, 'sell_at': 2, 'deny': 1.12, 'race': 0, 'endgame': 1, 'big_hunt': False}
+25.6% {'pref': {'Rice': 1.54, 'Lentils': 1.76, 'Cloth': 0.62, 'Spice': 1.75, 'Saffron': 0.82}, 'sell_at': 3, 'deny': 0.01, 'race': 1, 'endgame': 0.5, 'big_hunt': False}
+25.1% {'pref': {'Rice': 0.41, 'Lentils': 1.68, 'Cloth': 0.53, 'Spice': 0.33, 'Saffron': 0.72}, 'sell_at': 4, 'deny': 1.25, 'race': 2, 'endgame': 1, 'big_hunt': True}
+24.8% {'pref': {'Rice': 1.91, 'Lentils': 1.96, 'Cloth': 1.98, 'Spice': 1.12, 'Saffron': 1.65}, 'sell_at': 2, 'deny': 0.4, 'race': 3, 'endgame': 3, 'big_hunt': False}
+
+(elapsed 928s)

@@ -48,7 +48,7 @@ Run these tables:
 |---|---|
 | `won` (1 / 0 / 1÷k on a k-way tie), `seat`, `strategy` | Seat advantage, dominance |
 | final `score`, `margin` to the best other player | Close games or blowouts |
-| `turns`, game length | Too long, too short, too variable |
+| `turns`, game length, and **minutes per game** (turns × seconds per turn: ask the designer, or assume 20–30 s for simple turns and say so) | Too long, too short, too variable. If the designer names a playtime ("about 20 minutes", the time on the box), check it at every player count: it's a goal, not a detail |
 | `halfLeaderWon` (on one row per game) | Runaway leader: how often the midgame leader wins |
 | `leadChanges` | Whether the lead moves around |
 | `decisionImpact` at sampled turns | Whether choices matter, or the game plays itself |

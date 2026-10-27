@@ -1,0 +1,43 @@
+{
+  "title": "Market Day",
+  "baseline": "baseline",
+  "profiles": ["mirror-2p", "mirror-3p", "mirror-4p", "mirror-quick-2p", "mirror-expert-2p", "quick-vs-steady-2p", "bigsale-vs-steady-2p", "luxury-vs-steady-2p", "all-4p", "expert-vs-steady-2p", "expert-vs-careless-2p"],
+  "focus_profile": "mirror-2p",
+  "compare_profiles": ["mirror-2p", "mirror-3p", "mirror-4p", "mirror-expert-2p", "all-4p", "expert-vs-steady-2p"],
+  "goals": [
+    { "name": "Seat 1 win rate, 2p (fair 0.50)", "metric": "won", "profile": "mirror-2p", "where": { "seat": "seat 1" }, "direction": "min" },
+    { "name": "Seat 1 win rate, 3p (fair 0.33)", "metric": "won", "profile": "mirror-3p", "where": { "seat": "seat 1" }, "direction": "min" },
+    { "name": "Seat 1 win rate, 4p (fair 0.25)", "metric": "won", "profile": "mirror-4p", "where": { "seat": "seat 1" }, "direction": "min" },
+    { "name": "Seat 1 win rate, expert mirror 2p", "metric": "won", "profile": "mirror-expert-2p", "where": { "seat": "seat 1" }, "direction": "min" },
+    { "name": "Expert win rate vs steady", "metric": "won", "profile": "expert-vs-steady-2p", "where": { "strategy": "expert" }, "direction": "max" },
+    { "name": "Winning gap in coins, 2p", "metric": "winGap", "profile": "mirror-2p", "direction": "min" }
+  ],
+  "constraints": [
+    { "name": "Seat 1 2p within 0.45-0.55", "metric": "won", "profile": "mirror-2p", "where": { "seat": "seat 1" }, "min": 0.45, "max": 0.55 },
+    { "name": "Seat 1 4p within 0.20-0.30", "metric": "won", "profile": "mirror-4p", "where": { "seat": "seat 1" }, "min": 0.20, "max": 0.30 },
+    { "name": "Last seat 4p within 0.20-0.30", "metric": "won", "profile": "mirror-4p", "where": { "seat": "seat 4" }, "min": 0.20, "max": 0.30 }
+  ],
+  "exact": [
+    { "name": "Takes per game, 2p (deck 43 + the final take)", "metric": "takesTotal", "profile": "mirror-2p", "value": 44 },
+    { "name": "Takes per game, 3p (deck 40 + 1)", "metric": "takesTotal", "profile": "mirror-3p", "value": 41 },
+    { "name": "Takes per game, 4p (deck 37 + 1)", "metric": "takesTotal", "profile": "mirror-4p", "value": 38 }
+  ],
+  "metrics": {
+    "won": { "label": "Win rate" },
+    "score": { "label": "Coins" },
+    "winGap": { "label": "Winner's lead in coins" },
+    "bigSales": { "label": "Big sales", "used": "> 0" },
+    "saffronSold": { "label": "Saffron sold", "used": "> 0" },
+    "cardsWasted": { "label": "Cards left unsold" },
+    "tie": { "label": "Tied games" }
+  },
+  "groups": [
+    { "metric": "won", "by": "seat", "profile": "mirror-2p", "fair": "even", "tolerance": 0.03, "label": "Seat advantage, 2p (steady bots)" },
+    { "metric": "won", "by": "seat", "profile": "mirror-3p", "fair": "even", "tolerance": 0.03, "label": "Seat advantage, 3p (steady bots)" },
+    { "metric": "won", "by": "seat", "profile": "mirror-4p", "fair": "even", "tolerance": 0.03, "label": "Seat advantage, 4p (steady bots)" },
+    { "metric": "won", "by": "seat", "profile": "mirror-expert-2p", "fair": "even", "tolerance": 0.03, "label": "Seat advantage, 2p (expert bots)" },
+    { "metric": "won", "by": "strategy", "profiles": ["quick-vs-steady-2p", "bigsale-vs-steady-2p", "luxury-vs-steady-2p"], "fair": 0.5, "tolerance": 0.05, "exclude": ["steady"], "label": "Each strategy head-to-head against steady, 2p" },
+    { "metric": "won", "by": "strategy", "profile": "all-4p", "fair": "even", "tolerance": 0.04, "label": "Four strategies at one 4p table" }
+  ],
+  "skill": { "metric": "won", "by": "strategy", "profile": "expert-vs-careless-2p", "strong": "expert", "weak": "careless", "min_gap": 0.1 }
+}

@@ -1,0 +1,31 @@
+{
+  "title": "Ladoo Spin",
+  "segment": "day",
+  "baseline": "baseline",
+  "profiles": ["flat-1", "casual", "regular", "keen"],
+  "focus_profile": "regular",
+  "compare_profiles": ["flat-1", "casual", "regular", "keen"],
+  "exact": [
+    { "name": "RTP", "metric": "rtp", "profile": "flat-1", "aggregate": "mean", "value": 1.0393518518518519, "note": "449/432 by enumerating 1,728 outcomes" },
+    { "name": "Hit rate", "metric": "hitRate", "profile": "flat-1", "aggregate": "mean", "value": 0.3101851851851852, "note": "67/216" },
+    { "name": "Big-win rate (40x+)", "metric": "bigRate", "profile": "flat-1", "aggregate": "mean", "value": 0.0028935185185185184, "note": "5/1728" }
+  ],
+  "goals": [
+    { "name": "Regular player's free-coin drift per day: gift + wins - bets (want negative)", "metric": "drift", "profile": "regular", "aggregate": "mean", "direction": "min", "weight": 2 },
+    { "name": "Coin purchases per keen player, 30 days", "metric": "purchases", "profile": "keen", "aggregate": "sum", "direction": "max" }
+  ],
+  "constraints": [
+    { "name": "RTP 95.5-96.5%", "metric": "rtp", "profile": "flat-1", "aggregate": "mean", "min": 0.955, "max": 0.965 },
+    { "name": "Hit rate ~3 in 10 (27-33%)", "metric": "hitRate", "profile": "flat-1", "aggregate": "mean", "min": 0.27, "max": 0.33 },
+    { "name": "Big win every few hundred spins (1/500 to 1/150)", "metric": "bigRate", "profile": "flat-1", "aggregate": "mean", "min": 0.002, "max": 0.00667 },
+    { "name": "Casual player out of coins on <=10% of days (assumed guardrail)", "metric": "outOfCoins", "profile": "casual", "aggregate": "mean", "max": 0.1 }
+  ],
+  "metrics": {
+    "balance": { "label": "Coin balance at end of day" },
+    "outOfCoins": { "label": "Ran out of coins (purchase moment)", "binds": "> 0" },
+    "purchases": { "label": "Coin packs bought", "used": "> 0" }
+  },
+  "targets": [
+    { "metric": "drift", "profile": "regular", "max": 0, "label": "Regular player's balance drifts down" }
+  ]
+}

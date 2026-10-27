@@ -20,7 +20,17 @@ while it's below 1.0, a minor version can change how audits are configured.
   fixed-seed simulation, run by GitHub Actions on every push.
 - An issue template, "Report a wrong calculation".
 - A copy of `LICENSE` inside the skill folder, so installed copies carry it.
-- A published with-and-without comparison on the showcase examples.
+- A published with-and-without comparison on the showcase examples (`evals/showcase.md`),
+  with all six reports unedited in `examples/<example>/audits/`.
+- `examples/loot-drops/package.json` marks it an ES module, so Node 18 can load it.
+
+### Changed
+- `analyze.py` caches cell values and statistics. On 364,000 rows it went from over 7
+  minutes to 14 seconds, with identical output.
+- The strategy reference makes the agent measure minutes per game whenever the designer
+  names a playtime (the showcase's Market Day audit missed it).
+- Eval graders read the report itself (`focus: { source: file, ... }`). The first showcase
+  run's judge saw only file names.
 
 ## 0.2.0 (2026-10-27)
 

@@ -1,0 +1,125 @@
+{
+  "title": "Spice Route: Royal Chest",
+  "baseline": "baseline",
+  "profiles": [
+    "player"
+  ],
+  "focus_profile": "player",
+  "metrics": {
+    "pulls": {
+      "label": "Pulls to first legendary"
+    },
+    "over90": {
+      "label": "Needed more than 90 pulls",
+      "binds": "> 0",
+      "binds_range": [
+        0,
+        1
+      ]
+    },
+    "emptyTen": {
+      "label": "Ten pulls with no epic or better",
+      "binds": "> 0",
+      "binds_range": [
+        0,
+        1
+      ]
+    }
+  },
+  "goals": [
+    {
+      "name": "Mean pulls to legendary (target ~60)",
+      "metric": "pulls",
+      "aggregate": "mean",
+      "direction": "min"
+    },
+    {
+      "name": "Gems per legendary (revenue)",
+      "metric": "gems",
+      "aggregate": "mean",
+      "direction": "max"
+    }
+  ],
+  "constraints": [
+    {
+      "name": "Share needing >90 pulls",
+      "metric": "over90",
+      "max": 0
+    },
+    {
+      "name": "Empty ten-pull",
+      "metric": "emptyTen",
+      "max": 0
+    },
+    {
+      "name": "Mean pulls 55-65",
+      "metric": "pulls",
+      "min": 55,
+      "max": 65
+    }
+  ],
+  "targets": [
+    {
+      "metric": "pulls",
+      "min": 55,
+      "max": 65,
+      "label": "Legendary in about 60 pulls on average",
+      "severity": "high"
+    },
+    {
+      "metric": "over90",
+      "max": 0,
+      "label": "Never more than 90 pulls",
+      "severity": "high"
+    }
+  ],
+  "exact": [
+    {
+      "name": "Mean pulls (baseline)",
+      "metric": "pulls",
+      "value": 69.4995366373966,
+      "note": "Fraction chain over legendaryChance(n), sim/exact.py"
+    },
+    {
+      "name": "P(>60 pulls) (baseline)",
+      "metric": "over60",
+      "value": 0.7862493608695524
+    },
+    {
+      "name": "P(>90 pulls) (baseline)",
+      "metric": "over90",
+      "value": 0.00041218417657834657,
+      "note": "1 in 2,426"
+    },
+    {
+      "name": "Mean pulls (P1-A)",
+      "metric": "pulls",
+      "scenario": "P1-A hard pity >= 90",
+      "value": 69.49912445322003
+    },
+    {
+      "name": "Mean pulls (P1-B)",
+      "metric": "pulls",
+      "scenario": "P1-B base legendary 0.7%",
+      "value": 62.128411527398306
+    },
+    {
+      "name": "Mean pulls (P2-A)",
+      "metric": "pulls",
+      "scenario": "P2-A base legendary 0.8%",
+      "value": 59.91150045169729
+    },
+    {
+      "name": "Mean pulls (P2-B)",
+      "metric": "pulls",
+      "scenario": "P2-B soft pity from 64",
+      "value": 60.60611158492921
+    },
+    {
+      "name": "Mean pulls (P2-C)",
+      "metric": "pulls",
+      "scenario": "P2-C soft pity from 66 step 10%",
+      "value": 60.89236417977886
+    }
+  ]
+}

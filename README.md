@@ -133,13 +133,32 @@ How the exact answers agree with the simulation (fixed seed 1, from the answer k
 | Pulls per legendary | 69.4995 | 69.37 ± 0.13 | 8,000,000 pulls |
 | Streaks that need a 91st pull | 0.000412 | 0.00045 ± 0.00013 | about 115,000 streaks |
 
-Each example's `audits/` folder holds the skill's real, unedited output on it.
+For the first three examples, `audits/with-skill/` holds the skill's real, unedited
+output, and `audits/without-skill/` holds what plain Claude produced from the same prompt.
+Leave out `audits/` if you copy an example to try the skill yourself.
 
 ## With and without the skill
 
-*Being filled in: the same prompts run through Claude Code with and without the skill
-(`claude plugin eval`, with a no-plugin baseline arm), with both reports published
-unedited.*
+We ran the same three prompts (the slot, the loot chest and Market Day) through Claude Code
+with and without the skill, using `claude plugin eval` and its no-plugin baseline. All six
+reports are published unedited in `examples/<example>/audits/`. The full write-up, with
+scores, costs and our reading of each pair, is in [evals/showcase.md](evals/showcase.md).
+
+| Example | With the skill | Without |
+|---|---|---|
+| Loot drops | 1.00 | 1.00 |
+| Slot | 1.00 | 0.40 (by our reading the judge was wrong here; the report is good) |
+| Market Day | 0.40 | 0.20 |
+
+The honest summary: **plain Claude also finds the planted bugs** in a small spreadsheet or
+formula. What the skill adds is the rest of an audit:
+- **goals:** the design and business goals, written down and checked;
+- **three tested alternatives** per problem, failures included;
+- **second-order effects:** its slot audit, in both runs, found that the daily gift keeps
+  balances rising even after the payout is fixed;
+- **checkable numbers:** seeds, intervals, and exact-against-simulated checks.
+
+It costs 2–4× more to run.
 
 ## What it runs, reads and writes
 

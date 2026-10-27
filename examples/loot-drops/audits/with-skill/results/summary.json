@@ -1,0 +1,1365 @@
+{
+ "title": "Spice Route: Royal Chest",
+ "segment": null,
+ "segments": [
+  "all"
+ ],
+ "scenarios": [
+  "baseline",
+  "P1-A hard pity >= 90",
+  "P1-B base legendary 0.7%",
+  "P2-A base legendary 0.8%",
+  "P2-B soft pity from 64",
+  "P2-C soft pity from 66 step 10%"
+ ],
+ "profiles": [
+  "player"
+ ],
+ "scorecard": {
+  "goals": [
+   {
+    "name": "Mean pulls to legendary (target ~60)",
+    "metric": "pulls",
+    "aggregate": "mean",
+    "direction": "min"
+   },
+   {
+    "name": "Gems per legendary (revenue)",
+    "metric": "gems",
+    "aggregate": "mean",
+    "direction": "max"
+   }
+  ],
+  "constraints": [
+   {
+    "name": "Share needing >90 pulls",
+    "metric": "over90",
+    "max": 0
+   },
+   {
+    "name": "Empty ten-pull",
+    "metric": "emptyTen",
+    "max": 0
+   },
+   {
+    "name": "Mean pulls 55-65",
+    "metric": "pulls",
+    "min": 55,
+    "max": 65
+   }
+  ],
+  "rows": [
+   {
+    "scenario": "P1-B base legendary 0.7%",
+    "goals": [
+     {
+      "name": "Mean pulls to legendary (target ~60)",
+      "value": 61.8009,
+      "pm": 0.3734935113751994,
+      "n": 20000,
+      "change": -0.10976200885471393,
+      "better": true,
+      "worse": false
+     },
+     {
+      "name": "Gems per legendary (revenue)",
+      "value": 9888.144,
+      "pm": 59.758961820033356,
+      "n": 20000,
+      "change": -0.10976200885471396,
+      "better": false,
+      "worse": true
+     }
+    ],
+    "constraints": [
+     {
+      "name": "Share needing >90 pulls",
+      "value": 0.0,
+      "pm": 0.0,
+      "ok": true
+     },
+     {
+      "name": "Empty ten-pull",
+      "value": 0.0,
+      "pm": 0.0,
+      "ok": true
+     },
+     {
+      "name": "Mean pulls 55-65",
+      "value": 61.8009,
+      "pm": 0.3734935113751994,
+      "ok": true
+     }
+    ],
+    "ok": true,
+    "score": -2.7755575615628914e-17,
+    "pareto": true
+   },
+   {
+    "scenario": "P2-B soft pity from 64",
+    "goals": [
+     {
+      "name": "Mean pulls to legendary (target ~60)",
+      "value": 60.55585,
+      "pm": 0.25645156381268563,
+      "n": 20000,
+      "change": -0.1276968740569268,
+      "better": true,
+      "worse": false
+     },
+     {
+      "name": "Gems per legendary (revenue)",
+      "value": 9688.936,
+      "pm": 41.03225021003055,
+      "n": 20000,
+      "change": -0.1276968740569269,
+      "better": false,
+      "worse": true
+     }
+    ],
+    "constraints": [
+     {
+      "name": "Share needing >90 pulls",
+      "value": 0.0,
+      "pm": 0.0,
+      "ok": true
+     },
+     {
+      "name": "Empty ten-pull",
+      "value": 0.0,
+      "pm": 0.0,
+      "ok": true
+     },
+     {
+      "name": "Mean pulls 55-65",
+      "value": 60.55585,
+      "pm": 0.25645156381268563,
+      "ok": true
+     }
+    ],
+    "ok": true,
+    "score": -8.326672684688674e-17,
+    "pareto": true
+   },
+   {
+    "scenario": "P2-C soft pity from 66 step 10%",
+    "goals": [
+     {
+      "name": "Mean pulls to legendary (target ~60)",
+      "value": 60.84525,
+      "pm": 0.2572896017587231,
+      "n": 20000,
+      "change": -0.1235280856632716,
+      "better": true,
+      "worse": false
+     },
+     {
+      "name": "Gems per legendary (revenue)",
+      "value": 9735.24,
+      "pm": 41.16633628139205,
+      "n": 20000,
+      "change": -0.12352808566327168,
+      "better": false,
+      "worse": true
+     }
+    ],
+    "constraints": [
+     {
+      "name": "Share needing >90 pulls",
+      "value": 0.0,
+      "pm": 0.0,
+      "ok": true
+     },
+     {
+      "name": "Empty ten-pull",
+      "value": 0.0,
+      "pm": 0.0,
+      "ok": true
+     },
+     {
+      "name": "Mean pulls 55-65",
+      "value": 60.84525,
+      "pm": 0.2572896017587231,
+      "ok": true
+     }
+    ],
+    "ok": true,
+    "score": -8.326672684688674e-17,
+    "pareto": true
+   },
+   {
+    "scenario": "P2-A base legendary 0.8%",
+    "goals": [
+     {
+      "name": "Mean pulls to legendary (target ~60)",
+      "value": 59.6452,
+      "pm": 0.38332225295064,
+      "n": 20000,
+      "change": -0.14081472875866177,
+      "better": true,
+      "worse": false
+     },
+     {
+      "name": "Gems per legendary (revenue)",
+      "value": 9543.232,
+      "pm": 61.33156047210257,
+      "n": 20000,
+      "change": -0.14081472875866188,
+      "better": false,
+      "worse": true
+     }
+    ],
+    "constraints": [
+     {
+      "name": "Share needing >90 pulls",
+      "value": 0.0,
+      "pm": 0.0,
+      "ok": true
+     },
+     {
+      "name": "Empty ten-pull",
+      "value": 0.0,
+      "pm": 0.0,
+      "ok": true
+     },
+     {
+      "name": "Mean pulls 55-65",
+      "value": 59.6452,
+      "pm": 0.38332225295064,
+      "ok": true
+     }
+    ],
+    "ok": true,
+    "score": -1.1102230246251565e-16,
+    "pareto": true
+   },
+   {
+    "scenario": "P1-A hard pity >= 90",
+    "goals": [
+     {
+      "name": "Mean pulls to legendary (target ~60)",
+      "value": 69.4202,
+      "pm": 0.3171353627597905,
+      "n": 20000,
+      "change": -6.482221068237299e-06,
+      "better": false,
+      "worse": false
+     },
+     {
+      "name": "Gems per legendary (revenue)",
+      "value": 11107.232,
+      "pm": 50.741658041564285,
+      "n": 20000,
+      "change": -6.482221068237298e-06,
+      "better": false,
+      "worse": false
+     }
+    ],
+    "constraints": [
+     {
+      "name": "Share needing >90 pulls",
+      "value": 0.0,
+      "pm": 0.0,
+      "ok": true
+     },
+     {
+      "name": "Empty ten-pull",
+      "value": 0.0,
+      "pm": 0.0,
+      "ok": true
+     },
+     {
+      "name": "Mean pulls 55-65",
+      "value": 69.4202,
+      "pm": 0.3171353627597905,
+      "ok": false
+     }
+    ],
+    "ok": false,
+    "score": 8.470329472543003e-22,
+    "pareto": false
+   },
+   {
+    "scenario": "baseline",
+    "goals": [
+     {
+      "name": "Mean pulls to legendary (target ~60)",
+      "value": 69.42065,
+      "pm": 0.3171411082835491,
+      "n": 20000,
+      "change": 0.0,
+      "better": false,
+      "worse": false
+     },
+     {
+      "name": "Gems per legendary (revenue)",
+      "value": 11107.304,
+      "pm": 50.742577325359264,
+      "n": 20000,
+      "change": 0.0,
+      "better": false,
+      "worse": false
+     }
+    ],
+    "constraints": [
+     {
+      "name": "Share needing >90 pulls",
+      "value": 0.00045,
+      "pm": 0.0002939411911780885,
+      "ok": false
+     },
+     {
+      "name": "Empty ten-pull",
+      "value": 0.0,
+      "pm": 0.0,
+      "ok": true
+     },
+     {
+      "name": "Mean pulls 55-65",
+      "value": 69.42065,
+      "pm": 0.3171411082835491,
+      "ok": false
+     }
+    ],
+    "ok": false,
+    "score": 0.0,
+    "pareto": false
+   }
+  ]
+ },
+ "exact": [
+  {
+   "name": "Mean pulls (baseline)",
+   "scenario": "baseline",
+   "exact": 69.4995366373966,
+   "simulated": 69.42065,
+   "pm": 0.3171411082835491,
+   "n": 20000,
+   "agrees": true,
+   "note": "Fraction chain over legendaryChance(n), sim/exact.py"
+  },
+  {
+   "name": "P(>60 pulls) (baseline)",
+   "scenario": "baseline",
+   "exact": 0.7862493608695524,
+   "simulated": 0.78605,
+   "pm": 0.005683726382318909,
+   "n": 20000,
+   "agrees": true,
+   "note": ""
+  },
+  {
+   "name": "P(>90 pulls) (baseline)",
+   "scenario": "baseline",
+   "exact": 0.00041218417657834657,
+   "simulated": 0.00045,
+   "pm": 0.0002939411911780885,
+   "n": 20000,
+   "agrees": true,
+   "note": "1 in 2,426"
+  },
+  {
+   "name": "Mean pulls (P1-A)",
+   "scenario": "P1-A hard pity >= 90",
+   "exact": 69.49912445322003,
+   "simulated": 69.4202,
+   "pm": 0.3171353627597905,
+   "n": 20000,
+   "agrees": true,
+   "note": ""
+  },
+  {
+   "name": "Mean pulls (P1-B)",
+   "scenario": "P1-B base legendary 0.7%",
+   "exact": 62.128411527398306,
+   "simulated": 61.8009,
+   "pm": 0.3734935113751994,
+   "n": 20000,
+   "agrees": true,
+   "note": ""
+  },
+  {
+   "name": "Mean pulls (P2-A)",
+   "scenario": "P2-A base legendary 0.8%",
+   "exact": 59.91150045169729,
+   "simulated": 59.6452,
+   "pm": 0.38332225295064,
+   "n": 20000,
+   "agrees": true,
+   "note": ""
+  },
+  {
+   "name": "Mean pulls (P2-B)",
+   "scenario": "P2-B soft pity from 64",
+   "exact": 60.60611158492921,
+   "simulated": 60.55585,
+   "pm": 0.25645156381268563,
+   "n": 20000,
+   "agrees": true,
+   "note": ""
+  },
+  {
+   "name": "Mean pulls (P2-C)",
+   "scenario": "P2-C soft pity from 66 step 10%",
+   "exact": 60.89236417977886,
+   "simulated": 60.84525,
+   "pm": 0.2572896017587231,
+   "n": 20000,
+   "agrees": true,
+   "note": ""
+  }
+ ],
+ "flags": {
+  "baseline": [
+   {
+    "id": "off-target:over90:Never more than 90 pulls:player",
+    "part": "Never more than 90 pulls",
+    "kind": "off-target",
+    "severity": "high",
+    "metric": "over90",
+    "scenario": "baseline",
+    "profile": "player",
+    "message": "Never more than 90 pulls: mean 0.00, target \u2264 0.00",
+    "evidence": {
+     "target": {
+      "metric": "over90",
+      "max": 0,
+      "label": "Never more than 90 pulls",
+      "severity": "high"
+     },
+     "misses": [
+      [
+       "all",
+       0.00045
+      ]
+     ],
+     "clear": [
+      [
+       "all",
+       0.00045
+      ]
+     ],
+     "borderline": []
+    }
+   },
+   {
+    "id": "off-target:pulls:Legendary in about 60 pulls on average:player",
+    "part": "Legendary in about 60 pulls on average",
+    "kind": "off-target",
+    "severity": "high",
+    "metric": "pulls",
+    "scenario": "baseline",
+    "profile": "player",
+    "message": "Legendary in about 60 pulls on average: mean 69.4, target 55.0\u201365.0",
+    "evidence": {
+     "target": {
+      "metric": "pulls",
+      "min": 55,
+      "max": 65,
+      "label": "Legendary in about 60 pulls on average",
+      "severity": "high"
+     },
+     "misses": [
+      [
+       "all",
+       69.42065
+      ]
+     ],
+     "clear": [
+      [
+       "all",
+       69.42065
+      ]
+     ],
+     "borderline": []
+    }
+   },
+   {
+    "id": "constant:emptyTen::all",
+    "part": "",
+    "kind": "constant",
+    "severity": "info",
+    "metric": "emptyTen",
+    "scenario": "baseline",
+    "profile": null,
+    "message": "Ten pulls with no epic or better is 0.00 in every row: either it measures nothing here, or something never happens (which may be a finding)",
+    "evidence": {
+     "value": 0.0
+    }
+   }
+  ],
+  "P1-A hard pity >= 90": [
+   {
+    "id": "off-target:pulls:Legendary in about 60 pulls on average:player",
+    "part": "Legendary in about 60 pulls on average",
+    "kind": "off-target",
+    "severity": "high",
+    "metric": "pulls",
+    "scenario": "P1-A hard pity >= 90",
+    "profile": "player",
+    "message": "Legendary in about 60 pulls on average: mean 69.4, target 55.0\u201365.0",
+    "evidence": {
+     "target": {
+      "metric": "pulls",
+      "min": 55,
+      "max": 65,
+      "label": "Legendary in about 60 pulls on average",
+      "severity": "high"
+     },
+     "misses": [
+      [
+       "all",
+       69.4202
+      ]
+     ],
+     "clear": [
+      [
+       "all",
+       69.4202
+      ]
+     ],
+     "borderline": []
+    }
+   },
+   {
+    "id": "constant:emptyTen::all",
+    "part": "",
+    "kind": "constant",
+    "severity": "info",
+    "metric": "emptyTen",
+    "scenario": "P1-A hard pity >= 90",
+    "profile": null,
+    "message": "Ten pulls with no epic or better is 0.00 in every row: either it measures nothing here, or something never happens (which may be a finding)",
+    "evidence": {
+     "value": 0.0
+    }
+   },
+   {
+    "id": "constant:over90::all",
+    "part": "",
+    "kind": "constant",
+    "severity": "info",
+    "metric": "over90",
+    "scenario": "P1-A hard pity >= 90",
+    "profile": null,
+    "message": "Needed more than 90 pulls is 0.00 in every row: either it measures nothing here, or something never happens (which may be a finding)",
+    "evidence": {
+     "value": 0.0
+    }
+   }
+  ],
+  "P1-B base legendary 0.7%": [
+   {
+    "id": "constant:emptyTen::all",
+    "part": "",
+    "kind": "constant",
+    "severity": "info",
+    "metric": "emptyTen",
+    "scenario": "P1-B base legendary 0.7%",
+    "profile": null,
+    "message": "Ten pulls with no epic or better is 0.00 in every row: either it measures nothing here, or something never happens (which may be a finding)",
+    "evidence": {
+     "value": 0.0
+    }
+   },
+   {
+    "id": "constant:over90::all",
+    "part": "",
+    "kind": "constant",
+    "severity": "info",
+    "metric": "over90",
+    "scenario": "P1-B base legendary 0.7%",
+    "profile": null,
+    "message": "Needed more than 90 pulls is 0.00 in every row: either it measures nothing here, or something never happens (which may be a finding)",
+    "evidence": {
+     "value": 0.0
+    }
+   }
+  ],
+  "P2-A base legendary 0.8%": [
+   {
+    "id": "constant:emptyTen::all",
+    "part": "",
+    "kind": "constant",
+    "severity": "info",
+    "metric": "emptyTen",
+    "scenario": "P2-A base legendary 0.8%",
+    "profile": null,
+    "message": "Ten pulls with no epic or better is 0.00 in every row: either it measures nothing here, or something never happens (which may be a finding)",
+    "evidence": {
+     "value": 0.0
+    }
+   },
+   {
+    "id": "constant:over90::all",
+    "part": "",
+    "kind": "constant",
+    "severity": "info",
+    "metric": "over90",
+    "scenario": "P2-A base legendary 0.8%",
+    "profile": null,
+    "message": "Needed more than 90 pulls is 0.00 in every row: either it measures nothing here, or something never happens (which may be a finding)",
+    "evidence": {
+     "value": 0.0
+    }
+   }
+  ],
+  "P2-B soft pity from 64": [
+   {
+    "id": "constant:emptyTen::all",
+    "part": "",
+    "kind": "constant",
+    "severity": "info",
+    "metric": "emptyTen",
+    "scenario": "P2-B soft pity from 64",
+    "profile": null,
+    "message": "Ten pulls with no epic or better is 0.00 in every row: either it measures nothing here, or something never happens (which may be a finding)",
+    "evidence": {
+     "value": 0.0
+    }
+   },
+   {
+    "id": "constant:over90::all",
+    "part": "",
+    "kind": "constant",
+    "severity": "info",
+    "metric": "over90",
+    "scenario": "P2-B soft pity from 64",
+    "profile": null,
+    "message": "Needed more than 90 pulls is 0.00 in every row: either it measures nothing here, or something never happens (which may be a finding)",
+    "evidence": {
+     "value": 0.0
+    }
+   }
+  ],
+  "P2-C soft pity from 66 step 10%": [
+   {
+    "id": "constant:emptyTen::all",
+    "part": "",
+    "kind": "constant",
+    "severity": "info",
+    "metric": "emptyTen",
+    "scenario": "P2-C soft pity from 66 step 10%",
+    "profile": null,
+    "message": "Ten pulls with no epic or better is 0.00 in every row: either it measures nothing here, or something never happens (which may be a finding)",
+    "evidence": {
+     "value": 0.0
+    }
+   },
+   {
+    "id": "constant:over90::all",
+    "part": "",
+    "kind": "constant",
+    "severity": "info",
+    "metric": "over90",
+    "scenario": "P2-C soft pity from 66 step 10%",
+    "profile": null,
+    "message": "Needed more than 90 pulls is 0.00 in every row: either it measures nothing here, or something never happens (which may be a finding)",
+    "evidence": {
+     "value": 0.0
+    }
+   }
+  ]
+ },
+ "compare": {
+  "P1-A hard pity >= 90": {
+   "fixed": [
+    {
+     "id": "off-target:over90:Never more than 90 pulls:player",
+     "part": "Never more than 90 pulls",
+     "kind": "off-target",
+     "severity": "high",
+     "metric": "over90",
+     "scenario": "baseline",
+     "profile": "player",
+     "message": "Never more than 90 pulls: mean 0.00, target \u2264 0.00",
+     "evidence": {
+      "target": {
+       "metric": "over90",
+       "max": 0,
+       "label": "Never more than 90 pulls",
+       "severity": "high"
+      },
+      "misses": [
+       [
+        "all",
+        0.00045
+       ]
+      ],
+      "clear": [
+       [
+        "all",
+        0.00045
+       ]
+      ],
+      "borderline": []
+     }
+    }
+   ],
+   "new": [],
+   "still": [
+    {
+     "id": "off-target:pulls:Legendary in about 60 pulls on average:player",
+     "part": "Legendary in about 60 pulls on average",
+     "kind": "off-target",
+     "severity": "high",
+     "metric": "pulls",
+     "scenario": "P1-A hard pity >= 90",
+     "profile": "player",
+     "message": "Legendary in about 60 pulls on average: mean 69.4, target 55.0\u201365.0",
+     "evidence": {
+      "target": {
+       "metric": "pulls",
+       "min": 55,
+       "max": 65,
+       "label": "Legendary in about 60 pulls on average",
+       "severity": "high"
+      },
+      "misses": [
+       [
+        "all",
+        69.4202
+       ]
+      ],
+      "clear": [
+       [
+        "all",
+        69.4202
+       ]
+      ],
+      "borderline": []
+     },
+     "before": 1,
+     "after": 1,
+     "gauge": "clear misses"
+    }
+   ],
+   "moves": [
+    {
+     "metric": "pulls",
+     "profile": "player",
+     "base": 69.42065,
+     "whatif": 69.4202,
+     "change": -6.482221068237299e-06,
+     "base_first": 69.42065,
+     "base_last": 69.42065,
+     "whatif_first": 69.4202,
+     "whatif_last": 69.4202
+    },
+    {
+     "metric": "over90",
+     "profile": "player",
+     "base": 0.00045,
+     "whatif": 0.0,
+     "change": -1.0,
+     "base_first": 0.00045,
+     "base_last": 0.00045,
+     "whatif_first": 0.0,
+     "whatif_last": 0.0
+    },
+    {
+     "metric": "emptyTen",
+     "profile": "player",
+     "base": 0.0,
+     "whatif": 0.0,
+     "change": null,
+     "base_first": 0.0,
+     "base_last": 0.0,
+     "whatif_first": 0.0,
+     "whatif_last": 0.0
+    }
+   ],
+   "groups": []
+  },
+  "P1-B base legendary 0.7%": {
+   "fixed": [
+    {
+     "id": "off-target:over90:Never more than 90 pulls:player",
+     "part": "Never more than 90 pulls",
+     "kind": "off-target",
+     "severity": "high",
+     "metric": "over90",
+     "scenario": "baseline",
+     "profile": "player",
+     "message": "Never more than 90 pulls: mean 0.00, target \u2264 0.00",
+     "evidence": {
+      "target": {
+       "metric": "over90",
+       "max": 0,
+       "label": "Never more than 90 pulls",
+       "severity": "high"
+      },
+      "misses": [
+       [
+        "all",
+        0.00045
+       ]
+      ],
+      "clear": [
+       [
+        "all",
+        0.00045
+       ]
+      ],
+      "borderline": []
+     }
+    },
+    {
+     "id": "off-target:pulls:Legendary in about 60 pulls on average:player",
+     "part": "Legendary in about 60 pulls on average",
+     "kind": "off-target",
+     "severity": "high",
+     "metric": "pulls",
+     "scenario": "baseline",
+     "profile": "player",
+     "message": "Legendary in about 60 pulls on average: mean 69.4, target 55.0\u201365.0",
+     "evidence": {
+      "target": {
+       "metric": "pulls",
+       "min": 55,
+       "max": 65,
+       "label": "Legendary in about 60 pulls on average",
+       "severity": "high"
+      },
+      "misses": [
+       [
+        "all",
+        69.42065
+       ]
+      ],
+      "clear": [
+       [
+        "all",
+        69.42065
+       ]
+      ],
+      "borderline": []
+     }
+    }
+   ],
+   "new": [],
+   "still": [],
+   "moves": [
+    {
+     "metric": "pulls",
+     "profile": "player",
+     "base": 69.42065,
+     "whatif": 61.8009,
+     "change": -0.10976200885471393,
+     "base_first": 69.42065,
+     "base_last": 69.42065,
+     "whatif_first": 61.8009,
+     "whatif_last": 61.8009
+    },
+    {
+     "metric": "over90",
+     "profile": "player",
+     "base": 0.00045,
+     "whatif": 0.0,
+     "change": -1.0,
+     "base_first": 0.00045,
+     "base_last": 0.00045,
+     "whatif_first": 0.0,
+     "whatif_last": 0.0
+    },
+    {
+     "metric": "emptyTen",
+     "profile": "player",
+     "base": 0.0,
+     "whatif": 0.0,
+     "change": null,
+     "base_first": 0.0,
+     "base_last": 0.0,
+     "whatif_first": 0.0,
+     "whatif_last": 0.0
+    }
+   ],
+   "groups": []
+  },
+  "P2-A base legendary 0.8%": {
+   "fixed": [
+    {
+     "id": "off-target:over90:Never more than 90 pulls:player",
+     "part": "Never more than 90 pulls",
+     "kind": "off-target",
+     "severity": "high",
+     "metric": "over90",
+     "scenario": "baseline",
+     "profile": "player",
+     "message": "Never more than 90 pulls: mean 0.00, target \u2264 0.00",
+     "evidence": {
+      "target": {
+       "metric": "over90",
+       "max": 0,
+       "label": "Never more than 90 pulls",
+       "severity": "high"
+      },
+      "misses": [
+       [
+        "all",
+        0.00045
+       ]
+      ],
+      "clear": [
+       [
+        "all",
+        0.00045
+       ]
+      ],
+      "borderline": []
+     }
+    },
+    {
+     "id": "off-target:pulls:Legendary in about 60 pulls on average:player",
+     "part": "Legendary in about 60 pulls on average",
+     "kind": "off-target",
+     "severity": "high",
+     "metric": "pulls",
+     "scenario": "baseline",
+     "profile": "player",
+     "message": "Legendary in about 60 pulls on average: mean 69.4, target 55.0\u201365.0",
+     "evidence": {
+      "target": {
+       "metric": "pulls",
+       "min": 55,
+       "max": 65,
+       "label": "Legendary in about 60 pulls on average",
+       "severity": "high"
+      },
+      "misses": [
+       [
+        "all",
+        69.42065
+       ]
+      ],
+      "clear": [
+       [
+        "all",
+        69.42065
+       ]
+      ],
+      "borderline": []
+     }
+    }
+   ],
+   "new": [],
+   "still": [],
+   "moves": [
+    {
+     "metric": "pulls",
+     "profile": "player",
+     "base": 69.42065,
+     "whatif": 59.6452,
+     "change": -0.14081472875866177,
+     "base_first": 69.42065,
+     "base_last": 69.42065,
+     "whatif_first": 59.6452,
+     "whatif_last": 59.6452
+    },
+    {
+     "metric": "over90",
+     "profile": "player",
+     "base": 0.00045,
+     "whatif": 0.0,
+     "change": -1.0,
+     "base_first": 0.00045,
+     "base_last": 0.00045,
+     "whatif_first": 0.0,
+     "whatif_last": 0.0
+    },
+    {
+     "metric": "emptyTen",
+     "profile": "player",
+     "base": 0.0,
+     "whatif": 0.0,
+     "change": null,
+     "base_first": 0.0,
+     "base_last": 0.0,
+     "whatif_first": 0.0,
+     "whatif_last": 0.0
+    }
+   ],
+   "groups": []
+  },
+  "P2-B soft pity from 64": {
+   "fixed": [
+    {
+     "id": "off-target:over90:Never more than 90 pulls:player",
+     "part": "Never more than 90 pulls",
+     "kind": "off-target",
+     "severity": "high",
+     "metric": "over90",
+     "scenario": "baseline",
+     "profile": "player",
+     "message": "Never more than 90 pulls: mean 0.00, target \u2264 0.00",
+     "evidence": {
+      "target": {
+       "metric": "over90",
+       "max": 0,
+       "label": "Never more than 90 pulls",
+       "severity": "high"
+      },
+      "misses": [
+       [
+        "all",
+        0.00045
+       ]
+      ],
+      "clear": [
+       [
+        "all",
+        0.00045
+       ]
+      ],
+      "borderline": []
+     }
+    },
+    {
+     "id": "off-target:pulls:Legendary in about 60 pulls on average:player",
+     "part": "Legendary in about 60 pulls on average",
+     "kind": "off-target",
+     "severity": "high",
+     "metric": "pulls",
+     "scenario": "baseline",
+     "profile": "player",
+     "message": "Legendary in about 60 pulls on average: mean 69.4, target 55.0\u201365.0",
+     "evidence": {
+      "target": {
+       "metric": "pulls",
+       "min": 55,
+       "max": 65,
+       "label": "Legendary in about 60 pulls on average",
+       "severity": "high"
+      },
+      "misses": [
+       [
+        "all",
+        69.42065
+       ]
+      ],
+      "clear": [
+       [
+        "all",
+        69.42065
+       ]
+      ],
+      "borderline": []
+     }
+    }
+   ],
+   "new": [],
+   "still": [],
+   "moves": [
+    {
+     "metric": "pulls",
+     "profile": "player",
+     "base": 69.42065,
+     "whatif": 60.55585,
+     "change": -0.1276968740569268,
+     "base_first": 69.42065,
+     "base_last": 69.42065,
+     "whatif_first": 60.55585,
+     "whatif_last": 60.55585
+    },
+    {
+     "metric": "over90",
+     "profile": "player",
+     "base": 0.00045,
+     "whatif": 0.0,
+     "change": -1.0,
+     "base_first": 0.00045,
+     "base_last": 0.00045,
+     "whatif_first": 0.0,
+     "whatif_last": 0.0
+    },
+    {
+     "metric": "emptyTen",
+     "profile": "player",
+     "base": 0.0,
+     "whatif": 0.0,
+     "change": null,
+     "base_first": 0.0,
+     "base_last": 0.0,
+     "whatif_first": 0.0,
+     "whatif_last": 0.0
+    }
+   ],
+   "groups": []
+  },
+  "P2-C soft pity from 66 step 10%": {
+   "fixed": [
+    {
+     "id": "off-target:over90:Never more than 90 pulls:player",
+     "part": "Never more than 90 pulls",
+     "kind": "off-target",
+     "severity": "high",
+     "metric": "over90",
+     "scenario": "baseline",
+     "profile": "player",
+     "message": "Never more than 90 pulls: mean 0.00, target \u2264 0.00",
+     "evidence": {
+      "target": {
+       "metric": "over90",
+       "max": 0,
+       "label": "Never more than 90 pulls",
+       "severity": "high"
+      },
+      "misses": [
+       [
+        "all",
+        0.00045
+       ]
+      ],
+      "clear": [
+       [
+        "all",
+        0.00045
+       ]
+      ],
+      "borderline": []
+     }
+    },
+    {
+     "id": "off-target:pulls:Legendary in about 60 pulls on average:player",
+     "part": "Legendary in about 60 pulls on average",
+     "kind": "off-target",
+     "severity": "high",
+     "metric": "pulls",
+     "scenario": "baseline",
+     "profile": "player",
+     "message": "Legendary in about 60 pulls on average: mean 69.4, target 55.0\u201365.0",
+     "evidence": {
+      "target": {
+       "metric": "pulls",
+       "min": 55,
+       "max": 65,
+       "label": "Legendary in about 60 pulls on average",
+       "severity": "high"
+      },
+      "misses": [
+       [
+        "all",
+        69.42065
+       ]
+      ],
+      "clear": [
+       [
+        "all",
+        69.42065
+       ]
+      ],
+      "borderline": []
+     }
+    }
+   ],
+   "new": [],
+   "still": [],
+   "moves": [
+    {
+     "metric": "pulls",
+     "profile": "player",
+     "base": 69.42065,
+     "whatif": 60.84525,
+     "change": -0.1235280856632716,
+     "base_first": 69.42065,
+     "base_last": 69.42065,
+     "whatif_first": 60.84525,
+     "whatif_last": 60.84525
+    },
+    {
+     "metric": "over90",
+     "profile": "player",
+     "base": 0.00045,
+     "whatif": 0.0,
+     "change": -1.0,
+     "base_first": 0.00045,
+     "base_last": 0.00045,
+     "whatif_first": 0.0,
+     "whatif_last": 0.0
+    },
+    {
+     "metric": "emptyTen",
+     "profile": "player",
+     "base": 0.0,
+     "whatif": 0.0,
+     "change": null,
+     "base_first": 0.0,
+     "base_last": 0.0,
+     "whatif_first": 0.0,
+     "whatif_last": 0.0
+    }
+   ],
+   "groups": []
+  }
+ },
+ "means": {
+  "baseline": {
+   "player": {
+    "pulls": {
+     "all": 69.42065
+    },
+    "over60": {
+     "all": 0.78605
+    },
+    "over90": {
+     "all": 0.00045
+    },
+    "epics": {
+     "all": 8.53945
+    },
+    "epicShare": {
+     "all": 0.11863815888466836
+    },
+    "maxRareStreak": {
+     "all": 8.76095
+    },
+    "emptyTen": {
+     "all": 0.0
+    },
+    "gems": {
+     "all": 11107.304
+    }
+   }
+  },
+  "P1-A hard pity >= 90": {
+   "player": {
+    "pulls": {
+     "all": 69.4202
+    },
+    "over60": {
+     "all": 0.78605
+    },
+    "over90": {
+     "all": 0.0
+    },
+    "epics": {
+     "all": 8.5394
+    },
+    "epicShare": {
+     "all": 0.11863818940969893
+    },
+    "maxRareStreak": {
+     "all": 8.76095
+    },
+    "emptyTen": {
+     "all": 0.0
+    },
+    "gems": {
+     "all": 11107.232
+    }
+   }
+  },
+  "P1-B base legendary 0.7%": {
+   "player": {
+    "pulls": {
+     "all": 61.8009
+    },
+    "over60": {
+     "all": 0.65285
+    },
+    "over90": {
+     "all": 0.0
+    },
+    "epics": {
+     "all": 7.5471
+    },
+    "epicShare": {
+     "all": 0.11475759916148698
+    },
+    "maxRareStreak": {
+     "all": 8.5911
+    },
+    "emptyTen": {
+     "all": 0.0
+    },
+    "gems": {
+     "all": 9888.144
+    }
+   }
+  },
+  "P2-A base legendary 0.8%": {
+   "player": {
+    "pulls": {
+     "all": 59.6452
+    },
+    "over60": {
+     "all": 0.6159
+    },
+    "over90": {
+     "all": 0.0
+    },
+    "epics": {
+     "all": 7.26855
+    },
+    "epicShare": {
+     "all": 0.11367814700507353
+    },
+    "maxRareStreak": {
+     "all": 8.5428
+    },
+    "emptyTen": {
+     "all": 0.0
+    },
+    "gems": {
+     "all": 9543.232
+    }
+   }
+  },
+  "P2-B soft pity from 64": {
+   "player": {
+    "pulls": {
+     "all": 60.55585
+    },
+    "over60": {
+     "all": 0.78605
+    },
+    "over90": {
+     "all": 0.0
+    },
+    "epics": {
+     "all": 7.38495
+    },
+    "epicShare": {
+     "all": 0.11783752687581948
+    },
+    "maxRareStreak": {
+     "all": 8.7609
+    },
+    "emptyTen": {
+     "all": 0.0
+    },
+    "gems": {
+     "all": 9688.936
+    }
+   }
+  },
+  "P2-C soft pity from 66 step 10%": {
+   "player": {
+    "pulls": {
+     "all": 60.84525
+    },
+    "over60": {
+     "all": 0.78605
+    },
+    "over90": {
+     "all": 0.0
+    },
+    "epics": {
+     "all": 7.42175
+    },
+    "epicShare": {
+     "all": 0.11786256432635273
+    },
+    "maxRareStreak": {
+     "all": 8.76095
+    },
+    "emptyTen": {
+     "all": 0.0
+    },
+    "gems": {
+     "all": 9735.24
+    }
+   }
+  }
+ }
+}

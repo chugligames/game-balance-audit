@@ -1,0 +1,60 @@
+## Seat fixes: seat win rates, mirror matches (2000 games each)
+
+### As written
+n=2 Greedy     57.7% 42.3%   first-seat edge +7.7 pts
+n=2 QuickPairs 56.9% 43.1%   first-seat edge +6.9 pts
+n=2 Denier     59.5% 40.6%   first-seat edge +9.5 pts
+n=3 Greedy     43.8% 30.2% 26.1%   first-seat edge +10.4 pts
+n=3 QuickPairs 44.5% 32.0% 23.5%   first-seat edge +11.1 pts
+n=3 Denier     42.0% 31.3% 26.7%   first-seat edge +8.7 pts
+n=4 Greedy     34.2% 24.8% 21.6% 19.4%   first-seat edge +9.2 pts
+n=4 QuickPairs 31.9% 26.7% 22.5% 18.9%   first-seat edge +6.9 pts
+n=4 Denier     33.7% 23.8% 21.8% 20.7%   first-seat edge +8.7 pts
+
+### Finish the round
+n=2 Greedy     56.5% 43.5%   first-seat edge +6.5 pts
+n=2 QuickPairs 55.5% 44.5%   first-seat edge +5.5 pts
+n=2 Denier     58.5% 41.5%   first-seat edge +8.5 pts
+n=3 Greedy     42.8% 30.3% 26.9%   first-seat edge +9.5 pts
+n=3 QuickPairs 43.0% 31.7% 25.4%   first-seat edge +9.6 pts
+n=3 Denier     41.2% 31.2% 27.5%   first-seat edge +7.9 pts
+n=4 Greedy     32.8% 24.2% 22.2% 20.8%   first-seat edge +7.8 pts
+n=4 QuickPairs 30.6% 25.8% 23.0% 20.6%   first-seat edge +5.6 pts
+n=4 Denier     32.8% 23.4% 22.0% 21.8%   first-seat edge +7.8 pts
+
+### Hands 3/4/4/5 by seat
+n=2 Greedy     52.4% 47.6%   first-seat edge +2.4 pts
+n=2 QuickPairs 49.2% 50.8%   first-seat edge -0.8 pts
+n=2 Denier     49.1% 50.9%   first-seat edge -0.9 pts
+n=3 Greedy     34.4% 34.5% 31.1%   first-seat edge +1.1 pts
+n=3 QuickPairs 34.8% 37.4% 27.8%   first-seat edge +1.5 pts
+n=3 Denier     34.4% 34.1% 31.5%   first-seat edge +1.1 pts
+n=4 Greedy     24.0% 26.5% 22.1% 27.5%   first-seat edge -1.0 pts
+n=4 QuickPairs 24.1% 28.2% 21.5% 26.1%   first-seat edge -0.9 pts
+n=4 Denier     22.9% 25.9% 22.3% 28.9%   first-seat edge -2.1 pts
+
+### Hands 3/4/4/5 + finish round
+n=2 Greedy     51.2% 48.8%   first-seat edge +1.2 pts
+n=2 QuickPairs 48.0% 51.9%   first-seat edge -2.0 pts
+n=2 Denier     47.9% 52.1%   first-seat edge -2.2 pts
+n=3 Greedy     33.5% 34.7% 31.9%   first-seat edge +0.1 pts
+n=3 QuickPairs 34.3% 37.3% 28.4%   first-seat edge +1.0 pts
+n=3 Denier     33.4% 34.1% 32.5%   first-seat edge +0.1 pts
+n=4 Greedy     22.9% 26.2% 22.2% 28.7%   first-seat edge -2.1 pts
+n=4 QuickPairs 21.6% 27.2% 22.7% 28.6%   first-seat edge -3.4 pts
+n=4 Denier     21.5% 25.4% 23.0% 30.1%   first-seat edge -3.5 pts
+
+### Hands 3/4/5/6 + finish round
+n=2 Greedy     51.2% 48.8%   first-seat edge +1.2 pts
+n=2 QuickPairs 48.0% 51.9%   first-seat edge -2.0 pts
+n=2 Denier     47.9% 52.1%   first-seat edge -2.2 pts
+n=3 Greedy     25.9% 31.8% 42.3%   first-seat edge -7.4 pts
+n=3 QuickPairs 28.7% 33.2% 38.0%   first-seat edge -4.6 pts
+n=3 Denier     26.8% 31.0% 42.2%   first-seat edge -6.6 pts
+n=4 Greedy     18.0% 19.1% 27.1% 35.8%   first-seat edge -7.0 pts
+n=4 QuickPairs 19.4% 20.5% 26.8% 33.2%   first-seat edge -5.6 pts
+n=4 Denier     17.6% 20.2% 26.3% 35.9%   first-seat edge -7.4 pts
+
+## Strategy diversity: rotated-seat head-to-head win rate of X vs Greedy, 2p and 4p
+As written       Cheap(2p) 4%, Cheap(4p) 5%, BigSale(2p) 14%, BigSale(4p) 11%, Saffron(2p) 28%, Saffron(4p) 22%, QuickPairs(2p) 33%, QuickPairs(4p) 22%, Denier(2p) 47%, Denier(4p) 22%
+Flatter stacks   Cheap(2p) 1%, Cheap(4p) 2%, BigSale(2p) 6%, BigSale(4p) 5%, Saffron(2p) 24%, Saffron(4p) 18%, QuickPairs(2p) 29%, QuickPairs(4p) 24%, Denier(2p) 42%, Denier(4p) 19%
