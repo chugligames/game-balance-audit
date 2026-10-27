@@ -141,6 +141,25 @@ Each example's `audits/` folder holds the skill's real, unedited output on it.
 (`claude plugin eval`, with a no-plugin baseline arm), with both reports published
 unedited.*
 
+## What it runs, reads and writes
+
+- **Runs:** small Node or Python scripts on your machine: the toolkit and analyser in
+  `scripts/`, and the simulator the agent writes into `balance-audit/sim/`. Readable
+  source, no compiled code, no packages to install.
+- **Reads:** the game files you point it at (code, spreadsheets, a rulebook), and nothing
+  else.
+- **Writes:** only the `balance-audit/` folder. Your game's own files are never edited.
+- **Sends:** nothing. The skill makes no network calls, collects no data and has no
+  telemetry. (Installing it with the `skills` CLI sends that tool's own anonymous install
+  count; installing as a Claude Code plugin does not.) Your agent itself works under its
+  usual terms.
+
+## Privacy
+
+This skill collects, stores and sends no personal data. Everything it produces stays in
+your project. Questions: hello@chugligames.com. The studio's privacy policy is at
+[chugligames.com/privacy](https://chugligames.com/privacy).
+
 ## Limitations
 
 - **Not certification.** For real-money gambling, payout and fairness need an accredited

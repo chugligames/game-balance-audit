@@ -3,3 +3,4 @@ evals/results/
 __pycache__/
 *.pyc
 .DS_Store
+evals/reference/*/results/summary.json
