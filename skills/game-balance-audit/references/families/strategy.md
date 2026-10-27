@@ -19,9 +19,13 @@ stay interesting to the end?**
 - **Strategy archetypes:** named, simple plans that a real player might follow (rush,
   hoard, sell early, chase one resource). Each is a greedy policy with different weights.
   These find dominant strategies.
-- **A strong player:** `lookahead` (flat Monte Carlo) with determinisation: before each
-  rollout, reshuffle every card the player can't see. Without it the bot cheats and every
-  skill finding is inflated.
+- **A strong player:** `lookahead` (flat Monte Carlo) with `determinize`: a function that
+  re-deals everything the player can't see (deck order, other hands) before each rollout.
+  Without it the bot cheats and every skill finding is inflated. In a toy test, a
+  lookahead bot that could see the deck beat a random player 88% of the time, against
+  52–56% when it couldn't. Use `candidates` with a cheap `prior` to search only the most
+  promising moves. **Write search-based experts in JavaScript** if you can: Python is often
+  several times slower here, and expert tables can take tens of minutes.
 - **A weak player:** sloppy greedy, or random among sensible moves.
 
 Run these tables:
@@ -30,7 +34,12 @@ Run these tables:
   differences are then the game's, not the bots'.
 - **Archetype vs baseline**, with seats rotated each game so every archetype sits in every
   seat equally often. This finds dominant and dead strategies.
-- **Strong vs weak**, for how much skill matters.
+- **Strong vs weak**, for how much skill matters: put both bots at one table (a `strategy`
+  label on each row) and use `skill` with `by: "strategy"`.
+- **Re-tune after a rule change.** Archetypes are fixed policies. When a what-if rewards a
+  behaviour (bonus tokens for big sales), add or re-tune an archetype that pursues it, and
+  re-tune the baseline bot's thresholds too. Otherwise the gain is measured against
+  opponents who ignore the new rule.
 - Every player count the game supports. Balance at 2 players says little about 4.
 
 ## Metrics per seat per game
@@ -43,7 +52,7 @@ Run these tables:
 | `halfLeaderWon` (on one row per game) | Runaway leader: how often the midgame leader wins |
 | `leadChanges` | Whether the lead moves around |
 | `decisionImpact` at sampled turns | Whether choices matter, or the game plays itself |
-| per-option counts (card bought, action used) | Dead options nobody takes |
+| per-option counts (card bought, action used) | Dead options nobody takes (check with `used`) |
 
 ## Problems this family usually has
 

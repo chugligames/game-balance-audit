@@ -1,21 +1,155 @@
 {
   "title": "Match-3 Mini",
   "segment": "level",
-  "profiles": ["novice", "typical", "expert"],
+  "profiles": [
+    "novice",
+    "typical",
+    "expert"
+  ],
   "focus_profile": "typical",
   "metrics": {
-    "won": { "label": "Win rate", "expect": "fall", "min_growth": 0.3, "breathers": [6, 11] },
-    "movesLeft": { "label": "Moves left at the end" },
-    "goalDone": { "label": "Share of the goal done" }
+    "won": {
+      "label": "Win rate",
+      "expect": "fall",
+      "min_growth": 0.3,
+      "breathers": [
+        6,
+        11
+      ]
+    },
+    "movesLeft": {
+      "label": "Moves left at the end"
+    },
+    "goalDone": {
+      "label": "Share of the goal done"
+    },
+    "nearMiss": {
+      "label": "Lost with the goal 90% done"
+    },
+    "hopeless": {
+      "label": "Lost with under 70% of the goal done"
+    }
   },
   "targets": [
-    { "metric": "won", "profile": "typical", "segments": [1, 4], "min": 0.8, "label": "Early levels are easy" },
-    { "metric": "won", "profile": "typical", "segments": [5, 5], "min": 0.25, "max": 0.4, "label": "Hard level 5" },
-    { "metric": "won", "profile": "typical", "segments": [6, 9], "min": 0.55, "max": 0.92, "label": "Levels 6–9" },
-    { "metric": "won", "profile": "typical", "segments": [10, 10], "min": 0.25, "max": 0.4, "label": "Hard level 10" },
-    { "metric": "won", "profile": "typical", "segments": [11, 14], "min": 0.45, "max": 0.85, "label": "Levels 11–14" },
-    { "metric": "won", "profile": "typical", "segments": [15, 15], "min": 0.25, "max": 0.4, "label": "Hard level 15" },
-    { "metric": "won", "profile": "expert", "min": 0.15, "label": "Every level is winnable by a strong player", "severity": "high" }
+    {
+      "metric": "won",
+      "profile": "typical",
+      "segments": [
+        1,
+        4
+      ],
+      "min": 0.8,
+      "label": "Early levels are easy"
+    },
+    {
+      "metric": "won",
+      "profile": "typical",
+      "segments": [
+        5,
+        5
+      ],
+      "min": 0.25,
+      "max": 0.4,
+      "label": "Hard level 5"
+    },
+    {
+      "metric": "won",
+      "profile": "typical",
+      "segments": [
+        6,
+        9
+      ],
+      "min": 0.55,
+      "max": 0.92,
+      "label": "Levels 6–9"
+    },
+    {
+      "metric": "won",
+      "profile": "typical",
+      "segments": [
+        10,
+        10
+      ],
+      "min": 0.25,
+      "max": 0.4,
+      "label": "Hard level 10"
+    },
+    {
+      "metric": "won",
+      "profile": "typical",
+      "segments": [
+        11,
+        14
+      ],
+      "min": 0.45,
+      "max": 0.85,
+      "label": "Levels 11–14"
+    },
+    {
+      "metric": "won",
+      "profile": "typical",
+      "segments": [
+        15,
+        15
+      ],
+      "min": 0.25,
+      "max": 0.4,
+      "label": "Hard level 15"
+    },
+    {
+      "metric": "won",
+      "profile": "expert",
+      "min": 0.15,
+      "label": "Every level is winnable by a strong player",
+      "severity": "high"
+    }
   ],
-  "skill": { "metric": "won", "strong": "expert", "weak": "novice", "min_gap": 0.1 }
+  "skill": {
+    "metric": "won",
+    "strong": "expert",
+    "weak": "novice",
+    "min_gap": 0.1
+  },
+  "goals": [
+    {
+      "name": "Near-miss losses on hard levels 5/10/15 (offer moments)",
+      "metric": "nearMiss",
+      "profile": "typical",
+      "segments": [
+        5,
+        10,
+        15
+      ],
+      "where": {},
+      "aggregate": "mean",
+      "direction": "max"
+    }
+  ],
+  "constraints": [
+    {
+      "name": "Hopeless losses on hard levels 5/10/15",
+      "metric": "hopeless",
+      "profile": "typical",
+      "segments": [
+        5,
+        10,
+        15
+      ],
+      "aggregate": "mean",
+      "max": 0.3
+    },
+    {
+      "name": "Hardest level for an expert (win rate)",
+      "metric": "won",
+      "profile": "expert",
+      "aggregate": "min",
+      "min": 0.15,
+      "per": "segment"
+    }
+  ],
+  "chart_scenarios": [
+    "L8-easier",
+    "L10-hard",
+    "L2-4-varied"
+  ]
 }

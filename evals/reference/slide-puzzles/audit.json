@@ -1,18 +1,90 @@
 {
   "title": "Slide Mini",
   "segment": "level",
-  "profiles": ["novice", "typical", "expert"],
+  "profiles": [
+    "novice",
+    "typical",
+    "expert"
+  ],
   "focus_profile": "typical",
   "metrics": {
-    "optimal": { "label": "Shortest solution (moves)", "expect": "rise" },
-    "explored": { "label": "Positions a full search visits", "expect": "rise" },
-    "solved": { "label": "Solve rate", "expect": "fall", "min_growth": 0.2 },
-    "moves": { "label": "Moves used when solved" }
+    "optimal": {
+      "label": "Shortest solution (moves)",
+      "expect": "rise"
+    },
+    "explored": {
+      "label": "Positions a full search visits",
+      "expect": "rise"
+    },
+    "solved": {
+      "label": "Solve rate",
+      "expect": "fall",
+      "min_growth": 0.2
+    },
+    "moves": {
+      "label": "Moves used when solved"
+    }
   },
   "targets": [
-    { "metric": "solved", "profile": "expert", "min": 1, "label": "Every level can be solved" },
-    { "metric": "optimal", "profile": "expert", "segments": [8, 12], "min": 6, "label": "No pushover from level 8 on" },
-    { "metric": "solved", "profile": "typical", "min": 0.2, "label": "A typical player can get through each level", "severity": "medium" }
+    {
+      "metric": "solved",
+      "profile": "expert",
+      "min": 1,
+      "label": "Every level can be solved"
+    },
+    {
+      "metric": "optimal",
+      "profile": "expert",
+      "segments": [
+        8,
+        12
+      ],
+      "min": 6,
+      "label": "No pushover from level 8 on"
+    },
+    {
+      "metric": "solved",
+      "profile": "typical",
+      "min": 0.2,
+      "label": "A typical player can get through each level",
+      "severity": "medium"
+    }
   ],
-  "skill": { "metric": "solved", "strong": "typical", "weak": "novice", "min_gap": 0.1 }
+  "skill": {
+    "metric": "solved",
+    "strong": "typical",
+    "weak": "novice",
+    "min_gap": 0.1
+  },
+  "goals": [
+    {
+      "name": "Levels a typical player solves (of 12)",
+      "metric": "solved",
+      "profile": "typical",
+      "aggregate": "sum",
+      "direction": "max"
+    }
+  ],
+  "constraints": [
+    {
+      "name": "Every level can be solved",
+      "metric": "solved",
+      "profile": "expert",
+      "aggregate": "min",
+      "min": 1,
+      "per": "segment"
+    },
+    {
+      "name": "Shortest late level (8–12), moves",
+      "metric": "optimal",
+      "profile": "expert",
+      "segments": [
+        8,
+        12
+      ],
+      "aggregate": "min",
+      "min": 6,
+      "per": "segment"
+    }
+  ]
 }

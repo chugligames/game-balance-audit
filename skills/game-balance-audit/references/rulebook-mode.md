@@ -1,8 +1,13 @@
 # Rulebook mode: the game exists only on paper
 
 Board and card game designers often have rules, card lists and a prototype, but no code.
-Write the rules as a simulator yourself, in Python with `sim_kit.py` unless the designer
-prefers JavaScript.
+Write the rules as a simulator yourself, with `sim_kit.py` (Python) or `sim-kit.mjs`
+(JavaScript). Prefer JavaScript when you'll need a search-based expert player: Python is
+often several times slower for search, and expert tables can take tens of minutes.
+
+Ask what the designer is optimising for (`references/design-goals.md`): fairness, close
+games, the length on the box, replayability, accessibility for new players. Those become
+the scorecard's goals and constraints.
 
 ## Turning rules into code
 

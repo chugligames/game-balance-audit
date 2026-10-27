@@ -1,6 +1,8 @@
 // Match-3 Mini: the rules of a tiny match-3 (made up for the game-balance-audit skill).
 
 export const SIZE = 7;
+/** On a loss the game offers extra moves for coins (coins are bought in the shop). */
+export const OFFER = { extraMoves: 5, price: 900 };
 export const COLORS = ['red', 'blue', 'green', 'yellow', 'purple', 'orange'];
 
 /** A level in play: a board with no ready-made matches, the moves left and the goals still open. */

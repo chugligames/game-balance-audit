@@ -107,5 +107,6 @@ SCENARIOS = {
     "fix-L9": {"replace": {"9": SOLVABLE_9}},
     "move-L6-last": {"order": [1, 2, 3, 4, 5, 7, 8, 9, 10, 11, 12, 6]},
     "replace-L10": {"replace": {"10": HARDER_12}},
+    "all three": {"replace": {"9": SOLVABLE_9, "10": HARDER_12}, "order": [1, 2, 3, 4, 5, 7, 8, 9, 10, 11, 12, 6]},
 }
 simulate(play=play, params={}, scenarios=SCENARIOS, profiles=PROFILES, opts=args())

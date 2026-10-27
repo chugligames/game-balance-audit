@@ -245,22 +245,33 @@ def sloppy(policy, mistake_rate):
     return lambda s, acts, rand, seat=0: rand.pick(acts) if rand.chance(mistake_rate) else policy(s, acts, rand, seat)
 
 
-def lookahead(game, rollouts=16, max_steps=200, playout=None):
+def lookahead(game, rollouts=16, max_steps=200, playout=None, determinize=None, candidates=0, prior=None):
     """Flat Monte Carlo: tries each action, plays `rollouts` quick games from there with
     `playout` (random by default) and keeps the action with the best average value.
-    A strong, game-agnostic "expert". Cost: actions x rollouts x game length."""
+    A strong, game-agnostic "expert". Cost: actions x rollouts x game length.
+      determinize(state, seat, rand) -> a copy with everything `seat` can't see re-dealt
+        (deck order, other hands). Without it the bot sees hidden cards and cheats.
+      candidates + prior(state, action, seat): only search the `candidates` actions a
+        cheap heuristic likes best. Much faster when there are many legal moves.
+    Search is slow in Python; for a search-based expert, Node is often several times faster."""
     clone = _clone(game)
     follow = playout or random_bot()
 
     def policy(s, acts, rand, seat=0):
+        pool = acts
+        if candidates and prior and len(acts) > candidates:
+            ranked = sorted(((prior(s, a, seat), i, a) for i, a in enumerate(acts)), key=lambda t: (-t[0], t[1]))
+            pool = [t[2] for t in ranked[:candidates]]
+
         def avg(a):
             total = 0.0
             for _ in range(rollouts):
-                nxt = game.apply(clone(s), a, rand)
+                start = determinize(s, seat, rand) if determinize else clone(s)
+                nxt = game.apply(start, a, rand)
                 total += game.value(play_game(game, nxt, follow, rand, max_steps)["state"], seat)
             return total / rollouts
 
-        return _argmax(acts, avg, rand)
+        return _argmax(pool, avg, rand)
 
     return policy
 
@@ -283,7 +294,7 @@ def play_game(game, state, policies, rand, max_steps=10000, on_step=None):
     return {"state": state, "steps": steps, "capped": steps >= max_steps and not game.over(state)}
 
 
-def decision_impact(game, state, rand, rollouts=24, max_steps=200, playout=None):
+def decision_impact(game, state, rand, rollouts=24, max_steps=200, playout=None, determinize=None):
     """How much the choice at this moment matters: each option's average outcome over
     `rollouts` playouts. `spread` (best - average option) near zero, game after game,
     means the decisions don't change anything. Counting options does not show that."""
@@ -294,7 +305,7 @@ def decision_impact(game, state, rand, rollouts=24, max_steps=200, playout=None)
     for a in game.actions(state):
         total = 0.0
         for _ in range(rollouts):
-            nxt = game.apply(clone(state), a, rand)
+            nxt = game.apply(determinize(state, seat, rand) if determinize else clone(state), a, rand)
             total += game.value(play_game(game, nxt, follow, rand, max_steps)["state"], seat)
         values.append(total / rollouts)
     if not values:

@@ -3,6 +3,10 @@
 *A trading card game for 2–4 players, about 20 minutes. Made up for trying the
 game-balance-audit skill: there is no code, only these rules.*
 
+*Designer's note: I'm pitching this to publishers as a quick filler game for 2–4 players.
+It has to be fair at every player count, keep games close to the end, and reward more
+than one way to play, or it won't get past their playtesters.*
+
 You are traders at a village market. Collect goods and sell them in sets before the
 other traders flood the market and prices fall.
 

@@ -1,9 +1,9 @@
 # `audit.json`: the designer's intent as checks
 
-`analyze.py` knows nothing about games. `audit.json` tells it what each metric means and
-what the designer wants. Write it from the intent you gathered in step 1. Every check
-here should trace back to something the designer said, or to a family default you named
-in the report.
+`analyze.py` knows nothing about games. `audit.json` tells it what the designer is
+optimising for (`goals`, `constraints`), what each metric means and what the intended
+experience is (`metrics`, `targets`, `groups`, `skill`). Write it from step 1. Every entry
+should trace back to something the designer said, or to a default you named in the report.
 
 ```json
 {
@@ -37,7 +37,42 @@ in the report.
 | `baseline` | The scenario the others are compared with (default `baseline`) |
 | `profiles` | Order of player profiles in tables and charts |
 | `focus_profile` | The player the design is built around. The report leads with them |
+| `compare_profiles` | Profiles shown in the what-if tables. Default: the focus profile and those named in goals, constraints and targets |
 | `chart_scenarios` | Which what-ifs to draw against the baseline in `charts.html` (up to 7). Default: the first 7 |
+
+## `goals` and `constraints`: the scorecard
+
+Each turns a metric into **one number per scenario**: within each run the metric is
+aggregated over the segments named (`aggregate`: `sum` by default when there are segments,
+or `mean`, `max`, `min`, `last`, `any`), then `stat` (`mean` by default, or `p10`, `p50`,
+`p90`) is taken over runs, for `profile` (or the list `profiles`, or all).
+`when: "> 0"` first turns the metric into 0/1, so `"aggregate": "any"` gives "the share of
+players who ever hit it". `where: {"seat": 1}` keeps only matching rows (seat 1's win
+rate; one strategy's games). `per: "segment"` reverses the order: each segment's mean over
+runs first, then the aggregate across segments. Use it for "the hardest level's win rate"
+(`"per": "segment", "aggregate": "min"`).
+
+```json
+"goals": [
+  { "name": "Rewarded ads per player", "metric": "adsWatched", "profile": "twice", "direction": "max", "weight": 2 },
+  { "name": "Days played", "metric": "played", "profile": "twice", "direction": "max" }
+],
+"constraints": [
+  { "name": "Quit by Day 7", "metric": "quit", "profile": "twice", "segments": [1, 7], "aggregate": "any", "max": 0.1 }
+]
+```
+
+| Key | Meaning |
+|---|---|
+| `name` | Shown in the scorecard |
+| `direction` | Goals: `max` (default) or `min` |
+| `weight` | Goals: how much this goal counts when the scorecard is sorted (default 1). Sorting only: the "best trade-off" column ignores weights |
+| `min`, `max` | Constraints: the bounds a scenario must stay within |
+
+The scorecard opens `summary.md`. For each scenario it shows each goal's value ± a 95%
+interval, its change from the baseline (▲/▼ when beyond noise) and each constraint (✓/✗).
+**Best trade-off** marks scenarios that keep every constraint and that no other such
+scenario beats on every goal. `charts.html` draws one bar chart per goal.
 
 ## `metrics`: what each metric should do
 
@@ -52,9 +87,11 @@ Keyed by row field. All keys are optional except the field name itself.
 | `expect: "steady"` | Flags *unsteady* if the coefficient of variation across segments is over `tolerance` (default 15%) |
 | `binds: "<= 0"` | **Constraint pressure.** The condition that means "the limit was hit" (`<= 0` free cells, `> 0` times out of energy). Flags *never-binds* (under 1% of rows) and *always-binds* (over 90%). Change the band with `binds_range: [0.05, 0.6]` |
 
+| `used: "> 0"` | **Options nobody uses.** The condition that means "this option, reward or rule was used" (a big sale, a booster, a card bought). Flags *rarely-used* below `used_min` (default 5%) of rows |
+
 Use `rise`/`fall` on difficulty proxies (energy per day, moves needed, solution length,
-win rate with `fall`) and `binds` on every limit the design relies on for tension (board
-space, energy, hand size, moves).
+win rate with `fall`), `binds` on every limit the design relies on for tension (board
+space, energy, hand size, moves), and `used` on options and rewards that should matter.
 
 ## `targets`: numbers the designer named
 
@@ -77,7 +114,9 @@ space, energy, hand size, moves).
 
 Averages `metric` for each value of the label `by` (pooled over `profile` or `profiles`)
 and flags *uneven* when a group is further than `tolerance` from `fair` **and** its 95%
-interval excludes `fair`. `fair: "even"` means 1 ÷ number of groups (seat win rate at a
+interval excludes `fair`. `exclude: ["steady"]` leaves a reference strategy out of the
+flags (it still shows in the table). Each what-if gets the same table, before → after,
+and a flag that swings past fair is marked *over-corrected*. `fair: "even"` means 1 ÷ number of groups (seat win rate at a
 3-player table: 0.333). Use it for seat advantage, strategy dominance, a card's win rate
 when drafted, a character's win rate.
 
@@ -88,7 +127,9 @@ when drafted, a character's win rate.
 ```
 
 Flags *luck-dominated* when the strong player's average beats the weak player's by less
-than `min_gap`, and *skill-wall* when it beats it by more than `max_gap`.
+than `min_gap`, and *skill-wall* when it beats it by more than `max_gap`. `strong` and
+`weak` are profiles, or, with `by` (e.g. `"by": "strategy"` plus `profile`), values of
+a label at the same tables (an expert and a careless bot sitting at one table).
 
 ## Always on
 

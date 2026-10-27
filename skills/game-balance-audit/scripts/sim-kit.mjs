@@ -228,16 +228,25 @@ export const bots = {
    * Flat Monte Carlo: tries each action, plays `rollouts` quick games from there with
    * `playout` (random by default) and keeps the action with the best average value.
    * A strong, game-agnostic "expert". Cost: actions × rollouts × game length.
+   *   determinize(state, seat, rand) → a copy with everything `seat` can't see re-dealt
+   *     (deck order, other hands). Without it the bot sees hidden cards and cheats.
+   *   candidates + prior(state, action, seat): only search the `candidates` actions a
+   *     cheap heuristic likes best. Much faster when there are many legal moves.
    */
-  lookahead: (game, { rollouts = 16, maxSteps = 200, playout = null } = {}) => (s, acts, rand, seat) => {
+  lookahead: (game, { rollouts = 16, maxSteps = 200, playout = null, determinize = null, candidates = 0, prior = null } = {}) => (s, acts, rand, seat) => {
     const clone = game.clone || structuredClone;
     const follow = playout || bots.random();
+    let pool = acts;
+    if (candidates && prior && acts.length > candidates) {
+      pool = acts.map((a) => [prior(s, a, seat), a]).sort((x, y) => y[0] - x[0]).slice(0, candidates).map((x) => x[1]);
+    }
     return argmax(
-      acts,
+      pool,
       (a) => {
         let sum = 0;
         for (let i = 0; i < rollouts; i++) {
-          const next = game.apply(clone(s), a, rand);
+          const start = determinize ? determinize(s, seat, rand) : clone(s);
+          const next = game.apply(start, a, rand);
           sum += game.value(playGame(game, next, follow, rand, { maxSteps }).state, seat);
         }
         return sum / rollouts;
@@ -272,7 +281,7 @@ export function playGame(game, state, policies, rand, { maxSteps = 10000, onStep
  * means the decisions don't change anything. Counting options does not show that;
  * this does.
  */
-export function decisionImpact(game, state, rand, { rollouts = 24, maxSteps = 200, playout = null } = {}) {
+export function decisionImpact(game, state, rand, { rollouts = 24, maxSteps = 200, playout = null, determinize = null } = {}) {
   const clone = game.clone || structuredClone;
   const follow = playout || bots.random();
   const seat = game.seat ? game.seat(state) : 0;
@@ -280,7 +289,7 @@ export function decisionImpact(game, state, rand, { rollouts = 24, maxSteps = 20
   const values = acts.map((a) => {
     let sum = 0;
     for (let i = 0; i < rollouts; i++) {
-      const next = game.apply(clone(state), a, rand);
+      const next = game.apply(determinize ? determinize(state, seat, rand) : clone(state), a, rand);
       sum += game.value(playGame(game, next, follow, rand, { maxSteps }).state, seat);
     }
     return sum / rollouts;

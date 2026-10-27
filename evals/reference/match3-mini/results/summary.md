@@ -2,6 +2,18 @@
 
 18000 rows · baseline `baseline` + 3 what-if scenario(s) · player profiles: novice, typical, expert · 100 runs each
 
+## Scenarios against the design goals
+
+Each goal is measured per player over the segments it names, then averaged over runs (± is a 95% interval). ▲/▼: better/worse than the baseline beyond noise. ✗: breaks a constraint. Best trade-off: no other scenario that keeps every constraint is at least as good on every goal and better on one. Weighted change: the goals' changes from the baseline, weighted as in audit.json, only to sort the table.
+
+| Scenario | Near-miss losses on hard levels 5/10/15 (offer moments) (higher is better) | Hopeless losses on hard levels 5/10/15 (≤ 0.30) | Hardest level for an expert (win rate) (≥ 0.15) | Weighted change | Best trade-off |
+|---|---|---|---|---|---|
+| `L8-easier` | 0.17 ± 0.04 | ✓ 0.07 | ✓ 0.31 | +0% | yes |
+| `L10-hard` | 0.19 ± 0.04 (+12%) | ✓ 0.19 | ✗ 0.02 | +12% |  |
+| `baseline` | 0.17 ± 0.04 | ✓ 0.07 | ✗ 0.02 | +0% |  |
+| `L2-4-varied` | 0.17 ± 0.04 | ✓ 0.07 | ✗ 0.02 | +0% |  |
+
+
 ## Flags in the baseline
 
 | Severity | Check | Player profile | Finding |
@@ -82,6 +94,46 @@ Mean per level, with the 10th–90th percentile range in brackets.
 | 14 | 0.70 (0.41–0.95) | 0.73 (0.41–1.00) | 0.85 (0.68–1.00) |
 | 15 | 0.74 (0.57–0.95) | 0.80 (0.62–0.95) | 0.91 (0.75–1.00) |
 
+### Lost with the goal 90% done (`nearMiss`)
+
+| level | novice | typical | expert |
+|---|---|---|---|
+| 1 | 0.00 (0.00–0.00) | 0.00 (0.00–0.00) | 0.00 (0.00–0.00) |
+| 2 | 0.00 (0.00–0.00) | 0.00 (0.00–0.00) | 0.00 (0.00–0.00) |
+| 3 | 0.00 (0.00–0.00) | 0.00 (0.00–0.00) | 0.00 (0.00–0.00) |
+| 4 | 0.00 (0.00–0.00) | 0.00 (0.00–0.00) | 0.00 (0.00–0.00) |
+| 5 | 0.27 (0.00–1.00) | 0.28 (0.00–1.00) | 0.09 (0.00–0.00) |
+| 6 | 0.00 (0.00–0.00) | 0.00 (0.00–0.00) | 0.00 (0.00–0.00) |
+| 7 | 0.14 (0.00–1.00) | 0.16 (0.00–1.00) | 0.00 (0.00–0.00) |
+| 8 | 0.00 (0.00–0.00) | 0.00 (0.00–0.00) | 0.03 (0.00–0.00) |
+| 9 | 0.09 (0.00–0.00) | 0.11 (0.00–1.00) | 0.03 (0.00–0.00) |
+| 10 | 0.00 (0.00–0.00) | 0.00 (0.00–0.00) | 0.00 (0.00–0.00) |
+| 11 | 0.19 (0.00–1.00) | 0.11 (0.00–1.00) | 0.04 (0.00–0.00) |
+| 12 | 0.23 (0.00–1.00) | 0.11 (0.00–1.00) | 0.02 (0.00–0.00) |
+| 13 | 0.17 (0.00–1.00) | 0.28 (0.00–1.00) | 0.11 (0.00–1.00) |
+| 14 | 0.16 (0.00–1.00) | 0.17 (0.00–1.00) | 0.16 (0.00–1.00) |
+| 15 | 0.09 (0.00–0.00) | 0.22 (0.00–1.00) | 0.33 (0.00–1.00) |
+
+### Lost with under 70% of the goal done (`hopeless`)
+
+| level | novice | typical | expert |
+|---|---|---|---|
+| 1 | 0.00 (0.00–0.00) | 0.00 (0.00–0.00) | 0.00 (0.00–0.00) |
+| 2 | 0.00 (0.00–0.00) | 0.00 (0.00–0.00) | 0.00 (0.00–0.00) |
+| 3 | 0.00 (0.00–0.00) | 0.00 (0.00–0.00) | 0.00 (0.00–0.00) |
+| 4 | 0.00 (0.00–0.00) | 0.00 (0.00–0.00) | 0.00 (0.00–0.00) |
+| 5 | 0.13 (0.00–1.00) | 0.02 (0.00–0.00) | 0.00 (0.00–0.00) |
+| 6 | 0.03 (0.00–0.00) | 0.00 (0.00–0.00) | 0.00 (0.00–0.00) |
+| 7 | 0.05 (0.00–0.00) | 0.00 (0.00–0.00) | 0.00 (0.00–0.00) |
+| 8 | 0.93 (1.00–1.00) | 0.81 (0.00–1.00) | 0.45 (0.00–1.00) |
+| 9 | 0.23 (0.00–1.00) | 0.04 (0.00–0.00) | 0.02 (0.00–0.00) |
+| 10 | 0.00 (0.00–0.00) | 0.00 (0.00–0.00) | 0.00 (0.00–0.00) |
+| 11 | 0.01 (0.00–0.00) | 0.01 (0.00–0.00) | 0.00 (0.00–0.00) |
+| 12 | 0.02 (0.00–0.00) | 0.00 (0.00–0.00) | 0.00 (0.00–0.00) |
+| 13 | 0.02 (0.00–0.00) | 0.01 (0.00–0.00) | 0.00 (0.00–0.00) |
+| 14 | 0.51 (0.00–1.00) | 0.50 (0.00–1.00) | 0.26 (0.00–1.00) |
+| 15 | 0.37 (0.00–1.00) | 0.19 (0.00–1.00) | 0.02 (0.00–0.00) |
+
 ## What-ifs against the baseline
 
 ### `L8-easier`
@@ -92,9 +144,11 @@ Mean per level, with the 10th–90th percentile range in brackets.
 
 | Metric | Baseline, typical (first third → last third) | What-if, typical | Change in the mean, by profile |
 |---|---|---|---|
-| won | 0.89 → 0.47 | 0.89 → 0.47 | novice +5% · typical +7% · expert +8% |
-| movesLeft | 11.7 → 2.17 | 11.7 → 2.17 | novice +2% · typical +4% · expert +6% |
-| goalDone | 0.99 → 0.89 | 0.99 → 0.89 | novice +3% · typical +3% · expert +2% |
+| won | 0.89 → 0.47 | 0.89 → 0.47 | typical +7% · expert +8% |
+| movesLeft | 11.7 → 2.17 | 11.7 → 2.17 | typical +4% · expert +6% |
+| goalDone | 0.99 → 0.89 | 0.99 → 0.89 | typical +3% · expert +2% |
+| nearMiss | 0.06 → 0.18 | 0.06 → 0.18 | typical +9% · expert −1% |
+| hopeless | 0.00 → 0.14 | 0.00 → 0.14 | typical −51% · expert −60% |
 
 ### `L10-hard`
 
@@ -104,9 +158,11 @@ Mean per level, with the 10th–90th percentile range in brackets.
 
 | Metric | Baseline, typical (first third → last third) | What-if, typical | Change in the mean, by profile |
 |---|---|---|---|
-| won | 0.89 → 0.47 | 0.89 → 0.47 | novice −12% · typical −9% · expert −7% |
-| movesLeft | 11.7 → 2.17 | 11.7 → 2.17 | novice −13% · typical −12% · expert −11% |
-| goalDone | 0.99 → 0.89 | 0.99 → 0.89 | novice −2% · typical −2% · expert −1% |
+| won | 0.89 → 0.47 | 0.89 → 0.47 | typical −9% · expert −7% |
+| movesLeft | 11.7 → 2.17 | 11.7 → 2.17 | typical −12% · expert −11% |
+| goalDone | 0.99 → 0.89 | 0.99 → 0.89 | typical −2% · expert −1% |
+| nearMiss | 0.06 → 0.18 | 0.06 → 0.18 | typical +4% · expert +25% |
+| hopeless | 0.00 → 0.14 | 0.00 → 0.14 | typical +23% · expert +35% |
 
 ### `L2-4-varied`
 
@@ -116,6 +172,9 @@ Mean per level, with the 10th–90th percentile range in brackets.
 
 | Metric | Baseline, typical (first third → last third) | What-if, typical | Change in the mean, by profile |
 |---|---|---|---|
-| won | 0.89 → 0.47 | 0.89 → 0.47 | novice −1% · typical −0% · expert +0% |
-| movesLeft | 11.7 → 2.17 | 10.5 → 2.17 | novice −10% · typical −6% · expert −5% |
-| goalDone | 0.99 → 0.89 | 0.99 → 0.89 | novice −0% · typical −0% · expert +0% |
+| won | 0.89 → 0.47 | 0.89 → 0.47 | typical −0% · expert +0% |
+| movesLeft | 11.7 → 2.17 | 10.5 → 2.17 | typical −6% · expert −5% |
+| goalDone | 0.99 → 0.89 | 0.99 → 0.89 | typical −0% · expert +0% |
+| nearMiss | 0.06 → 0.18 | 0.06 → 0.18 | typical +1% · expert +0% |
+
+Unchanged: `hopeless`.

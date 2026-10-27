@@ -36,4 +36,7 @@ graders:
       4. Level 14 or 15 is reported as harder than intended for a typical player.
       5. Each problem reported in full has three suggestions, each with a before → after win rate from a simulation.
       6. The report says bot win rates are relative difficulty, not promises about human pass rates (or that calibration with real data is needed).
+      7. It identifies the business model (+5 moves sold on a loss) and judges hard levels as purchase moments: it separates
+         losses that come close (where the offer sells) from hopeless ones (where players quit), and treats an unwinnable
+         level as churn with no sale.
     focus: files

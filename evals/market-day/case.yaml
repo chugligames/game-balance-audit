@@ -33,4 +33,6 @@ graders:
       3. It finds a strategy that beats a sensible baseline well beyond noise, such as selling small sets early or chasing saffron, and looks for why (e.g. falling coin stacks reward selling first).
       4. It reports that the half-time leader usually wins (a runaway leader), or explains why it measured comebacks differently.
       5. Each problem reported in full has three suggestions, each tested in the simulator with before → after numbers, and at least one natural fix is shown to work less well than expected, or the report explains why a fix works.
+      6. It uses the designer's note (a quick filler pitched to publishers): goals are fairness at every player count,
+         games that stay close, more than one viable way to play, and about 20 minutes, and it checks each player count.
     focus: files

@@ -1,6 +1,19 @@
 # Balance summary: Slide Mini
 
-4320 rows · baseline `baseline` + 3 what-if scenario(s) · player profiles: novice, typical, expert · 30 runs each
+5400 rows · baseline `baseline` + 4 what-if scenario(s) · player profiles: novice, typical, expert · 30 runs each
+
+## Scenarios against the design goals
+
+Each goal is measured per player over the segments it names, then averaged over runs (± is a 95% interval). ▲/▼: better/worse than the baseline beyond noise. ✗: breaks a constraint. Best trade-off: no other scenario that keeps every constraint is at least as good on every goal and better on one. Weighted change: the goals' changes from the baseline, weighted as in audit.json, only to sort the table.
+
+| Scenario | Levels a typical player solves (of 12) (higher is better) | Every level can be solved (≥ 1.00) | Shortest late level (8–12), moves (≥ 6.00) | Weighted change | Best trade-off |
+|---|---|---|---|---|---|
+| `all three` | 9.33 ± 0.20 (+12%) ▲ | ✓ 1.00 | ✓ 9.00 | +12% | yes |
+| `fix-L9` | 9.37 ± 0.20 (+12%) ▲ | ✓ 1.00 | ✗ 1.00 | +12% |  |
+| `baseline` | 8.37 ± 0.20 | ✗ 0.00 | ✗ 1.00 | +0% |  |
+| `move-L6-last` | 8.37 ± 0.20 | ✗ 0.00 | ✗ 1.00 | +0% |  |
+| `replace-L10` | 8.33 ± 0.20 | ✗ 0.00 | ✓ 8.00 | −0% |  |
+
 
 ## Flags in the baseline
 
@@ -99,10 +112,10 @@ Mean per level, with the 10th–90th percentile range in brackets.
 
 | Metric | Baseline, typical (first third → last third) | What-if, typical | Change in the mean, by profile |
 |---|---|---|---|
-| optimal | 3.50 → 8.33 | 3.50 → 8.50 | novice +2% · typical +2% · expert +2% |
-| explored | 995 → 6118 | 995 → 6896 | novice +5% · typical +5% · expert +5% |
-| solved | 1.00 → 0.50 | 1.00 → 0.75 | novice +8% · typical +12% · expert +9% |
-| moves | 12.9 → 27.6 | 12.9 → 45.1 | novice +25% · typical +24% · expert +11% |
+| optimal | 3.50 → 8.33 | 3.50 → 8.50 | typical +2% · expert +2% |
+| explored | 995 → 6118 | 995 → 6896 | typical +5% · expert +5% |
+| solved | 1.00 → 0.50 | 1.00 → 0.75 | typical +12% · expert +9% |
+| moves | 12.9 → 27.6 | 12.9 → 45.1 | typical +24% · expert +11% |
 
 ### `move-L6-last`
 
@@ -112,7 +125,7 @@ Mean per level, with the 10th–90th percentile range in brackets.
 
 | Metric | Baseline, typical (first third → last third) | What-if, typical | Change in the mean, by profile |
 |---|---|---|---|
-| solved | 1.00 → 0.50 | 1.00 → 0.59 | novice +0% · typical +0% · expert +0% |
+| solved | 1.00 → 0.50 | 1.00 → 0.59 | typical +0% · expert +0% |
 
 Unchanged: `optimal`, `explored`, `moves`.
 
@@ -124,7 +137,20 @@ Unchanged: `optimal`, `explored`, `moves`.
 
 | Metric | Baseline, typical (first third → last third) | What-if, typical | Change in the mean, by profile |
 |---|---|---|---|
-| optimal | 3.50 → 8.33 | 3.50 → 12.0 | novice +14% · typical +14% · expert +14% |
-| explored | 995 → 6118 | 995 → 8212 | novice +13% · typical +13% · expert +13% |
-| solved | 1.00 → 0.50 | 1.00 → 0.49 | novice −5% · typical −0% · expert +0% |
-| moves | 12.9 → 27.6 | 12.9 → 43.4 | novice +24% · typical +22% · expert +14% |
+| optimal | 3.50 → 8.33 | 3.50 → 12.0 | typical +14% · expert +14% |
+| explored | 995 → 6118 | 995 → 8212 | typical +13% · expert +13% |
+| solved | 1.00 → 0.50 | 1.00 → 0.49 | typical −0% · expert +0% |
+| moves | 12.9 → 27.6 | 12.9 → 43.4 | typical +22% · expert +14% |
+
+### `all three`
+
+- **Fixes:** off-target on `optimal` · No pushover from level 8 on (expert); off-target on `solved` · Every level can be solved (expert); spike on `solved` (expert); dips on `optimal` (typical (and every other profile)); dips on `solved` (expert)
+- **Introduces:** flat (expert): Solve rate falls by only 0.0% from the first third of levels (1.00) to the last third (1.00); the design expects at least 20%; spike (typical): Solve rate drops sharply at levels 6→7 (0.97 → 0.03), 9→10 (0.97 → 0.03), 11→12 (0.97 → 0.37), more than 3× a typical step
+- **Still flagged:** spike on `explored` (typical (and every other profile)): jumps 2 → 1; spike on `optimal` (typical (and every other profile)): jumps 2 → 1; spike on `solved` (novice): jumps 2 → 1; off-target on `solved` · A typical player can get through each level (typical): clear misses 3 → 2; dips on `explored` (typical (and every other profile)): dips 4 → 1; plateau on `solved` (typical (and every other profile)); dips on `solved` (typical (also novice)): dips 3 → 2
+
+| Metric | Baseline, typical (first third → last third) | What-if, typical | Change in the mean, by profile |
+|---|---|---|---|
+| optimal | 3.50 → 8.33 | 3.50 → 14.0 | typical +15% · expert +15% |
+| explored | 995 → 6118 | 995 → 14519 | typical +17% · expert +17% |
+| solved | 1.00 → 0.50 | 1.00 → 0.58 | typical +12% · expert +9% |
+| moves | 12.9 → 27.6 | 12.9 → 56.8 | typical +46% · expert +25% |

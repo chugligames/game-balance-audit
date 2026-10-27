@@ -1,17 +1,129 @@
 {
   "title": "Merge Mini",
   "segment": "day",
-  "profiles": ["careless", "twice", "efficient"],
+  "profiles": [
+    "careless",
+    "twice",
+    "efficient"
+  ],
   "focus_profile": "twice",
   "metrics": {
-    "taps": { "label": "Energy spent", "expect": "rise", "segments": [3, 10] },
-    "energyShare": { "label": "Share of the day's free energy used", "expect": "rise", "segments": [3, 10] },
-    "minFree": { "label": "Fewest empty cells", "binds": "<= 0", "expect": "fall", "segments": [3, 10] },
-    "outOfEnergy": { "label": "Times out of energy", "binds": "> 0", "segments": [8, 10] },
-    "daysLate": { "label": "Days behind the calendar" }
+    "taps": {
+      "label": "Energy spent",
+      "expect": "rise",
+      "segments": [
+        3,
+        10
+      ]
+    },
+    "energyShare": {
+      "label": "Share of the day's free energy used",
+      "expect": "rise",
+      "segments": [
+        3,
+        10
+      ]
+    },
+    "minFree": {
+      "label": "Fewest empty cells",
+      "binds": "<= 0",
+      "expect": "fall",
+      "segments": [
+        3,
+        10
+      ]
+    },
+    "outOfEnergy": {
+      "label": "Times out of energy",
+      "binds": "> 0",
+      "segments": [
+        8,
+        10
+      ]
+    },
+    "daysLate": {
+      "label": "Days behind the calendar"
+    },
+    "adsWatched": {
+      "label": "Rewarded ads watched",
+      "expect": "rise",
+      "segments": [
+        3,
+        10
+      ]
+    }
   },
   "targets": [
-    { "metric": "energyShare", "segments": [8, 10], "profile": "twice", "min": 0.6, "label": "Twice-a-day player uses most of their energy on days 8–10" },
-    { "metric": "minFree", "segments": [6, 10], "profile": "twice", "max": 4, "label": "Board feels crowded from day 6" }
+    {
+      "metric": "energyShare",
+      "segments": [
+        8,
+        10
+      ],
+      "profile": "twice",
+      "min": 0.6,
+      "label": "Twice-a-day player uses most of their energy on days 8–10"
+    },
+    {
+      "metric": "minFree",
+      "segments": [
+        6,
+        10
+      ],
+      "profile": "twice",
+      "max": 4,
+      "label": "Board feels crowded from day 6"
+    },
+    {
+      "metric": "adsWatched",
+      "segments": [
+        8,
+        10
+      ],
+      "profile": "twice",
+      "min": 2,
+      "label": "2–3 ads a day from the second week",
+      "severity": "high"
+    }
+  ],
+  "goals": [
+    {
+      "name": "Rewarded ads per player, 10 days",
+      "metric": "adsWatched",
+      "profile": "twice",
+      "aggregate": "sum",
+      "direction": "max",
+      "weight": 2
+    },
+    {
+      "name": "Days played",
+      "metric": "played",
+      "profile": "twice",
+      "aggregate": "sum",
+      "direction": "max"
+    }
+  ],
+  "constraints": [
+    {
+      "name": "Twice-a-day players who quit",
+      "metric": "quit",
+      "profile": "twice",
+      "aggregate": "any",
+      "max": 0.15
+    },
+    {
+      "name": "Once-a-day players who quit",
+      "metric": "quit",
+      "profile": "careless",
+      "aggregate": "any",
+      "max": 0.25
+    }
+  ],
+  "chart_scenarios": [
+    "orders-x1.5-from-6",
+    "cap-60",
+    "orders-x1.5 + cap-60",
+    "orders-x1.5 + cap-60 + ad 30",
+    "orders-x1.5 + cap-60, quit x2"
   ]
 }

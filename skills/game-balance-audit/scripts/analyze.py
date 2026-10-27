@@ -349,6 +349,25 @@ def check_binds(data, scenario, metric, mcfg, out):
                  rate=rate, per_segment=per)
 
 
+def check_used(data, scenario, metric, mcfg, out):
+    """An option, reward or rule that players should sometimes use: `used: "> 0"`."""
+    if "used" not in mcfg:
+        return
+    cond, _ = parse_cond(mcfg["used"])
+    label = mcfg.get("label", metric)
+    floor = mcfg.get("used_min", 0.05)
+    for profile in data.profiles:
+        xs = [x for sg in data.segs_in(mcfg.get("segments")) for x in data.values(scenario, profile, sg, metric)]
+        if not xs:
+            continue
+        rate = sum(1 for x in xs if cond(x)) / len(xs)
+        if rate < floor:
+            flag(out, "rarely-used", "medium", metric, scenario, profile,
+                 "%s (%s) happens in only %s of %ss: an option or reward players almost never use"
+                 % (label, mcfg["used"].strip(), pct(rate) if rate else "none", data.seg or "game"),
+                 rate=rate)
+
+
 def interval(xs, which):
     """95% interval for a mean or a rate, so a miss inside sampling noise isn't called a miss."""
     n = len(xs)
@@ -410,7 +429,8 @@ def group_table(data, scenario, g):
                 vals.setdefault(r.get(by), []).append(x)
     keys = sorted(vals, key=lambda k: (num(k) is None, num(k) if num(k) is not None else str(k)))
     fair = g.get("fair", "even")
-    fair = 1.0 / len(keys) if fair == "even" and keys else float(fair) if fair != "even" else None
+    if fair is not None:
+        fair = 1.0 / len(keys) if fair == "even" and keys else float(fair) if fair != "even" else None
     table = []
     for k in keys:
         xs = vals[k]
@@ -433,7 +453,10 @@ def check_groups(data, scenario, cfg, out):
             continue
         tol = g.get("tolerance", 0.03)
         label = g.get("label", "%s by %s" % (g["metric"], g["by"]))
+        skip = set(str(x) for x in g.get("exclude", []))
         for row in table:
+            if str(row["group"]) in skip:
+                continue
             off = row["mean"] - fair
             if abs(off) > tol and (row["lo"] > fair or row["hi"] < fair):
                 where = g.get("profile") or (", ".join(g["profiles"]) if g.get("profiles") else None)
@@ -448,8 +471,14 @@ def check_skill(data, scenario, cfg, out):
     if not sk:
         return
     metric = sk["metric"]
-    strong = mean([x for s in data.segments for x in data.values(scenario, sk["strong"], s, metric)])
-    weak = mean([x for s in data.segments for x in data.values(scenario, sk["weak"], s, metric)])
+    if sk.get("by"):
+        # strong and weak are values of a label (e.g. strategy) at the same tables
+        table, _ = group_table(data, scenario, dict(sk, fair=None))
+        val = {row["group"]: row["mean"] for row in table}
+        strong, weak = val.get(sk["strong"]), val.get(sk["weak"])
+    else:
+        strong = mean([x for s in data.segments for x in data.values(scenario, sk["strong"], s, metric)])
+        weak = mean([x for s in data.segments for x in data.values(scenario, sk["weak"], s, metric)])
     if strong is None or weak is None:
         return
     gap = strong - weak
@@ -482,6 +511,11 @@ def check_constant(data, scenario, cfg, out):
             flag(out, "constant", "info", m, scenario, None,
                  "%s is %s in every row: either it measures nothing here, or something never happens (which may be a finding)"
                  % (cfg.get("metrics", {}).get(m, {}).get("label", m), fmt(xs[0])), value=xs[0])
+            continue
+        for p in data.profiles:
+            ys = [x for sg in data.segments for x in data.values(scenario, p, sg, m)]
+            if len(ys) > 1 and min(ys) == max(ys):
+                flag(out, "constant", "info", m, scenario, p, "%s is always %s for %s" % (m, fmt(ys[0]), p), value=ys[0], part=p)
 
 
 def run_checks(data, scenario):
@@ -492,6 +526,7 @@ def run_checks(data, scenario):
             continue
         check_shape(data, scenario, metric, mcfg, out)
         check_binds(data, scenario, metric, mcfg, out)
+        check_used(data, scenario, metric, mcfg, out)
     check_targets(data, scenario, cfg, out)
     check_groups(data, scenario, cfg, out)
     check_skill(data, scenario, cfg, out)
@@ -499,6 +534,125 @@ def run_checks(data, scenario):
     check_constant(data, scenario, cfg, out)
     out.sort(key=lambda f: (SEVERITY[f["severity"]], f["metric"], str(f["profile"])))
     return out
+
+
+# ── Design goals: one number per scenario ───────────────────────────────────
+
+AGGREGATE = {
+    "sum": sum,
+    "mean": lambda xs: sum(xs) / len(xs),
+    "max": max,
+    "min": min,
+    "last": lambda xs: xs[-1],
+    "any": lambda xs: 1.0 if any(x for x in xs) else 0.0,
+}
+
+
+def measure(data, scenario, spec):
+    """One number for a scenario, as a goal or constraint defines it: within each run, the
+    metric is aggregated over the spec's segments (sum by default when there are segments,
+    e.g. ads watched over 21 days), then `stat` (default mean) is taken over runs.
+    `when: "> 0"` first turns the metric into 0/1, so `aggregate: "any"` + mean gives
+    "share of players who ever hit it". `where: {"seat": 1}` keeps only matching rows.
+    `per: "segment"` reverses the order: each segment's mean over runs first, then the
+    aggregate across segments ("the hardest level's win rate" = min). Returns (value, half-width of a 95% interval, runs)."""
+    metric = spec["metric"]
+    segs = data.segs_in(spec.get("segments"))
+    profiles = [spec["profile"]] if spec.get("profile") else spec.get("profiles") or data.profiles
+    agg = AGGREGATE[spec.get("aggregate", "sum" if data.seg and len(data.segments) > 1 else "mean")]
+    cond = parse_cond(spec["when"])[0] if spec.get("when") else None
+    where = spec.get("where", {})
+    runs = OrderedDict()
+    for p in profiles:
+        for sg in segs:
+            for r in data.cells.get((scenario, p, sg), []):
+                if any(str(r.get(k)) != str(v) for k, v in where.items()):
+                    continue
+                x = num(r.get(metric))
+                if x is None:
+                    continue
+                if cond:
+                    x = 1.0 if cond(x) else 0.0
+                runs.setdefault((p, r.get("run"), r.get("seat")), []).append(x)
+    if spec.get("per") == "segment":
+        # e.g. "the hardest level's win rate": each segment's mean over runs, then aggregated across segments
+        by_seg = OrderedDict()
+        for p in profiles:
+            for sg in segs:
+                xs = []
+                for r in data.cells.get((scenario, p, sg), []):
+                    if any(str(r.get(k)) != str(v) for k, v in where.items()):
+                        continue
+                    x = num(r.get(metric))
+                    if x is not None:
+                        xs.append((1.0 if cond(x) else 0.0) if cond else x)
+                if xs:
+                    by_seg.setdefault(sg, []).extend(xs)
+        if not by_seg:
+            return None, None, 0
+        means = [sum(xs) / len(xs) for xs in by_seg.values()]
+        return agg(means), None, len(by_seg)
+    vals = [agg(xs) for xs in runs.values()]
+    if not vals:
+        return None, None, 0
+    st = stats(vals)
+    value = st[spec.get("stat", "mean")]
+    return value, 1.96 * st["sd"] / math.sqrt(st["n"]) if st["n"] > 1 else 0.0, st["n"]
+
+
+def scorecard(data):
+    """Every scenario against the designer's goals and constraints (audit.json `goals`,
+    `constraints`): values, change from the baseline, constraint passes, Pareto front."""
+    cfg = data.cfg
+    goals = cfg.get("goals", [])
+    limits = cfg.get("constraints", [])
+    if not goals and not limits:
+        return None
+    rows = []
+    for sc in data.scenarios:
+        row = {"scenario": sc, "goals": [], "constraints": [], "ok": True}
+        for g in goals:
+            v, h, n = measure(data, sc, g)
+            row["goals"].append({"name": g["name"], "value": v, "pm": h, "n": n})
+        for c in limits:
+            v, h, n = measure(data, sc, c)
+            ok = v is not None and ("min" not in c or v >= c["min"]) and ("max" not in c or v <= c["max"])
+            row["constraints"].append({"name": c["name"], "value": v, "pm": h, "ok": ok})
+            row["ok"] = row["ok"] and ok
+        rows.append(row)
+    base = next(r for r in rows if r["scenario"] == data.baseline)
+    # Changes are relative to the baseline; when the baseline is 0 (no ads at all), relative
+    # to the goal's largest value across scenarios instead, so the sort still sees them.
+    spread = [max([abs(r["goals"][i]["value"]) for r in rows if r["goals"][i]["value"] is not None] or [0.0]) for i in range(len(goals))]
+    for r in rows:
+        score = 0.0
+        for i, (g, mine, b) in enumerate(zip(goals, r["goals"], base["goals"])):
+            if mine["value"] is None or b["value"] is None:
+                continue
+            sign = 1 if g.get("direction", "max") == "max" else -1
+            mine["change"] = (mine["value"] - b["value"]) / abs(b["value"]) if b["value"] else None
+            change = (mine["value"] - b["value"]) / max(abs(b["value"]), 0.1 * spread[i], 1e-9)
+            mine["better"] = sign * (mine["value"] - b["value"]) > (mine["pm"] or 0) + (b["pm"] or 0)
+            mine["worse"] = sign * (b["value"] - mine["value"]) > (mine["pm"] or 0) + (b["pm"] or 0)
+            score += g.get("weight", 1) * sign * change
+        r["score"] = score
+
+    def beats(a, b):
+        some = False
+        for g, x, y in zip(goals, a["goals"], b["goals"]):
+            if x["value"] is None or y["value"] is None:
+                return False
+            sign = 1 if g.get("direction", "max") == "max" else -1
+            if sign * (x["value"] - y["value"]) < 0:
+                return False
+            if sign * (x["value"] - y["value"]) > 0:
+                some = True
+        return some
+
+    for r in rows:
+        r["pareto"] = r["ok"] and not any(o["ok"] and beats(o, r) for o in rows if o is not r)
+    rows.sort(key=lambda r: (not r["ok"], -r["score"]))
+    return {"goals": goals, "constraints": limits, "rows": rows}
 
 
 # ── Comparing what-ifs with the baseline ─────────────────────────────────────
@@ -510,7 +664,7 @@ def gauge(f):
     k = f["kind"]
     if k == "off-target":
         return len(e["clear"]), "clear misses"
-    if k in ("never-binds", "always-binds"):
+    if k in ("never-binds", "always-binds", "rarely-used"):
         return e["rate"], "rate"
     if k in ("flat", "reversed"):
         return e["growth"], "growth"
@@ -523,6 +677,19 @@ def gauge(f):
     if k == "spike":
         return len(e["jumps"]), "jumps"
     return None, None
+
+
+def compare_profiles(data):
+    """The profiles what-if tables show: `compare_profiles`, else the focus profile and the
+    ones goals, constraints and targets name (all profiles if none are named)."""
+    cfg = data.cfg
+    if cfg.get("compare_profiles"):
+        return [p for p in cfg["compare_profiles"] if p in data.profiles]
+    named = [cfg.get("focus_profile")]
+    for spec in cfg.get("goals", []) + cfg.get("constraints", []) + cfg.get("targets", []):
+        named += [spec.get("profile")] + list(spec.get("profiles", []))
+    keep = [p for p in data.profiles if p in named]
+    return keep or data.profiles
 
 
 def compare(data, flags):
@@ -538,7 +705,7 @@ def compare(data, flags):
                 continue
             segs = data.segs_in(mcfg.get("segments"))
             k = max(1, len(segs) // 3)
-            for p in data.profiles:
+            for p in compare_profiles(data):
                 b = [v for _, v in data.series(data.baseline, p, metric, segs)]
                 w = [v for _, v in data.series(sc, p, metric, segs)]
                 if not any(x is not None for x in w):
@@ -563,12 +730,24 @@ def compare(data, flags):
                 f = dict(mine[i])
                 f["before"], _ = gauge(base[i])
                 f["after"], f["gauge"] = gauge(mine[i])
+                e0, e1 = base[i]["evidence"], mine[i]["evidence"]
+                if f["kind"] == "uneven" and (e0["value"] - e0["fair"]) * (e1["value"] - e1["fair"]) < 0:
+                    f["gauge"] = "over-corrected: value"
                 still.append(f)
+        groups = []
+        for g in data.cfg.get("groups", []):
+            b_table, fair = group_table(data, data.baseline, g)
+            w_table, _ = group_table(data, sc, g)
+            w = {row["group"]: row for row in w_table}
+            groups.append({"label": g.get("label", "%s by %s" % (g["metric"], g["by"])), "by": g["by"], "fair": fair,
+                           "rows": [{"group": row["group"], "base": row["mean"], "whatif": w.get(row["group"], {}).get("mean"),
+                                     "lo": w.get(row["group"], {}).get("lo"), "hi": w.get(row["group"], {}).get("hi")} for row in b_table]})
         out[sc] = {
             "fixed": [base[i] for i in base if i not in mine and base[i]["severity"] != "info"],
             "new": [mine[i] for i in mine if i not in base and mine[i]["severity"] != "info"],
             "still": still,
             "moves": moves,
+            "groups": groups,
         }
     return out
 
@@ -624,7 +803,32 @@ def short(data, flags):
     return "; ".join(out)
 
 
-def write_markdown(data, flags, cmp, path):
+def md_scorecard(card):
+    """The scenarios ranked against the design goals."""
+    goals, limits = card["goals"], card["constraints"]
+    head = ["Scenario"] + ["%s (%s)" % (g["name"], "higher is better" if g.get("direction", "max") == "max" else "lower is better") for g in goals]
+    head += ["%s (%s)" % (c["name"], ("≥ %s" % fmt(c["min"])) if "min" in c and "max" not in c else ("≤ %s" % fmt(c["max"])) if "max" in c and "min" not in c else "%s–%s" % (fmt(c["min"]), fmt(c["max"]))) for c in limits]
+    head += ["Weighted change", "Best trade-off"]
+    L = ["| " + " | ".join(head) + " |", "|" + "---|" * len(head)]
+    for r in card["rows"]:
+        cells = ["`%s`" % r["scenario"]]
+        for g in r["goals"]:
+            if g["value"] is None:
+                cells.append("–")
+                continue
+            mark = " ▲" if g.get("better") else " ▼" if g.get("worse") else ""
+            change = "" if g.get("change") is None or abs(g["change"]) < 0.005 else " (%s)" % pct(g["change"], True)
+            pm = "" if g["pm"] is None else " ± %s" % fmt(g["pm"])
+            cells.append("%s%s%s%s" % (fmt(g["value"]), pm, change, mark))
+        for c in r["constraints"]:
+            cells.append("%s %s" % ("✓" if c["ok"] else "✗", fmt(c["value"])))
+        cells.append(pct(r["score"], True))
+        cells.append("yes" if r["pareto"] else "")
+        L.append("| " + " | ".join(cells) + " |")
+    return "\n".join(L) + "\n"
+
+
+def write_markdown(data, flags, cmp, path, card=None):
     cfg = data.cfg
     runs = {}
     for (sc, p, _), rs in data.cells.items():
@@ -633,10 +837,16 @@ def write_markdown(data, flags, cmp, path):
     L = ["# Balance summary: %s" % cfg.get("title", "game"), ""]
     L.append("%d rows · baseline `%s` + %d what-if scenario(s) · player profiles: %s · %s runs each"
              % (len(data.rows), data.baseline, len(data.scenarios) - 1, ", ".join(data.profiles), "/".join(map(str, nruns))))
+    if card:
+        L += ["", "## Scenarios against the design goals", "",
+              "Each goal is measured per player over the segments it names, then averaged over runs (± is a 95% interval). "
+              "▲/▼: better/worse than the baseline beyond noise. ✗: breaks a constraint. Best trade-off: no other scenario that "
+              "keeps every constraint is at least as good on every goal and better on one. Weighted change: the goals' changes "
+              "from the baseline, weighted as in audit.json, only to sort the table.", "", md_scorecard(card)]
     L += ["", "## Flags in the baseline", "", md_flags(data, flags[data.baseline])]
     info = [f for f in flags[data.baseline] if f["severity"] == "info"]
     if info:
-        L += ["Never changes: " + "; ".join("`%s` = %s" % (f["metric"], fmt(f["evidence"]["value"])) for f in info), ""]
+        L += ["Never changes: " + "; ".join("`%s` = %s%s" % (f["metric"], fmt(f["evidence"]["value"]), " (%s)" % f["profile"] if f["profile"] else "") for f in info), ""]
 
     if data.seg and len(data.segments) > 1:
         L += ["## Baseline by %s" % data.seg, "", "Mean per %s, with the 10th–90th percentile range in brackets." % data.seg, ""]
@@ -699,6 +909,15 @@ def write_markdown(data, flags, cmp, path):
                 L += ["", "| Metric | %s | What-if, %s | Change in the mean, by profile |" % (head, focus), "|---|---|---|---|"] + table
             if same:
                 L += ["", "Unchanged: " + ", ".join("`%s`" % m for m in same) + "."]
+            for g in c.get("groups", []):
+                if not any(row["whatif"] is not None and row["whatif"] != row["base"] for row in g["rows"]):
+                    continue
+                L += ["", "| %s: %s | Baseline | What-if (95%% CI) |" % (g["label"], g["by"]), "|---|---|---|"]
+                for row in g["rows"]:
+                    L.append("| %s | %s | %s (%s–%s) |" % (row["group"], fmt(row["base"], 3), fmt(row["whatif"], 3), fmt(row["lo"], 3), fmt(row["hi"], 3)))
+                if g["fair"] is not None:
+                    L.append("")
+                    L.append("Fair: %s." % fmt(g["fair"], 3))
             L.append("")
     with open(path, "w") as f:
         f.write("\n".join(L))
@@ -774,16 +993,66 @@ def svg_chart(title, segs, series, threshold=None, bands=(), width=640, height=2
     return '<figure>%s<figcaption>%s</figcaption></figure>' % ("".join(out), legend)
 
 
-def write_charts(data, path):
+def svg_bars(title, items, ref=None, ref_label="", width=640):
+    """Horizontal bars: items = [(label, value, lo, hi, color, note)]; ref draws a vertical line."""
+    row_h, pad_l, pad_r, pad_t = 26, 230, 70, 30
+    height = pad_t + row_h * len(items) + 10
+    vals = [v for _, v, lo, hi, _, _ in items if v is not None] + [x for _, _, lo, hi, _, _ in items for x in (lo, hi) if x is not None]
+    if ref is not None:
+        vals.append(ref)
+    if not vals:
+        return ""
+    lo_v = min(0.0, min(vals))
+    hi_v = max(vals) or 1.0
+    ticks = nice_ticks(lo_v, hi_v)
+    lo_v, hi_v = ticks[0], ticks[-1]
+    x = lambda v: pad_l + (width - pad_l - pad_r) * (v - lo_v) / ((hi_v - lo_v) or 1)
+    out = ['<svg viewBox="0 0 %d %d" role="img" aria-label="%s">' % (width, height, html.escape(title))]
+    out.append('<text x="0" y="16" class="t">%s</text>' % html.escape(title))
+    for t in ticks:
+        out.append('<line x1="%.1f" x2="%.1f" y1="%d" y2="%d" class="g"/>' % (x(t), x(t), pad_t - 4, height - 10))
+    for i, (label, v, lo, hi, color, note) in enumerate(items):
+        y = pad_t + i * row_h
+        out.append('<text x="%d" y="%.1f" class="a" text-anchor="end">%s</text>' % (pad_l - 8, y + 15, html.escape(str(label)[:34])))
+        if v is None:
+            continue
+        out.append('<rect x="%.1f" y="%d" width="%.1f" height="16" rx="3" fill="%s"><title>%s: %s</title></rect>' % (x(min(0.0, v)), y + 3, max(1.0, abs(x(v) - x(0.0))), color, html.escape(str(label)), fmt(v)))
+        if lo is not None and hi is not None:
+            out.append('<line x1="%.1f" x2="%.1f" y1="%d" y2="%d" class="ci"/>' % (x(lo), x(hi), y + 11, y + 11))
+        out.append('<text x="%.1f" y="%.1f" class="a">%s%s</text>' % (x(max(v, hi or v)) + 6, y + 15, fmt(v), html.escape(note)))
+    if ref is not None:
+        out.append('<line x1="%.1f" x2="%.1f" y1="%d" y2="%d" class="thr"><title>%s</title></line>' % (x(ref), x(ref), pad_t - 6, height - 8, html.escape(ref_label)))
+    out.append("</svg>")
+    return "<figure>%s</figure>" % "".join(out)
+
+
+def write_charts(data, path, card=None):
     cfg = data.cfg
+    parts = []
+    if card:
+        for gi, g in enumerate(card["goals"]):
+            items = [(r["scenario"], r["goals"][gi]["value"], None, None, PALETTE[0] if r["ok"] else "#9a9aa0", "" if r["ok"] else " ✗")
+                     for r in card["rows"]]
+            parts.append(svg_bars("%s · by scenario (%s; grey breaks a constraint)" % (g["name"], "higher is better" if g.get("direction", "max") == "max" else "lower is better"), items))
+    shown_sc = [data.baseline] + ([sc for sc in cfg.get("chart_scenarios", []) if sc in data.scenarios and sc != data.baseline]
+                                  or [sc for sc in data.scenarios if sc != data.baseline])[:3]
+    for g in cfg.get("groups", []):
+        items = []
+        for si, sc in enumerate(shown_sc):
+            table, fair = group_table(data, sc, g)
+            for row in table:
+                items.append(("%s · %s=%s" % (sc[:16], g["by"], row["group"]), row["mean"], row["lo"], row["hi"], PALETTE[si % len(PALETTE)], ""))
+        _, fair = group_table(data, data.baseline, g)
+        parts.append(svg_bars("%s (bars: mean, line: 95%% interval)" % g.get("label", g["metric"]), items, fair, "fair"))
     if not data.seg or len(data.segments) < 2:
-        return False
+        if not parts:
+            return False
+        return write_page(data, path, parts)
     metrics = [m for m in cfg.get("metrics", {}) if m in data.metrics]
     focus = cfg.get("focus_profile") or data.profiles[0]
     # Up to 8 lines stay readable: the baseline plus `chart_scenarios` from the config, else the first 7 what-ifs.
     picked = [sc for sc in cfg.get("chart_scenarios", []) if sc in data.scenarios and sc != data.baseline]
     shown = [data.baseline] + (picked or [sc for sc in data.scenarios if sc != data.baseline])[:7]
-    parts = []
     for m in metrics:
         mcfg = cfg["metrics"][m]
         thr = parse_cond(mcfg["binds"])[1] if "binds" in mcfg else None
@@ -799,15 +1068,20 @@ def write_charts(data, path):
         if len(shown) > 1:
             series = [(sc, data.series(sc, focus, m, data.segments), PALETTE[i % len(PALETTE)], i > 0) for i, sc in enumerate(shown)]
             parts.append(svg_chart("%s · what-ifs (%s player)" % (label, focus), data.segments, series, thr, bands))
+    return write_page(data, path, parts)
+
+
+def write_page(data, path, parts):
+    cfg = data.cfg
     doc = """<!doctype html><html><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
 <title>%s balance charts</title><style>
 :root{--bg:#fff;--fg:#1d1d1f;--muted:#6e6e73;--grid:#e5e5ea;--band:rgba(0,158,115,.10)}
 @media (prefers-color-scheme:dark){:root{--bg:#161618;--fg:#f2f2f7;--muted:#a1a1a6;--grid:#2c2c2e;--band:rgba(0,158,115,.18)}}
 body{background:var(--bg);color:var(--fg);font:14px/1.45 system-ui,sans-serif;margin:0 auto;max-width:720px;padding:16px}
 figure{margin:0 0 28px}svg{width:100%%;height:auto}.t{fill:var(--fg);font-weight:600;font-size:13px}.a{fill:var(--muted);font-size:11px}
-.g{stroke:var(--grid)}.thr{stroke:#D55E00;stroke-dasharray:3 3}.band{fill:var(--band)}
+.g{stroke:var(--grid)}.thr{stroke:#D55E00;stroke-dasharray:3 3;stroke-width:2}.band{fill:var(--band)}.ci{stroke:var(--fg);stroke-width:1.5}
 figcaption{display:flex;flex-wrap:wrap;gap:12px;color:var(--muted);font-size:12px}figcaption i{display:inline-block;width:10px;height:10px;border-radius:2px;margin-right:5px}
-</style></head><body><h1>%s</h1><p>Dashed orange line: the limit a constraint metric binds at. Green band: the designer's target. Hover a point for its value.</p>%s</body></html>""" % (
+</style></head><body><h1>%s</h1><p>Dashed orange line: a limit, or the fair value. Green band: the designer's target. Hover a point or bar for its value.</p>%s</body></html>""" % (
         html.escape(cfg.get("title", "Game")), html.escape(cfg.get("title", "Game")), "".join(parts))
     with open(path, "w") as f:
         f.write(doc)
@@ -828,15 +1102,17 @@ def main():
         sys.stderr.write("warning: metrics in the config but not in any row: %s\n" % ", ".join(missing))
     flags = OrderedDict((sc, run_checks(data, sc)) for sc in data.scenarios)
     cmp = compare(data, flags)
+    card = scorecard(data)
     os.makedirs(a.out, exist_ok=True)
-    write_markdown(data, flags, cmp, os.path.join(a.out, "summary.md"))
-    charts = write_charts(data, os.path.join(a.out, "charts.html"))
+    write_markdown(data, flags, cmp, os.path.join(a.out, "summary.md"), card)
+    charts = write_charts(data, os.path.join(a.out, "charts.html"), card)
     summary = {
         "title": cfg.get("title"),
         "segment": data.seg,
         "segments": data.segments,
         "scenarios": data.scenarios,
         "profiles": data.profiles,
+        "scorecard": card,
         "flags": flags,
         "compare": cmp,
         "means": {
@@ -854,6 +1130,11 @@ def main():
         print("  [%s] %s: %s" % (f["severity"], f["where"], f["message"]))
     for sc, c in cmp.items():
         print("%s: fixes %d, introduces %d, still %d (counted per profile)" % (sc, len(c["fixed"]), len(c["new"]), len(c["still"])))
+    if card:
+        print("design goals, best first (✗ breaks a constraint, * best trade-off):")
+        for r in card["rows"]:
+            print("  %s%s %s: %s" % ("✗" if not r["ok"] else " ", "*" if r["pareto"] else " ", r["scenario"],
+                                     ", ".join("%s %s" % (g["name"], fmt(g["value"])) for g in r["goals"])))
     print("wrote %s/summary.md, summary.json%s" % (a.out, ", charts.html" if charts else ""))
 
 

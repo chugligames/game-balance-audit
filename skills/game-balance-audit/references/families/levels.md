@@ -2,16 +2,18 @@
 
 Match-3, bubble shooters, tile and block puzzles with a move limit or score target:
 anything played as a sequence of separate levels with a pass or fail. The audit asks:
-**how likely is each kind of player to beat each level, and does that follow the
-designer's curve?**
+**how likely is each kind of player to beat each level, does that follow the designer's
+curve, and, in free-to-play, are the hard levels where players pay or watch rather than
+quit?** Read `references/design-goals.md` first.
 
 ## What to model
 
 - The board rules exactly as the game runs them: matching, special pieces, gravity,
   refill odds, shuffles when stuck, blockers and their layers.
 - Each level's definition from the game's own files: moves, colours, goals, layout.
-- **Retries and boosters**, if the business model relies on them: how many attempts a
-  player makes, and what a booster does.
+- **Retries, lives, boosters and offers**, if the business model relies on them: how many
+  attempts a player makes, what a booster does, and what's offered on a loss ("+5 moves"
+  for coins or an ad). Add a response model for the offer: accept, retry, or quit.
 
 ## Player models
 
@@ -38,6 +40,8 @@ promises about players.
 | `attempts` (with a retry model) | What players experience: attempts per win |
 | `cascades`, `specials` | How much of the outcome is luck from the refill |
 | `shuffles` | Dead boards: a sign the colour count is too high for the layout |
+| `nearMiss` (lost with the goal nearly done, e.g. ≥ 90% or ≤ 2 items short) | The moments a "+5 moves" offer converts. A hard level with many near-misses earns; one with hopeless losses churns |
+| `offerTaken`, `quit` (from the response model) | Revenue and churn at each level |
 
 ## Problems this family usually has
 
@@ -50,6 +54,10 @@ promises about players.
   spread wide: the refill decides, not the player.
 - **Skill walls:** the expert wins easily, the typical player almost never, so the level
   needs knowledge most players don't have.
+- **Hard levels that don't earn:** in free-to-play, hard levels are revenue moments (King
+  has said a notoriously hard level was both its highest-converting and its biggest churn
+  point; see `references/benchmarks.md`). A hard level with few near-misses is all churn
+  and no conversion.
 
 ## Levers
 

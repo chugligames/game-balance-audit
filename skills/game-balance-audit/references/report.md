@@ -11,6 +11,13 @@ every number.
 
 <Two or three sentences: the state of the game's balance and the one change that matters most.>
 
+**Design goals.** <How the game makes money or why it exists; the primary goal; the
+guardrails; who matters. Say whether the designer stated them or you inferred them.>
+
+| Scenario | <goal 1> | <goal 2> | <constraint> | Best trade-off |
+|---|---|---|---|---|
+<the scorecard rows that matter: baseline, the recommended picks, notable trade-offs>
+
 **How this was measured.** <Source: code imported / rules written as code / running build.>
 <Player models, one line each.> <Runs per scenario and what that means for precision.>
 <Calibration: what was checked against real data, and the gap.> Details: `game-model.md`.
@@ -21,7 +28,8 @@ every number.
 
 ### 1. <The problem as a player would notice it> · <severity>
 
-**What happens.** <One paragraph: what players experience, for which player type, where.>
+**What happens.** <One paragraph: what players experience, for which player type, where,
+and which design goal it hurts.>
 
 | <segment> | <metric> (careless) | (typical) | (expert) | Target |
 |---|---|---|---|---|
@@ -30,11 +38,11 @@ every number.
 
 **Three suggestions, each tested** (<N> runs, same seeds as the baseline):
 
-| | Change | <key metric>, before → after | Fixes / breaks | Cost |
-|---|---|---|---|---|
-| A | <tune: the exact change> | … | … | … |
-| B | <rule: …> | … | … | … |
-| C | <content: …> | … | … | … |
+| | Change | <key metric>, before → after | Effect on the goals (from the scorecard) | Fixes / breaks | Cost |
+|---|---|---|---|---|---|
+| A | <tune: the exact change> | … | … | … | … |
+| B | <rule: …> | … | … | … | … |
+| C | <content: …> | … | … | … | … |
 
 **Recommendation:** <A, B, C, or a combination, and why>. <Anything the simulator can't
 show, and the playtest that would.>
@@ -64,13 +72,16 @@ main metrics, and anything the combination breaks that the single changes didn't
 | Severity | Meaning |
 |---|---|
 | **Blocker** | A player can't progress: an unwinnable level, an unsolvable puzzle, a game that never ends |
-| **High** | Breaks a stated design intent for the focus player (no tension where it should be, a wall where there shouldn't be, a seat or strategy that wins well beyond noise) |
+| **High** | Breaks a guardrail or costs the primary goal (players quitting at a wall, no revenue moments in an ad-funded game, a seat or strategy that wins well beyond noise in a tabletop game) |
 | **Medium** | A curve problem a player will notice over time (spikes, front-loading, a plateau, a weak comeback) |
 | **Low** | Polish, or borderline results that need more runs |
 
 ## Style
 
-- Lead each problem with what a player experiences, not with the metric's name.
+- Lead each problem with what a player experiences and the goal it costs, not with the
+  metric's name.
+- Trade-offs are stated in the designer's units ("−0.8 rewarded ads per player per day",
+  "+4 minutes per game"), never hidden inside "better balance".
 - Round numbers sensibly (whole percentages, one decimal for small values) and give
   ranges when variance matters.
 - Say when an effect is within sampling noise.

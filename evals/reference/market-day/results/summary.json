@@ -9,7 +9,8 @@
   "saffron-7-6-5-5",
   "equal-turns",
   "big-sale-+3-coins",
-  "second-seat-+2"
+  "second-seat-+2",
+  "later-seat-coins"
  ],
  "profiles": [
   "mirror-2p",
@@ -18,6 +19,316 @@
   "hoarder-vs-steady",
   "quick-vs-steady"
  ],
+ "scorecard": {
+  "goals": [
+   {
+    "name": "Half-time leader wins, 2 players",
+    "metric": "halfLeaderWon",
+    "profile": "mirror-2p",
+    "direction": "min"
+   }
+  ],
+  "constraints": [
+   {
+    "name": "Seat 1 wins, 2 players",
+    "metric": "won",
+    "profile": "mirror-2p",
+    "where": {
+     "seat": 1
+    },
+    "min": 0.47,
+    "max": 0.53
+   },
+   {
+    "name": "Seat 3 wins, 3 players",
+    "metric": "won",
+    "profile": "mirror-3p",
+    "where": {
+     "seat": 3
+    },
+    "min": 0.3,
+    "max": 0.37
+   },
+   {
+    "name": "Saffron plan vs steady",
+    "metric": "won",
+    "profile": "saffron-vs-steady",
+    "where": {
+     "strategy": "saffron"
+    },
+    "max": 0.55
+   },
+   {
+    "name": "Quick-sell plan vs steady",
+    "metric": "won",
+    "profile": "quick-vs-steady",
+    "where": {
+     "strategy": "quick"
+    },
+    "max": 0.55
+   }
+  ],
+  "rows": [
+   {
+    "scenario": "baseline",
+    "goals": [
+     {
+      "name": "Half-time leader wins, 2 players",
+      "value": 0.8335933437337494,
+      "pm": 0.016651058468246348,
+      "n": 1923,
+      "change": 0.0,
+      "better": false,
+      "worse": false
+     }
+    ],
+    "constraints": [
+     {
+      "name": "Seat 1 wins, 2 players",
+      "value": 0.53025,
+      "pm": 0.021619235500401734,
+      "ok": false
+     },
+     {
+      "name": "Seat 3 wins, 3 players",
+      "value": 0.2755,
+      "pm": 0.019375642119779442,
+      "ok": false
+     },
+     {
+      "name": "Saffron plan vs steady",
+      "value": 0.64125,
+      "pm": 0.020825234307012476,
+      "ok": false
+     },
+     {
+      "name": "Quick-sell plan vs steady",
+      "value": 0.5935,
+      "pm": 0.02116093520592603,
+      "ok": false
+     }
+    ],
+    "ok": false,
+    "score": 0.0,
+    "pareto": false
+   },
+   {
+    "scenario": "big-sale-+3-coins",
+    "goals": [
+     {
+      "name": "Half-time leader wins, 2 players",
+      "value": 0.8335933437337494,
+      "pm": 0.016651058468246348,
+      "n": 1923,
+      "change": 0.0,
+      "better": false,
+      "worse": false
+     }
+    ],
+    "constraints": [
+     {
+      "name": "Seat 1 wins, 2 players",
+      "value": 0.53025,
+      "pm": 0.021619235500401734,
+      "ok": false
+     },
+     {
+      "name": "Seat 3 wins, 3 players",
+      "value": 0.2755,
+      "pm": 0.019375642119779442,
+      "ok": false
+     },
+     {
+      "name": "Saffron plan vs steady",
+      "value": 0.64125,
+      "pm": 0.020825234307012476,
+      "ok": false
+     },
+     {
+      "name": "Quick-sell plan vs steady",
+      "value": 0.5935,
+      "pm": 0.02116093520592603,
+      "ok": false
+     }
+    ],
+    "ok": false,
+    "score": 0.0,
+    "pareto": false
+   },
+   {
+    "scenario": "later-seat-coins",
+    "goals": [
+     {
+      "name": "Half-time leader wins, 2 players",
+      "value": 0.8357070193285859,
+      "pm": 0.016383674963319456,
+      "n": 1966,
+      "change": 0.0025356195688525803,
+      "better": false,
+      "worse": false
+     }
+    ],
+    "constraints": [
+     {
+      "name": "Seat 1 wins, 2 players",
+      "value": 0.50275,
+      "pm": 0.021692779035456626,
+      "ok": true
+     },
+     {
+      "name": "Seat 3 wins, 3 players",
+      "value": 0.3055,
+      "pm": 0.02000131200799139,
+      "ok": true
+     },
+     {
+      "name": "Saffron plan vs steady",
+      "value": 0.64025,
+      "pm": 0.020826687672544284,
+      "ok": false
+     },
+     {
+      "name": "Quick-sell plan vs steady",
+      "value": 0.59975,
+      "pm": 0.021145817381845712,
+      "ok": false
+     }
+    ],
+    "ok": false,
+    "score": -0.0025356195688525803,
+    "pareto": false
+   },
+   {
+    "scenario": "equal-turns",
+    "goals": [
+     {
+      "name": "Half-time leader wins, 2 players",
+      "value": 0.8377535101404057,
+      "pm": 0.016482578874861008,
+      "n": 1923,
+      "change": 0.004990642545227721,
+      "better": false,
+      "worse": false
+     }
+    ],
+    "constraints": [
+     {
+      "name": "Seat 1 wins, 2 players",
+      "value": 0.523,
+      "pm": 0.021586367977064196,
+      "ok": true
+     },
+     {
+      "name": "Seat 3 wins, 3 players",
+      "value": 0.28775,
+      "pm": 0.019620821294332565,
+      "ok": false
+     },
+     {
+      "name": "Saffron plan vs steady",
+      "value": 0.63775,
+      "pm": 0.020927713313744052,
+      "ok": false
+     },
+     {
+      "name": "Quick-sell plan vs steady",
+      "value": 0.596,
+      "pm": 0.021139412115105345,
+      "ok": false
+     }
+    ],
+    "ok": false,
+    "score": -0.004990642545227721,
+    "pareto": false
+   },
+   {
+    "scenario": "second-seat-+2",
+    "goals": [
+     {
+      "name": "Half-time leader wins, 2 players",
+      "value": 0.8412455334354262,
+      "pm": 0.016187287857717347,
+      "n": 1959,
+      "change": 0.009179763441250464,
+      "better": false,
+      "worse": false
+     }
+    ],
+    "constraints": [
+     {
+      "name": "Seat 1 wins, 2 players",
+      "value": 0.50075,
+      "pm": 0.021715224959633923,
+      "ok": true
+     },
+     {
+      "name": "Seat 3 wins, 3 players",
+      "value": 0.2575,
+      "pm": 0.019030076902457647,
+      "ok": false
+     },
+     {
+      "name": "Saffron plan vs steady",
+      "value": 0.63375,
+      "pm": 0.02090869617020159,
+      "ok": false
+     },
+     {
+      "name": "Quick-sell plan vs steady",
+      "value": 0.59475,
+      "pm": 0.021189962369070104,
+      "ok": false
+     }
+    ],
+    "ok": false,
+    "score": -0.009179763441250464,
+    "pareto": false
+   },
+   {
+    "scenario": "saffron-7-6-5-5",
+    "goals": [
+     {
+      "name": "Half-time leader wins, 2 players",
+      "value": 0.8554587391081496,
+      "pm": 0.01560753145177812,
+      "n": 1951,
+      "change": 0.026230290271348513,
+      "better": false,
+      "worse": false
+     }
+    ],
+    "constraints": [
+     {
+      "name": "Seat 1 wins, 2 players",
+      "value": 0.5485,
+      "pm": 0.02157197425449574,
+      "ok": false
+     },
+     {
+      "name": "Seat 3 wins, 3 players",
+      "value": 0.271,
+      "pm": 0.01908630584307409,
+      "ok": false
+     },
+     {
+      "name": "Saffron plan vs steady",
+      "value": 0.63475,
+      "pm": 0.020838795110102053,
+      "ok": false
+     },
+     {
+      "name": "Quick-sell plan vs steady",
+      "value": 0.6505,
+      "pm": 0.02049625448768669,
+      "ok": false
+     }
+    ],
+    "ok": false,
+    "score": -0.026230290271348513,
+    "pareto": false
+   }
+  ]
+ },
  "flags": {
   "baseline": [
    {
@@ -330,6 +641,58 @@
        "n": 6000
       }
      ]
+    }
+   },
+   {
+    "id": "constant:extraTurns:mirror-2p:mirror-2p",
+    "part": "mirror-2p",
+    "kind": "constant",
+    "severity": "info",
+    "metric": "extraTurns",
+    "scenario": "baseline",
+    "profile": "mirror-2p",
+    "message": "extraTurns is always 0.00 for mirror-2p",
+    "evidence": {
+     "value": 0.0
+    }
+   },
+   {
+    "id": "constant:extraTurns:mirror-3p:mirror-3p",
+    "part": "mirror-3p",
+    "kind": "constant",
+    "severity": "info",
+    "metric": "extraTurns",
+    "scenario": "baseline",
+    "profile": "mirror-3p",
+    "message": "extraTurns is always 0.00 for mirror-3p",
+    "evidence": {
+     "value": 0.0
+    }
+   },
+   {
+    "id": "constant:extraTurns:quick-vs-steady:quick-vs-steady",
+    "part": "quick-vs-steady",
+    "kind": "constant",
+    "severity": "info",
+    "metric": "extraTurns",
+    "scenario": "baseline",
+    "profile": "quick-vs-steady",
+    "message": "extraTurns is always 0.00 for quick-vs-steady",
+    "evidence": {
+     "value": 0.0
+    }
+   },
+   {
+    "id": "constant:extraTurns:saffron-vs-steady:saffron-vs-steady",
+    "part": "saffron-vs-steady",
+    "kind": "constant",
+    "severity": "info",
+    "metric": "extraTurns",
+    "scenario": "baseline",
+    "profile": "saffron-vs-steady",
+    "message": "extraTurns is always 0.00 for saffron-vs-steady",
+    "evidence": {
+     "value": 0.0
     }
    }
   ],
@@ -647,49 +1010,55 @@
     }
    },
    {
-    "id": "uneven:won:Strategy against the steady player \u00b7 strategy=steady:saffron-vs-steady, hoarder-vs-steady, quick-vs-steady",
-    "part": "Strategy against the steady player \u00b7 strategy=steady",
-    "kind": "uneven",
-    "severity": "medium",
-    "metric": "won",
+    "id": "constant:extraTurns:mirror-2p:mirror-2p",
+    "part": "mirror-2p",
+    "kind": "constant",
+    "severity": "info",
+    "metric": "extraTurns",
     "scenario": "saffron-7-6-5-5",
-    "profile": "saffron-vs-steady, hoarder-vs-steady, quick-vs-steady",
-    "message": "Strategy against the steady player: strategy = steady has 0.445 (95% CI 0.433\u20130.458, n=6000) against a fair 0.500 \u00b1 0.050",
+    "profile": "mirror-2p",
+    "message": "extraTurns is always 0.00 for mirror-2p",
     "evidence": {
-     "group": "steady",
-     "by": "strategy",
-     "value": 0.4454166666666667,
-     "fair": 0.5,
-     "table": [
-      {
-       "group": "hoarder",
-       "mean": 0.3785,
-       "lo": 0.35756825522873,
-       "hi": 0.39943174477127,
-       "n": 2000
-      },
-      {
-       "group": "quick",
-       "mean": 0.6505,
-       "lo": 0.6300037455123133,
-       "hi": 0.6709962544876866,
-       "n": 2000
-      },
-      {
-       "group": "saffron",
-       "mean": 0.63475,
-       "lo": 0.613911204889898,
-       "hi": 0.655588795110102,
-       "n": 2000
-      },
-      {
-       "group": "steady",
-       "mean": 0.4454166666666667,
-       "lo": 0.4330265064861614,
-       "hi": 0.45780682684717194,
-       "n": 6000
-      }
-     ]
+     "value": 0.0
+    }
+   },
+   {
+    "id": "constant:extraTurns:mirror-3p:mirror-3p",
+    "part": "mirror-3p",
+    "kind": "constant",
+    "severity": "info",
+    "metric": "extraTurns",
+    "scenario": "saffron-7-6-5-5",
+    "profile": "mirror-3p",
+    "message": "extraTurns is always 0.00 for mirror-3p",
+    "evidence": {
+     "value": 0.0
+    }
+   },
+   {
+    "id": "constant:extraTurns:quick-vs-steady:quick-vs-steady",
+    "part": "quick-vs-steady",
+    "kind": "constant",
+    "severity": "info",
+    "metric": "extraTurns",
+    "scenario": "saffron-7-6-5-5",
+    "profile": "quick-vs-steady",
+    "message": "extraTurns is always 0.00 for quick-vs-steady",
+    "evidence": {
+     "value": 0.0
+    }
+   },
+   {
+    "id": "constant:extraTurns:saffron-vs-steady:saffron-vs-steady",
+    "part": "saffron-vs-steady",
+    "kind": "constant",
+    "severity": "info",
+    "metric": "extraTurns",
+    "scenario": "saffron-7-6-5-5",
+    "profile": "saffron-vs-steady",
+    "message": "extraTurns is always 0.00 for saffron-vs-steady",
+    "evidence": {
+     "value": 0.0
     }
    }
   ],
@@ -965,6 +1334,58 @@
        "n": 6000
       }
      ]
+    }
+   },
+   {
+    "id": "constant:extraTurns:mirror-2p:mirror-2p",
+    "part": "mirror-2p",
+    "kind": "constant",
+    "severity": "info",
+    "metric": "extraTurns",
+    "scenario": "equal-turns",
+    "profile": "mirror-2p",
+    "message": "extraTurns is always 0.00 for mirror-2p",
+    "evidence": {
+     "value": 0.0
+    }
+   },
+   {
+    "id": "constant:extraTurns:mirror-3p:mirror-3p",
+    "part": "mirror-3p",
+    "kind": "constant",
+    "severity": "info",
+    "metric": "extraTurns",
+    "scenario": "equal-turns",
+    "profile": "mirror-3p",
+    "message": "extraTurns is always 0.00 for mirror-3p",
+    "evidence": {
+     "value": 0.0
+    }
+   },
+   {
+    "id": "constant:extraTurns:quick-vs-steady:quick-vs-steady",
+    "part": "quick-vs-steady",
+    "kind": "constant",
+    "severity": "info",
+    "metric": "extraTurns",
+    "scenario": "equal-turns",
+    "profile": "quick-vs-steady",
+    "message": "extraTurns is always 0.00 for quick-vs-steady",
+    "evidence": {
+     "value": 0.0
+    }
+   },
+   {
+    "id": "constant:extraTurns:saffron-vs-steady:saffron-vs-steady",
+    "part": "saffron-vs-steady",
+    "kind": "constant",
+    "severity": "info",
+    "metric": "extraTurns",
+    "scenario": "equal-turns",
+    "profile": "saffron-vs-steady",
+    "message": "extraTurns is always 0.00 for saffron-vs-steady",
+    "evidence": {
+     "value": 0.0
     }
    }
   ],
@@ -1282,52 +1703,6 @@
     }
    },
    {
-    "id": "uneven:won:Strategy against the steady player \u00b7 strategy=steady:saffron-vs-steady, hoarder-vs-steady, quick-vs-steady",
-    "part": "Strategy against the steady player \u00b7 strategy=steady",
-    "kind": "uneven",
-    "severity": "medium",
-    "metric": "won",
-    "scenario": "big-sale-+3-coins",
-    "profile": "saffron-vs-steady, hoarder-vs-steady, quick-vs-steady",
-    "message": "Strategy against the steady player: strategy = steady has 0.442 (95% CI 0.430\u20130.455, n=6000) against a fair 0.500 \u00b1 0.050",
-    "evidence": {
-     "group": "steady",
-     "by": "strategy",
-     "value": 0.44233333333333336,
-     "fair": 0.5,
-     "table": [
-      {
-       "group": "hoarder",
-       "mean": 0.43825,
-       "lo": 0.4167487786204964,
-       "hi": 0.4597512213795035,
-       "n": 2000
-      },
-      {
-       "group": "quick",
-       "mean": 0.5935,
-       "lo": 0.572339064794074,
-       "hi": 0.614660935205926,
-       "n": 2000
-      },
-      {
-       "group": "saffron",
-       "mean": 0.64125,
-       "lo": 0.6204247656929875,
-       "hi": 0.6620752343070124,
-       "n": 2000
-      },
-      {
-       "group": "steady",
-       "mean": 0.44233333333333336,
-       "lo": 0.4299209114134259,
-       "hi": 0.4547457552532408,
-       "n": 6000
-      }
-     ]
-    }
-   },
-   {
     "id": "constant:extraTurns::all",
     "part": "",
     "kind": "constant",
@@ -1589,60 +1964,289 @@
       }
      ]
     }
+   },
+   {
+    "id": "constant:extraTurns:mirror-2p:mirror-2p",
+    "part": "mirror-2p",
+    "kind": "constant",
+    "severity": "info",
+    "metric": "extraTurns",
+    "scenario": "second-seat-+2",
+    "profile": "mirror-2p",
+    "message": "extraTurns is always 0.00 for mirror-2p",
+    "evidence": {
+     "value": 0.0
+    }
+   },
+   {
+    "id": "constant:extraTurns:mirror-3p:mirror-3p",
+    "part": "mirror-3p",
+    "kind": "constant",
+    "severity": "info",
+    "metric": "extraTurns",
+    "scenario": "second-seat-+2",
+    "profile": "mirror-3p",
+    "message": "extraTurns is always 0.00 for mirror-3p",
+    "evidence": {
+     "value": 0.0
+    }
+   },
+   {
+    "id": "constant:extraTurns:quick-vs-steady:quick-vs-steady",
+    "part": "quick-vs-steady",
+    "kind": "constant",
+    "severity": "info",
+    "metric": "extraTurns",
+    "scenario": "second-seat-+2",
+    "profile": "quick-vs-steady",
+    "message": "extraTurns is always 0.00 for quick-vs-steady",
+    "evidence": {
+     "value": 0.0
+    }
+   },
+   {
+    "id": "constant:extraTurns:saffron-vs-steady:saffron-vs-steady",
+    "part": "saffron-vs-steady",
+    "kind": "constant",
+    "severity": "info",
+    "metric": "extraTurns",
+    "scenario": "second-seat-+2",
+    "profile": "saffron-vs-steady",
+    "message": "extraTurns is always 0.00 for saffron-vs-steady",
+    "evidence": {
+     "value": 0.0
+    }
+   }
+  ],
+  "later-seat-coins": [
+   {
+    "id": "uneven:won:Strategy against the steady player \u00b7 strategy=hoarder:saffron-vs-steady, hoarder-vs-steady, quick-vs-steady",
+    "part": "Strategy against the steady player \u00b7 strategy=hoarder",
+    "kind": "uneven",
+    "severity": "high",
+    "metric": "won",
+    "scenario": "later-seat-coins",
+    "profile": "saffron-vs-steady, hoarder-vs-steady, quick-vs-steady",
+    "message": "Strategy against the steady player: strategy = hoarder has 0.365 (95% CI 0.345\u20130.386, n=2000) against a fair 0.500 \u00b1 0.050",
+    "evidence": {
+     "group": "hoarder",
+     "by": "strategy",
+     "value": 0.3655,
+     "fair": 0.5,
+     "table": [
+      {
+       "group": "hoarder",
+       "mean": 0.3655,
+       "lo": 0.3445488920994347,
+       "hi": 0.3864511079005653,
+       "n": 2000
+      },
+      {
+       "group": "quick",
+       "mean": 0.59975,
+       "lo": 0.5786041826181543,
+       "hi": 0.6208958173818457,
+       "n": 2000
+      },
+      {
+       "group": "saffron",
+       "mean": 0.64025,
+       "lo": 0.6194233123274557,
+       "hi": 0.6610766876725442,
+       "n": 2000
+      },
+      {
+       "group": "steady",
+       "mean": 0.4648333333333333,
+       "lo": 0.4523436252985668,
+       "hi": 0.47732304136809983,
+       "n": 6000
+      }
+     ]
+    }
+   },
+   {
+    "id": "uneven:won:Strategy against the steady player \u00b7 strategy=saffron:saffron-vs-steady, hoarder-vs-steady, quick-vs-steady",
+    "part": "Strategy against the steady player \u00b7 strategy=saffron",
+    "kind": "uneven",
+    "severity": "high",
+    "metric": "won",
+    "scenario": "later-seat-coins",
+    "profile": "saffron-vs-steady, hoarder-vs-steady, quick-vs-steady",
+    "message": "Strategy against the steady player: strategy = saffron has 0.640 (95% CI 0.619\u20130.661, n=2000) against a fair 0.500 \u00b1 0.050",
+    "evidence": {
+     "group": "saffron",
+     "by": "strategy",
+     "value": 0.64025,
+     "fair": 0.5,
+     "table": [
+      {
+       "group": "hoarder",
+       "mean": 0.3655,
+       "lo": 0.3445488920994347,
+       "hi": 0.3864511079005653,
+       "n": 2000
+      },
+      {
+       "group": "quick",
+       "mean": 0.59975,
+       "lo": 0.5786041826181543,
+       "hi": 0.6208958173818457,
+       "n": 2000
+      },
+      {
+       "group": "saffron",
+       "mean": 0.64025,
+       "lo": 0.6194233123274557,
+       "hi": 0.6610766876725442,
+       "n": 2000
+      },
+      {
+       "group": "steady",
+       "mean": 0.4648333333333333,
+       "lo": 0.4523436252985668,
+       "hi": 0.47732304136809983,
+       "n": 6000
+      }
+     ]
+    }
+   },
+   {
+    "id": "off-target:halfLeaderWon:Comebacks stay possible:mirror-2p",
+    "part": "Comebacks stay possible",
+    "kind": "off-target",
+    "severity": "medium",
+    "metric": "halfLeaderWon",
+    "scenario": "later-seat-coins",
+    "profile": "mirror-2p",
+    "message": "Comebacks stay possible: mean 0.84, target \u2264 0.75",
+    "evidence": {
+     "target": {
+      "metric": "halfLeaderWon",
+      "profile": "mirror-2p",
+      "max": 0.75,
+      "label": "Comebacks stay possible",
+      "severity": "medium"
+     },
+     "misses": [
+      [
+       "all",
+       0.8357070193285859
+      ]
+     ],
+     "clear": [
+      [
+       "all",
+       0.8357070193285859
+      ]
+     ],
+     "borderline": []
+    }
+   },
+   {
+    "id": "uneven:won:Strategy against the steady player \u00b7 strategy=quick:saffron-vs-steady, hoarder-vs-steady, quick-vs-steady",
+    "part": "Strategy against the steady player \u00b7 strategy=quick",
+    "kind": "uneven",
+    "severity": "medium",
+    "metric": "won",
+    "scenario": "later-seat-coins",
+    "profile": "saffron-vs-steady, hoarder-vs-steady, quick-vs-steady",
+    "message": "Strategy against the steady player: strategy = quick has 0.600 (95% CI 0.579\u20130.621, n=2000) against a fair 0.500 \u00b1 0.050",
+    "evidence": {
+     "group": "quick",
+     "by": "strategy",
+     "value": 0.59975,
+     "fair": 0.5,
+     "table": [
+      {
+       "group": "hoarder",
+       "mean": 0.3655,
+       "lo": 0.3445488920994347,
+       "hi": 0.3864511079005653,
+       "n": 2000
+      },
+      {
+       "group": "quick",
+       "mean": 0.59975,
+       "lo": 0.5786041826181543,
+       "hi": 0.6208958173818457,
+       "n": 2000
+      },
+      {
+       "group": "saffron",
+       "mean": 0.64025,
+       "lo": 0.6194233123274557,
+       "hi": 0.6610766876725442,
+       "n": 2000
+      },
+      {
+       "group": "steady",
+       "mean": 0.4648333333333333,
+       "lo": 0.4523436252985668,
+       "hi": 0.47732304136809983,
+       "n": 6000
+      }
+     ]
+    }
+   },
+   {
+    "id": "constant:extraTurns:mirror-2p:mirror-2p",
+    "part": "mirror-2p",
+    "kind": "constant",
+    "severity": "info",
+    "metric": "extraTurns",
+    "scenario": "later-seat-coins",
+    "profile": "mirror-2p",
+    "message": "extraTurns is always 0.00 for mirror-2p",
+    "evidence": {
+     "value": 0.0
+    }
+   },
+   {
+    "id": "constant:extraTurns:mirror-3p:mirror-3p",
+    "part": "mirror-3p",
+    "kind": "constant",
+    "severity": "info",
+    "metric": "extraTurns",
+    "scenario": "later-seat-coins",
+    "profile": "mirror-3p",
+    "message": "extraTurns is always 0.00 for mirror-3p",
+    "evidence": {
+     "value": 0.0
+    }
+   },
+   {
+    "id": "constant:extraTurns:quick-vs-steady:quick-vs-steady",
+    "part": "quick-vs-steady",
+    "kind": "constant",
+    "severity": "info",
+    "metric": "extraTurns",
+    "scenario": "later-seat-coins",
+    "profile": "quick-vs-steady",
+    "message": "extraTurns is always 0.00 for quick-vs-steady",
+    "evidence": {
+     "value": 0.0
+    }
+   },
+   {
+    "id": "constant:extraTurns:saffron-vs-steady:saffron-vs-steady",
+    "part": "saffron-vs-steady",
+    "kind": "constant",
+    "severity": "info",
+    "metric": "extraTurns",
+    "scenario": "later-seat-coins",
+    "profile": "saffron-vs-steady",
+    "message": "extraTurns is always 0.00 for saffron-vs-steady",
+    "evidence": {
+     "value": 0.0
+    }
    }
   ]
  },
  "compare": {
   "saffron-7-6-5-5": {
    "fixed": [],
-   "new": [
-    {
-     "id": "uneven:won:Strategy against the steady player \u00b7 strategy=steady:saffron-vs-steady, hoarder-vs-steady, quick-vs-steady",
-     "part": "Strategy against the steady player \u00b7 strategy=steady",
-     "kind": "uneven",
-     "severity": "medium",
-     "metric": "won",
-     "scenario": "saffron-7-6-5-5",
-     "profile": "saffron-vs-steady, hoarder-vs-steady, quick-vs-steady",
-     "message": "Strategy against the steady player: strategy = steady has 0.445 (95% CI 0.433\u20130.458, n=6000) against a fair 0.500 \u00b1 0.050",
-     "evidence": {
-      "group": "steady",
-      "by": "strategy",
-      "value": 0.4454166666666667,
-      "fair": 0.5,
-      "table": [
-       {
-        "group": "hoarder",
-        "mean": 0.3785,
-        "lo": 0.35756825522873,
-        "hi": 0.39943174477127,
-        "n": 2000
-       },
-       {
-        "group": "quick",
-        "mean": 0.6505,
-        "lo": 0.6300037455123133,
-        "hi": 0.6709962544876866,
-        "n": 2000
-       },
-       {
-        "group": "saffron",
-        "mean": 0.63475,
-        "lo": 0.613911204889898,
-        "hi": 0.655588795110102,
-        "n": 2000
-       },
-       {
-        "group": "steady",
-        "mean": 0.4454166666666667,
-        "lo": 0.4330265064861614,
-        "hi": 0.45780682684717194,
-        "n": 6000
-       }
-      ]
-     }
-    }
-   ],
+   "new": [],
    "still": [
     {
      "id": "uneven:won:Seat advantage, 2 players \u00b7 seat=1:mirror-2p",
@@ -2017,17 +2621,6 @@
     },
     {
      "metric": "coins",
-     "profile": "hoarder-vs-steady",
-     "base": 44.29925,
-     "whatif": 41.869,
-     "change": -0.0548598452569739,
-     "base_first": 44.29925,
-     "base_last": 44.29925,
-     "whatif_first": 41.869,
-     "whatif_last": 41.869
-    },
-    {
-     "metric": "coins",
      "profile": "quick-vs-steady",
      "base": 52.40375,
      "whatif": 48.7225,
@@ -2069,17 +2662,6 @@
      "base_last": 29.303,
      "whatif_first": 29.33025,
      "whatif_last": 29.33025
-    },
-    {
-     "metric": "turns",
-     "profile": "hoarder-vs-steady",
-     "base": 27.27675,
-     "whatif": 27.29575,
-     "change": 0.000696563923488022,
-     "base_first": 27.27675,
-     "base_last": 27.27675,
-     "whatif_first": 27.29575,
-     "whatif_last": 27.29575
     },
     {
      "metric": "turns",
@@ -2127,17 +2709,6 @@
     },
     {
      "metric": "halfLeaderWon",
-     "profile": "hoarder-vs-steady",
-     "base": 0.8099547511312217,
-     "whatif": 0.8141993957703928,
-     "change": 0.005240594777970985,
-     "base_first": 0.8099547511312217,
-     "base_last": 0.8099547511312217,
-     "whatif_first": 0.8141993957703928,
-     "whatif_last": 0.8141993957703928
-    },
-    {
-     "metric": "halfLeaderWon",
      "profile": "quick-vs-steady",
      "base": 0.8523929471032745,
      "whatif": 0.8530757498729029,
@@ -2146,6 +2717,92 @@
      "base_last": 0.8523929471032745,
      "whatif_first": 0.8530757498729029,
      "whatif_last": 0.8530757498729029
+    }
+   ],
+   "groups": [
+    {
+     "label": "Seat advantage, 2 players",
+     "by": "seat",
+     "fair": 0.5,
+     "rows": [
+      {
+       "group": 1,
+       "base": 0.53025,
+       "whatif": 0.5485,
+       "lo": 0.5269280257455042,
+       "hi": 0.5700719742544957
+      },
+      {
+       "group": 2,
+       "base": 0.46975,
+       "whatif": 0.4515,
+       "lo": 0.42992802574550454,
+       "hi": 0.4730719742544955
+      }
+     ]
+    },
+    {
+     "label": "Seat advantage, 3 players",
+     "by": "seat",
+     "fair": 0.3333333333333333,
+     "rows": [
+      {
+       "group": 1,
+       "base": 0.374,
+       "whatif": 0.398,
+       "lo": 0.3769032672466459,
+       "hi": 0.41909673275335413
+      },
+      {
+       "group": 2,
+       "base": 0.3505,
+       "whatif": 0.331,
+       "lo": 0.3107352729902326,
+       "hi": 0.3512647270097674
+      },
+      {
+       "group": 3,
+       "base": 0.2755,
+       "whatif": 0.271,
+       "lo": 0.25191369415692594,
+       "hi": 0.2900863058430741
+      }
+     ]
+    },
+    {
+     "label": "Strategy against the steady player",
+     "by": "strategy",
+     "fair": 0.5,
+     "rows": [
+      {
+       "group": "hoarder",
+       "base": 0.36475,
+       "whatif": 0.3785,
+       "lo": 0.35756825522873,
+       "hi": 0.39943174477127
+      },
+      {
+       "group": "quick",
+       "base": 0.5935,
+       "whatif": 0.6505,
+       "lo": 0.6300037455123133,
+       "hi": 0.6709962544876866
+      },
+      {
+       "group": "saffron",
+       "base": 0.64125,
+       "whatif": 0.63475,
+       "lo": 0.613911204889898,
+       "hi": 0.655588795110102
+      },
+      {
+       "group": "steady",
+       "base": 0.4668333333333333,
+       "whatif": 0.4454166666666667,
+       "lo": 0.4330265064861614,
+       "hi": 0.45780682684717194
+      }
+     ]
     }
    ]
   },
@@ -2524,17 +3181,6 @@
     },
     {
      "metric": "coins",
-     "profile": "hoarder-vs-steady",
-     "base": 44.29925,
-     "whatif": 44.562,
-     "change": 0.005931251657759373,
-     "base_first": 44.29925,
-     "base_last": 44.29925,
-     "whatif_first": 44.562,
-     "whatif_last": 44.562
-    },
-    {
-     "metric": "coins",
      "profile": "quick-vs-steady",
      "base": 52.40375,
      "whatif": 52.598,
@@ -2576,17 +3222,6 @@
      "base_last": 29.303,
      "whatif_first": 29.5465,
      "whatif_last": 29.5465
-    },
-    {
-     "metric": "turns",
-     "profile": "hoarder-vs-steady",
-     "base": 27.27675,
-     "whatif": 27.42575,
-     "change": 0.005462527610510816,
-     "base_first": 27.27675,
-     "base_last": 27.27675,
-     "whatif_first": 27.42575,
-     "whatif_last": 27.42575
     },
     {
      "metric": "turns",
@@ -2634,17 +3269,6 @@
     },
     {
      "metric": "halfLeaderWon",
-     "profile": "hoarder-vs-steady",
-     "base": 0.8099547511312217,
-     "whatif": 0.8069381598793364,
-     "change": -0.0037243947858472863,
-     "base_first": 0.8099547511312217,
-     "base_last": 0.8099547511312217,
-     "whatif_first": 0.8069381598793364,
-     "whatif_last": 0.8069381598793364
-    },
-    {
-     "metric": "halfLeaderWon",
      "profile": "quick-vs-steady",
      "base": 0.8523929471032745,
      "whatif": 0.8498740554156171,
@@ -2654,58 +3278,97 @@
      "whatif_first": 0.8498740554156171,
      "whatif_last": 0.8498740554156171
     }
+   ],
+   "groups": [
+    {
+     "label": "Seat advantage, 2 players",
+     "by": "seat",
+     "fair": 0.5,
+     "rows": [
+      {
+       "group": 1,
+       "base": 0.53025,
+       "whatif": 0.523,
+       "lo": 0.5014136320229359,
+       "hi": 0.5445863679770642
+      },
+      {
+       "group": 2,
+       "base": 0.46975,
+       "whatif": 0.477,
+       "lo": 0.45541363202293583,
+       "hi": 0.4985863679770641
+      }
+     ]
+    },
+    {
+     "label": "Seat advantage, 3 players",
+     "by": "seat",
+     "fair": 0.3333333333333333,
+     "rows": [
+      {
+       "group": 1,
+       "base": 0.374,
+       "whatif": 0.3625,
+       "lo": 0.3416438602737197,
+       "hi": 0.3833561397262803
+      },
+      {
+       "group": 2,
+       "base": 0.3505,
+       "whatif": 0.34975,
+       "lo": 0.3290693867636396,
+       "hi": 0.3704306132363604
+      },
+      {
+       "group": 3,
+       "base": 0.2755,
+       "whatif": 0.28775,
+       "lo": 0.26812917870566744,
+       "hi": 0.3073708212943326
+      }
+     ]
+    },
+    {
+     "label": "Strategy against the steady player",
+     "by": "strategy",
+     "fair": 0.5,
+     "rows": [
+      {
+       "group": "hoarder",
+       "base": 0.36475,
+       "whatif": 0.3625,
+       "lo": 0.3414946605087288,
+       "hi": 0.3835053394912712
+      },
+      {
+       "group": "quick",
+       "base": 0.5935,
+       "whatif": 0.596,
+       "lo": 0.5748605878848946,
+       "hi": 0.6171394121151054
+      },
+      {
+       "group": "saffron",
+       "base": 0.64125,
+       "whatif": 0.63775,
+       "lo": 0.6168222866862559,
+       "hi": 0.6586777133137441
+      },
+      {
+       "group": "steady",
+       "base": 0.4668333333333333,
+       "whatif": 0.46791666666666665,
+       "lo": 0.45539924210701205,
+       "hi": 0.48043409122632125
+      }
+     ]
+    }
    ]
   },
   "big-sale-+3-coins": {
    "fixed": [],
-   "new": [
-    {
-     "id": "uneven:won:Strategy against the steady player \u00b7 strategy=steady:saffron-vs-steady, hoarder-vs-steady, quick-vs-steady",
-     "part": "Strategy against the steady player \u00b7 strategy=steady",
-     "kind": "uneven",
-     "severity": "medium",
-     "metric": "won",
-     "scenario": "big-sale-+3-coins",
-     "profile": "saffron-vs-steady, hoarder-vs-steady, quick-vs-steady",
-     "message": "Strategy against the steady player: strategy = steady has 0.442 (95% CI 0.430\u20130.455, n=6000) against a fair 0.500 \u00b1 0.050",
-     "evidence": {
-      "group": "steady",
-      "by": "strategy",
-      "value": 0.44233333333333336,
-      "fair": 0.5,
-      "table": [
-       {
-        "group": "hoarder",
-        "mean": 0.43825,
-        "lo": 0.4167487786204964,
-        "hi": 0.4597512213795035,
-        "n": 2000
-       },
-       {
-        "group": "quick",
-        "mean": 0.5935,
-        "lo": 0.572339064794074,
-        "hi": 0.614660935205926,
-        "n": 2000
-       },
-       {
-        "group": "saffron",
-        "mean": 0.64125,
-        "lo": 0.6204247656929875,
-        "hi": 0.6620752343070124,
-        "n": 2000
-       },
-       {
-        "group": "steady",
-        "mean": 0.44233333333333336,
-        "lo": 0.4299209114134259,
-        "hi": 0.4547457552532408,
-        "n": 6000
-       }
-      ]
-     }
-    }
-   ],
+   "new": [],
    "still": [
     {
      "id": "uneven:won:Strategy against the steady player \u00b7 strategy=saffron:saffron-vs-steady, hoarder-vs-steady, quick-vs-steady",
@@ -3080,17 +3743,6 @@
     },
     {
      "metric": "coins",
-     "profile": "hoarder-vs-steady",
-     "base": 44.29925,
-     "whatif": 51.32075,
-     "change": 0.15850155476672848,
-     "base_first": 44.29925,
-     "base_last": 44.29925,
-     "whatif_first": 51.32075,
-     "whatif_last": 51.32075
-    },
-    {
-     "metric": "coins",
      "profile": "quick-vs-steady",
      "base": 52.40375,
      "whatif": 52.40375,
@@ -3132,17 +3784,6 @@
      "base_last": 29.303,
      "whatif_first": 29.303,
      "whatif_last": 29.303
-    },
-    {
-     "metric": "turns",
-     "profile": "hoarder-vs-steady",
-     "base": 27.27675,
-     "whatif": 27.42875,
-     "change": 0.005572511387903655,
-     "base_first": 27.27675,
-     "base_last": 27.27675,
-     "whatif_first": 27.42875,
-     "whatif_last": 27.42875
     },
     {
      "metric": "turns",
@@ -3190,17 +3831,6 @@
     },
     {
      "metric": "halfLeaderWon",
-     "profile": "hoarder-vs-steady",
-     "base": 0.8099547511312217,
-     "whatif": 0.808316430020284,
-     "change": -0.002022731650934326,
-     "base_first": 0.8099547511312217,
-     "base_last": 0.8099547511312217,
-     "whatif_first": 0.808316430020284,
-     "whatif_last": 0.808316430020284
-    },
-    {
-     "metric": "halfLeaderWon",
      "profile": "quick-vs-steady",
      "base": 0.8523929471032745,
      "whatif": 0.8523929471032745,
@@ -3209,6 +3839,92 @@
      "base_last": 0.8523929471032745,
      "whatif_first": 0.8523929471032745,
      "whatif_last": 0.8523929471032745
+    }
+   ],
+   "groups": [
+    {
+     "label": "Seat advantage, 2 players",
+     "by": "seat",
+     "fair": 0.5,
+     "rows": [
+      {
+       "group": 1,
+       "base": 0.53025,
+       "whatif": 0.53025,
+       "lo": 0.5086307644995982,
+       "hi": 0.5518692355004018
+      },
+      {
+       "group": 2,
+       "base": 0.46975,
+       "whatif": 0.46975,
+       "lo": 0.44813076449959865,
+       "hi": 0.49136923550040135
+      }
+     ]
+    },
+    {
+     "label": "Seat advantage, 3 players",
+     "by": "seat",
+     "fair": 0.3333333333333333,
+     "rows": [
+      {
+       "group": 1,
+       "base": 0.374,
+       "whatif": 0.374,
+       "lo": 0.3529818444998063,
+       "hi": 0.3950181555001937
+      },
+      {
+       "group": 2,
+       "base": 0.3505,
+       "whatif": 0.3505,
+       "lo": 0.3297915365120923,
+       "hi": 0.37120846348790765
+      },
+      {
+       "group": 3,
+       "base": 0.2755,
+       "whatif": 0.2755,
+       "lo": 0.2561243578802206,
+       "hi": 0.29487564211977946
+      }
+     ]
+    },
+    {
+     "label": "Strategy against the steady player",
+     "by": "strategy",
+     "fair": 0.5,
+     "rows": [
+      {
+       "group": "hoarder",
+       "base": 0.36475,
+       "whatif": 0.43825,
+       "lo": 0.4167487786204964,
+       "hi": 0.4597512213795035
+      },
+      {
+       "group": "quick",
+       "base": 0.5935,
+       "whatif": 0.5935,
+       "lo": 0.572339064794074,
+       "hi": 0.614660935205926
+      },
+      {
+       "group": "saffron",
+       "base": 0.64125,
+       "whatif": 0.64125,
+       "lo": 0.6204247656929875,
+       "hi": 0.6620752343070124
+      },
+      {
+       "group": "steady",
+       "base": 0.4668333333333333,
+       "whatif": 0.44233333333333336,
+       "lo": 0.4299209114134259,
+       "hi": 0.4547457552532408
+      }
+     ]
     }
    ]
   },
@@ -3621,17 +4337,6 @@
     },
     {
      "metric": "coins",
-     "profile": "hoarder-vs-steady",
-     "base": 44.29925,
-     "whatif": 45.29925,
-     "change": 0.022573745605173903,
-     "base_first": 44.29925,
-     "base_last": 44.29925,
-     "whatif_first": 45.29925,
-     "whatif_last": 45.29925
-    },
-    {
-     "metric": "coins",
      "profile": "quick-vs-steady",
      "base": 52.40375,
      "whatif": 53.40375,
@@ -3673,17 +4378,6 @@
      "base_last": 29.303,
      "whatif_first": 29.303,
      "whatif_last": 29.303
-    },
-    {
-     "metric": "turns",
-     "profile": "hoarder-vs-steady",
-     "base": 27.27675,
-     "whatif": 27.27675,
-     "change": 0.0,
-     "base_first": 27.27675,
-     "base_last": 27.27675,
-     "whatif_first": 27.27675,
-     "whatif_last": 27.27675
     },
     {
      "metric": "turns",
@@ -3731,17 +4425,6 @@
     },
     {
      "metric": "halfLeaderWon",
-     "profile": "hoarder-vs-steady",
-     "base": 0.8099547511312217,
-     "whatif": 0.8148710166919575,
-     "change": 0.006069802731411197,
-     "base_first": 0.8099547511312217,
-     "base_last": 0.8099547511312217,
-     "whatif_first": 0.8148710166919575,
-     "whatif_last": 0.8148710166919575
-    },
-    {
-     "metric": "halfLeaderWon",
      "profile": "quick-vs-steady",
      "base": 0.8523929471032745,
      "whatif": 0.8513994910941476,
@@ -3750,6 +4433,643 @@
      "base_last": 0.8523929471032745,
      "whatif_first": 0.8513994910941476,
      "whatif_last": 0.8513994910941476
+    }
+   ],
+   "groups": [
+    {
+     "label": "Seat advantage, 2 players",
+     "by": "seat",
+     "fair": 0.5,
+     "rows": [
+      {
+       "group": 1,
+       "base": 0.53025,
+       "whatif": 0.50075,
+       "lo": 0.4790347750403661,
+       "hi": 0.522465224959634
+      },
+      {
+       "group": 2,
+       "base": 0.46975,
+       "whatif": 0.49925,
+       "lo": 0.4775347750403656,
+       "hi": 0.5209652249596344
+      }
+     ]
+    },
+    {
+     "label": "Seat advantage, 3 players",
+     "by": "seat",
+     "fair": 0.3333333333333333,
+     "rows": [
+      {
+       "group": 1,
+       "base": 0.374,
+       "whatif": 0.35375,
+       "lo": 0.33295651127548204,
+       "hi": 0.374543488724518
+      },
+      {
+       "group": 2,
+       "base": 0.3505,
+       "whatif": 0.38875,
+       "lo": 0.3675667952653187,
+       "hi": 0.40993320473468126
+      },
+      {
+       "group": 3,
+       "base": 0.2755,
+       "whatif": 0.2575,
+       "lo": 0.23846992309754236,
+       "hi": 0.2765300769024577
+      }
+     ]
+    },
+    {
+     "label": "Strategy against the steady player",
+     "by": "strategy",
+     "fair": 0.5,
+     "rows": [
+      {
+       "group": "hoarder",
+       "base": 0.36475,
+       "whatif": 0.3665,
+       "lo": 0.34552514852502636,
+       "hi": 0.3874748514749736
+      },
+      {
+       "group": "quick",
+       "base": 0.5935,
+       "whatif": 0.59475,
+       "lo": 0.5735600376309299,
+       "hi": 0.6159399623690701
+      },
+      {
+       "group": "saffron",
+       "base": 0.64125,
+       "whatif": 0.63375,
+       "lo": 0.6128413038297984,
+       "hi": 0.6546586961702017
+      },
+      {
+       "group": "steady",
+       "base": 0.4668333333333333,
+       "whatif": 0.4683333333333333,
+       "lo": 0.4558354949100906,
+       "hi": 0.480831171756576
+      }
+     ]
+    }
+   ]
+  },
+  "later-seat-coins": {
+   "fixed": [
+    {
+     "id": "uneven:won:Seat advantage, 2 players \u00b7 seat=1:mirror-2p",
+     "part": "Seat advantage, 2 players \u00b7 seat=1",
+     "kind": "uneven",
+     "severity": "medium",
+     "metric": "won",
+     "scenario": "baseline",
+     "profile": "mirror-2p",
+     "message": "Seat advantage, 2 players: seat = 1 has 0.530 (95% CI 0.509\u20130.552, n=2000) against a fair 0.500 \u00b1 0.020",
+     "evidence": {
+      "group": 1,
+      "by": "seat",
+      "value": 0.53025,
+      "fair": 0.5,
+      "table": [
+       {
+        "group": 1,
+        "mean": 0.53025,
+        "lo": 0.5086307644995982,
+        "hi": 0.5518692355004018,
+        "n": 2000
+       },
+       {
+        "group": 2,
+        "mean": 0.46975,
+        "lo": 0.44813076449959865,
+        "hi": 0.49136923550040135,
+        "n": 2000
+       }
+      ]
+     }
+    },
+    {
+     "id": "uneven:won:Seat advantage, 2 players \u00b7 seat=2:mirror-2p",
+     "part": "Seat advantage, 2 players \u00b7 seat=2",
+     "kind": "uneven",
+     "severity": "medium",
+     "metric": "won",
+     "scenario": "baseline",
+     "profile": "mirror-2p",
+     "message": "Seat advantage, 2 players: seat = 2 has 0.470 (95% CI 0.448\u20130.491, n=2000) against a fair 0.500 \u00b1 0.020",
+     "evidence": {
+      "group": 2,
+      "by": "seat",
+      "value": 0.46975,
+      "fair": 0.5,
+      "table": [
+       {
+        "group": 1,
+        "mean": 0.53025,
+        "lo": 0.5086307644995982,
+        "hi": 0.5518692355004018,
+        "n": 2000
+       },
+       {
+        "group": 2,
+        "mean": 0.46975,
+        "lo": 0.44813076449959865,
+        "hi": 0.49136923550040135,
+        "n": 2000
+       }
+      ]
+     }
+    },
+    {
+     "id": "uneven:won:Seat advantage, 3 players \u00b7 seat=1:mirror-3p",
+     "part": "Seat advantage, 3 players \u00b7 seat=1",
+     "kind": "uneven",
+     "severity": "medium",
+     "metric": "won",
+     "scenario": "baseline",
+     "profile": "mirror-3p",
+     "message": "Seat advantage, 3 players: seat = 1 has 0.374 (95% CI 0.353\u20130.395, n=2000) against a fair 0.333 \u00b1 0.030",
+     "evidence": {
+      "group": 1,
+      "by": "seat",
+      "value": 0.374,
+      "fair": 0.3333333333333333,
+      "table": [
+       {
+        "group": 1,
+        "mean": 0.374,
+        "lo": 0.3529818444998063,
+        "hi": 0.3950181555001937,
+        "n": 2000
+       },
+       {
+        "group": 2,
+        "mean": 0.3505,
+        "lo": 0.3297915365120923,
+        "hi": 0.37120846348790765,
+        "n": 2000
+       },
+       {
+        "group": 3,
+        "mean": 0.2755,
+        "lo": 0.2561243578802206,
+        "hi": 0.29487564211977946,
+        "n": 2000
+       }
+      ]
+     }
+    },
+    {
+     "id": "uneven:won:Seat advantage, 3 players \u00b7 seat=3:mirror-3p",
+     "part": "Seat advantage, 3 players \u00b7 seat=3",
+     "kind": "uneven",
+     "severity": "medium",
+     "metric": "won",
+     "scenario": "baseline",
+     "profile": "mirror-3p",
+     "message": "Seat advantage, 3 players: seat = 3 has 0.276 (95% CI 0.256\u20130.295, n=2000) against a fair 0.333 \u00b1 0.030",
+     "evidence": {
+      "group": 3,
+      "by": "seat",
+      "value": 0.2755,
+      "fair": 0.3333333333333333,
+      "table": [
+       {
+        "group": 1,
+        "mean": 0.374,
+        "lo": 0.3529818444998063,
+        "hi": 0.3950181555001937,
+        "n": 2000
+       },
+       {
+        "group": 2,
+        "mean": 0.3505,
+        "lo": 0.3297915365120923,
+        "hi": 0.37120846348790765,
+        "n": 2000
+       },
+       {
+        "group": 3,
+        "mean": 0.2755,
+        "lo": 0.2561243578802206,
+        "hi": 0.29487564211977946,
+        "n": 2000
+       }
+      ]
+     }
+    }
+   ],
+   "new": [],
+   "still": [
+    {
+     "id": "uneven:won:Strategy against the steady player \u00b7 strategy=hoarder:saffron-vs-steady, hoarder-vs-steady, quick-vs-steady",
+     "part": "Strategy against the steady player \u00b7 strategy=hoarder",
+     "kind": "uneven",
+     "severity": "high",
+     "metric": "won",
+     "scenario": "later-seat-coins",
+     "profile": "saffron-vs-steady, hoarder-vs-steady, quick-vs-steady",
+     "message": "Strategy against the steady player: strategy = hoarder has 0.365 (95% CI 0.345\u20130.386, n=2000) against a fair 0.500 \u00b1 0.050",
+     "evidence": {
+      "group": "hoarder",
+      "by": "strategy",
+      "value": 0.3655,
+      "fair": 0.5,
+      "table": [
+       {
+        "group": "hoarder",
+        "mean": 0.3655,
+        "lo": 0.3445488920994347,
+        "hi": 0.3864511079005653,
+        "n": 2000
+       },
+       {
+        "group": "quick",
+        "mean": 0.59975,
+        "lo": 0.5786041826181543,
+        "hi": 0.6208958173818457,
+        "n": 2000
+       },
+       {
+        "group": "saffron",
+        "mean": 0.64025,
+        "lo": 0.6194233123274557,
+        "hi": 0.6610766876725442,
+        "n": 2000
+       },
+       {
+        "group": "steady",
+        "mean": 0.4648333333333333,
+        "lo": 0.4523436252985668,
+        "hi": 0.47732304136809983,
+        "n": 6000
+       }
+      ]
+     },
+     "before": 0.36475,
+     "after": 0.3655,
+     "gauge": "value"
+    },
+    {
+     "id": "uneven:won:Strategy against the steady player \u00b7 strategy=saffron:saffron-vs-steady, hoarder-vs-steady, quick-vs-steady",
+     "part": "Strategy against the steady player \u00b7 strategy=saffron",
+     "kind": "uneven",
+     "severity": "high",
+     "metric": "won",
+     "scenario": "later-seat-coins",
+     "profile": "saffron-vs-steady, hoarder-vs-steady, quick-vs-steady",
+     "message": "Strategy against the steady player: strategy = saffron has 0.640 (95% CI 0.619\u20130.661, n=2000) against a fair 0.500 \u00b1 0.050",
+     "evidence": {
+      "group": "saffron",
+      "by": "strategy",
+      "value": 0.64025,
+      "fair": 0.5,
+      "table": [
+       {
+        "group": "hoarder",
+        "mean": 0.3655,
+        "lo": 0.3445488920994347,
+        "hi": 0.3864511079005653,
+        "n": 2000
+       },
+       {
+        "group": "quick",
+        "mean": 0.59975,
+        "lo": 0.5786041826181543,
+        "hi": 0.6208958173818457,
+        "n": 2000
+       },
+       {
+        "group": "saffron",
+        "mean": 0.64025,
+        "lo": 0.6194233123274557,
+        "hi": 0.6610766876725442,
+        "n": 2000
+       },
+       {
+        "group": "steady",
+        "mean": 0.4648333333333333,
+        "lo": 0.4523436252985668,
+        "hi": 0.47732304136809983,
+        "n": 6000
+       }
+      ]
+     },
+     "before": 0.64125,
+     "after": 0.64025,
+     "gauge": "value"
+    },
+    {
+     "id": "off-target:halfLeaderWon:Comebacks stay possible:mirror-2p",
+     "part": "Comebacks stay possible",
+     "kind": "off-target",
+     "severity": "medium",
+     "metric": "halfLeaderWon",
+     "scenario": "later-seat-coins",
+     "profile": "mirror-2p",
+     "message": "Comebacks stay possible: mean 0.84, target \u2264 0.75",
+     "evidence": {
+      "target": {
+       "metric": "halfLeaderWon",
+       "profile": "mirror-2p",
+       "max": 0.75,
+       "label": "Comebacks stay possible",
+       "severity": "medium"
+      },
+      "misses": [
+       [
+        "all",
+        0.8357070193285859
+       ]
+      ],
+      "clear": [
+       [
+        "all",
+        0.8357070193285859
+       ]
+      ],
+      "borderline": []
+     },
+     "before": 1,
+     "after": 1,
+     "gauge": "clear misses"
+    },
+    {
+     "id": "uneven:won:Strategy against the steady player \u00b7 strategy=quick:saffron-vs-steady, hoarder-vs-steady, quick-vs-steady",
+     "part": "Strategy against the steady player \u00b7 strategy=quick",
+     "kind": "uneven",
+     "severity": "medium",
+     "metric": "won",
+     "scenario": "later-seat-coins",
+     "profile": "saffron-vs-steady, hoarder-vs-steady, quick-vs-steady",
+     "message": "Strategy against the steady player: strategy = quick has 0.600 (95% CI 0.579\u20130.621, n=2000) against a fair 0.500 \u00b1 0.050",
+     "evidence": {
+      "group": "quick",
+      "by": "strategy",
+      "value": 0.59975,
+      "fair": 0.5,
+      "table": [
+       {
+        "group": "hoarder",
+        "mean": 0.3655,
+        "lo": 0.3445488920994347,
+        "hi": 0.3864511079005653,
+        "n": 2000
+       },
+       {
+        "group": "quick",
+        "mean": 0.59975,
+        "lo": 0.5786041826181543,
+        "hi": 0.6208958173818457,
+        "n": 2000
+       },
+       {
+        "group": "saffron",
+        "mean": 0.64025,
+        "lo": 0.6194233123274557,
+        "hi": 0.6610766876725442,
+        "n": 2000
+       },
+       {
+        "group": "steady",
+        "mean": 0.4648333333333333,
+        "lo": 0.4523436252985668,
+        "hi": 0.47732304136809983,
+        "n": 6000
+       }
+      ]
+     },
+     "before": 0.5935,
+     "after": 0.59975,
+     "gauge": "value"
+    }
+   ],
+   "moves": [
+    {
+     "metric": "coins",
+     "profile": "mirror-2p",
+     "base": 49.43825,
+     "whatif": 50.306,
+     "change": 0.01755219895526239,
+     "base_first": 49.43825,
+     "base_last": 49.43825,
+     "whatif_first": 50.306,
+     "whatif_last": 50.306
+    },
+    {
+     "metric": "coins",
+     "profile": "mirror-3p",
+     "base": 30.080166666666667,
+     "whatif": 31.044,
+     "change": 0.03204215402175299,
+     "base_first": 30.080166666666667,
+     "base_last": 30.080166666666667,
+     "whatif_first": 31.044,
+     "whatif_last": 31.044
+    },
+    {
+     "metric": "coins",
+     "profile": "saffron-vs-steady",
+     "base": 51.1475,
+     "whatif": 51.98675,
+     "change": 0.016408426609316188,
+     "base_first": 51.1475,
+     "base_last": 51.1475,
+     "whatif_first": 51.98675,
+     "whatif_last": 51.98675
+    },
+    {
+     "metric": "coins",
+     "profile": "quick-vs-steady",
+     "base": 52.40375,
+     "whatif": 53.3525,
+     "change": 0.01810462037545017,
+     "base_first": 52.40375,
+     "base_last": 52.40375,
+     "whatif_first": 53.3525,
+     "whatif_last": 53.3525
+    },
+    {
+     "metric": "turns",
+     "profile": "mirror-2p",
+     "base": 28.93575,
+     "whatif": 28.93075,
+     "change": -0.0001727966270098064,
+     "base_first": 28.93575,
+     "base_last": 28.93575,
+     "whatif_first": 28.93075,
+     "whatif_last": 28.93075
+    },
+    {
+     "metric": "turns",
+     "profile": "mirror-3p",
+     "base": 17.885,
+     "whatif": 17.8895,
+     "change": 0.0002516074923120028,
+     "base_first": 17.885,
+     "base_last": 17.885,
+     "whatif_first": 17.8895,
+     "whatif_last": 17.8895
+    },
+    {
+     "metric": "turns",
+     "profile": "saffron-vs-steady",
+     "base": 29.303,
+     "whatif": 29.2895,
+     "change": -0.0004607036822168553,
+     "base_first": 29.303,
+     "base_last": 29.303,
+     "whatif_first": 29.2895,
+     "whatif_last": 29.2895
+    },
+    {
+     "metric": "turns",
+     "profile": "quick-vs-steady",
+     "base": 31.18375,
+     "whatif": 31.18125,
+     "change": -8.016996031591065e-05,
+     "base_first": 31.18375,
+     "base_last": 31.18375,
+     "whatif_first": 31.18125,
+     "whatif_last": 31.18125
+    },
+    {
+     "metric": "halfLeaderWon",
+     "profile": "mirror-2p",
+     "base": 0.8335933437337494,
+     "whatif": 0.8357070193285859,
+     "change": 0.0025356195688525803,
+     "base_first": 0.8335933437337494,
+     "base_last": 0.8335933437337494,
+     "whatif_first": 0.8357070193285859,
+     "whatif_last": 0.8357070193285859
+    },
+    {
+     "metric": "halfLeaderWon",
+     "profile": "mirror-3p",
+     "base": 0.7581903276131046,
+     "whatif": 0.7498708010335917,
+     "change": -0.01097287353388423,
+     "base_first": 0.7581903276131046,
+     "base_last": 0.7581903276131046,
+     "whatif_first": 0.7498708010335917,
+     "whatif_last": 0.7498708010335917
+    },
+    {
+     "metric": "halfLeaderWon",
+     "profile": "saffron-vs-steady",
+     "base": 0.8572884811416922,
+     "whatif": 0.8608430675469781,
+     "change": 0.004146313036368025,
+     "base_first": 0.8572884811416922,
+     "base_last": 0.8572884811416922,
+     "whatif_first": 0.8608430675469781,
+     "whatif_last": 0.8608430675469781
+    },
+    {
+     "metric": "halfLeaderWon",
+     "profile": "quick-vs-steady",
+     "base": 0.8523929471032745,
+     "whatif": 0.8520589730554143,
+     "change": -0.00039180761524967335,
+     "base_first": 0.8523929471032745,
+     "base_last": 0.8523929471032745,
+     "whatif_first": 0.8520589730554143,
+     "whatif_last": 0.8520589730554143
+    }
+   ],
+   "groups": [
+    {
+     "label": "Seat advantage, 2 players",
+     "by": "seat",
+     "fair": 0.5,
+     "rows": [
+      {
+       "group": 1,
+       "base": 0.53025,
+       "whatif": 0.50275,
+       "lo": 0.4810572209645434,
+       "hi": 0.5244427790354567
+      },
+      {
+       "group": 2,
+       "base": 0.46975,
+       "whatif": 0.49725,
+       "lo": 0.47555722096454356,
+       "hi": 0.5189427790354565
+      }
+     ]
+    },
+    {
+     "label": "Seat advantage, 3 players",
+     "by": "seat",
+     "fair": 0.3333333333333333,
+     "rows": [
+      {
+       "group": 1,
+       "base": 0.374,
+       "whatif": 0.34925,
+       "lo": 0.3285415510122138,
+       "hi": 0.36995844898778624
+      },
+      {
+       "group": 2,
+       "base": 0.3505,
+       "whatif": 0.34525,
+       "lo": 0.32459833014781003,
+       "hi": 0.36590166985218997
+      },
+      {
+       "group": 3,
+       "base": 0.2755,
+       "whatif": 0.3055,
+       "lo": 0.2854986879920086,
+       "hi": 0.3255013120079914
+      }
+     ]
+    },
+    {
+     "label": "Strategy against the steady player",
+     "by": "strategy",
+     "fair": 0.5,
+     "rows": [
+      {
+       "group": "hoarder",
+       "base": 0.36475,
+       "whatif": 0.3655,
+       "lo": 0.3445488920994347,
+       "hi": 0.3864511079005653
+      },
+      {
+       "group": "quick",
+       "base": 0.5935,
+       "whatif": 0.59975,
+       "lo": 0.5786041826181543,
+       "hi": 0.6208958173818457
+      },
+      {
+       "group": "saffron",
+       "base": 0.64125,
+       "whatif": 0.64025,
+       "lo": 0.6194233123274557,
+       "hi": 0.6610766876725442
+      },
+      {
+       "group": "steady",
+       "base": 0.4668333333333333,
+       "whatif": 0.4648333333333333,
+       "lo": 0.4523436252985668,
+       "hi": 0.47732304136809983
+      }
+     ]
     }
    ]
   }
@@ -4337,6 +5657,123 @@
     },
     "halfLeaderWon": {
      "all": 0.8513994910941476
+    }
+   }
+  },
+  "later-seat-coins": {
+   "mirror-2p": {
+    "seat": {
+     "all": 1.5
+    },
+    "won": {
+     "all": 0.5
+    },
+    "coins": {
+     "all": 50.306
+    },
+    "turns": {
+     "all": 28.93075
+    },
+    "extraTurns": {
+     "all": 0.0
+    },
+    "margin": {
+     "all": 0.0
+    },
+    "halfLeaderWon": {
+     "all": 0.8357070193285859
+    }
+   },
+   "mirror-3p": {
+    "seat": {
+     "all": 2.0
+    },
+    "won": {
+     "all": 0.3333333333333333
+    },
+    "coins": {
+     "all": 31.044
+    },
+    "turns": {
+     "all": 17.8895
+    },
+    "extraTurns": {
+     "all": 0.0
+    },
+    "margin": {
+     "all": -6.347333333333333
+    },
+    "halfLeaderWon": {
+     "all": 0.7498708010335917
+    }
+   },
+   "saffron-vs-steady": {
+    "seat": {
+     "all": 1.5
+    },
+    "won": {
+     "all": 0.5
+    },
+    "coins": {
+     "all": 51.98675
+    },
+    "turns": {
+     "all": 29.2895
+    },
+    "extraTurns": {
+     "all": 0.0
+    },
+    "margin": {
+     "all": 0.0
+    },
+    "halfLeaderWon": {
+     "all": 0.8608430675469781
+    }
+   },
+   "hoarder-vs-steady": {
+    "seat": {
+     "all": 1.5
+    },
+    "won": {
+     "all": 0.5
+    },
+    "coins": {
+     "all": 45.28125
+    },
+    "turns": {
+     "all": 27.288
+    },
+    "extraTurns": {
+     "all": 2.322
+    },
+    "margin": {
+     "all": 0.0
+    },
+    "halfLeaderWon": {
+     "all": 0.8168016194331984
+    }
+   },
+   "quick-vs-steady": {
+    "seat": {
+     "all": 1.5
+    },
+    "won": {
+     "all": 0.5
+    },
+    "coins": {
+     "all": 53.3525
+    },
+    "turns": {
+     "all": 31.18125
+    },
+    "extraTurns": {
+     "all": 0.0
+    },
+    "margin": {
+     "all": 0.0
+    },
+    "halfLeaderWon": {
+     "all": 0.8520589730554143
     }
    }
   }

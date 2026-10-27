@@ -1,10 +1,25 @@
 {
   "name": "game-balance-audit",
-  "description": "Audit a game's balance by simulation: bots play your game (from its code, a rulebook or a running build) hundreds of times, the results are checked against your design intent, and every problem gets three suggestions tested in the simulator.",
-  "version": "0.1.0",
-  "author": { "name": "Chugli Games", "url": "https://chugligames.com" },
+  "description": "Audit a game's balance by simulation, against your goals (ad or purchase revenue and engagement, completion, or tabletop fairness): bots play your game from its code, a rulebook or a running build, and every problem gets three suggestions tested in the simulator and scored on those goals.",
+  "version": "0.2.0",
+  "author": {
+    "name": "Chugli Games",
+    "url": "https://chugligames.com"
+  },
   "homepage": "https://github.com/chugligames/game-balance-audit",
   "repository": "https://github.com/chugligames/game-balance-audit",
   "license": "MIT",
-  "keywords": ["game-design", "balance", "simulation", "economy", "match-3", "merge", "board-games", "puzzles", "playtesting"]
+  "keywords": [
+    "game-design",
+    "balance",
+    "simulation",
+    "economy",
+    "match-3",
+    "merge",
+    "board-games",
+    "puzzles",
+    "playtesting",
+    "monetization",
+    "free-to-play"
+  ]
 }

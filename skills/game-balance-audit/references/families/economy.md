@@ -1,9 +1,11 @@
 # Economy and progression games
 
 Merge-2, idle and clicker games, farming and town builders, and anything with energy,
-timers, daily unlocks or a currency that flows in and out. The audit asks two things:
-**what does each segment demand**, and **when does a limit bite** for the people who
-actually play this way.
+timers, daily unlocks or a currency that flows in and out. The audit asks: **what does each
+segment demand**, **when does a limit bite** for the people who actually play this way,
+and, in free-to-play, **what happens at that moment**: do they watch, pay, wait or quit?
+Read `references/design-goals.md` first. In an ad-funded game the energy wall is usually
+the product, not the problem.
 
 ## What to model
 
@@ -17,6 +19,8 @@ actually play this way.
   and anything that pauses regeneration.
 - **The calendar:** when segments unlock (install day, daily at a set hour, after a
   timer), and how many open at install.
+- **Monetisation moments:** every place the game offers an ad or a purchase (out of
+  energy, a refill shop, a booster, a time skip), its reward, and its daily cap.
 - **Currencies:** every source and sink, so the simulator can track the balance over time.
 
 ## Player models
@@ -28,6 +32,10 @@ Vary two things separately:
 - **How they play over a day:** session times and length. Common profiles: once a day in
   the evening; twice a day (morning and evening); three times with ads and refills.
   `references/benchmarks.md` has sourced session counts and lengths.
+
+Free-to-play games also need a **response model** at each wall: watch, pay, wait or quit
+(`references/design-goals.md`). Without one, the simulator only sees players getting stuck,
+never the revenue or the churn.
 
 Then run two passes:
 
@@ -49,6 +57,9 @@ Then run two passes:
 | `daysLate` (calendar days behind) | Whether the free player keeps up |
 | currency earned / spent / held | Inflation: piles of unspent currency mean its sinks are too weak |
 | `wasted` (items never used) | Whether a mistake costs anything |
+| `adPrompts`, `adsWatched`, `capReached` (0/1) | Revenue moments, revenue, and whether the daily ad cap is used up |
+| `purchases`, currency spent on refills | Purchase moments taken |
+| `quit` (0/1, then the run ends), `played` (1 per day the player opened the game) | Churn and engagement, from the response model |
 
 ## Problems this family usually has
 
@@ -57,8 +68,13 @@ Then run two passes:
 - **Flat or reversed curve.** Later segments ask for no more than early ones, or less.
 - **Front-loaded tightness.** A feature (sealed cells, a small starting board) makes early
   segments hard and disappears, the reverse of a ramp.
-- **A wall at the worst time.** Players run out of energy in their first session (several
-  segments open at install) or right before a story beat.
+- **A wall at the wrong moment.** For premium games, any wall that stops a session the
+  player wanted to continue. For free-to-play, a wall *before* the player is invested
+  (first session, before the hook lands) risks quitting rather than watching. A wall that
+  never comes means no revenue moment at all.
+- **The ad cap.** If the target player reaches the daily ad cap early, more pressure earns
+  nothing more and only adds waiting and quit risk. If they rarely reach it, ad inventory
+  is going unused.
 - **Inert levers.** Regeneration speed doesn't matter to someone who fills the cap
   between sessions; the cap and the session pattern do.
 - **Inflation.** A currency piles up with nothing worth buying.
@@ -74,8 +90,10 @@ Then run two passes:
 Order size and tier; how many orders need two items at once; junk or blocker drops that
 take space; the board's size or sealed cells that open later; how many orders show at
 once; the energy cap (often stronger than regeneration speed); first-session energy;
-unlock timing; sinks for surplus currency; time-limited orders. Test where each lands on
-the curve, not just its average.
+unlock timing; sinks for surplus currency; time-limited orders. Monetisation levers: the
+ad reward size, the daily ad cap, when in the day or the run the first wall comes, refill
+prices, and whether watching gets the player back into the *same* session. Test where each
+lands on the curve and on every goal in the scorecard, not just its average.
 
 ## What the simulator can't tell you
 

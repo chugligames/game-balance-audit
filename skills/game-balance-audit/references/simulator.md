@@ -32,7 +32,7 @@ folder.
 | `withSeededMathRandom(rand, fn)` | `seeded_global_random(rand)` | Makes imported game code that calls `Math.random()` / `random.random()` repeatable |
 | `args()` | `args()` | `--runs --seed --out --scenario --profile --set key=value --print m1,m2 --by field` |
 | `simulate(spec, opts)` | `simulate(play=…, params=…, scenarios=…, profiles=…, opts=…)` | Runs every scenario × profile × run, adds `scenario/profile/run`, writes JSONL |
-| `bots.random/greedy/sloppy/lookahead` | `random_bot/greedy/sloppy/lookahead` | Player models for games written to the game interface below |
+| `bots.random/greedy/sloppy/lookahead` | `random_bot/greedy/sloppy/lookahead` | Player models for games written to the game interface below. `lookahead` takes `determinize` (re-deal what the player can't see before each rollout) and `candidates` + `prior` (search only the best few moves) |
 | `playGame(game, state, policies, rand)` | `play_game(…)` | Plays a game to the end (or a step limit) |
 | `decisionImpact(game, state, rand)` | `decision_impact(…)` | How much the choice at one moment changes the outcome |
 
@@ -104,9 +104,12 @@ result = play_game(GAME, GAME.start(r), [expert, typical], r)
 ```
 
 **Hidden information.** A lookahead bot must not see the deck order or other players'
-hands. Before each rollout, reshuffle everything the player can't see
-("determinisation"); otherwise the expert cheats and every finding about skill is
-inflated.
+hands. Pass `determinize: (state, seat, rand) => copy with hidden cards re-dealt`;
+otherwise the expert cheats and every finding about skill is inflated.
+
+**Response models.** Free-to-play simulators also decide, at each wall, whether the player
+watches, pays, waits or quits (`references/design-goals.md`). Keep those probabilities in
+`params` so the audit can vary them, and stop a run's rows when the player quits.
 
 ## Wrapping existing code
 

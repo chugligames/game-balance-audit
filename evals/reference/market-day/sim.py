@@ -14,7 +14,8 @@ from sim_kit import args, simulate  # noqa: E402
 
 GOODS = {"rice": 15, "lentils": 13, "cloth": 11, "spice": 9, "saffron": 6}
 COINS = {"rice": [3, 2, 2, 1, 1, 1], "lentils": [4, 3, 2, 2, 1], "cloth": [5, 4, 3, 2, 1], "spice": [6, 5, 4, 3], "saffron": [9, 8, 7, 7]}
-PARAMS = {"coins": COINS, "goods": GOODS, "hand_limit": 7, "big_sale": 4, "big_sale_reward": "extra-turn", "equal_turns": False, "second_seat_bonus": 0}
+PARAMS = {"coins": COINS, "goods": GOODS, "hand_limit": 7, "big_sale": 4, "big_sale_reward": "extra-turn", "equal_turns": False, "second_seat_bonus": 0,
+          "start_coins": {}}  # e.g. {"2": [0, 2], "3": [0, 1, 2]}: coins each seat starts with, by player count
 
 # Player strategies. `sell_at`: smallest set worth selling; `like`: how much they chase each good.
 STRATEGIES = {
@@ -74,6 +75,8 @@ def play(rand, params, profile, run, **_):
     st = {"deck": deck, "market": [deck.pop() for _ in range(5)], "hands": [[deck.pop() for _ in range(3)] for _ in range(n)],
           "coins": {g: list(v) for g, v in p["coins"].items()}, "score": [0] * n}
     st["score"][1 % n] += p["second_seat_bonus"]
+    for i, c in enumerate(p["start_coins"].get(str(n), [])):
+        st["score"][i] += c
     turns, extra, half_leader = [0] * n, [0] * n, None
     total_turns_guess = (len(deck) + 5) * 1.6
     seat, over, played = 0, False, 0
@@ -132,5 +135,6 @@ SCENARIOS = {
     "equal-turns": {"equal_turns": True},
     "big-sale-+3-coins": {"big_sale_reward": 3},
     "second-seat-+2": {"second_seat_bonus": 2},
+    "later-seat-coins": {"start_coins": {"2": [0, 2], "3": [0, 1, 2], "4": [0, 1, 2, 3]}},
 }
 simulate(play=play, params=PARAMS, scenarios=SCENARIOS, profiles=PROFILES, opts=args())

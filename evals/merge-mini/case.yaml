@@ -38,4 +38,8 @@ graders:
       3. It reports that days 6–8 ask for less effort than day 5 (the curve dips instead of rising).
       4. Each problem it reports in full has three suggestions, and each suggestion shows a before → after number from a simulation run.
       5. Numbers name the kind of player they describe (e.g. careless, typical, twice a day).
+      6. It identifies the business model (rewarded ads, up to 4 a day) and judges the game by it: it treats "energy never
+         runs out" as a revenue problem (no moments to watch an ad), measures ads watched per player and players quitting
+         with an explicit watch / wait / quit model whose probabilities are labelled as assumptions, and does not recommend
+         changes that cut ad views without stating that cost.
     focus: files

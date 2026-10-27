@@ -13,8 +13,13 @@ three sizes of one idea:
 For each suggestion, write it so it could be implemented today, with the actual numbers
 ("orders on days 8–14 ask for one tier higher" rather than "make later days harder"). Add
 it to the simulator as a scenario, run it, and report: the problem's key metric before →
-after for each player type, the flags it fixes and the ones it introduces, its cost or
-risk, and your confidence.
+after for each player type, **its effect on every design goal** (the scorecard row), the
+flags it fixes and the ones it introduces, its cost or risk, and your confidence.
+
+Suggestions must serve the designer's goals (`references/design-goals.md`). A suggestion
+that only makes the game kinder to players is not automatically a fix. In an ad-funded
+game, "more free energy" usually costs ad views; show that price, and look first for
+changes that move the problem without costing the primary goal.
 
 ## Levers by problem
 
@@ -32,12 +37,16 @@ risk, and your confidence.
 | **Luck over skill** | Lower variance (smaller drop ranges, bigger hands) | More information (preview the next refill, a reroll) | Fewer random events per game |
 | **Skill wall** | Smaller gap between good and adequate play | Hints, an undo, a teaching segment | Move the segment later; add a preceding level that teaches the idea |
 | **Inflation** (currency piles up) | Raise sink prices, lower income | Spending with a deadline; upkeep costs | New things worth buying at the right time |
+| **Revenue moments too rare** (free-to-play: few walls, unused ad cap) | Smaller energy cap; bigger demand later; smaller ad reward so a second ad is needed | A placement where watching helps mid-goal (finish this order now), not just a refill | Content that peaks right after the hook lands, where players want to keep going |
+| **Revenue moments that churn** (players quit at walls instead of watching) | A bigger ad reward; first walls later in the run; walls spread across days instead of stacked | Watching gets the player back into the same session; a guaranteed first ad that refills fully | Move the first wall after the story's hook; a breather after a wall day |
+| **Ad cap reached too early** (pressure past the cap earns nothing) | A later cap; a different cap per day | A second, different placement; a reward that grows with the day's ads | Spread demand so the cap is reached at the end of the day's play, not the start |
 | **Unsolvable or trivial puzzle** | – | – | Replace with a generated candidate of measured difficulty; reorder |
 
 ## Choosing what to recommend
 
-- Prefer the suggestion that fixes the problem for the **focus player** without breaking
-  another check. Then the cheapest to build, then the most reversible.
+- Prefer the suggestion that best serves the **design goals** without breaking a
+  constraint: a "best trade-off" row in the scorecard. Then the cheapest to build, then the
+  most reversible.
 - If none of the three fixes it on its own, say so, and test a combination.
 - Run all the recommended picks together as one scenario before writing the report.
   Fixes interact (a bigger order and a smaller board can turn a ramp into a wall).

@@ -4,13 +4,24 @@
 import { args, simulate, withSeededMathRandom } from '../../../skills/game-balance-audit/scripts/sim-kit.mjs';
 import * as G from '../../../examples/merge-mini/game.mjs';
 
-const PARAMS = { regenMinutes: G.CONFIG.regenMinutes, rows: G.CONFIG.rows, orderScale: 1, finaleTier: 0 };
+// The response model's numbers are assumptions (no sourced value for this game): the
+// audit varies them in the quit-* scenarios.
+const PARAMS = {
+  regenMinutes: G.CONFIG.regenMinutes, rows: G.CONFIG.rows, orderScale: 1, maxEnergy: G.CONFIG.maxEnergy,
+  adReward: G.CONFIG.adReward, adsPerDay: G.CONFIG.adsPerDay,
+  watch: 0.6, // chance a player out of energy watches an ad (while under the cap)
+  quitBase: 0.01, quitEarly: 0.08, quitPerWall: 0.03, // quit chance at a wall: base, extra on days 1–2, extra per earlier wall that day
+};
 
 // What-ifs: three answers to each problem the baseline shows.
 const SCENARIOS = {
   'smaller-board': { rows: 4 },
   'orders-x1.5-from-6': { orderScale: 1.5 },
   'slower-regen': { regenMinutes: 4 },
+  'cap-60': { maxEnergy: 60 },
+  'orders-x1.5 + cap-60': { orderScale: 1.5, maxEnergy: 60 },
+  'orders-x1.5 + cap-60 + ad 30': { orderScale: 1.5, maxEnergy: 60, adReward: 30 },
+  'orders-x1.5 + cap-60, quit x2': { orderScale: 1.5, maxEnergy: 60, quitBase: 0.02, quitEarly: 0.16, quitPerWall: 0.06 },
 };
 
 const PROFILES = {
@@ -27,7 +38,7 @@ function ordersFor(day, p) {
 }
 
 function play({ rand, params: p, profile }) {
-  const config = { ...G.CONFIG, rows: p.rows, regenMinutes: p.regenMinutes };
+  const config = { ...G.CONFIG, rows: p.rows, regenMinutes: p.regenMinutes, maxEnergy: p.maxEnergy };
   const board = G.newBoard(config);
   let energy = config.maxEnergy;
   let clock = 8 * 60; // installs at 8:00 on calendar day 0, so day 1 is open
@@ -37,8 +48,11 @@ function play({ rand, params: p, profile }) {
   let orders = ordersFor(1, p);
   let stat = fresh();
   function fresh() {
-    return { taps: 0, merges: 0, sells: 0, outOfEnergy: 0, minFree: G.emptyCells(board).length };
+    return { taps: 0, merges: 0, sells: 0, outOfEnergy: 0, adPrompts: 0, adsWatched: 0, minFree: G.emptyCells(board).length };
   }
+  let adsDate = -1;
+  let adsToday = 0;
+  let wallsToday = 0;
   const unlockedThrough = (minute) => Math.floor((minute - 6 * 60) / 1440) + 1; // day n opens at 6:00 on calendar day n-1
   const freePerDay = profile.sessions.reduce((sum, m, i, all) => {
     const gap = i === 0 ? all[all.length - 1] - 1440 : all[i - 1];
@@ -50,13 +64,30 @@ function play({ rand, params: p, profile }) {
       const t0 = cal * 1440 + start;
       if (t0 < clock) continue;
       energy = G.regen(energy, t0 - lastRest, config);
+      if (adsDate !== cal) [adsDate, adsToday, wallsToday] = [cal, 0, 0];
       let spent = 0;
       while (day <= G.DAYS.length && day <= unlockedThrough(t0) && spent < SESSION_MAX) {
         const act = step(board, orders, profile, rand, config, energy);
-        if (act === 'out') {
+        if (act === 'out' && energy < config.tapCost) {
+          // A wall: watch an ad (under the cap), or wait for the next session, or quit for good.
+          stat.adPrompts++;
+          if (adsToday < p.adsPerDay && rand.chance(p.watch)) {
+            adsToday++;
+            stat.adsWatched++;
+            energy += p.adReward;
+            spent += 30;
+            continue;
+          }
           stat.outOfEnergy++;
+          const quit = p.quitBase + (day <= 2 ? p.quitEarly : 0) + p.quitPerWall * wallsToday;
+          wallsToday++;
+          if (rand.chance(quit)) {
+            rows.push({ day, ...stat, energyShare: stat.taps / freePerDay, daysLate: cal - (day - 1), played: 1, quit: 1 });
+            return rows;
+          }
           break;
         }
+        if (act === 'out') break;
         if (act === 'tap') {
           energy -= config.tapCost;
           stat.taps++;
@@ -66,7 +97,7 @@ function play({ rand, params: p, profile }) {
         spent += SECONDS[act] || 1;
         stat.minFree = Math.min(stat.minFree, G.emptyCells(board).length);
         if (orders.length === 0) {
-          rows.push({ day, ...stat, energyShare: stat.taps / freePerDay, daysLate: cal - (day - 1) });
+          rows.push({ day, ...stat, energyShare: stat.taps / freePerDay, daysLate: cal - (day - 1), played: 1, quit: 0 });
           day++;
           if (day <= G.DAYS.length) orders = ordersFor(day, p);
           stat = fresh();

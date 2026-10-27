@@ -66,7 +66,10 @@ function play({ rand, params, profile }) {
     let cascades = 0;
     while (!M.won(s) && !M.lost(s)) cascades += M.play(s, profile.pick(s, M.validSwaps(s), r), r.next).cascades;
     const left = Object.values(s.goals).reduce((a, b) => a + b, 0);
-    return { level: def.level, won: M.won(s) ? 1 : 0, movesLeft: M.won(s) ? s.moves : 0, goalDone: 1 - left / total, cascades, shuffles: s.shuffles };
+    const done = 1 - left / total;
+    // A loss with the goal nearly done is when "+5 moves" sells; a hopeless loss is when players quit.
+    const lost = M.won(s) ? 0 : 1;
+    return { level: def.level, won: 1 - lost, movesLeft: M.won(s) ? s.moves : 0, goalDone: done, nearMiss: lost && done >= 0.9 ? 1 : 0, hopeless: lost && done < 0.7 ? 1 : 0, cascades, shuffles: s.shuffles };
   });
 }
 

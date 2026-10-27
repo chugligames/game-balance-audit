@@ -7,6 +7,9 @@ empty). There is no UI.
 **How it plays.** Blocks slide along their own direction. Get block X out through the gap
 on the right edge of its row.
 
+**How it makes money.** It's a paid app: $2.99 once, no ads, no hints for sale. Reviews and
+word of mouth sell it, so players should finish the pack feeling clever, not stuck.
+
 **What the designer wants.**
 - The pack gets steadily harder from level 1 to level 12.
 - Every level can be solved.

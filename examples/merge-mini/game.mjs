@@ -6,6 +6,8 @@ export const CONFIG = {
   maxEnergy: 100,
   regenMinutes: 2, // +1 energy every 2 minutes
   tapCost: 1,
+  adReward: 20, // energy for one rewarded ad
+  adsPerDay: 4,
   generators: {
     oven: { chain: 'bread', cell: 0, drops: [[1, 0.85], [2, 0.15]] },
     loom: { chain: 'cloth', cell: 5, drops: [[1, 0.9], [2, 0.1]] },

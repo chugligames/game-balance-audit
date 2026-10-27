@@ -1,91 +1,128 @@
 # game-balance-audit
 
-An agent skill that audits a game's balance by **simulation, not opinion**.
+An agent skill that audits a game's balance by **simulation, not opinion**, against what
+*you* are optimising for.
 
-Point it at a game (its code, a rulebook, or a running web build) and it:
+Point your coding agent at a game: its code, a rulebook, or a running web build. It will:
 
-1. works out how the game plays and what you want from it (which days or levels should
-   feel hard, what must never happen);
-2. builds a small simulator, reusing your game's own rule code wherever it can;
-3. lets bots, from careless to expert, play hundreds of seeded games, days or levels;
-4. checks the results against your intent: difficulty curves, walls, limits that never
-   bite, win rate per level, seat advantage, dominant strategies, runaway leaders, luck
-   versus skill;
-5. writes an audit that ranks the problems and gives **three suggestions for each, every
-   one tested in the simulator** before it is recommended, with before → after numbers.
+1. **Work out your goals.** How the game makes money, or why it exists, decides what counts
+   as a problem:
+   - free-to-play: rewarded ads or purchases against engagement and players quitting;
+   - premium: completion and satisfaction;
+   - tabletop: fairness, close games, length on the box, more than one way to win.
+2. **Build a small simulator**, reusing your game's own rule code wherever it can, or writing
+   your rulebook as code.
+3. **Let bots play it** hundreds of times, from careless to expert. For free-to-play games
+   the bots also decide, at each wall, whether to watch an ad, pay, wait or quit.
+4. **Check the results** against your goals and your intended experience. That covers
+   difficulty curves, walls and revenue moments, win rate per level, seat advantage,
+   dominant strategies, runaway leaders, and luck versus skill.
+5. **Write an audit** that ranks the problems and gives **three suggestions for each**.
+   Every suggestion is tested in the simulator and scored on your goals, with before → after
+   numbers. A scorecard shows which changes are the best trade-offs.
 
 It works for merge-2 and energy economies, match-3 and other level-based games, logic
 puzzles, and strategy, board and card games, on web, mobile or tabletop.
 
 ## Install
 
-As an agent skill (Claude Code and other agents that read `SKILL.md`):
-
-```bash
-npx skills add chugligames/game-balance-audit
-```
-
-As a Claude Code plugin:
+**Claude Code, as a plugin** (recommended; it updates with the repo):
 
 ```bash
 claude plugin marketplace add chugligames/game-balance-audit
 claude plugin install game-balance-audit@chugligames
 ```
 
-Needs Node 18+ or Python 3.7+ to run simulations. No packages to install.
+**Claude Code or another agent that reads `SKILL.md`, via the skills CLI:**
 
-## Use
+```bash
+npx skills add chugligames/game-balance-audit            # into this project
+npx skills add chugligames/game-balance-audit -g         # for all your projects
+```
 
-In your game's repository, or next to your rulebook:
+**By hand:** copy `skills/game-balance-audit/` into your project's `.claude/skills/`, or
+your agent's skills folder.
 
-> Audit the balance of this game. Days 1–3 should be easy, and it should get steadily
-> harder until day 21.
+Simulations need **Node 18+ or Python 3.7+**. There are no packages to install. Everything
+runs on your machine.
+
+## Use it
+
+Open your agent in the game's folder (or next to your rulebook) and ask in plain words:
+
+> Audit the balance of this game. It's free-to-play with rewarded ads; I want players
+> watching 2–3 ads a day by week two without many quitting.
 
 > Here's my rulebook (RULES.md). Is there a first-player advantage, and is any strategy
-> dominant?
+> dominant? It should play in about 30 minutes at 2–5 players.
 
 > Levels 1–40 are in `levels/`. Where are the spikes, and which levels are unwinnable?
+> It's a paid game, so no monetisation.
 
-You get a `balance-audit/` folder: `REPORT.md` (the audit), `game-model.md` (how the
-simulator models your game, and every assumption), `audit.json` (your intent as checks),
-the simulator itself, raw results and charts. Re-run it after every change.
+Tell it what you're optimising for if you can. If you don't, it looks for clues: ad SDKs,
+shop code, energy caps, a component list. Then it asks you one short question, or states
+its assumption at the top of the report.
 
-## What's inside
+**What you get:** a `balance-audit/` folder.
 
-```
-skills/game-balance-audit/
-  SKILL.md                 the workflow the agent follows
-  scripts/sim-kit.mjs      simulation toolkit for JS/TS games (seeded runs, bots, what-if scenarios)
-  scripts/sim_kit.py       the same for Python, rulebooks and everything else
-  scripts/analyze.py       turns results into flags, what-if comparisons and charts (stdlib only)
-  references/              how to build the simulator, what to measure per game family,
-                           a catalogue of fixes, report template, sourced benchmarks
-examples/                  four small made-up games with planted balance problems
-evals/                     test prompts and reference simulators for the examples
-```
+| File | What it is |
+|---|---|
+| `REPORT.md` | The audit: your goals, a scorecard of every change tried, problems ranked by how much they hurt your goals, and three tested suggestions for each |
+| `game-model.md` | How the simulator models your game, which parts reuse your code, and every assumption it made |
+| `audit.json` | Your goals, limits and intended experience, written as checks |
+| `sim/` | The simulator. Re-run it after every change, or add your own what-ifs |
+| `results/` | `summary.md`, `summary.json` and `charts.html` (curves, scorecard bars, fairness bars) |
+
+Your game's own files are never edited. In a git repo, the agent offers to work on a
+branch.
+
+**How long it takes:** often 30–90 minutes of agent time, depending on the game and how
+long its simulations take. Search-based "expert" bots for card and board games are the
+slowest part.
 
 ## Try it on the examples
 
-Each example hides a few balance problems. Ask your agent to audit one and compare with
-`evals/evals.json`:
+Four small made-up games, each with balance problems planted on purpose and its own
+business model. Copy one into an empty folder, ask for an audit, and compare with the
+answer key in `evals/reference/`.
 
-| Example | Family | What's in it |
-|---|---|---|
-| `examples/merge-mini` | merge-2 economy (JavaScript) | rules module, 10 days of orders, design intent |
-| `examples/match3-mini` | match-3 levels (JavaScript) | rules module, 15 levels, design intent |
-| `examples/slide-puzzles` | logic puzzles (Python) | Rush Hour-style rules, a 12-level pack |
-| `examples/market-day` | tabletop card game | a rulebook only, no code |
+| Example | Kind of game | Business model | What's in it |
+|---|---|---|---|
+| `examples/merge-mini` | merge-2 economy (JavaScript) | rewarded ads | rules module, 10 days of orders, design notes |
+| `examples/match3-mini` | match-3 levels (JavaScript) | "+5 moves" sold on a loss | rules module, 15 levels, design notes |
+| `examples/slide-puzzles` | logic puzzles (Python) | paid app, no ads | Rush Hour-style rules, a 12-level pack |
+| `examples/market-day` | tabletop card game | pitched to publishers | a rulebook only, no code |
+
+`evals/` holds one case per example for `claude plugin eval` (see `evals/README.md`).
 
 ## Why simulation
 
 Most balance advice, from people or from AI, is a hunch in a confident voice. A
 simulator shows what actually happens, for which kind of player, how sure you can be, and
-whether a fix works. Often the obvious fix doesn't: in `market-day`, cutting the
-dominant card's value barely changes its win rate, because its real edge is selling first.
+whether a fix works. Often the obvious fix doesn't. In `market-day`, cutting the dominant
+card's value barely changes its win rate, because its real edge is selling first.
 
 What a simulator can't tell you: whether the game feels good, whether players understand
-it, or anything about bluffing and table talk. The audit says so and lists the playtest
-questions that would answer it.
+it, how real people respond to an ad offer, or anything about bluffing and table talk. The
+audit says so, treats guesses (like how often players watch or quit) as dials it varies,
+and lists the playtest questions that would settle them.
+
+## How it works
+
+```
+skills/game-balance-audit/
+  SKILL.md                 the workflow the agent follows
+  scripts/sim-kit.mjs      simulation toolkit for JS/TS games: seeded runs, per-segment luck, bots, what-ifs
+  scripts/sim_kit.py       the same for Python, rulebooks and everything else
+  scripts/analyze.py       results → scorecard, flags, what-if comparisons and charts (Python 3.7+, stdlib only)
+  references/              design goals by business model, building the simulator, what to measure per
+                           kind of game, a catalogue of fixes, report template, sourced benchmarks
+```
+
+## Feedback
+
+Issues and pull requests are welcome. If you run it on your game, an issue telling us what
+it found, and what it got wrong, helps the most.
 
 ## Licence
 

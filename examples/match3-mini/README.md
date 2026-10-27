@@ -8,6 +8,10 @@ Matches clear, tiles fall, new ones drop in, and chains can follow. Each level g
 number of moves and a goal: collect enough tiles of one or two colours. If no move is
 possible, the board reshuffles.
 
+**How it makes money.** In-app purchases. When a level is lost, the game offers +5 moves for
+900 coins (`OFFER` in `match3.mjs`); coins are sold in the shop. We want the hard levels
+to be where players buy moves, without most of them quitting there.
+
 **What the designer wants.**
 - Win rates for a typical player should drift down from about 90% on level 1 to about
   45% on level 15.
