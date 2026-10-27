@@ -134,6 +134,8 @@ class Data:
         segs = [r.get(self.seg, "all") if self.seg else "all" for r in rows]
         self.segments = self._segments(segs, cfg.get("segment_order"))
         self.cells = {}
+        self._values = {}
+        self._stats = {}
         for r in rows:
             key = (r.get("scenario", "baseline"), r.get("profile", "default"), r.get(self.seg, "all") if self.seg else "all")
             self.cells.setdefault(key, []).append(r)
@@ -178,6 +180,11 @@ class Data:
         return [s for s in self.segments if s in spec]
 
     def values(self, scenario, profile, seg, metric):
+        """The metric's numbers in one cell (cached: every check asks for the same cells)."""
+        key = (scenario, profile, seg, metric)
+        hit = self._values.get(key)
+        if hit is not None:
+            return hit
         profiles = self.profiles if profile is None else [profile]
         out = []
         for p in profiles:
@@ -185,6 +192,7 @@ class Data:
                 x = num(r.get(metric))
                 if x is not None:
                     out.append(x)
+        self._values[key] = out
         return out
 
     def stat(self, scenario, profile, seg, metric, which="mean", cond=None):
@@ -193,7 +201,11 @@ class Data:
             return None
         if which == "rate":
             return sum(1 for x in xs if cond(x)) / len(xs)
-        return stats(xs)[which]
+        key = (scenario, profile, seg, metric)
+        st = self._stats.get(key)
+        if st is None:
+            st = self._stats[key] = stats(xs)
+        return st[which]
 
     def series(self, scenario, profile, metric, segs, which="mean"):
         return [(s, self.stat(scenario, profile, s, metric, which)) for s in segs]
@@ -506,7 +518,7 @@ def check_constant(data, scenario, cfg, out):
     for m in data.metrics:
         if m == "capped":
             continue
-        xs = [x for (sc, _, _), rs in data.cells.items() if sc == scenario for r in rs for x in [num(r.get(m))] if x is not None]
+        xs = [x for p in data.profiles for sg in data.segments for x in data.values(scenario, p, sg, m)]
         if xs and min(xs) == max(xs):
             flag(out, "constant", "info", m, scenario, None,
                  "%s is %s in every row: either it measures nothing here, or something never happens (which may be a finding)"

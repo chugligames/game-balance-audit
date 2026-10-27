@@ -28,11 +28,11 @@ graders:
     name: findings
     weight: 3
     criteria: |
-      Read balance-audit/REPORT.md. Pass only if all of these hold:
+      Read this audit report. Pass only if all of these hold:
       1. It finds the true average is about 69.5 pulls per legendary (about 1.44%), not the 1.6% (62.5 pulls) the Rates text claims.
       2. It finds that "guaranteed within 90 pulls" is false: the hard-pity check uses `>` so a legendary can take 91 pulls, in about 1 in 2,400 streaks (0.04%), and it names the fix (`>=`).
       3. It confirms the epic guarantee (an epic or better within 10 pulls) holds.
       4. It reports what players experience beyond the mean (e.g. a median around 80 pulls, most players reaching soft pity) and the gem cost per legendary (about 11,100 against the 10,000 the rates imply).
       5. It treats the false Rates text as a disclosure problem (app stores require accurate odds for paid random items), not just a tuning issue.
       6. Fixes come with recomputed numbers, and simulated numbers state their size and an interval, or are backed by exact calculation.
-    focus: files
+    focus: { source: file, path: balance-audit/REPORT.md }

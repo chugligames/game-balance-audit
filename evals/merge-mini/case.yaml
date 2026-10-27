@@ -32,7 +32,7 @@ graders:
     name: findings-and-tested-suggestions
     weight: 3
     criteria: |
-      Read balance-audit/REPORT.md. Pass only if all of these hold:
+      Read this audit report. Pass only if all of these hold:
       1. It reports that the board never gets crowded (free cells stay far above zero), against the designer's wish that it feel crowded from about day 6.
       2. It reports that energy never runs out, or that days 8–10 use far less of a twice-a-day player's energy than the designer wants.
       3. It reports that days 6–8 ask for less effort than day 5 (the curve dips instead of rising).
@@ -42,4 +42,4 @@ graders:
          runs out" as a revenue problem (no moments to watch an ad), measures ads watched per player and players quitting
          with an explicit watch / wait / quit model whose probabilities are labelled as assumptions, and does not recommend
          changes that cut ad views without stating that cost.
-    focus: files
+    focus: { source: file, path: balance-audit/REPORT.md }

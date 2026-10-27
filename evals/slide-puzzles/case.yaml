@@ -29,7 +29,7 @@ graders:
     name: findings-and-tested-suggestions
     weight: 3
     criteria: |
-      Read balance-audit/REPORT.md. Pass only if all of these hold:
+      Read this audit report. Pass only if all of these hold:
       1. Level 9 is reported as unsolvable and ranked first.
       2. Level 6 is reported as far harder than the levels around it (its shortest solution is about 20 moves, against 6–8 nearby).
       3. Level 10 is reported as trivial (solvable in one move) although it is late in the pack.
@@ -37,4 +37,4 @@ graders:
       5. Each problem reported in full has three suggestions, tested by re-running the measurements (before → after).
       6. It recognises a paid game with no ads and no paid hints, frames the goals as completion and satisfaction, and
          doesn't propose ads, paid hints or other monetisation.
-    focus: files
+    focus: { source: file, path: balance-audit/REPORT.md }

@@ -28,12 +28,12 @@ graders:
     name: findings-and-tested-suggestions
     weight: 3
     criteria: |
-      Read balance-audit/REPORT.md and balance-audit/game-model.md. Pass only if all of these hold:
-      1. It writes the rules as a simulator and logs assumptions for gaps in the rules, at least: whether the game ends mid-round when the market can't refill, and how ties are broken.
+      Read this audit report. Pass only if all of these hold:
+      1. It says the rules were written as a simulator and states the assumptions it made for gaps in the rules, at least: whether the game ends mid-round when the market can't refill, and how ties are broken.
       2. It measures seat advantage with seats rotated or mirror tables, reports the first seat winning more than its share (or the last seat less, at 3 players) with a confidence interval or run count, and judges whether the size matters.
       3. It finds a strategy that beats a sensible baseline well beyond noise, such as selling small sets early or chasing saffron, and looks for why (e.g. falling coin stacks reward selling first).
       4. It reports that the half-time leader usually wins (a runaway leader), or explains why it measured comebacks differently.
       5. Each problem reported in full has three suggestions, each tested in the simulator with before → after numbers, and at least one natural fix is shown to work less well than expected, or the report explains why a fix works.
       6. It uses the designer's note (a quick filler pitched to publishers): goals are fairness at every player count,
          games that stay close, more than one viable way to play, and about 20 minutes, and it checks each player count.
-    focus: files
+    focus: { source: file, path: balance-audit/REPORT.md }

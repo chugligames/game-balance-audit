@@ -29,11 +29,11 @@ graders:
     name: findings
     weight: 3
     criteria: |
-      Read balance-audit/REPORT.md. Pass only if all of these hold:
+      Read this audit report. Pass only if all of these hold:
       1. It finds the true RTP is about 103.9% (exactly 449/432), not the 96% the sheet states.
       2. It explains why the sheet is wrong: its probabilities treat every reel as if it were reel 1 (or otherwise ignore that the three reels differ).
       3. It says what an RTP above 100% means for this business: play coins are created by spinning, so balances grow and players don't need to buy coins.
       4. It confirms the hit rate (about 31%) and gives the big-win frequency (about 1 in 346 spins).
       5. Each fix it proposes comes with the recomputed RTP (exact, or simulated with an interval), and at least one fix lands within about 95–97%.
       6. Simulated numbers state their size (spins or runs) and an interval or error margin, or are backed by exact enumeration.
-    focus: files
+    focus: { source: file, path: balance-audit/REPORT.md }

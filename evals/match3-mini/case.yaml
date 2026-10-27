@@ -29,7 +29,7 @@ graders:
     name: findings-and-tested-suggestions
     weight: 3
     criteria: |
-      Read balance-audit/REPORT.md. Pass only if all of these hold:
+      Read this audit report. Pass only if all of these hold:
       1. Level 8 is reported as (nearly) unwinnable, even for a strong player, and ranked as the most serious problem.
       2. Level 10 is reported as not hard, although the designer wants every fifth level to be hard.
       3. Levels 1–4 are reported as playing alike (no variety, all near 100% wins).
@@ -39,4 +39,4 @@ graders:
       7. It identifies the business model (+5 moves sold on a loss) and judges hard levels as purchase moments: it separates
          losses that come close (where the offer sells) from hopeless ones (where players quit), and treats an unwinnable
          level as churn with no sale.
-    focus: files
+    focus: { source: file, path: balance-audit/REPORT.md }
