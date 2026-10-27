@@ -68,7 +68,19 @@ Make each probability a param, and let quitting grow with what drives it:
 Take starting values from `references/benchmarks.md` where a sourced number exists. Where
 none does, label the value as an assumption, and run a **sensitivity check**: the same
 scenarios at a low, middle and high value. A recommendation that holds only for one
-assumed quit rate must say so.
+assumed quit rate must say so. Useful anchors (sources in `benchmarks.md`):
+
+- **Watching at a wall.** Unity's 2024 report puts the watch rate at about 38% for ad
+  placements shown when the player runs out of resources, against about 24% between
+  levels. About 25–45% of daily players watch at least one rewarded ad.
+- **Quitting at a wall.** No public number exists for energy walls. For difficulty walls,
+  two randomised experiments (EA's match-3, and Ascarza et al.'s lives-based puzzle game
+  with about 300k players) found that **easing hard spots raised engagement by 4–20%
+  without lowering revenue**, and in one case raised it. Almost no early quitter ever paid.
+  So a stricter wall must earn more in ad views and purchases than it loses in future
+  watchers and payers who quit. Model that cost; don't assume it away.
+- **Paying.** On a given day about 0.2–1% of daily players pay in median casual and
+  puzzle games, and about 4.5% in top IAP-led portfolios.
 
 ```js
 // One wall, one decision. Probabilities are params so the audit can vary them.
@@ -123,11 +135,22 @@ constraint), with constraints on seat win rates.
 
 ## Rules of the platform are hard constraints
 
-- **Rewarded ads must be opt-in.** Ad networks require the player to choose to watch in
-  exchange for the reward. The design lever is how attractive watching is compared with
-  waiting, never a disguised or unskippable ad. Check the network's current policy.
-- **Paid random items** (loot boxes, gacha): app stores require the odds to be disclosed,
-  and some countries regulate or ban them.
+- **Rewarded ads must be opt-in, and declining must leave the game playable.**
+  - Google AdMob: rewarded ads "must only be served after a user affirmatively and
+    unambiguously opts in", and skipping one "must not impede or interfere with the normal
+    usage of the platform, website or app".
+  - No copy may nudge the player ("watch this ad to support us").
+
+  So every ad-gated refill needs a non-ad path (wait, or pay), and **a simulation must
+  never model an ad as the only way past a wall**. The design lever is how attractive
+  watching is compared with waiting
+  ([AdMob policy](https://support.google.com/admob/answer/7313578)).
+- **Interstitials** (non-rewarded full-screen ads): Google Play doesn't allow them at the
+  start of a level or of a content segment. They carry several times the churn per
+  impression of rewarded ads.
+- **Paid random items** (loot boxes, gacha): Apple (Review Guideline 3.1.1) and Google Play
+  require the odds to be disclosed before purchase, and some countries regulate or ban
+  them. Random rewards from an ad need disclosed odds too.
 - **Games for children** have stricter ad rules (app-store family programmes, COPPA in
   the US).
 

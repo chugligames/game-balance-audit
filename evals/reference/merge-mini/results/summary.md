@@ -1,6 +1,6 @@
 # Balance summary: Merge Mini
 
-24000 rows · baseline `baseline` + 7 what-if scenario(s) · player profiles: careless, twice, efficient · 100 runs each
+23996 rows · baseline `baseline` + 7 what-if scenario(s) · player profiles: careless, twice, efficient · 100 runs each
 
 ## Scenarios against the design goals
 
@@ -8,10 +8,10 @@ Each goal is measured per player over the segments it names, then averaged over 
 
 | Scenario | Rewarded ads per player, 10 days (higher is better) | Days played (higher is better) | Twice-a-day players who quit (≤ 0.15) | Once-a-day players who quit (≤ 0.25) | Weighted change | Best trade-off |
 |---|---|---|---|---|---|---|
-| `orders-x1.5 + cap-60` | 1.59 ± 0.22 ▲ | 10.0 ± 0.00 | ✓ 0.01 | ✓ 0.01 | +2000% | yes |
-| `orders-x1.5 + cap-60, quit x2` | 1.59 ± 0.22 ▲ | 10.0 ± 0.00 | ✓ 0.01 | ✓ 0.02 | +2000% | yes |
-| `orders-x1.5 + cap-60 + ad 30` | 1.49 ± 0.19 ▲ | 10.0 ± 0.00 | ✓ 0.01 | ✓ 0.01 | +1874% |  |
-| `orders-x1.5-from-6` | 0.16 ± 0.07 ▲ | 10.0 ± 0.00 | ✓ 0.00 | ✓ 0.00 | +201% |  |
+| `orders-x1.5 + cap-60` | 0.85 ± 0.17 ▲ | 9.99 ± 0.02 | ✓ 0.02 | ✓ 0.01 | +2000% | yes |
+| `orders-x1.5 + cap-60, quit x2` | 0.85 ± 0.17 ▲ | 9.98 ± 0.03 | ✓ 0.05 | ✓ 0.03 | +2000% |  |
+| `orders-x1.5 + cap-60 + ad 30` | 0.83 ± 0.17 ▲ | 9.99 ± 0.02 | ✓ 0.02 | ✓ 0.01 | +1953% |  |
+| `orders-x1.5-from-6` | 0.09 ± 0.06 ▲ | 10.0 ± 0.00 | ✓ 0.00 | ✓ 0.00 | +212% | yes |
 | `baseline` | 0.00 ± 0.00 | 10.0 ± 0.00 | ✓ 0.00 | ✓ 0.00 | +0% |  |
 | `smaller-board` | 0.00 ± 0.00 | 10.0 ± 0.00 | ✓ 0.00 | ✓ 0.00 | +0% |  |
 | `slower-regen` | 0.00 ± 0.00 | 10.0 ± 0.00 | ✓ 0.00 | ✓ 0.00 | +0% |  |
@@ -146,7 +146,7 @@ Unchanged: `taps`, `energyShare`, `outOfEnergy`, `daysLate`, `adsWatched`.
 ### `orders-x1.5-from-6`
 
 - **Fixes:** never-binds on `outOfEnergy` (twice (and every other profile)); flat on `adsWatched` (twice (and every other profile)); dips on `energyShare` (twice (and every other profile)); dips on `taps` (twice (and every other profile))
-- **Introduces:** spike (twice (and every other profile)): Rewarded ads watched jumps up sharply at days 9→10 (0.00 → 0.16), more than 3× a typical step; spike (twice (and every other profile)): Share of the day's free energy used jumps up sharply at days 4→5 (0.11 → 0.18), 8→9 (0.18 → 0.32), 9→10 (0.32 → 0.49), more than 3× a typical step; spike (twice (and every other profile)): Energy spent jumps up sharply at days 4→5 (21.3 → 35.4), 8→9 (35.7 → 63.7), 9→10 (63.7 → 98.7), more than 3× a typical step; plateau (twice): Fewest empty cells barely changes for 4 days in a row (5 to 8)
+- **Introduces:** spike (twice (and every other profile)): Rewarded ads watched jumps up sharply at days 9→10 (0.00 → 0.09), more than 3× a typical step; spike (twice (and every other profile)): Share of the day's free energy used jumps up sharply at days 4→5 (0.11 → 0.18), 8→9 (0.18 → 0.32), 9→10 (0.32 → 0.49), more than 3× a typical step; spike (twice (and every other profile)): Energy spent jumps up sharply at days 4→5 (21.3 → 35.4), 8→9 (35.7 → 63.7), 9→10 (63.7 → 98.7), more than 3× a typical step; plateau (twice): Fewest empty cells barely changes for 4 days in a row (5 to 8)
 - **Still flagged:** off-target on `adsWatched` · 2–3 ads a day from the second week (twice); off-target on `energyShare` · Twice-a-day player uses most of their energy on days 8–10 (twice); never-binds on `minFree` (twice (and every other profile)); off-target on `minFree` · Board feels crowded from day 6 (twice); flat on `minFree` (twice (and every other profile)): growth 8% → 13%; plateau on `adsWatched` (twice (and every other profile))
 
 | Metric | Baseline, twice (first third → last third) | What-if, twice | Change in the mean, by profile |
@@ -154,9 +154,9 @@ Unchanged: `taps`, `energyShare`, `outOfEnergy`, `daysLate`, `adsWatched`.
 | taps | 19.5 → 40.8 | 19.5 → 81.2 | careless +58% · twice +58% |
 | energyShare | 0.10 → 0.20 | 0.10 → 0.41 | careless +58% · twice +58% |
 | minFree | 33.4 → 30.9 | 33.4 → 29.0 | careless −4% · twice −4% |
-| outOfEnergy | 0.00 → 0.00 | 0.00 → 0.13 | careless 0.00 → 0.04 · twice 0.00 → 0.04 |
+| outOfEnergy | 0.00 → 0.00 | 0.00 → 0.20 | careless 0.00 → 0.05 · twice 0.00 → 0.07 |
 | daysLate | 0.00 → 0.00 | 0.00 → 0.00 | careless 0.00 → 0.01 · twice 0.00 → 0.00 |
-| adsWatched | 0.00 → 0.00 | 0.00 → 0.08 | careless 0.00 → 0.01 · twice 0.00 → 0.02 |
+| adsWatched | 0.00 → 0.00 | 0.00 → 0.04 | careless 0.00 → 0.01 · twice 0.00 → 0.01 |
 
 ### `slower-regen`
 
@@ -181,7 +181,7 @@ Unchanged: `taps`, `minFree`, `outOfEnergy`, `daysLate`, `adsWatched`.
 ### `orders-x1.5 + cap-60`
 
 - **Fixes:** never-binds on `outOfEnergy` (twice (and every other profile)); flat on `adsWatched` (twice (and every other profile)); dips on `energyShare` (twice (and every other profile)); dips on `taps` (twice (and every other profile))
-- **Introduces:** spike (twice (and every other profile)): Rewarded ads watched jumps up sharply at days 8→9 (0.00 → 0.56), 9→10 (0.56 → 1.03), more than 3× a typical step; spike (twice (and every other profile)): Share of the day's free energy used jumps up sharply at days 4→5 (0.18 → 0.29), 8→9 (0.30 → 0.53), 9→10 (0.53 → 0.82), more than 3× a typical step; spike (twice (and every other profile)): Energy spent jumps up sharply at days 4→5 (21.3 → 35.4), 8→9 (35.7 → 63.7), 9→10 (63.7 → 98.4), more than 3× a typical step; plateau (twice): Fewest empty cells barely changes for 4 days in a row (5 to 8)
+- **Introduces:** spike (twice (and every other profile)): Rewarded ads watched jumps up sharply at days 8→9 (0.00 → 0.37), 9→10 (0.37 → 0.48), more than 3× a typical step; spike (twice (and every other profile)): Share of the day's free energy used jumps up sharply at days 4→5 (0.18 → 0.29), 8→9 (0.30 → 0.53), 9→10 (0.53 → 0.82), more than 3× a typical step; spike (twice (and every other profile)): Energy spent jumps up sharply at days 4→5 (21.3 → 35.4), 8→9 (35.7 → 63.6), 9→10 (63.6 → 98.4), more than 3× a typical step; plateau (twice): Fewest empty cells barely changes for 4 days in a row (5 to 8)
 - **Still flagged:** off-target on `adsWatched` · 2–3 ads a day from the second week (twice); off-target on `energyShare` · Twice-a-day player uses most of their energy on days 8–10 (twice): clear misses 3 → 2; never-binds on `minFree` (twice (and every other profile)); off-target on `minFree` · Board feels crowded from day 6 (twice); flat on `minFree` (twice (and every other profile)): growth 8% → 14%; plateau on `adsWatched` (twice (and every other profile))
 
 | Metric | Baseline, twice (first third → last third) | What-if, twice | Change in the mean, by profile |
@@ -189,29 +189,14 @@ Unchanged: `taps`, `minFree`, `outOfEnergy`, `daysLate`, `adsWatched`.
 | taps | 19.5 → 40.8 | 19.5 → 81.0 | careless +58% · twice +58% |
 | energyShare | 0.10 → 0.20 | 0.16 → 0.68 | careless +163% · twice +163% |
 | minFree | 33.4 → 30.9 | 33.4 → 28.9 | careless −4% · twice −4% |
-| outOfEnergy | 0.00 → 0.00 | 0.00 → 0.66 | careless 0.00 → 0.35 · twice 0.00 → 0.34 |
-| daysLate | 0.00 → 0.00 | 0.00 → 0.00 | careless 0.00 → 0.10 · twice 0.00 → 0.00 |
-| adsWatched | 0.00 → 0.00 | 0.00 → 0.80 | careless 0.00 → 0.20 · twice 0.00 → 0.20 |
+| outOfEnergy | 0.00 → 0.00 | 0.00 → 0.88 | careless 0.00 → 0.48 · twice 0.00 → 0.48 |
+| daysLate | 0.00 → 0.00 | 0.00 → 0.00 | careless 0.00 → 0.14 · twice 0.00 → 0.00 |
+| adsWatched | 0.00 → 0.00 | 0.00 → 0.43 | careless 0.00 → 0.11 · twice 0.00 → 0.11 |
 
 ### `orders-x1.5 + cap-60 + ad 30`
 
 - **Fixes:** never-binds on `outOfEnergy` (twice (and every other profile)); flat on `adsWatched` (twice (and every other profile)); dips on `energyShare` (twice (and every other profile)); dips on `taps` (twice (and every other profile))
-- **Introduces:** spike (twice (and every other profile)): Rewarded ads watched jumps up sharply at days 8→9 (0.00 → 0.56), 9→10 (0.56 → 0.93), more than 3× a typical step; spike (twice (and every other profile)): Share of the day's free energy used jumps up sharply at days 4→5 (0.18 → 0.29), 8→9 (0.30 → 0.53), 9→10 (0.53 → 0.82), more than 3× a typical step; spike (twice (and every other profile)): Energy spent jumps up sharply at days 4→5 (21.3 → 35.4), 8→9 (35.7 → 63.7), 9→10 (63.7 → 98.3), more than 3× a typical step; plateau (twice): Fewest empty cells barely changes for 4 days in a row (5 to 8)
-- **Still flagged:** off-target on `adsWatched` · 2–3 ads a day from the second week (twice); off-target on `energyShare` · Twice-a-day player uses most of their energy on days 8–10 (twice): clear misses 3 → 2; never-binds on `minFree` (twice (and every other profile)); off-target on `minFree` · Board feels crowded from day 6 (twice); flat on `minFree` (twice (and every other profile)): growth 8% → 13%; plateau on `adsWatched` (twice (and every other profile))
-
-| Metric | Baseline, twice (first third → last third) | What-if, twice | Change in the mean, by profile |
-|---|---|---|---|
-| taps | 19.5 → 40.8 | 19.5 → 81.0 | careless +58% · twice +58% |
-| energyShare | 0.10 → 0.20 | 0.16 → 0.68 | careless +163% · twice +163% |
-| minFree | 33.4 → 30.9 | 33.4 → 28.9 | careless −4% · twice −4% |
-| outOfEnergy | 0.00 → 0.00 | 0.00 → 0.65 | careless 0.00 → 0.33 · twice 0.00 → 0.34 |
-| daysLate | 0.00 → 0.00 | 0.00 → 0.00 | careless 0.00 → 0.10 · twice 0.00 → 0.00 |
-| adsWatched | 0.00 → 0.00 | 0.00 → 0.75 | careless 0.00 → 0.19 · twice 0.00 → 0.19 |
-
-### `orders-x1.5 + cap-60, quit x2`
-
-- **Fixes:** never-binds on `outOfEnergy` (twice (and every other profile)); flat on `adsWatched` (twice (and every other profile)); dips on `energyShare` (twice (and every other profile)); dips on `taps` (twice (and every other profile))
-- **Introduces:** spike (twice (and every other profile)): Rewarded ads watched jumps up sharply at days 8→9 (0.00 → 0.56), 9→10 (0.56 → 1.03), more than 3× a typical step; spike (twice (and every other profile)): Share of the day's free energy used jumps up sharply at days 4→5 (0.18 → 0.29), 8→9 (0.30 → 0.53), 9→10 (0.53 → 0.82), more than 3× a typical step; spike (twice (and every other profile)): Energy spent jumps up sharply at days 4→5 (21.3 → 35.4), 8→9 (35.7 → 63.7), 9→10 (63.7 → 98.4), more than 3× a typical step; plateau (twice): Fewest empty cells barely changes for 4 days in a row (5 to 8)
+- **Introduces:** spike (twice (and every other profile)): Rewarded ads watched jumps up sharply at days 8→9 (0.00 → 0.37), 9→10 (0.37 → 0.46), more than 3× a typical step; spike (twice (and every other profile)): Share of the day's free energy used jumps up sharply at days 4→5 (0.18 → 0.29), 8→9 (0.30 → 0.53), 9→10 (0.53 → 0.82), more than 3× a typical step; spike (twice (and every other profile)): Energy spent jumps up sharply at days 4→5 (21.3 → 35.4), 8→9 (35.7 → 63.6), 9→10 (63.6 → 98.4), more than 3× a typical step; plateau (twice): Fewest empty cells barely changes for 4 days in a row (5 to 8)
 - **Still flagged:** off-target on `adsWatched` · 2–3 ads a day from the second week (twice); off-target on `energyShare` · Twice-a-day player uses most of their energy on days 8–10 (twice): clear misses 3 → 2; never-binds on `minFree` (twice (and every other profile)); off-target on `minFree` · Board feels crowded from day 6 (twice); flat on `minFree` (twice (and every other profile)): growth 8% → 14%; plateau on `adsWatched` (twice (and every other profile))
 
 | Metric | Baseline, twice (first third → last third) | What-if, twice | Change in the mean, by profile |
@@ -219,6 +204,21 @@ Unchanged: `taps`, `minFree`, `outOfEnergy`, `daysLate`, `adsWatched`.
 | taps | 19.5 → 40.8 | 19.5 → 81.0 | careless +58% · twice +58% |
 | energyShare | 0.10 → 0.20 | 0.16 → 0.68 | careless +163% · twice +163% |
 | minFree | 33.4 → 30.9 | 33.4 → 28.9 | careless −4% · twice −4% |
-| outOfEnergy | 0.00 → 0.00 | 0.00 → 0.66 | careless 0.00 → 0.35 · twice 0.00 → 0.34 |
-| daysLate | 0.00 → 0.00 | 0.00 → 0.00 | careless 0.00 → 0.10 · twice 0.00 → 0.00 |
-| adsWatched | 0.00 → 0.00 | 0.00 → 0.80 | careless 0.00 → 0.20 · twice 0.00 → 0.20 |
+| outOfEnergy | 0.00 → 0.00 | 0.00 → 0.88 | careless 0.00 → 0.47 · twice 0.00 → 0.48 |
+| daysLate | 0.00 → 0.00 | 0.00 → 0.00 | careless 0.00 → 0.14 · twice 0.00 → 0.00 |
+| adsWatched | 0.00 → 0.00 | 0.00 → 0.42 | careless 0.00 → 0.10 · twice 0.00 → 0.10 |
+
+### `orders-x1.5 + cap-60, quit x2`
+
+- **Fixes:** never-binds on `outOfEnergy` (twice (and every other profile)); flat on `adsWatched` (twice (and every other profile)); dips on `energyShare` (twice (and every other profile)); dips on `taps` (twice (and every other profile))
+- **Introduces:** spike (twice (and every other profile)): Rewarded ads watched jumps up sharply at days 8→9 (0.00 → 0.37), 9→10 (0.37 → 0.49), more than 3× a typical step; spike (twice (and every other profile)): Share of the day's free energy used jumps up sharply at days 4→5 (0.18 → 0.29), 8→9 (0.30 → 0.53), 9→10 (0.53 → 0.82), more than 3× a typical step; spike (twice (and every other profile)): Energy spent jumps up sharply at days 4→5 (21.3 → 35.4), 8→9 (35.7 → 63.6), 9→10 (63.6 → 97.9), more than 3× a typical step; plateau (twice): Fewest empty cells barely changes for 4 days in a row (5 to 8)
+- **Still flagged:** off-target on `adsWatched` · 2–3 ads a day from the second week (twice); off-target on `energyShare` · Twice-a-day player uses most of their energy on days 8–10 (twice): clear misses 3 → 2; never-binds on `minFree` (twice (and every other profile)); off-target on `minFree` · Board feels crowded from day 6 (twice); flat on `minFree` (twice (and every other profile)): growth 8% → 14%; plateau on `adsWatched` (twice (and every other profile))
+
+| Metric | Baseline, twice (first third → last third) | What-if, twice | Change in the mean, by profile |
+|---|---|---|---|
+| taps | 19.5 → 40.8 | 19.5 → 80.7 | careless +58% · twice +58% |
+| energyShare | 0.10 → 0.20 | 0.16 → 0.67 | careless +163% · twice +163% |
+| minFree | 33.4 → 30.9 | 33.4 → 28.9 | careless −4% · twice −4% |
+| outOfEnergy | 0.00 → 0.00 | 0.00 → 0.88 | careless 0.00 → 0.48 · twice 0.00 → 0.48 |
+| daysLate | 0.00 → 0.00 | 0.00 → 0.00 | careless 0.00 → 0.14 · twice 0.00 → 0.00 |
+| adsWatched | 0.00 → 0.00 | 0.00 → 0.43 | careless 0.00 → 0.11 · twice 0.00 → 0.11 |

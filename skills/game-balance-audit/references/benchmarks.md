@@ -31,6 +31,132 @@ norms say how much a day can ask before it stops fitting a commute or a break.
 **Caveats.** Wiki numbers change with live updates. Session and retention benchmarks mix
 every genre.
 
+## Free-to-play monetisation and engagement
+
+Checked in October 2026. Most of these figures come from ad networks and analytics vendors
+(Unity/ironSource, Tapjoy, Appodeal, GameAnalytics), which have a commercial interest, so
+treat them as directional. Quality flags: **2°**: read through a secondary summary;
+**~**: read off a chart; **UV**: the primary source couldn't be reached.
+
+### Rewarded video ads
+
+| metric | number or range | context | source | quality | year |
+|---|---|---|---|---|---|
+| Share of DAU who watch ≥1 rewarded video ("engagement") | Casual 36%; Word 38.4%; RPG 37.6%; Sports/Trivia 27.3% (lowest) | Global, all platforms, 2023 data; Unity Ads + ironSource + Tapjoy data | Unity *Mobile Growth & Monetization Report 2024*, via PocketGamer.biz "Unity: global rewarded ad engagement rose by 3.2% in 2023" https://www.pocketgamer.biz/unity-global-rewarded-ad-engagement-rose-by-32-in-2023/ | industry report (2°) | 2024 |
+| Engagement vs number of RV placements | Titles with >15 placements reach up to 46%; conversion growth "almost stops" after 15–20 placements | Same dataset | Same, plus GameDev Reports "Unity: Mobile UA and Monetization trends in 2024" https://gamedevreports.substack.com/p/unity-mobile-user-acquisition-and | industry report (2°) | 2024 |
+| Engagement-rate target | ≥35%, aim for 50% of DAU | ironSource guidance, all genres; these are targets, not medians | ironSource "Monetization Deep Dive" deck (Developer Tour HCMC), slide 14 https://www.slideshare.net/slideshow/the-developer-tour-ho-chi-minh-city/109679422 | industry blog (deck) | c. 2018 (inferred from file name) |
+| RV views per engaged user ("usage rate") | ≥4.5, aim for 8 per engaged user per day; worked example 2.4M imps / 400K engaged = 6 | Same deck. Definition given as "Imp/engaged user" | Same deck, slides 10–14 | industry blog (deck) | c. 2018 |
+| Total ad impressions per DAU | ≥1.3, aim for 4 | Same deck (all formats) | Same deck, slide 14 | industry blog (deck) | c. 2018 |
+| RV views per DAU, genre-specific (casual/puzzle/merge) | **No public number found.** Appodeal's 2025 casual report has a "fullscreen impressions per DAU" chart, but I could not read its values reliably | — | — | — | — |
+| Stated willingness to watch | 51% of US gamers willing to watch ≥4 videos/day; 37% ≥6/day | US survey of mobile gamers | Tapjoy *Modern Mobile Gamer* via App Developer Magazine https://appdevelopermagazine.com/reward-videos-for-mobile-ads-payoff-the-best-says-tapjoy/ | industry report (survey, 2°) | 2017 |
+| Daily caps (design guidance) | Free-reward/timer placement capped at 6/day; speed-boost placement 3/day; having "10–12 imp a day" available helps usage | ironSource placement examples | ironSource deck above, slides 28 and 31 | industry blog (deck) | c. 2018 |
+| Network default cap | "Users are limited by default to 25 ads per day (on a rolling 24hr basis) per app" (Unity Ads FAQ, quoted) | Unity Ads only. A later forum reply says there is no cap, so treat this as historical | Unity Discussions thread https://discussions.unity.com/t/what-happens-when-the-player-reaches-the-ads-limit-of-25-ads-per-day-per-player/171572 | community | 2016 |
+| Watch rate by placement context | Placements shown when the player runs out of resources: 38.1% watch. Placements between levels: 23.8% | Unity 2024 report, all genres | PocketGamer.biz link above | industry report (2°) | 2024 |
+| Conversion by reward motivator | Gacha 31.1%; extra moves 30.5%; daily rewards 30.3% | Unity 2024 report | GameDev Reports link above | industry report (2°) | 2024 |
+| Split of RV views: energy/lives refills vs other placements | **No public number found** (searched ironSource, Unity, GameRefinery, AdMob) | — | — | — | — |
+| Rewarded eCPM, US | iOS $30.25; Android $27.88 (top country on both) | Games only, kids' apps excluded; Q1 2024; eCPM computed from 6B impressions | Tenjin ad monetization Q1'24, via GameDev Reports https://gamedevreports.substack.com/p/tenjin-ad-monetization-in-mobile | industry report (2°) | 2024 |
+| Rewarded eCPM by region (Android / iOS) | North America $9.20 / $13.90; Europe $5.10 / $8.80; APAC $8.20 / $7.50; LATAM $1.90 / $3.75; Middle East $2.30 / $8.40; US blended $15.15 | Appodeal network, 100k+ apps, probably Q4 2024 (seasonal peak) | Mistplay "Mobile ads eCPM" citing Appodeal https://business.mistplay.com/resources/mobile-ads-ecpm ; Appodeal PDF (charts only) https://appodeal.com/wp-content/uploads/2025/03/Quarterly_Mobile_eCPM_Report_-_Q4_2024.pdf | industry blog (2°, ~) | 2026 (Q4 2024 data) |
+| Rewarded eCPM, India vs US | India average ~$1.20, against US iOS $13.18 / Android $12.91 | Not stated which period or network | Undrads "How Much Do Mobile Games Make Per Ad?" (cites Udonis 2026 / Adnimation 2025) https://www.undrads.com/blogs/how-much-do-mobile-games-make-per-ad | industry blog (UV) | 2026 |
+| India rewarded eCPM trend | Android RV +3.6% Q2 vs Q1 2025, India's only growing Android format; India "the poorest performer for Android ads overall" of 5 countries | Bidlogic network: US, UK, DE, IN, JP | Bidlogic "eCPM growth in mobile apps Q1–Q2 2025" https://bidlogic.io/2025/07/25/ecpm-growth-in-mobile-apps-q1-q2-2025-analysis-and-insights/ | industry blog | 2025 |
+| RV engagement and IAP/retention (correlational) | RV engagers 4.5× more likely to make a first IAP; players who watched ≥1 RV in week 1 had 30-day retention ≥50% vs a 13% benchmark (53%→68% for 1→6 views) | 8 high-DAU apps, new users, 1 month | ironSource blog on unity.com https://unity.com/blog/understanding-the-impact-of-rewarded-ads-on-iap-retention-and-engagement | industry blog | 2022 |
+
+**How to use.** Model "engagement" (the share of DAU who watch at least one RV) as roughly 25–45%. Treat placement context as the lever: offers at a resource wall convert better than offers between levels (38% against 24%).
+Nobody publishes views per DAU for casual, puzzle or merge games. Sweep it as a parameter, for example 1–4 per DAU and 3–8 per engaged user, with a per-placement cap of 3–6 per day.
+India rewarded eCPM is roughly 10× below the US, but the only India figure has an unverified origin. Sweep $0.5–3 for India against $12–30 for the US, and remember Q4 runs seasonally high.
+The 4.5× IAP and 50% retention figures are selection effects, because engaged players both watch and pay. Do not simulate them as a causal effect of adding ads.
+
+### In-app purchases
+
+| metric | number or range | context | source | quality | year |
+|---|---|---|---|---|---|
+| Monthly payer share | 1.9% of players paid in Feb 2016; 64% of payers bought once; 0.19% of players = 48% of IAP revenue | Swrve, 20M+ players, 40+ F2P titles | Swrve Monetization Report 2016, via Adweek https://www.adweek.com/performance-marketing/report-0-19-of-players-account-for-48-of-free-to-play-game-revenue/ | industry report (2°) | 2016 |
+| Monthly payer share, lives-based puzzle network | MUP/MUU = 2.5% in Q3 2014 (8.669M / 348M); 4.8% in Q3 2013. MGABPPU (monthly gross bookings per payer) $20.92 | King (Candy Crush etc.), all platforms. I computed the ratio from the reported MUPs and MUUs | King Digital 6-K Q3 2014 (SEC) https://www.sec.gov/Archives/edgar/data/0001580732/000119312514402054/d809152dex991.htm | official | 2014 |
+| Daily payer conversion, large casual/social-casino portfolio | 4.5% (avg daily paying users ÷ DAU), Q4 2025; FY2025 4.4%; ARPDAU $0.93; 7.9M DAU | Playtika (Bingo Blitz, Solitaire, June's Journey, slots). IAP-led, top tier | Playtika Q4 & 2025 results (release mirror) https://www.financialcontent.com/article/gnwcq-2026-2-26-playtika-holding-corp-reports-q4-and-2025-financial-results | official | 2026 |
+| Daily conversion by genre | Puzzle median ~0.38%, top ~1.1%; Casual median ~0.23%, top ~0.7%; "a game with 1.2% is performing particularly well" | GameAnalytics games with revenue, IAP only, 2018 | GameAnalytics *Mobile Benchmarks Industry Report 2018* (PDF mirror) https://tap-nation.io/assets/docs/Mobile_Benchmarks_Industry_Report_2018_GameAnalytics.pdf | industry report (~) | 2019 (2018 data) |
+| Match-3 conversion target | "Aim for at least 1.69%"; top games "3.5% to 4%" (period not defined) | GameAnalytics Benchmarks, match-3 sub-genre | GameAnalytics "Match 3 games metrics guide" https://www.gameanalytics.com/blog/match-3-games-metrics-guide | industry blog | updated 2025 |
+| Payers among churners vs stayers | >99% of players who churned within 28 days never paid; 4.1% of players still active after day 28 paid in their first 28 days | One popular F2P lives-based puzzle game | Ascarza, Netzer & Runge, "Personalized Game Design for Improved User Retention and Monetization in Freemium Games" https://business.columbia.edu/sites/default/files-efs/citation_file_upload/ascarza_netzer_runge_2023-12-04.pdf | paper (working paper) | 2023 |
+| Daily ARPPU | Top performers $25, median $7, bottom $2 | GameAnalytics, all genres, games with revenue | GameAnalytics 2018 report above | industry report | 2019 |
+| IAP ARPDAU by genre | Puzzle median ~$0.02, top ~$0.075; Casual median ~$0.016, top ~$0.08 | Same; IAP only, no ad revenue | Same | industry report (~) | 2019 |
+| IAP ARPDAU, top match-3/merge titles | Gossip Harbor (merge) $0.31; Royal Match $0.17; Candy Crush $0.11 | 2025, Sensor Tower estimates | Naavik "What Leading Match-3 & Merge Games Do Differently" https://naavik.co/digest/what-leading-match-3-and-merge-games-do-differently/ | industry blog (2°) | 2026 |
+| Hybrid-casual revenue mix | Ads-first Wordscapes ~80% ads; IAP-first Pixel Flow! / Color Block Jam ~78–80% IAP; ad-monetised games = 83% of game downloads | Sensor Tower, 19 markets | Sensor Tower "Gaming Deep Dive: Ad Monetization" https://sensortower.com/report/gaming-deep-dive-ad-monetization | industry report | 2026 |
+| Revenue mix by market | India/Indonesia/Brazil: ads ~55–70% of game revenue; US/CA/KR/JP: IAP 77–90%. Candy Crush ads 10–15% | Sensor Tower estimates, Jan 2025–May 2026 | GameDev Reports summary https://gamedevreports.substack.com/p/sensor-tower-mobile-game-ad-monetization | industry report (2°) | 2026 |
+| Ads share of all mobile game revenue | ~13–23% of net revenue ($12B ads in 19 markets, 2025) | Analyst reading of Sensor Tower | Deconstructor of Fun "5 Numbers Hiding in Plain Sight" https://www.deconstructoroffun.com/blog/5-numbers-hiding-in-plain-sight-sensor-towers-ad-monetization-report | industry blog | 2026 |
+| Typical IAP/ads split for "hybrid casual" as a whole | **No consistent public number found.** Vendor blogs quote 40–55% IAP without sources | — | — | — | — |
+
+**How to use.** Keep daily and monthly conversion apart. About 0.2–1% of DAU pay on a given day in median casual or puzzle games. Monthly payers run about 2–5% of MAU. Top IAP-led portfolios reach about 4.5% daily.
+Paying is concentrated in players who stay. In the Ascarza game almost no early churner ever paid, so a wall that causes early churn removes future payers, not just ad views.
+Revenue mix depends on the market more than the genre: India-weighted audiences are ad-led, US audiences IAP-led. Run the simulation per region.
+The 2018 GameAnalytics figures are old and were read off charts, so use them as order-of-magnitude anchors only.
+
+### Walls and churn
+
+| metric | number or range | context | source | quality | year |
+|---|---|---|---|---|---|
+| Level difficulty vs churn | Correlation 0.880 between a level's difficulty and the % of players who reach it but never pass (no play for 30 days); 0.394 with per-round churn propensity; 0.553 with paying in that round | Levels 1–100 of a lives-based F2P puzzle game | Ascarza, Netzer & Runge 2023 (link above) | paper | 2023 |
+| Failure → breaks | With lives still left, players are 14% more likely to pause ≥10 min after failing a level than after first completing one | Same game | Same | paper | 2023 |
+| Easing the wall (RCT) | Easier boards for at-risk players: ~20% more engagement and fewer purchases in the eased round, but higher total spend. +$0.07 net revenue per player over 30 days, 18% of it from ads and 82% from IAP | >300k players, players past level 20 with <20 rounds in the past week, 50/50 randomisation | Same | paper | 2023 |
+| Easing the wall (A/B, match-3) | DDA: +4.4% to +7.9% rounds/day and +4.4% to +9.0% playtime/day, with "neutral impact on monetization". A slight difficulty rise at level 21 coincided with a sharp player drop. Hardest board seed: 0.15 win rate, 5× more attempts than easiest (0.75) | EA match-3, treatment share 10%→40%→70% | Xue et al., "Dynamic Difficulty Adjustment for Maximized Engagement in Digital Games," WWW'17 Companion https://archives.iw3c2.org/www2017/proceedings/companion/p465.pdf | paper | 2017 |
+| Energy/lives cap or refill-timer A/B effect on retention | **No public number found.** One studio removed energy after seeing retention and drop-off data, but published no figures | *Midnight Star* (shooter) | Game Developer "Core Players & Energy Mechanics: They Don't Mix" https://www.gamedeveloper.com/design/core-players-energy-mechanics-they-don-t-mix | anecdote | 2015 |
+| D1 churn after an ad impression, by format | Rewarded: mostly <2% Android, <1% iOS (worst networks ~4% / ~2.5%). Interstitial: typically 4–6% Android (AppLovin 8.7%), 7–9% iOS (AppLovin >15%) | Unity AdQuality data, one consultancy's casual + midcore portfolio, Nov 2025 | PocketGamer.biz "What our data reveals about ad quality and player churn" https://www.pocketgamer.biz/what-our-data-reveals-about-ad-quality-and-player-churn-in-mobile-games/ | industry blog | 2026 |
+| Disruptive ads (fake close button, forced redirects) | One exposure raises churn 6–7%; quitting triples when shown on end-cards or reward screens; 52% quit after repeated exposure; casual gamers 30–50% more likely to churn | 7,000 gamers in BR, DE, JP, UK, US plus a 50-person diary study; co-published with Google AdMob | Deloitte press release "Quality Drives Value" https://www.deloitte.com/us/en/about/press-room/deloitte-improve-mobile-game-advertising.html | industry report (survey) | 2025 |
+| Stated preference: rewarded vs mandatory vs paid | 54% prefer apps funded by opt-in rewarded ads, 32% mandatory pre-roll, 14% paid download; rewarded preferred 4:1 over mandatory | US mobile gamers, Tapjoy | App Developer Magazine (Tapjoy 2017, link above) | industry report (survey, 2°) | 2017 |
+| Stated preference: rewarded ad vs paying | 54% (US) would rather watch a rewarded ad than pay for a premium game; 71% call video ads their "preferred" way to pay; 46% (US) prefer RV over all other ad formats; 57% of non-payers are "fine" with ads | Facebook survey of 6,000 gamers, Dec 2016–May 2017 | PocketGamer.biz "Facebook mobile gaming ad survey 2018" https://www.pocketgamer.biz/facebook-mobile-gaming-ad-survey-2018/ | industry report (survey, 2°) | 2018 |
+| Stated preference trend | 50% prefer ad-supported over pay-to-play (21% in 2017); rewarded video the top ad type (53%) | 9,352 respondents on the Tapjoy network, Feb 2022, aged 18+ | Game Developer (Tapjoy press release) https://www.gamedeveloper.com/press-release/mobile-gamers-now-prefer-ad-supported-games-over-pay-to-play-games-according-to-tapjoys-modern-mobile-gamer-2022-report | industry report (survey) | 2022 |
+| Preference for *waiting* out a timer vs watching or paying | **No public survey number found** | — | — | — | — |
+| Adding ads to an IAP-only game | +2.3% D7 retention; +1.1% share of users who make ≥1 IAP | Unity 2020 Mobile Game Monetization report (gated) | GameBiz Consulting "Do ads hurt IAP revenue?" https://www.gamebizconsulting.com/blog/do-ads-hurt-in-app-purchase-revenue-in-mobile-games | industry blog (2°, UV) | 2020 |
+
+**How to use.** The best causal evidence is about difficulty walls, not energy timers. Two randomised experiments (EA, and Ascarza et al.) found that easing hard spots raised engagement 4–20% without lowering revenue, and in one case raised it. Model churn as a hazard that rises with consecutive failures and level difficulty.
+The cost of a wall shows up as churn among future payers, so a stricter energy wall needs a churn term that is higher than its extra ad views.
+Interstitials carry several times the per-impression churn of rewarded ads.
+The preference surveys come from ad sellers (Tapjoy, Facebook, AdMob). Use them to argue for rewarded over forced ads, not to set magnitudes.
+
+### Platform rules that constrain design
+
+| metric | number or range | context | source | quality | year |
+|---|---|---|---|---|---|
+| AdMob: opt-in required | "Rewarded Ads, except those implemented via the rewarded interstitial format, must only be served after a user affirmatively and unambiguously opts in (such as by tapping a button that represents "yes" or "accept")." | Google-served rewarded ads | AdMob Help "Policies for ad units that offer rewards" https://support.google.com/admob/answer/7313578 | official | page as of 2026 |
+| AdMob: no forcing, no penalty for declining | "Rewarded Ads must not oblige users to interact with it (for example, it must be possible to skip or dismiss them)." / "Skipping the Rewarded Ad or selecting the "no" or "don't accept" option must not impede or interfere with the normal usage of the platform, website or app." | Same | Same | official | 2026 |
+| AdMob: rewarded interstitial | "…must present an introductory screen containing an option representing "no" or "don't accept", with sufficient time for the user to opt out." | Auto-shown rewarded format | Same | official | 2026 |
+| AdMob: disclosure and nudging | "Publishers must provide clear, accurate and conspicuous disclosure of the action(s) required and reward(s) offered prior to each instance of Rewarded Ads being presented." / "Publishers must not include any text or icons, other than to describe the reward(s) offered, to mislead or incentivize users towards a particular choice (such as by indicating "watch this ad to support our business")." | Bundles must be disclosed (e.g. "watch 3 ads now to receive 100 gold coins") | Same | official | 2026 |
+| AdMob: what can be a reward | "Direct monetary items may not be offered as rewards under any circumstance." In-game items such as an "extra life" are allowed. Random rewards are allowed if "The chance of random rewards is disclosed to the user prior to Rewarded Ads being presented" and "The chance for receiving a reward must be greater than 0." | Same | Same | official | 2026 |
+| Google Play: interstitial timing | "Ads that appear during game play at the beginning of a level or during the beginning of a content segment are not allowed." / "Full screen interstitial ads of all formats that are not closeable after 15 seconds are not allowed." / "This policy does not apply to rewarded ads which are explicitly opted-in by users…" | All Play apps | Play Console Help "Ads" policy https://support.google.com/googleplay/android-developer/answer/9857753 | official | 2026 |
+| Google Play: loot boxes | "Apps and games offering mechanisms to receive randomized virtual items from a purchase including, but not limited to, "loot boxes" must clearly disclose the odds of receiving those items in advance of, and in close and timely proximity to, that purchase." | Paid random items | Play Console Help "Payments" policy https://support.google.com/googleplay/android-developer/answer/9858738 | official | 2026 |
+| Apple 3.1.1: loot boxes | "Apps offering "loot boxes" or other mechanisms that provide randomized virtual items for purchase must disclose the odds of receiving each type of item to customers prior to purchase." | App Store | App Store Review Guidelines https://developer.apple.com/app-store/review/guidelines/ | official | 2026 |
+| Apple 3.2.2(x): rewarding ad views | "Apps must not force users to rate the app, review the app, download other apps, or other store-related actions in order to access functionality, content, or use of the app. Apps may otherwise incentivize users to take specific actions within apps (such as by completing a level or watching an ad)." | App Store | Same | official | 2026 |
+
+**How to use.** "Watch an ad to refill lives" is allowed on both stores. Under AdMob the player must choose to watch, and saying no must leave normal play working, so every ad-gated refill needs a non-ad path (wait or pay). A simulation should never model an ad as the only way past a wall.
+No "support us" copy is allowed. Random rewarded-ad prizes and paid random items both need odds shown before the choice.
+On Play, interstitials cannot open a level. Policies change, so re-check these pages before release. This is not legal advice.
+
+### Engagement by genre
+
+| metric | number or range | context | source | quality | year |
+|---|---|---|---|---|---|
+| D1 / D7 / D28 retention, medians by genre | Puzzle 19.7–20.7% / 4.3–4.8% / 1.09–1.26%. Casual 20.0–21.1% / 3.1–3.5% / 0.65–0.75%. Best genre, Card: D7 6.45–7.14%, D28 2.85–3.24% | Median (P50) game per genre, monthly cohorts 2024; 11,600 games, iOS + Android | GameAnalytics *2025 Mobile Gaming Benchmarks* (PDF mirror) https://investgame.net/wp-content/uploads/2025/02/2025-GameAnalytics-Mobile-Gaming-Benchmarks.pdf | industry report (~, from rendered tables) | 2025 |
+| Sessions per day, medians | Puzzle 4.59–4.90; Casual 3.86–4.13 | Same | Same | industry report (~) | 2025 |
+| Session length, medians | Puzzle 5.6–5.7 min; Casual 3.5–4.0 min | Same | Same | industry report (~) | 2025 |
+| Daily playtime, medians | Puzzle 29.5–31.1 min; Casual 12.7–14.3 min | Same | Same | industry report (~) | 2025 |
+| All-genre spread, 2025 | D1: P50 ~22%, P75 just above 30%, P90 ~40%. D7: P50 just under 4%, P90 11–12%. D30: P50 0.68–0.79%. Sessions/day P50 3.8–3.9. Session length P50 3.1–3.5 min | 16,262 games with ≥1k MAU | GameAnalytics *2026 Mobile & PC Benchmarks* (mirror) https://investgame.net/wp-content/uploads/2026/01/2026-01-27-2026-mobile-pc-benchmarks_compressed.pdf (original https://www.gameanalytics.com/reports/2026-mobile-pc-gaming-benchmarks) | industry report | 2026 |
+| All-genre retention, different panel | D1 27% (2024; 28% in 2023); D30 ~5%; average session 30.75 min | Adjust, 5,000+ apps | Adjust *Mobile Games Insights 2025*, via GameDev Reports https://gamedevreports.substack.com/p/adjust-mobile-games-insights-report | industry report (2°) | 2025 |
+| Retention of one successful lives-based puzzle game | D1 47.54%; D28 9.02% | Random sample, N=10,000 | Ascarza, Netzer & Runge 2023 (link above) | paper | 2023 |
+| Plays per DAU, Candy Crush | 77M DAU, 834M daily game plays ≈ 10.8 plays/DAU/day (my division) | Q3 2014, 5-life system | King 6-K Q3 2014 (link above) | official | 2014 |
+| Merge games ("Merge 3" subgenre) | Avg session 656 s (~11 min, longest subgenre); D1 ~38.5%; "ad ARPU" $14.83 (highest subgenre; period and definition unclear) | US, Android, 10,000+ casual games, Jun 2024–Jan 2025 | Appodeal *Mobile Casual Benchmarks Report 2025*, via Game Industry Library https://gameindustrylibrary.com/documents/mobile-casual-benchmarks-report-2025 and App Developer Magazine https://appdevelopermagazine.com/mobile-casual-benchmarks-report-2025/ | industry report (2°; D1 and session values UV) | 2025 |
+| Merge D7 / D30, sessions per day | **No public number found** | — | — | — | — |
+| Match-3 targets | D7 "anything above 20% is good"; sessions "up to around 30 minutes" | GameAnalytics guidance for top match-3 games | GameAnalytics match-3 guide (link above) | industry blog | updated 2025 |
+
+**How to use.** GameAnalytics medians describe the typical small or indie game, because many top studios keep their data in-house. Its medians therefore run far below marketed hits: the Ascarza game reached D1 47.5% and D28 9%.
+Use the GameAnalytics genre medians as a floor, the P90 values (D1 ~40%, D7 ~12%) as "good", and the King and Ascarza figures as anchors for a lives-based puzzle game.
+Puzzle beats casual on D7, D28, sessions and playtime, so a puzzle game can carry more session-gating.
+Panels disagree on definitions (session timeout, classic vs rolling retention): Adjust's 30.75-min "session" is not comparable to GameAnalytics' 3–6 min. Merge data is thin. Treat Merge 3's ~11-min sessions as one unverified reading.
+
+### Biggest gaps
+
+- **Rewarded views per daily player, by genre**, and the split between energy or lives
+  refills and other placements. No public data.
+- **The effect of energy caps or refill-timer length on retention.** No A/B result is
+  published. The closest evidence is the two difficulty-wall experiments above.
+- **Merge-genre D7/D30 retention and payer conversion.** None public.
+
 ## Level-based puzzles (match-3 and move-limited)
 
 | metric | number or range | context | source | quality | year |

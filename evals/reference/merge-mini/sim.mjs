@@ -4,12 +4,13 @@
 import { args, simulate, withSeededMathRandom } from '../../../skills/game-balance-audit/scripts/sim-kit.mjs';
 import * as G from '../../../examples/merge-mini/game.mjs';
 
-// The response model's numbers are assumptions (no sourced value for this game): the
-// audit varies them in the quit-* scenarios.
+// The response model: the watch rate is Unity's 2024 figure for ads offered at a resource
+// wall (about 38%; see references/benchmarks.md); the quit numbers are assumptions with no
+// public source, varied in the "quit x2" scenario.
 const PARAMS = {
   regenMinutes: G.CONFIG.regenMinutes, rows: G.CONFIG.rows, orderScale: 1, maxEnergy: G.CONFIG.maxEnergy,
   adReward: G.CONFIG.adReward, adsPerDay: G.CONFIG.adsPerDay,
-  watch: 0.6, // chance a player out of energy watches an ad (while under the cap)
+  watch: 0.38, // chance a player out of energy watches an ad (while under the cap)
   quitBase: 0.01, quitEarly: 0.08, quitPerWall: 0.03, // quit chance at a wall: base, extra on days 1–2, extra per earlier wall that day
 };
 

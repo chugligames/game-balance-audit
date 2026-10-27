@@ -68,8 +68,8 @@
     "goals": [
      {
       "name": "Rewarded ads per player, 10 days",
-      "value": 1.59,
-      "pm": 0.22303116238306134,
+      "value": 0.85,
+      "pm": 0.17480898666310557,
       "n": 100,
       "change": null,
       "better": true,
@@ -77,10 +77,10 @@
      },
      {
       "name": "Days played",
-      "value": 10.0,
-      "pm": 0.0,
+      "value": 9.99,
+      "pm": 0.019599999999999992,
       "n": 100,
-      "change": 0.0,
+      "change": -0.0009999999999999788,
       "better": false,
       "worse": false
      }
@@ -88,8 +88,8 @@
     "constraints": [
      {
       "name": "Twice-a-day players who quit",
-      "value": 0.01,
-      "pm": 0.0196,
+      "value": 0.02,
+      "pm": 0.027578237650712777,
       "ok": true
      },
      {
@@ -100,7 +100,7 @@
      }
     ],
     "ok": true,
-    "score": 19.999999999999996,
+    "score": 19.998999999999995,
     "pareto": true
    },
    {
@@ -108,8 +108,8 @@
     "goals": [
      {
       "name": "Rewarded ads per player, 10 days",
-      "value": 1.59,
-      "pm": 0.22303116238306134,
+      "value": 0.85,
+      "pm": 0.17480898666310557,
       "n": 100,
       "change": null,
       "better": true,
@@ -117,10 +117,10 @@
      },
      {
       "name": "Days played",
-      "value": 10.0,
-      "pm": 0.0,
+      "value": 9.98,
+      "pm": 0.02757823765071276,
       "n": 100,
-      "change": 0.0,
+      "change": -0.0019999999999999575,
       "better": false,
       "worse": false
      }
@@ -128,28 +128,28 @@
     "constraints": [
      {
       "name": "Twice-a-day players who quit",
-      "value": 0.01,
-      "pm": 0.0196,
+      "value": 0.05,
+      "pm": 0.0429324110572877,
       "ok": true
      },
      {
       "name": "Once-a-day players who quit",
-      "value": 0.02,
-      "pm": 0.027578237650712777,
+      "value": 0.03,
+      "pm": 0.033603535167561996,
       "ok": true
      }
     ],
     "ok": true,
-    "score": 19.999999999999996,
-    "pareto": true
+    "score": 19.997999999999998,
+    "pareto": false
    },
    {
     "scenario": "orders-x1.5 + cap-60 + ad 30",
     "goals": [
      {
       "name": "Rewarded ads per player, 10 days",
-      "value": 1.49,
-      "pm": 0.19400009996873402,
+      "value": 0.83,
+      "pm": 0.1718538773246479,
       "n": 100,
       "change": null,
       "better": true,
@@ -157,10 +157,10 @@
      },
      {
       "name": "Days played",
-      "value": 10.0,
-      "pm": 0.0,
+      "value": 9.99,
+      "pm": 0.019599999999999992,
       "n": 100,
-      "change": 0.0,
+      "change": -0.0009999999999999788,
       "better": false,
       "worse": false
      }
@@ -168,8 +168,8 @@
     "constraints": [
      {
       "name": "Twice-a-day players who quit",
-      "value": 0.01,
-      "pm": 0.0196,
+      "value": 0.02,
+      "pm": 0.027578237650712777,
       "ok": true
      },
      {
@@ -180,7 +180,7 @@
      }
     ],
     "ok": true,
-    "score": 18.74213836477987,
+    "score": 19.52841176470588,
     "pareto": false
    },
    {
@@ -188,8 +188,8 @@
     "goals": [
      {
       "name": "Rewarded ads per player, 10 days",
-      "value": 0.16,
-      "pm": 0.07221677803878426,
+      "value": 0.09,
+      "pm": 0.05637420428787363,
       "n": 100,
       "change": null,
       "better": true,
@@ -220,8 +220,8 @@
      }
     ],
     "ok": true,
-    "score": 2.012578616352201,
-    "pareto": false
+    "score": 2.117647058823529,
+    "pareto": true
    },
    {
     "scenario": "baseline",
@@ -2253,7 +2253,7 @@
     "metric": "adsWatched",
     "scenario": "orders-x1.5-from-6",
     "profile": "twice",
-    "message": "2\u20133 ads a day from the second week: mean 8: 0.00, 9: 0.00, 10: 0.16, target \u2265 2.00 (missed in 3 of 3 days)",
+    "message": "2\u20133 ads a day from the second week: mean 8: 0.00, 9: 0.00, 10: 0.09, target \u2265 2.00 (missed in 3 of 3 days)",
     "evidence": {
      "target": {
       "metric": "adsWatched",
@@ -2277,7 +2277,7 @@
       ],
       [
        10,
-       0.16
+       0.09
       ]
      ],
      "clear": [
@@ -2291,7 +2291,7 @@
       ],
       [
        10,
-       0.16
+       0.09
       ]
      ],
      "borderline": []
@@ -2328,7 +2328,7 @@
       ],
       [
        10,
-       0.49345000000000006
+       0.49355000000000004
       ]
      ],
      "clear": [
@@ -2342,7 +2342,7 @@
       ],
       [
        10,
-       0.49345000000000006
+       0.49355000000000004
       ]
      ],
      "borderline": []
@@ -2500,7 +2500,7 @@
     "metric": "minFree",
     "scenario": "orders-x1.5-from-6",
     "profile": "twice",
-    "message": "Board feels crowded from day 6: mean 6: 31.4, 7: 31.4, 8: 30.4, 9: 29.4, 10: 28.6, target \u2264 4.00 (missed in 5 of 5 days)",
+    "message": "Board feels crowded from day 6: mean 6: 31.4, 7: 31.4, 8: 30.4, 9: 29.4, 10: 28.5, target \u2264 4.00 (missed in 5 of 5 days)",
     "evidence": {
      "target": {
       "metric": "minFree",
@@ -2531,7 +2531,7 @@
       ],
       [
        10,
-       28.55
+       28.54
       ]
      ],
      "clear": [
@@ -2553,7 +2553,7 @@
       ],
       [
        10,
-       28.55
+       28.54
       ]
      ],
      "borderline": []
@@ -2567,10 +2567,10 @@
     "metric": "adsWatched",
     "scenario": "orders-x1.5-from-6",
     "profile": "careless",
-    "message": "Rewarded ads watched jumps up sharply at days 9\u219210 (0.00 \u2192 0.11), more than 3\u00d7 a typical step",
+    "message": "Rewarded ads watched jumps up sharply at days 9\u219210 (0.00 \u2192 0.09), more than 3\u00d7 a typical step",
     "evidence": {
      "jumps": [
-      "9\u219210 (0.00 \u2192 0.11)"
+      "9\u219210 (0.00 \u2192 0.09)"
      ]
     }
    },
@@ -2582,10 +2582,10 @@
     "metric": "adsWatched",
     "scenario": "orders-x1.5-from-6",
     "profile": "efficient",
-    "message": "Rewarded ads watched jumps up sharply at days 9\u219210 (0.00 \u2192 0.21), more than 3\u00d7 a typical step",
+    "message": "Rewarded ads watched jumps up sharply at days 9\u219210 (0.00 \u2192 0.13), more than 3\u00d7 a typical step",
     "evidence": {
      "jumps": [
-      "9\u219210 (0.00 \u2192 0.21)"
+      "9\u219210 (0.00 \u2192 0.13)"
      ]
     }
    },
@@ -2597,10 +2597,10 @@
     "metric": "adsWatched",
     "scenario": "orders-x1.5-from-6",
     "profile": "twice",
-    "message": "Rewarded ads watched jumps up sharply at days 9\u219210 (0.00 \u2192 0.16), more than 3\u00d7 a typical step",
+    "message": "Rewarded ads watched jumps up sharply at days 9\u219210 (0.00 \u2192 0.09), more than 3\u00d7 a typical step",
     "evidence": {
      "jumps": [
-      "9\u219210 (0.00 \u2192 0.16)"
+      "9\u219210 (0.00 \u2192 0.09)"
      ]
     }
    },
@@ -2763,9 +2763,9 @@
     "profile": "twice",
     "message": "Fewest empty cells falls by only 13.4% from the first third of days (33.4) to the last third (29.0); the design expects at least 25%",
     "evidence": {
-     "growth": 0.13369223867205032,
+     "growth": 0.13384178256318233,
      "first_third": 33.435,
-     "last_third": 28.965,
+     "last_third": 28.96,
      "values": [
       [
        3,
@@ -2797,7 +2797,7 @@
       ],
       [
        10,
-       28.55
+       28.54
       ]
      ]
     }
@@ -4808,7 +4808,7 @@
     "metric": "adsWatched",
     "scenario": "orders-x1.5 + cap-60",
     "profile": "twice",
-    "message": "2\u20133 ads a day from the second week: mean 8: 0.00, 9: 0.56, 10: 1.03, target \u2265 2.00 (missed in 3 of 3 days)",
+    "message": "2\u20133 ads a day from the second week: mean 8: 0.00, 9: 0.37, 10: 0.48, target \u2265 2.00 (missed in 3 of 3 days)",
     "evidence": {
      "target": {
       "metric": "adsWatched",
@@ -4828,11 +4828,11 @@
       ],
       [
        9,
-       0.56
+       0.37
       ],
       [
        10,
-       1.03
+       0.48484848484848486
       ]
      ],
      "clear": [
@@ -4842,11 +4842,11 @@
       ],
       [
        9,
-       0.56
+       0.37
       ],
       [
        10,
-       1.03
+       0.48484848484848486
       ]
      ],
      "borderline": []
@@ -4879,7 +4879,7 @@
       ],
       [
        9,
-       0.530666666666666
+       0.5302499999999992
       ]
      ],
      "clear": [
@@ -4889,7 +4889,7 @@
       ],
       [
        9,
-       0.530666666666666
+       0.5302499999999992
       ]
      ],
      "borderline": []
@@ -5047,7 +5047,7 @@
     "metric": "minFree",
     "scenario": "orders-x1.5 + cap-60",
     "profile": "twice",
-    "message": "Board feels crowded from day 6: mean 6: 31.4, 7: 31.4, 8: 30.4, 9: 29.3, 10: 28.5, target \u2264 4.00 (missed in 5 of 5 days)",
+    "message": "Board feels crowded from day 6: mean 6: 31.4, 7: 31.4, 8: 30.4, 9: 29.4, 10: 28.3, target \u2264 4.00 (missed in 5 of 5 days)",
     "evidence": {
      "target": {
       "metric": "minFree",
@@ -5074,11 +5074,11 @@
       ],
       [
        9,
-       29.34
+       29.38
       ],
       [
        10,
-       28.47
+       28.32323232323232
       ]
      ],
      "clear": [
@@ -5096,11 +5096,11 @@
       ],
       [
        9,
-       29.34
+       29.38
       ],
       [
        10,
-       28.47
+       28.32323232323232
       ]
      ],
      "borderline": []
@@ -5114,11 +5114,11 @@
     "metric": "adsWatched",
     "scenario": "orders-x1.5 + cap-60",
     "profile": "careless",
-    "message": "Rewarded ads watched jumps up sharply at days 8\u21929 (0.00 \u2192 0.57), 9\u219210 (0.57 \u2192 0.99), more than 3\u00d7 a typical step",
+    "message": "Rewarded ads watched jumps up sharply at days 8\u21929 (0.00 \u2192 0.36), 9\u219210 (0.36 \u2192 0.53), more than 3\u00d7 a typical step",
     "evidence": {
      "jumps": [
-      "8\u21929 (0.00 \u2192 0.57)",
-      "9\u219210 (0.57 \u2192 0.99)"
+      "8\u21929 (0.00 \u2192 0.36)",
+      "9\u219210 (0.36 \u2192 0.53)"
      ]
     }
    },
@@ -5130,11 +5130,11 @@
     "metric": "adsWatched",
     "scenario": "orders-x1.5 + cap-60",
     "profile": "efficient",
-    "message": "Rewarded ads watched jumps up sharply at days 8\u21929 (0.00 \u2192 0.55), 9\u219210 (0.55 \u2192 1.09), more than 3\u00d7 a typical step",
+    "message": "Rewarded ads watched jumps up sharply at days 8\u21929 (0.00 \u2192 0.40), 9\u219210 (0.40 \u2192 0.63), more than 3\u00d7 a typical step",
     "evidence": {
      "jumps": [
-      "8\u21929 (0.00 \u2192 0.55)",
-      "9\u219210 (0.55 \u2192 1.09)"
+      "8\u21929 (0.00 \u2192 0.40)",
+      "9\u219210 (0.40 \u2192 0.63)"
      ]
     }
    },
@@ -5146,11 +5146,11 @@
     "metric": "adsWatched",
     "scenario": "orders-x1.5 + cap-60",
     "profile": "twice",
-    "message": "Rewarded ads watched jumps up sharply at days 8\u21929 (0.00 \u2192 0.56), 9\u219210 (0.56 \u2192 1.03), more than 3\u00d7 a typical step",
+    "message": "Rewarded ads watched jumps up sharply at days 8\u21929 (0.00 \u2192 0.37), 9\u219210 (0.37 \u2192 0.48), more than 3\u00d7 a typical step",
     "evidence": {
      "jumps": [
-      "8\u21929 (0.00 \u2192 0.56)",
-      "9\u219210 (0.56 \u2192 1.03)"
+      "8\u21929 (0.00 \u2192 0.37)",
+      "9\u219210 (0.37 \u2192 0.48)"
      ]
     }
    },
@@ -5213,11 +5213,11 @@
     "metric": "minFree",
     "scenario": "orders-x1.5 + cap-60",
     "profile": "careless",
-    "message": "Fewest empty cells falls by only 13.4% from the first third of days (33.5) to the last third (29.0); the design expects at least 25%",
+    "message": "Fewest empty cells falls by only 13.5% from the first third of days (33.5) to the last third (29.0); the design expects at least 25%",
     "evidence": {
-     "growth": 0.13399910567893886,
+     "growth": 0.13459531971977942,
      "first_third": 33.545,
-     "last_third": 29.049999999999997,
+     "last_third": 29.03,
      "values": [
       [
        3,
@@ -5245,11 +5245,11 @@
       ],
       [
        9,
-       29.54
+       29.48
       ],
       [
        10,
-       28.56
+       28.58
       ]
      ]
     }
@@ -5264,9 +5264,9 @@
     "profile": "efficient",
     "message": "Fewest empty cells falls by only 13.6% from the first third of days (33.3) to the last third (28.8); the design expects at least 25%",
     "evidence": {
-     "growth": 0.13647270545890833,
+     "growth": 0.13602279544091192,
      "first_third": 33.34,
-     "last_third": 28.79,
+     "last_third": 28.805,
      "values": [
       [
        3,
@@ -5294,11 +5294,11 @@
       ],
       [
        9,
-       29.27
+       29.24
       ],
       [
        10,
-       28.31
+       28.37
       ]
      ]
     }
@@ -5311,11 +5311,11 @@
     "metric": "minFree",
     "scenario": "orders-x1.5 + cap-60",
     "profile": "twice",
-    "message": "Fewest empty cells falls by only 13.5% from the first third of days (33.4) to the last third (28.9); the design expects at least 25%",
+    "message": "Fewest empty cells falls by only 13.7% from the first third of days (33.4) to the last third (28.9); the design expects at least 25%",
     "evidence": {
-     "growth": 0.13548676536563484,
+     "growth": 0.13708341074873162,
      "first_third": 33.435,
-     "last_third": 28.905,
+     "last_third": 28.85161616161616,
      "values": [
       [
        3,
@@ -5343,11 +5343,11 @@
       ],
       [
        9,
-       29.34
+       29.38
       ],
       [
        10,
-       28.47
+       28.32323232323232
       ]
      ]
     }
@@ -5377,12 +5377,12 @@
     "metric": "taps",
     "scenario": "orders-x1.5 + cap-60",
     "profile": "efficient",
-    "message": "Energy spent jumps up sharply at days 4\u21925 (21.1 \u2192 35.4), 8\u21929 (35.8 \u2192 64.0), 9\u219210 (64.0 \u2192 98.7), more than 3\u00d7 a typical step",
+    "message": "Energy spent jumps up sharply at days 4\u21925 (21.1 \u2192 35.4), 8\u21929 (35.8 \u2192 64.0), 9\u219210 (64.0 \u2192 98.6), more than 3\u00d7 a typical step",
     "evidence": {
      "jumps": [
       "4\u21925 (21.1 \u2192 35.4)",
       "8\u21929 (35.8 \u2192 64.0)",
-      "9\u219210 (64.0 \u2192 98.7)"
+      "9\u219210 (64.0 \u2192 98.6)"
      ]
     }
    },
@@ -5394,12 +5394,12 @@
     "metric": "taps",
     "scenario": "orders-x1.5 + cap-60",
     "profile": "twice",
-    "message": "Energy spent jumps up sharply at days 4\u21925 (21.3 \u2192 35.4), 8\u21929 (35.7 \u2192 63.7), 9\u219210 (63.7 \u2192 98.4), more than 3\u00d7 a typical step",
+    "message": "Energy spent jumps up sharply at days 4\u21925 (21.3 \u2192 35.4), 8\u21929 (35.7 \u2192 63.6), 9\u219210 (63.6 \u2192 98.4), more than 3\u00d7 a typical step",
     "evidence": {
      "jumps": [
       "4\u21925 (21.3 \u2192 35.4)",
-      "8\u21929 (35.7 \u2192 63.7)",
-      "9\u219210 (63.7 \u2192 98.4)"
+      "8\u21929 (35.7 \u2192 63.6)",
+      "9\u219210 (63.6 \u2192 98.4)"
      ]
     }
    },
@@ -5530,7 +5530,7 @@
     "metric": "adsWatched",
     "scenario": "orders-x1.5 + cap-60 + ad 30",
     "profile": "twice",
-    "message": "2\u20133 ads a day from the second week: mean 8: 0.00, 9: 0.56, 10: 0.93, target \u2265 2.00 (missed in 3 of 3 days)",
+    "message": "2\u20133 ads a day from the second week: mean 8: 0.00, 9: 0.37, 10: 0.46, target \u2265 2.00 (missed in 3 of 3 days)",
     "evidence": {
      "target": {
       "metric": "adsWatched",
@@ -5550,11 +5550,11 @@
       ],
       [
        9,
-       0.56
+       0.37
       ],
       [
        10,
-       0.93
+       0.46464646464646464
       ]
      ],
      "clear": [
@@ -5564,11 +5564,11 @@
       ],
       [
        9,
-       0.56
+       0.37
       ],
       [
        10,
-       0.93
+       0.46464646464646464
       ]
      ],
      "borderline": []
@@ -5601,7 +5601,7 @@
       ],
       [
        9,
-       0.530666666666666
+       0.5302499999999992
       ]
      ],
      "clear": [
@@ -5611,7 +5611,7 @@
       ],
       [
        9,
-       0.530666666666666
+       0.5302499999999992
       ]
      ],
      "borderline": []
@@ -5769,7 +5769,7 @@
     "metric": "minFree",
     "scenario": "orders-x1.5 + cap-60 + ad 30",
     "profile": "twice",
-    "message": "Board feels crowded from day 6: mean 6: 31.4, 7: 31.4, 8: 30.4, 9: 29.3, 10: 28.5, target \u2264 4.00 (missed in 5 of 5 days)",
+    "message": "Board feels crowded from day 6: mean 6: 31.4, 7: 31.4, 8: 30.4, 9: 29.4, 10: 28.4, target \u2264 4.00 (missed in 5 of 5 days)",
     "evidence": {
      "target": {
       "metric": "minFree",
@@ -5796,11 +5796,11 @@
       ],
       [
        9,
-       29.34
+       29.38
       ],
       [
        10,
-       28.51
+       28.393939393939394
       ]
      ],
      "clear": [
@@ -5818,11 +5818,11 @@
       ],
       [
        9,
-       29.34
+       29.38
       ],
       [
        10,
-       28.51
+       28.393939393939394
       ]
      ],
      "borderline": []
@@ -5836,11 +5836,11 @@
     "metric": "adsWatched",
     "scenario": "orders-x1.5 + cap-60 + ad 30",
     "profile": "careless",
-    "message": "Rewarded ads watched jumps up sharply at days 8\u21929 (0.00 \u2192 0.57), 9\u219210 (0.57 \u2192 0.94), more than 3\u00d7 a typical step",
+    "message": "Rewarded ads watched jumps up sharply at days 8\u21929 (0.00 \u2192 0.36), 9\u219210 (0.36 \u2192 0.48), more than 3\u00d7 a typical step",
     "evidence": {
      "jumps": [
-      "8\u21929 (0.00 \u2192 0.57)",
-      "9\u219210 (0.57 \u2192 0.94)"
+      "8\u21929 (0.00 \u2192 0.36)",
+      "9\u219210 (0.36 \u2192 0.48)"
      ]
     }
    },
@@ -5852,11 +5852,11 @@
     "metric": "adsWatched",
     "scenario": "orders-x1.5 + cap-60 + ad 30",
     "profile": "efficient",
-    "message": "Rewarded ads watched jumps up sharply at days 8\u21929 (0.00 \u2192 0.55), 9\u219210 (0.55 \u2192 1.02), more than 3\u00d7 a typical step",
+    "message": "Rewarded ads watched jumps up sharply at days 8\u21929 (0.00 \u2192 0.40), 9\u219210 (0.40 \u2192 0.64), more than 3\u00d7 a typical step",
     "evidence": {
      "jumps": [
-      "8\u21929 (0.00 \u2192 0.55)",
-      "9\u219210 (0.55 \u2192 1.02)"
+      "8\u21929 (0.00 \u2192 0.40)",
+      "9\u219210 (0.40 \u2192 0.64)"
      ]
     }
    },
@@ -5868,11 +5868,11 @@
     "metric": "adsWatched",
     "scenario": "orders-x1.5 + cap-60 + ad 30",
     "profile": "twice",
-    "message": "Rewarded ads watched jumps up sharply at days 8\u21929 (0.00 \u2192 0.56), 9\u219210 (0.56 \u2192 0.93), more than 3\u00d7 a typical step",
+    "message": "Rewarded ads watched jumps up sharply at days 8\u21929 (0.00 \u2192 0.37), 9\u219210 (0.37 \u2192 0.46), more than 3\u00d7 a typical step",
     "evidence": {
      "jumps": [
-      "8\u21929 (0.00 \u2192 0.56)",
-      "9\u219210 (0.56 \u2192 0.93)"
+      "8\u21929 (0.00 \u2192 0.37)",
+      "9\u219210 (0.37 \u2192 0.46)"
      ]
     }
    },
@@ -5935,11 +5935,11 @@
     "metric": "minFree",
     "scenario": "orders-x1.5 + cap-60 + ad 30",
     "profile": "careless",
-    "message": "Fewest empty cells falls by only 13.5% from the first third of days (33.5) to the last third (29.0); the design expects at least 25%",
+    "message": "Fewest empty cells falls by only 13.4% from the first third of days (33.5) to the last third (29.1); the design expects at least 25%",
     "evidence": {
-     "growth": 0.13474437322998964,
+     "growth": 0.1337009986585184,
      "first_third": 33.545,
-     "last_third": 29.025,
+     "last_third": 29.060000000000002,
      "values": [
       [
        3,
@@ -5967,11 +5967,11 @@
       ],
       [
        9,
-       29.54
+       29.48
       ],
       [
        10,
-       28.51
+       28.64
       ]
      ]
     }
@@ -5984,11 +5984,11 @@
     "metric": "minFree",
     "scenario": "orders-x1.5 + cap-60 + ad 30",
     "profile": "efficient",
-    "message": "Fewest empty cells falls by only 13.7% from the first third of days (33.3) to the last third (28.8); the design expects at least 25%",
+    "message": "Fewest empty cells falls by only 13.6% from the first third of days (33.3) to the last third (28.8); the design expects at least 25%",
     "evidence": {
-     "growth": 0.1366226754649071,
+     "growth": 0.13647270545890833,
      "first_third": 33.34,
-     "last_third": 28.785,
+     "last_third": 28.79,
      "values": [
       [
        3,
@@ -6016,11 +6016,11 @@
       ],
       [
        9,
-       29.27
+       29.24
       ],
       [
        10,
-       28.3
+       28.34
       ]
      ]
     }
@@ -6033,11 +6033,11 @@
     "metric": "minFree",
     "scenario": "orders-x1.5 + cap-60 + ad 30",
     "profile": "twice",
-    "message": "Fewest empty cells falls by only 13.5% from the first third of days (33.4) to the last third (28.9); the design expects at least 25%",
+    "message": "Fewest empty cells falls by only 13.6% from the first third of days (33.4) to the last third (28.9); the design expects at least 25%",
     "evidence": {
-     "growth": 0.13488858980110666,
+     "growth": 0.13602602970032318,
      "first_third": 33.435,
-     "last_third": 28.925,
+     "last_third": 28.886969696969697,
      "values": [
       [
        3,
@@ -6065,11 +6065,11 @@
       ],
       [
        9,
-       29.34
+       29.38
       ],
       [
        10,
-       28.51
+       28.393939393939394
       ]
      ]
     }
@@ -6099,12 +6099,12 @@
     "metric": "taps",
     "scenario": "orders-x1.5 + cap-60 + ad 30",
     "profile": "efficient",
-    "message": "Energy spent jumps up sharply at days 4\u21925 (21.1 \u2192 35.4), 8\u21929 (35.8 \u2192 64.0), 9\u219210 (64.0 \u2192 98.9), more than 3\u00d7 a typical step",
+    "message": "Energy spent jumps up sharply at days 4\u21925 (21.1 \u2192 35.4), 8\u21929 (35.8 \u2192 64.0), 9\u219210 (64.0 \u2192 98.8), more than 3\u00d7 a typical step",
     "evidence": {
      "jumps": [
       "4\u21925 (21.1 \u2192 35.4)",
       "8\u21929 (35.8 \u2192 64.0)",
-      "9\u219210 (64.0 \u2192 98.9)"
+      "9\u219210 (64.0 \u2192 98.8)"
      ]
     }
    },
@@ -6116,12 +6116,12 @@
     "metric": "taps",
     "scenario": "orders-x1.5 + cap-60 + ad 30",
     "profile": "twice",
-    "message": "Energy spent jumps up sharply at days 4\u21925 (21.3 \u2192 35.4), 8\u21929 (35.7 \u2192 63.7), 9\u219210 (63.7 \u2192 98.3), more than 3\u00d7 a typical step",
+    "message": "Energy spent jumps up sharply at days 4\u21925 (21.3 \u2192 35.4), 8\u21929 (35.7 \u2192 63.6), 9\u219210 (63.6 \u2192 98.4), more than 3\u00d7 a typical step",
     "evidence": {
      "jumps": [
       "4\u21925 (21.3 \u2192 35.4)",
-      "8\u21929 (35.7 \u2192 63.7)",
-      "9\u219210 (63.7 \u2192 98.3)"
+      "8\u21929 (35.7 \u2192 63.6)",
+      "9\u219210 (63.6 \u2192 98.4)"
      ]
     }
    },
@@ -6239,7 +6239,7 @@
     "metric": "adsWatched",
     "scenario": "orders-x1.5 + cap-60, quit x2",
     "profile": "twice",
-    "message": "2\u20133 ads a day from the second week: mean 8: 0.00, 9: 0.56, 10: 1.03, target \u2265 2.00 (missed in 3 of 3 days)",
+    "message": "2\u20133 ads a day from the second week: mean 8: 0.00, 9: 0.37, 10: 0.49, target \u2265 2.00 (missed in 3 of 3 days)",
     "evidence": {
      "target": {
       "metric": "adsWatched",
@@ -6259,11 +6259,11 @@
       ],
       [
        9,
-       0.56
+       0.37
       ],
       [
        10,
-       1.03
+       0.4897959183673469
       ]
      ],
      "clear": [
@@ -6273,11 +6273,11 @@
       ],
       [
        9,
-       0.56
+       0.37
       ],
       [
        10,
-       1.03
+       0.4897959183673469
       ]
      ],
      "borderline": []
@@ -6310,7 +6310,7 @@
       ],
       [
        9,
-       0.530666666666666
+       0.5298333333333326
       ]
      ],
      "clear": [
@@ -6320,7 +6320,7 @@
       ],
       [
        9,
-       0.530666666666666
+       0.5298333333333326
       ]
      ],
      "borderline": []
@@ -6478,7 +6478,7 @@
     "metric": "minFree",
     "scenario": "orders-x1.5 + cap-60, quit x2",
     "profile": "twice",
-    "message": "Board feels crowded from day 6: mean 6: 31.4, 7: 31.4, 8: 30.4, 9: 29.3, 10: 28.5, target \u2264 4.00 (missed in 5 of 5 days)",
+    "message": "Board feels crowded from day 6: mean 6: 31.4, 7: 31.4, 8: 30.4, 9: 29.4, 10: 28.4, target \u2264 4.00 (missed in 5 of 5 days)",
     "evidence": {
      "target": {
       "metric": "minFree",
@@ -6505,11 +6505,11 @@
       ],
       [
        9,
-       29.34
+       29.4
       ],
       [
        10,
-       28.47
+       28.357142857142858
       ]
      ],
      "clear": [
@@ -6527,11 +6527,11 @@
       ],
       [
        9,
-       29.34
+       29.4
       ],
       [
        10,
-       28.47
+       28.357142857142858
       ]
      ],
      "borderline": []
@@ -6545,11 +6545,11 @@
     "metric": "adsWatched",
     "scenario": "orders-x1.5 + cap-60, quit x2",
     "profile": "careless",
-    "message": "Rewarded ads watched jumps up sharply at days 8\u21929 (0.00 \u2192 0.57), 9\u219210 (0.57 \u2192 0.99), more than 3\u00d7 a typical step",
+    "message": "Rewarded ads watched jumps up sharply at days 8\u21929 (0.00 \u2192 0.36), 9\u219210 (0.36 \u2192 0.53), more than 3\u00d7 a typical step",
     "evidence": {
      "jumps": [
-      "8\u21929 (0.00 \u2192 0.57)",
-      "9\u219210 (0.57 \u2192 0.99)"
+      "8\u21929 (0.00 \u2192 0.36)",
+      "9\u219210 (0.36 \u2192 0.53)"
      ]
     }
    },
@@ -6561,11 +6561,11 @@
     "metric": "adsWatched",
     "scenario": "orders-x1.5 + cap-60, quit x2",
     "profile": "efficient",
-    "message": "Rewarded ads watched jumps up sharply at days 8\u21929 (0.00 \u2192 0.55), 9\u219210 (0.55 \u2192 1.09), more than 3\u00d7 a typical step",
+    "message": "Rewarded ads watched jumps up sharply at days 8\u21929 (0.00 \u2192 0.40), 9\u219210 (0.40 \u2192 0.63), more than 3\u00d7 a typical step",
     "evidence": {
      "jumps": [
-      "8\u21929 (0.00 \u2192 0.55)",
-      "9\u219210 (0.55 \u2192 1.09)"
+      "8\u21929 (0.00 \u2192 0.40)",
+      "9\u219210 (0.40 \u2192 0.63)"
      ]
     }
    },
@@ -6577,11 +6577,11 @@
     "metric": "adsWatched",
     "scenario": "orders-x1.5 + cap-60, quit x2",
     "profile": "twice",
-    "message": "Rewarded ads watched jumps up sharply at days 8\u21929 (0.00 \u2192 0.56), 9\u219210 (0.56 \u2192 1.03), more than 3\u00d7 a typical step",
+    "message": "Rewarded ads watched jumps up sharply at days 8\u21929 (0.00 \u2192 0.37), 9\u219210 (0.37 \u2192 0.49), more than 3\u00d7 a typical step",
     "evidence": {
      "jumps": [
-      "8\u21929 (0.00 \u2192 0.56)",
-      "9\u219210 (0.56 \u2192 1.03)"
+      "8\u21929 (0.00 \u2192 0.37)",
+      "9\u219210 (0.37 \u2192 0.49)"
      ]
     }
    },
@@ -6646,9 +6646,9 @@
     "profile": "careless",
     "message": "Fewest empty cells falls by only 13.4% from the first third of days (33.5) to the last third (29.1); the design expects at least 25%",
     "evidence": {
-     "growth": 0.13370099865851848,
+     "growth": 0.13385005216872864,
      "first_third": 33.545,
-     "last_third": 29.06,
+     "last_third": 29.055,
      "values": [
       [
        3,
@@ -6676,11 +6676,11 @@
       ],
       [
        9,
-       29.54
+       29.48
       ],
       [
        10,
-       28.58
+       28.63
       ]
      ]
     }
@@ -6695,9 +6695,9 @@
     "profile": "efficient",
     "message": "Fewest empty cells falls by only 13.6% from the first third of days (33.3) to the last third (28.8); the design expects at least 25%",
     "evidence": {
-     "growth": 0.1361727654469108,
+     "growth": 0.13572285542891438,
      "first_third": 33.34,
-     "last_third": 28.799999999999997,
+     "last_third": 28.814999999999998,
      "values": [
       [
        3,
@@ -6725,11 +6725,11 @@
       ],
       [
        9,
-       29.27
+       29.24
       ],
       [
        10,
-       28.33
+       28.39
       ]
      ]
     }
@@ -6742,11 +6742,11 @@
     "metric": "minFree",
     "scenario": "orders-x1.5 + cap-60, quit x2",
     "profile": "twice",
-    "message": "Fewest empty cells falls by only 13.5% from the first third of days (33.4) to the last third (28.9); the design expects at least 25%",
+    "message": "Fewest empty cells falls by only 13.6% from the first third of days (33.4) to the last third (28.9); the design expects at least 25%",
     "evidence": {
-     "growth": 0.13548676536563484,
+     "growth": 0.1362772116473329,
      "first_third": 33.435,
-     "last_third": 28.905,
+     "last_third": 28.878571428571426,
      "values": [
       [
        3,
@@ -6774,11 +6774,11 @@
       ],
       [
        9,
-       29.34
+       29.4
       ],
       [
        10,
-       28.47
+       28.357142857142858
       ]
      ]
     }
@@ -6791,12 +6791,12 @@
     "metric": "taps",
     "scenario": "orders-x1.5 + cap-60, quit x2",
     "profile": "careless",
-    "message": "Energy spent jumps up sharply at days 4\u21925 (21.2 \u2192 35.2), 8\u21929 (35.6 \u2192 63.7), 9\u219210 (63.7 \u2192 97.3), more than 3\u00d7 a typical step",
+    "message": "Energy spent jumps up sharply at days 4\u21925 (21.2 \u2192 35.2), 8\u21929 (35.6 \u2192 63.7), 9\u219210 (63.7 \u2192 96.9), more than 3\u00d7 a typical step",
     "evidence": {
      "jumps": [
       "4\u21925 (21.2 \u2192 35.2)",
       "8\u21929 (35.6 \u2192 63.7)",
-      "9\u219210 (63.7 \u2192 97.3)"
+      "9\u219210 (63.7 \u2192 96.9)"
      ]
     }
    },
@@ -6808,12 +6808,12 @@
     "metric": "taps",
     "scenario": "orders-x1.5 + cap-60, quit x2",
     "profile": "efficient",
-    "message": "Energy spent jumps up sharply at days 4\u21925 (21.1 \u2192 35.4), 8\u21929 (35.8 \u2192 64.0), 9\u219210 (64.0 \u2192 98.5), more than 3\u00d7 a typical step",
+    "message": "Energy spent jumps up sharply at days 4\u21925 (21.1 \u2192 35.4), 8\u21929 (35.8 \u2192 64.0), 9\u219210 (64.0 \u2192 98.4), more than 3\u00d7 a typical step",
     "evidence": {
      "jumps": [
       "4\u21925 (21.1 \u2192 35.4)",
       "8\u21929 (35.8 \u2192 64.0)",
-      "9\u219210 (64.0 \u2192 98.5)"
+      "9\u219210 (64.0 \u2192 98.4)"
      ]
     }
    },
@@ -6825,12 +6825,12 @@
     "metric": "taps",
     "scenario": "orders-x1.5 + cap-60, quit x2",
     "profile": "twice",
-    "message": "Energy spent jumps up sharply at days 4\u21925 (21.3 \u2192 35.4), 8\u21929 (35.7 \u2192 63.7), 9\u219210 (63.7 \u2192 98.4), more than 3\u00d7 a typical step",
+    "message": "Energy spent jumps up sharply at days 4\u21925 (21.3 \u2192 35.4), 8\u21929 (35.7 \u2192 63.6), 9\u219210 (63.6 \u2192 97.9), more than 3\u00d7 a typical step",
     "evidence": {
      "jumps": [
       "4\u21925 (21.3 \u2192 35.4)",
-      "8\u21929 (35.7 \u2192 63.7)",
-      "9\u219210 (63.7 \u2192 98.4)"
+      "8\u21929 (35.7 \u2192 63.6)",
+      "9\u219210 (63.6 \u2192 97.9)"
      ]
     }
    },
@@ -8339,10 +8339,10 @@
      "metric": "adsWatched",
      "scenario": "orders-x1.5-from-6",
      "profile": "careless",
-     "message": "Rewarded ads watched jumps up sharply at days 9\u219210 (0.00 \u2192 0.11), more than 3\u00d7 a typical step",
+     "message": "Rewarded ads watched jumps up sharply at days 9\u219210 (0.00 \u2192 0.09), more than 3\u00d7 a typical step",
      "evidence": {
       "jumps": [
-       "9\u219210 (0.00 \u2192 0.11)"
+       "9\u219210 (0.00 \u2192 0.09)"
       ]
      }
     },
@@ -8354,10 +8354,10 @@
      "metric": "adsWatched",
      "scenario": "orders-x1.5-from-6",
      "profile": "efficient",
-     "message": "Rewarded ads watched jumps up sharply at days 9\u219210 (0.00 \u2192 0.21), more than 3\u00d7 a typical step",
+     "message": "Rewarded ads watched jumps up sharply at days 9\u219210 (0.00 \u2192 0.13), more than 3\u00d7 a typical step",
      "evidence": {
       "jumps": [
-       "9\u219210 (0.00 \u2192 0.21)"
+       "9\u219210 (0.00 \u2192 0.13)"
       ]
      }
     },
@@ -8369,10 +8369,10 @@
      "metric": "adsWatched",
      "scenario": "orders-x1.5-from-6",
      "profile": "twice",
-     "message": "Rewarded ads watched jumps up sharply at days 9\u219210 (0.00 \u2192 0.16), more than 3\u00d7 a typical step",
+     "message": "Rewarded ads watched jumps up sharply at days 9\u219210 (0.00 \u2192 0.09), more than 3\u00d7 a typical step",
      "evidence": {
       "jumps": [
-       "9\u219210 (0.00 \u2192 0.16)"
+       "9\u219210 (0.00 \u2192 0.09)"
       ]
      }
     },
@@ -8501,7 +8501,7 @@
      "metric": "adsWatched",
      "scenario": "orders-x1.5-from-6",
      "profile": "twice",
-     "message": "2\u20133 ads a day from the second week: mean 8: 0.00, 9: 0.00, 10: 0.16, target \u2265 2.00 (missed in 3 of 3 days)",
+     "message": "2\u20133 ads a day from the second week: mean 8: 0.00, 9: 0.00, 10: 0.09, target \u2265 2.00 (missed in 3 of 3 days)",
      "evidence": {
       "target": {
        "metric": "adsWatched",
@@ -8525,7 +8525,7 @@
        ],
        [
         10,
-        0.16
+        0.09
        ]
       ],
       "clear": [
@@ -8539,7 +8539,7 @@
        ],
        [
         10,
-        0.16
+        0.09
        ]
       ],
       "borderline": []
@@ -8579,7 +8579,7 @@
        ],
        [
         10,
-        0.49345000000000006
+        0.49355000000000004
        ]
       ],
       "clear": [
@@ -8593,7 +8593,7 @@
        ],
        [
         10,
-        0.49345000000000006
+        0.49355000000000004
        ]
       ],
       "borderline": []
@@ -8763,7 +8763,7 @@
      "metric": "minFree",
      "scenario": "orders-x1.5-from-6",
      "profile": "twice",
-     "message": "Board feels crowded from day 6: mean 6: 31.4, 7: 31.4, 8: 30.4, 9: 29.4, 10: 28.6, target \u2264 4.00 (missed in 5 of 5 days)",
+     "message": "Board feels crowded from day 6: mean 6: 31.4, 7: 31.4, 8: 30.4, 9: 29.4, 10: 28.5, target \u2264 4.00 (missed in 5 of 5 days)",
      "evidence": {
       "target": {
        "metric": "minFree",
@@ -8794,7 +8794,7 @@
        ],
        [
         10,
-        28.55
+        28.54
        ]
       ],
       "clear": [
@@ -8816,7 +8816,7 @@
        ],
        [
         10,
-        28.55
+        28.54
        ]
       ],
       "borderline": []
@@ -8939,9 +8939,9 @@
      "profile": "twice",
      "message": "Fewest empty cells falls by only 13.4% from the first third of days (33.4) to the last third (29.0); the design expects at least 25%",
      "evidence": {
-      "growth": 0.13369223867205032,
+      "growth": 0.13384178256318233,
       "first_third": 33.435,
-      "last_third": 28.965,
+      "last_third": 28.96,
       "values": [
        [
         3,
@@ -8973,12 +8973,12 @@
        ],
        [
         10,
-        28.55
+        28.54
        ]
       ]
      },
      "before": 0.0753701211305519,
-     "after": 0.13369223867205032,
+     "after": 0.13384178256318233,
      "gauge": "growth"
     },
     {
@@ -9046,12 +9046,12 @@
      "metric": "taps",
      "profile": "twice",
      "base": 26.6075,
-     "whatif": 42.053749999999994,
-     "change": 0.5805224090951796,
+     "whatif": 42.05625,
+     "change": 0.5806163675655359,
      "base_first": 19.53,
      "base_last": 40.75,
      "whatif_first": 19.53,
-     "whatif_last": 81.21
+     "whatif_last": 81.22
     },
     {
      "metric": "energyShare",
@@ -9068,12 +9068,12 @@
      "metric": "energyShare",
      "profile": "twice",
      "base": 0.13303749999999995,
-     "whatif": 0.21026874999999995,
-     "change": 0.5805224090951802,
+     "whatif": 0.21028124999999998,
+     "change": 0.5806163675655365,
      "base_first": 0.09765,
      "base_last": 0.20374999999999985,
      "whatif_first": 0.09765,
-     "whatif_last": 0.4060499999999999
+     "whatif_last": 0.4060999999999999
     },
     {
      "metric": "minFree",
@@ -9090,45 +9090,45 @@
      "metric": "minFree",
      "profile": "twice",
      "base": 32.405,
-     "whatif": 31.16625,
-     "change": -0.03822712544360437,
+     "whatif": 31.165,
+     "change": -0.03826569973769486,
      "base_first": 33.435,
      "base_last": 30.915,
      "whatif_first": 33.435,
-     "whatif_last": 28.965
+     "whatif_last": 28.96
     },
     {
      "metric": "outOfEnergy",
      "profile": "careless",
      "base": 0.0,
-     "whatif": 0.043333333333333335,
+     "whatif": 0.049999999999999996,
      "change": null,
      "base_first": 0.0,
      "base_last": 0.0,
      "whatif_first": 0.0,
-     "whatif_last": 0.13
+     "whatif_last": 0.15
     },
     {
      "metric": "outOfEnergy",
      "profile": "twice",
      "base": 0.0,
-     "whatif": 0.043333333333333335,
+     "whatif": 0.06666666666666667,
      "change": null,
      "base_first": 0.0,
      "base_last": 0.0,
      "whatif_first": 0.0,
-     "whatif_last": 0.13
+     "whatif_last": 0.2
     },
     {
      "metric": "daysLate",
      "profile": "careless",
      "base": 0.0,
-     "whatif": 0.013000000000000001,
+     "whatif": 0.015,
      "change": null,
      "base_first": 0.0,
      "base_last": 0.0,
      "whatif_first": 0.0,
-     "whatif_last": 0.043333333333333335
+     "whatif_last": 0.049999999999999996
     },
     {
      "metric": "daysLate",
@@ -9145,23 +9145,23 @@
      "metric": "adsWatched",
      "profile": "careless",
      "base": 0.0,
-     "whatif": 0.01375,
+     "whatif": 0.01125,
      "change": null,
      "base_first": 0.0,
      "base_last": 0.0,
      "whatif_first": 0.0,
-     "whatif_last": 0.055
+     "whatif_last": 0.045
     },
     {
      "metric": "adsWatched",
      "profile": "twice",
      "base": 0.0,
-     "whatif": 0.02,
+     "whatif": 0.01125,
      "change": null,
      "base_first": 0.0,
      "base_last": 0.0,
      "whatif_first": 0.0,
-     "whatif_last": 0.08
+     "whatif_last": 0.045
     }
    ],
    "groups": []
@@ -11567,11 +11567,11 @@
      "metric": "adsWatched",
      "scenario": "orders-x1.5 + cap-60",
      "profile": "careless",
-     "message": "Rewarded ads watched jumps up sharply at days 8\u21929 (0.00 \u2192 0.57), 9\u219210 (0.57 \u2192 0.99), more than 3\u00d7 a typical step",
+     "message": "Rewarded ads watched jumps up sharply at days 8\u21929 (0.00 \u2192 0.36), 9\u219210 (0.36 \u2192 0.53), more than 3\u00d7 a typical step",
      "evidence": {
       "jumps": [
-       "8\u21929 (0.00 \u2192 0.57)",
-       "9\u219210 (0.57 \u2192 0.99)"
+       "8\u21929 (0.00 \u2192 0.36)",
+       "9\u219210 (0.36 \u2192 0.53)"
       ]
      }
     },
@@ -11583,11 +11583,11 @@
      "metric": "adsWatched",
      "scenario": "orders-x1.5 + cap-60",
      "profile": "efficient",
-     "message": "Rewarded ads watched jumps up sharply at days 8\u21929 (0.00 \u2192 0.55), 9\u219210 (0.55 \u2192 1.09), more than 3\u00d7 a typical step",
+     "message": "Rewarded ads watched jumps up sharply at days 8\u21929 (0.00 \u2192 0.40), 9\u219210 (0.40 \u2192 0.63), more than 3\u00d7 a typical step",
      "evidence": {
       "jumps": [
-       "8\u21929 (0.00 \u2192 0.55)",
-       "9\u219210 (0.55 \u2192 1.09)"
+       "8\u21929 (0.00 \u2192 0.40)",
+       "9\u219210 (0.40 \u2192 0.63)"
       ]
      }
     },
@@ -11599,11 +11599,11 @@
      "metric": "adsWatched",
      "scenario": "orders-x1.5 + cap-60",
      "profile": "twice",
-     "message": "Rewarded ads watched jumps up sharply at days 8\u21929 (0.00 \u2192 0.56), 9\u219210 (0.56 \u2192 1.03), more than 3\u00d7 a typical step",
+     "message": "Rewarded ads watched jumps up sharply at days 8\u21929 (0.00 \u2192 0.37), 9\u219210 (0.37 \u2192 0.48), more than 3\u00d7 a typical step",
      "evidence": {
       "jumps": [
-       "8\u21929 (0.00 \u2192 0.56)",
-       "9\u219210 (0.56 \u2192 1.03)"
+       "8\u21929 (0.00 \u2192 0.37)",
+       "9\u219210 (0.37 \u2192 0.48)"
       ]
      }
     },
@@ -11683,12 +11683,12 @@
      "metric": "taps",
      "scenario": "orders-x1.5 + cap-60",
      "profile": "efficient",
-     "message": "Energy spent jumps up sharply at days 4\u21925 (21.1 \u2192 35.4), 8\u21929 (35.8 \u2192 64.0), 9\u219210 (64.0 \u2192 98.7), more than 3\u00d7 a typical step",
+     "message": "Energy spent jumps up sharply at days 4\u21925 (21.1 \u2192 35.4), 8\u21929 (35.8 \u2192 64.0), 9\u219210 (64.0 \u2192 98.6), more than 3\u00d7 a typical step",
      "evidence": {
       "jumps": [
        "4\u21925 (21.1 \u2192 35.4)",
        "8\u21929 (35.8 \u2192 64.0)",
-       "9\u219210 (64.0 \u2192 98.7)"
+       "9\u219210 (64.0 \u2192 98.6)"
       ]
      }
     },
@@ -11700,12 +11700,12 @@
      "metric": "taps",
      "scenario": "orders-x1.5 + cap-60",
      "profile": "twice",
-     "message": "Energy spent jumps up sharply at days 4\u21925 (21.3 \u2192 35.4), 8\u21929 (35.7 \u2192 63.7), 9\u219210 (63.7 \u2192 98.4), more than 3\u00d7 a typical step",
+     "message": "Energy spent jumps up sharply at days 4\u21925 (21.3 \u2192 35.4), 8\u21929 (35.7 \u2192 63.6), 9\u219210 (63.6 \u2192 98.4), more than 3\u00d7 a typical step",
      "evidence": {
       "jumps": [
        "4\u21925 (21.3 \u2192 35.4)",
-       "8\u21929 (35.7 \u2192 63.7)",
-       "9\u219210 (63.7 \u2192 98.4)"
+       "8\u21929 (35.7 \u2192 63.6)",
+       "9\u219210 (63.6 \u2192 98.4)"
       ]
      }
     },
@@ -11732,7 +11732,7 @@
      "metric": "adsWatched",
      "scenario": "orders-x1.5 + cap-60",
      "profile": "twice",
-     "message": "2\u20133 ads a day from the second week: mean 8: 0.00, 9: 0.56, 10: 1.03, target \u2265 2.00 (missed in 3 of 3 days)",
+     "message": "2\u20133 ads a day from the second week: mean 8: 0.00, 9: 0.37, 10: 0.48, target \u2265 2.00 (missed in 3 of 3 days)",
      "evidence": {
       "target": {
        "metric": "adsWatched",
@@ -11752,11 +11752,11 @@
        ],
        [
         9,
-        0.56
+        0.37
        ],
        [
         10,
-        1.03
+        0.48484848484848486
        ]
       ],
       "clear": [
@@ -11766,11 +11766,11 @@
        ],
        [
         9,
-        0.56
+        0.37
        ],
        [
         10,
-        1.03
+        0.48484848484848486
        ]
       ],
       "borderline": []
@@ -11806,7 +11806,7 @@
        ],
        [
         9,
-        0.530666666666666
+        0.5302499999999992
        ]
       ],
       "clear": [
@@ -11816,7 +11816,7 @@
        ],
        [
         9,
-        0.530666666666666
+        0.5302499999999992
        ]
       ],
       "borderline": []
@@ -11986,7 +11986,7 @@
      "metric": "minFree",
      "scenario": "orders-x1.5 + cap-60",
      "profile": "twice",
-     "message": "Board feels crowded from day 6: mean 6: 31.4, 7: 31.4, 8: 30.4, 9: 29.3, 10: 28.5, target \u2264 4.00 (missed in 5 of 5 days)",
+     "message": "Board feels crowded from day 6: mean 6: 31.4, 7: 31.4, 8: 30.4, 9: 29.4, 10: 28.3, target \u2264 4.00 (missed in 5 of 5 days)",
      "evidence": {
       "target": {
        "metric": "minFree",
@@ -12013,11 +12013,11 @@
        ],
        [
         9,
-        29.34
+        29.38
        ],
        [
         10,
-        28.47
+        28.32323232323232
        ]
       ],
       "clear": [
@@ -12035,11 +12035,11 @@
        ],
        [
         9,
-        29.34
+        29.38
        ],
        [
         10,
-        28.47
+        28.32323232323232
        ]
       ],
       "borderline": []
@@ -12056,11 +12056,11 @@
      "metric": "minFree",
      "scenario": "orders-x1.5 + cap-60",
      "profile": "careless",
-     "message": "Fewest empty cells falls by only 13.4% from the first third of days (33.5) to the last third (29.0); the design expects at least 25%",
+     "message": "Fewest empty cells falls by only 13.5% from the first third of days (33.5) to the last third (29.0); the design expects at least 25%",
      "evidence": {
-      "growth": 0.13399910567893886,
+      "growth": 0.13459531971977942,
       "first_third": 33.545,
-      "last_third": 29.049999999999997,
+      "last_third": 29.03,
       "values": [
        [
         3,
@@ -12088,16 +12088,16 @@
        ],
        [
         9,
-        29.54
+        29.48
        ],
        [
         10,
-        28.56
+        28.58
        ]
       ]
      },
      "before": 0.07571918318676402,
-     "after": 0.13399910567893886,
+     "after": 0.13459531971977942,
      "gauge": "growth"
     },
     {
@@ -12110,9 +12110,9 @@
      "profile": "efficient",
      "message": "Fewest empty cells falls by only 13.6% from the first third of days (33.3) to the last third (28.8); the design expects at least 25%",
      "evidence": {
-      "growth": 0.13647270545890833,
+      "growth": 0.13602279544091192,
       "first_third": 33.34,
-      "last_third": 28.79,
+      "last_third": 28.805,
       "values": [
        [
         3,
@@ -12140,16 +12140,16 @@
        ],
        [
         9,
-        29.27
+        29.24
        ],
        [
         10,
-        28.31
+        28.37
        ]
       ]
      },
      "before": 0.07528494301139786,
-     "after": 0.13647270545890833,
+     "after": 0.13602279544091192,
      "gauge": "growth"
     },
     {
@@ -12160,11 +12160,11 @@
      "metric": "minFree",
      "scenario": "orders-x1.5 + cap-60",
      "profile": "twice",
-     "message": "Fewest empty cells falls by only 13.5% from the first third of days (33.4) to the last third (28.9); the design expects at least 25%",
+     "message": "Fewest empty cells falls by only 13.7% from the first third of days (33.4) to the last third (28.9); the design expects at least 25%",
      "evidence": {
-      "growth": 0.13548676536563484,
+      "growth": 0.13708341074873162,
       "first_third": 33.435,
-      "last_third": 28.905,
+      "last_third": 28.85161616161616,
       "values": [
        [
         3,
@@ -12192,16 +12192,16 @@
        ],
        [
         9,
-        29.34
+        29.38
        ],
        [
         10,
-        28.47
+        28.32323232323232
        ]
       ]
      },
      "before": 0.0753701211305519,
-     "after": 0.13548676536563484,
+     "after": 0.13708341074873162,
      "gauge": "growth"
     },
     {
@@ -12258,100 +12258,100 @@
      "metric": "taps",
      "profile": "careless",
      "base": 26.523750000000003,
-     "whatif": 41.893750000000004,
-     "change": 0.5794806541307319,
+     "whatif": 41.89125,
+     "change": 0.5793863989820441,
      "base_first": 19.5,
      "base_last": 40.605000000000004,
      "whatif_first": 19.5,
-     "whatif_last": 80.74
+     "whatif_last": 80.73
     },
     {
      "metric": "taps",
      "profile": "twice",
      "base": 26.6075,
-     "whatif": 42.01375,
-     "change": 0.5790190735694822,
+     "whatif": 42.009292929292926,
+     "change": 0.57885156175112,
      "base_first": 19.53,
      "base_last": 40.75,
      "whatif_first": 19.53,
-     "whatif_last": 81.05
+     "whatif_last": 81.03217171717172
     },
     {
      "metric": "energyShare",
      "profile": "careless",
      "base": 0.26523749999999996,
-     "whatif": 0.6982291666666667,
-     "change": 1.6324677568845536,
+     "whatif": 0.6981875000000001,
+     "change": 1.6323106649700747,
      "base_first": 0.195,
      "base_last": 0.4060499999999998,
      "whatif_first": 0.32500000000000007,
-     "whatif_last": 1.3456666666666663
+     "whatif_last": 1.3455
     },
     {
      "metric": "energyShare",
      "profile": "twice",
      "base": 0.13303749999999995,
-     "whatif": 0.35011458333333345,
-     "change": 1.631698455949139,
+     "whatif": 0.35007744107744115,
+     "change": 1.631419269585202,
      "base_first": 0.09765,
      "base_last": 0.20374999999999985,
      "whatif_first": 0.16275000000000006,
-     "whatif_last": 0.6754166666666668
+     "whatif_last": 0.6752680976430976
     },
     {
      "metric": "minFree",
      "profile": "careless",
      "base": 32.475,
-     "whatif": 31.283749999999998,
-     "change": -0.03668206312548125,
+     "whatif": 31.278749999999995,
+     "change": -0.036836027713626054,
      "base_first": 33.545,
      "base_last": 31.005000000000003,
      "whatif_first": 33.545,
-     "whatif_last": 29.049999999999997
+     "whatif_last": 29.03
     },
     {
      "metric": "minFree",
      "profile": "twice",
      "base": 32.405,
-     "whatif": 31.15125,
-     "change": -0.0386900169726894,
+     "whatif": 31.13790404040404,
+     "change": -0.0391018657489881,
      "base_first": 33.435,
      "base_last": 30.915,
      "whatif_first": 33.435,
-     "whatif_last": 28.905
+     "whatif_last": 28.85161616161616
     },
     {
      "metric": "outOfEnergy",
      "profile": "careless",
      "base": 0.0,
-     "whatif": 0.3466666666666667,
+     "whatif": 0.47666666666666674,
      "change": null,
      "base_first": 0.0,
      "base_last": 0.0,
      "whatif_first": 0.0,
-     "whatif_last": 0.7
+     "whatif_last": 0.88
     },
     {
      "metric": "outOfEnergy",
      "profile": "twice",
      "base": 0.0,
-     "whatif": 0.34,
+     "whatif": 0.4762626262626262,
      "change": null,
      "base_first": 0.0,
      "base_last": 0.0,
      "whatif_first": 0.0,
-     "whatif_last": 0.66
+     "whatif_last": 0.8787878787878788
     },
     {
      "metric": "daysLate",
      "profile": "careless",
      "base": 0.0,
-     "whatif": 0.10300000000000001,
+     "whatif": 0.142,
      "change": null,
      "base_first": 0.0,
      "base_last": 0.0,
      "whatif_first": 0.0,
-     "whatif_last": 0.3433333333333333
+     "whatif_last": 0.47333333333333333
     },
     {
      "metric": "daysLate",
@@ -12368,23 +12368,23 @@
      "metric": "adsWatched",
      "profile": "careless",
      "base": 0.0,
-     "whatif": 0.195,
+     "whatif": 0.11125,
      "change": null,
      "base_first": 0.0,
      "base_last": 0.0,
      "whatif_first": 0.0,
-     "whatif_last": 0.78
+     "whatif_last": 0.445
     },
     {
      "metric": "adsWatched",
      "profile": "twice",
      "base": 0.0,
-     "whatif": 0.19875,
+     "whatif": 0.10685606060606061,
      "change": null,
      "base_first": 0.0,
      "base_last": 0.0,
      "whatif_first": 0.0,
-     "whatif_last": 0.795
+     "whatif_last": 0.42742424242424243
     }
    ],
    "groups": []
@@ -12722,11 +12722,11 @@
      "metric": "adsWatched",
      "scenario": "orders-x1.5 + cap-60 + ad 30",
      "profile": "careless",
-     "message": "Rewarded ads watched jumps up sharply at days 8\u21929 (0.00 \u2192 0.57), 9\u219210 (0.57 \u2192 0.94), more than 3\u00d7 a typical step",
+     "message": "Rewarded ads watched jumps up sharply at days 8\u21929 (0.00 \u2192 0.36), 9\u219210 (0.36 \u2192 0.48), more than 3\u00d7 a typical step",
      "evidence": {
       "jumps": [
-       "8\u21929 (0.00 \u2192 0.57)",
-       "9\u219210 (0.57 \u2192 0.94)"
+       "8\u21929 (0.00 \u2192 0.36)",
+       "9\u219210 (0.36 \u2192 0.48)"
       ]
      }
     },
@@ -12738,11 +12738,11 @@
      "metric": "adsWatched",
      "scenario": "orders-x1.5 + cap-60 + ad 30",
      "profile": "efficient",
-     "message": "Rewarded ads watched jumps up sharply at days 8\u21929 (0.00 \u2192 0.55), 9\u219210 (0.55 \u2192 1.02), more than 3\u00d7 a typical step",
+     "message": "Rewarded ads watched jumps up sharply at days 8\u21929 (0.00 \u2192 0.40), 9\u219210 (0.40 \u2192 0.64), more than 3\u00d7 a typical step",
      "evidence": {
       "jumps": [
-       "8\u21929 (0.00 \u2192 0.55)",
-       "9\u219210 (0.55 \u2192 1.02)"
+       "8\u21929 (0.00 \u2192 0.40)",
+       "9\u219210 (0.40 \u2192 0.64)"
       ]
      }
     },
@@ -12754,11 +12754,11 @@
      "metric": "adsWatched",
      "scenario": "orders-x1.5 + cap-60 + ad 30",
      "profile": "twice",
-     "message": "Rewarded ads watched jumps up sharply at days 8\u21929 (0.00 \u2192 0.56), 9\u219210 (0.56 \u2192 0.93), more than 3\u00d7 a typical step",
+     "message": "Rewarded ads watched jumps up sharply at days 8\u21929 (0.00 \u2192 0.37), 9\u219210 (0.37 \u2192 0.46), more than 3\u00d7 a typical step",
      "evidence": {
       "jumps": [
-       "8\u21929 (0.00 \u2192 0.56)",
-       "9\u219210 (0.56 \u2192 0.93)"
+       "8\u21929 (0.00 \u2192 0.37)",
+       "9\u219210 (0.37 \u2192 0.46)"
       ]
      }
     },
@@ -12838,12 +12838,12 @@
      "metric": "taps",
      "scenario": "orders-x1.5 + cap-60 + ad 30",
      "profile": "efficient",
-     "message": "Energy spent jumps up sharply at days 4\u21925 (21.1 \u2192 35.4), 8\u21929 (35.8 \u2192 64.0), 9\u219210 (64.0 \u2192 98.9), more than 3\u00d7 a typical step",
+     "message": "Energy spent jumps up sharply at days 4\u21925 (21.1 \u2192 35.4), 8\u21929 (35.8 \u2192 64.0), 9\u219210 (64.0 \u2192 98.8), more than 3\u00d7 a typical step",
      "evidence": {
       "jumps": [
        "4\u21925 (21.1 \u2192 35.4)",
        "8\u21929 (35.8 \u2192 64.0)",
-       "9\u219210 (64.0 \u2192 98.9)"
+       "9\u219210 (64.0 \u2192 98.8)"
       ]
      }
     },
@@ -12855,12 +12855,12 @@
      "metric": "taps",
      "scenario": "orders-x1.5 + cap-60 + ad 30",
      "profile": "twice",
-     "message": "Energy spent jumps up sharply at days 4\u21925 (21.3 \u2192 35.4), 8\u21929 (35.7 \u2192 63.7), 9\u219210 (63.7 \u2192 98.3), more than 3\u00d7 a typical step",
+     "message": "Energy spent jumps up sharply at days 4\u21925 (21.3 \u2192 35.4), 8\u21929 (35.7 \u2192 63.6), 9\u219210 (63.6 \u2192 98.4), more than 3\u00d7 a typical step",
      "evidence": {
       "jumps": [
        "4\u21925 (21.3 \u2192 35.4)",
-       "8\u21929 (35.7 \u2192 63.7)",
-       "9\u219210 (63.7 \u2192 98.3)"
+       "8\u21929 (35.7 \u2192 63.6)",
+       "9\u219210 (63.6 \u2192 98.4)"
       ]
      }
     },
@@ -12887,7 +12887,7 @@
      "metric": "adsWatched",
      "scenario": "orders-x1.5 + cap-60 + ad 30",
      "profile": "twice",
-     "message": "2\u20133 ads a day from the second week: mean 8: 0.00, 9: 0.56, 10: 0.93, target \u2265 2.00 (missed in 3 of 3 days)",
+     "message": "2\u20133 ads a day from the second week: mean 8: 0.00, 9: 0.37, 10: 0.46, target \u2265 2.00 (missed in 3 of 3 days)",
      "evidence": {
       "target": {
        "metric": "adsWatched",
@@ -12907,11 +12907,11 @@
        ],
        [
         9,
-        0.56
+        0.37
        ],
        [
         10,
-        0.93
+        0.46464646464646464
        ]
       ],
       "clear": [
@@ -12921,11 +12921,11 @@
        ],
        [
         9,
-        0.56
+        0.37
        ],
        [
         10,
-        0.93
+        0.46464646464646464
        ]
       ],
       "borderline": []
@@ -12961,7 +12961,7 @@
        ],
        [
         9,
-        0.530666666666666
+        0.5302499999999992
        ]
       ],
       "clear": [
@@ -12971,7 +12971,7 @@
        ],
        [
         9,
-        0.530666666666666
+        0.5302499999999992
        ]
       ],
       "borderline": []
@@ -13141,7 +13141,7 @@
      "metric": "minFree",
      "scenario": "orders-x1.5 + cap-60 + ad 30",
      "profile": "twice",
-     "message": "Board feels crowded from day 6: mean 6: 31.4, 7: 31.4, 8: 30.4, 9: 29.3, 10: 28.5, target \u2264 4.00 (missed in 5 of 5 days)",
+     "message": "Board feels crowded from day 6: mean 6: 31.4, 7: 31.4, 8: 30.4, 9: 29.4, 10: 28.4, target \u2264 4.00 (missed in 5 of 5 days)",
      "evidence": {
       "target": {
        "metric": "minFree",
@@ -13168,11 +13168,11 @@
        ],
        [
         9,
-        29.34
+        29.38
        ],
        [
         10,
-        28.51
+        28.393939393939394
        ]
       ],
       "clear": [
@@ -13190,11 +13190,11 @@
        ],
        [
         9,
-        29.34
+        29.38
        ],
        [
         10,
-        28.51
+        28.393939393939394
        ]
       ],
       "borderline": []
@@ -13211,11 +13211,11 @@
      "metric": "minFree",
      "scenario": "orders-x1.5 + cap-60 + ad 30",
      "profile": "careless",
-     "message": "Fewest empty cells falls by only 13.5% from the first third of days (33.5) to the last third (29.0); the design expects at least 25%",
+     "message": "Fewest empty cells falls by only 13.4% from the first third of days (33.5) to the last third (29.1); the design expects at least 25%",
      "evidence": {
-      "growth": 0.13474437322998964,
+      "growth": 0.1337009986585184,
       "first_third": 33.545,
-      "last_third": 29.025,
+      "last_third": 29.060000000000002,
       "values": [
        [
         3,
@@ -13243,16 +13243,16 @@
        ],
        [
         9,
-        29.54
+        29.48
        ],
        [
         10,
-        28.51
+        28.64
        ]
       ]
      },
      "before": 0.07571918318676402,
-     "after": 0.13474437322998964,
+     "after": 0.1337009986585184,
      "gauge": "growth"
     },
     {
@@ -13263,11 +13263,11 @@
      "metric": "minFree",
      "scenario": "orders-x1.5 + cap-60 + ad 30",
      "profile": "efficient",
-     "message": "Fewest empty cells falls by only 13.7% from the first third of days (33.3) to the last third (28.8); the design expects at least 25%",
+     "message": "Fewest empty cells falls by only 13.6% from the first third of days (33.3) to the last third (28.8); the design expects at least 25%",
      "evidence": {
-      "growth": 0.1366226754649071,
+      "growth": 0.13647270545890833,
       "first_third": 33.34,
-      "last_third": 28.785,
+      "last_third": 28.79,
       "values": [
        [
         3,
@@ -13295,16 +13295,16 @@
        ],
        [
         9,
-        29.27
+        29.24
        ],
        [
         10,
-        28.3
+        28.34
        ]
       ]
      },
      "before": 0.07528494301139786,
-     "after": 0.1366226754649071,
+     "after": 0.13647270545890833,
      "gauge": "growth"
     },
     {
@@ -13315,11 +13315,11 @@
      "metric": "minFree",
      "scenario": "orders-x1.5 + cap-60 + ad 30",
      "profile": "twice",
-     "message": "Fewest empty cells falls by only 13.5% from the first third of days (33.4) to the last third (28.9); the design expects at least 25%",
+     "message": "Fewest empty cells falls by only 13.6% from the first third of days (33.4) to the last third (28.9); the design expects at least 25%",
      "evidence": {
-      "growth": 0.13488858980110666,
+      "growth": 0.13602602970032318,
       "first_third": 33.435,
-      "last_third": 28.925,
+      "last_third": 28.886969696969697,
       "values": [
        [
         3,
@@ -13347,16 +13347,16 @@
        ],
        [
         9,
-        29.34
+        29.38
        ],
        [
         10,
-        28.51
+        28.393939393939394
        ]
       ]
      },
      "before": 0.0753701211305519,
-     "after": 0.13488858980110666,
+     "after": 0.13602602970032318,
      "gauge": "growth"
     },
     {
@@ -13413,100 +13413,100 @@
      "metric": "taps",
      "profile": "careless",
      "base": 26.523750000000003,
-     "whatif": 41.901250000000005,
-     "change": 0.5797634195767943,
+     "whatif": 41.89625,
+     "change": 0.5795749092794192,
      "base_first": 19.5,
      "base_last": 40.605000000000004,
      "whatif_first": 19.5,
-     "whatif_last": 80.77
+     "whatif_last": 80.75
     },
     {
      "metric": "taps",
      "profile": "twice",
      "base": 26.6075,
-     "whatif": 42.00125,
-     "change": 0.5785492812177017,
+     "whatif": 42.00424242424242,
+     "change": 0.5786617466594914,
      "base_first": 19.53,
      "base_last": 40.75,
      "whatif_first": 19.53,
-     "whatif_last": 81.0
+     "whatif_last": 81.0119696969697
     },
     {
      "metric": "energyShare",
      "profile": "careless",
      "base": 0.26523749999999996,
-     "whatif": 0.6983541666666667,
-     "change": 1.6329390326279913,
+     "whatif": 0.6982708333333334,
+     "change": 1.632624848799033,
      "base_first": 0.195,
      "base_last": 0.4060499999999998,
      "whatif_first": 0.32500000000000007,
-     "whatif_last": 1.3461666666666665
+     "whatif_last": 1.3458333333333332
     },
     {
      "metric": "energyShare",
      "profile": "twice",
      "base": 0.13303749999999995,
-     "whatif": 0.35001041666666677,
-     "change": 1.6309154686961713,
+     "whatif": 0.3500353535353536,
+     "change": 1.6311029110991542,
      "base_first": 0.09765,
      "base_last": 0.20374999999999985,
      "whatif_first": 0.16275000000000006,
-     "whatif_last": 0.675
+     "whatif_last": 0.6750997474747473
     },
     {
      "metric": "minFree",
      "profile": "careless",
      "base": 32.475,
-     "whatif": 31.277499999999996,
-     "change": -0.0368745188606622,
+     "whatif": 31.286249999999995,
+     "change": -0.03660508083140896,
      "base_first": 33.545,
      "base_last": 31.005000000000003,
      "whatif_first": 33.545,
-     "whatif_last": 29.025
+     "whatif_last": 29.060000000000002
     },
     {
      "metric": "minFree",
      "profile": "twice",
      "base": 32.405,
-     "whatif": 31.15625,
-     "change": -0.038535719796327764,
+     "whatif": 31.146742424242426,
+     "change": -0.03882911821501544,
      "base_first": 33.435,
      "base_last": 30.915,
      "whatif_first": 33.435,
-     "whatif_last": 28.925
+     "whatif_last": 28.886969696969697
     },
     {
      "metric": "outOfEnergy",
      "profile": "careless",
      "base": 0.0,
-     "whatif": 0.33,
+     "whatif": 0.47333333333333333,
      "change": null,
      "base_first": 0.0,
      "base_last": 0.0,
      "whatif_first": 0.0,
-     "whatif_last": 0.65
+     "whatif_last": 0.87
     },
     {
      "metric": "outOfEnergy",
      "profile": "twice",
      "base": 0.0,
-     "whatif": 0.33666666666666667,
+     "whatif": 0.4762626262626262,
      "change": null,
      "base_first": 0.0,
      "base_last": 0.0,
      "whatif_first": 0.0,
-     "whatif_last": 0.65
+     "whatif_last": 0.8787878787878788
     },
     {
      "metric": "daysLate",
      "profile": "careless",
      "base": 0.0,
-     "whatif": 0.098,
+     "whatif": 0.14100000000000001,
      "change": null,
      "base_first": 0.0,
      "base_last": 0.0,
      "whatif_first": 0.0,
-     "whatif_last": 0.32666666666666666
+     "whatif_last": 0.47000000000000003
     },
     {
      "metric": "daysLate",
@@ -13523,23 +13523,23 @@
      "metric": "adsWatched",
      "profile": "careless",
      "base": 0.0,
-     "whatif": 0.18874999999999997,
+     "whatif": 0.105,
      "change": null,
      "base_first": 0.0,
      "base_last": 0.0,
      "whatif_first": 0.0,
-     "whatif_last": 0.7549999999999999
+     "whatif_last": 0.42
     },
     {
      "metric": "adsWatched",
      "profile": "twice",
      "base": 0.0,
-     "whatif": 0.18625000000000003,
+     "whatif": 0.10433080808080808,
      "change": null,
      "base_first": 0.0,
      "base_last": 0.0,
      "whatif_first": 0.0,
-     "whatif_last": 0.7450000000000001
+     "whatif_last": 0.4173232323232323
     }
    ],
    "groups": []
@@ -13877,11 +13877,11 @@
      "metric": "adsWatched",
      "scenario": "orders-x1.5 + cap-60, quit x2",
      "profile": "careless",
-     "message": "Rewarded ads watched jumps up sharply at days 8\u21929 (0.00 \u2192 0.57), 9\u219210 (0.57 \u2192 0.99), more than 3\u00d7 a typical step",
+     "message": "Rewarded ads watched jumps up sharply at days 8\u21929 (0.00 \u2192 0.36), 9\u219210 (0.36 \u2192 0.53), more than 3\u00d7 a typical step",
      "evidence": {
       "jumps": [
-       "8\u21929 (0.00 \u2192 0.57)",
-       "9\u219210 (0.57 \u2192 0.99)"
+       "8\u21929 (0.00 \u2192 0.36)",
+       "9\u219210 (0.36 \u2192 0.53)"
       ]
      }
     },
@@ -13893,11 +13893,11 @@
      "metric": "adsWatched",
      "scenario": "orders-x1.5 + cap-60, quit x2",
      "profile": "efficient",
-     "message": "Rewarded ads watched jumps up sharply at days 8\u21929 (0.00 \u2192 0.55), 9\u219210 (0.55 \u2192 1.09), more than 3\u00d7 a typical step",
+     "message": "Rewarded ads watched jumps up sharply at days 8\u21929 (0.00 \u2192 0.40), 9\u219210 (0.40 \u2192 0.63), more than 3\u00d7 a typical step",
      "evidence": {
       "jumps": [
-       "8\u21929 (0.00 \u2192 0.55)",
-       "9\u219210 (0.55 \u2192 1.09)"
+       "8\u21929 (0.00 \u2192 0.40)",
+       "9\u219210 (0.40 \u2192 0.63)"
       ]
      }
     },
@@ -13909,11 +13909,11 @@
      "metric": "adsWatched",
      "scenario": "orders-x1.5 + cap-60, quit x2",
      "profile": "twice",
-     "message": "Rewarded ads watched jumps up sharply at days 8\u21929 (0.00 \u2192 0.56), 9\u219210 (0.56 \u2192 1.03), more than 3\u00d7 a typical step",
+     "message": "Rewarded ads watched jumps up sharply at days 8\u21929 (0.00 \u2192 0.37), 9\u219210 (0.37 \u2192 0.49), more than 3\u00d7 a typical step",
      "evidence": {
       "jumps": [
-       "8\u21929 (0.00 \u2192 0.56)",
-       "9\u219210 (0.56 \u2192 1.03)"
+       "8\u21929 (0.00 \u2192 0.37)",
+       "9\u219210 (0.37 \u2192 0.49)"
       ]
      }
     },
@@ -13976,12 +13976,12 @@
      "metric": "taps",
      "scenario": "orders-x1.5 + cap-60, quit x2",
      "profile": "careless",
-     "message": "Energy spent jumps up sharply at days 4\u21925 (21.2 \u2192 35.2), 8\u21929 (35.6 \u2192 63.7), 9\u219210 (63.7 \u2192 97.3), more than 3\u00d7 a typical step",
+     "message": "Energy spent jumps up sharply at days 4\u21925 (21.2 \u2192 35.2), 8\u21929 (35.6 \u2192 63.7), 9\u219210 (63.7 \u2192 96.9), more than 3\u00d7 a typical step",
      "evidence": {
       "jumps": [
        "4\u21925 (21.2 \u2192 35.2)",
        "8\u21929 (35.6 \u2192 63.7)",
-       "9\u219210 (63.7 \u2192 97.3)"
+       "9\u219210 (63.7 \u2192 96.9)"
       ]
      }
     },
@@ -13993,12 +13993,12 @@
      "metric": "taps",
      "scenario": "orders-x1.5 + cap-60, quit x2",
      "profile": "efficient",
-     "message": "Energy spent jumps up sharply at days 4\u21925 (21.1 \u2192 35.4), 8\u21929 (35.8 \u2192 64.0), 9\u219210 (64.0 \u2192 98.5), more than 3\u00d7 a typical step",
+     "message": "Energy spent jumps up sharply at days 4\u21925 (21.1 \u2192 35.4), 8\u21929 (35.8 \u2192 64.0), 9\u219210 (64.0 \u2192 98.4), more than 3\u00d7 a typical step",
      "evidence": {
       "jumps": [
        "4\u21925 (21.1 \u2192 35.4)",
        "8\u21929 (35.8 \u2192 64.0)",
-       "9\u219210 (64.0 \u2192 98.5)"
+       "9\u219210 (64.0 \u2192 98.4)"
       ]
      }
     },
@@ -14010,12 +14010,12 @@
      "metric": "taps",
      "scenario": "orders-x1.5 + cap-60, quit x2",
      "profile": "twice",
-     "message": "Energy spent jumps up sharply at days 4\u21925 (21.3 \u2192 35.4), 8\u21929 (35.7 \u2192 63.7), 9\u219210 (63.7 \u2192 98.4), more than 3\u00d7 a typical step",
+     "message": "Energy spent jumps up sharply at days 4\u21925 (21.3 \u2192 35.4), 8\u21929 (35.7 \u2192 63.6), 9\u219210 (63.6 \u2192 97.9), more than 3\u00d7 a typical step",
      "evidence": {
       "jumps": [
        "4\u21925 (21.3 \u2192 35.4)",
-       "8\u21929 (35.7 \u2192 63.7)",
-       "9\u219210 (63.7 \u2192 98.4)"
+       "8\u21929 (35.7 \u2192 63.6)",
+       "9\u219210 (63.6 \u2192 97.9)"
       ]
      }
     },
@@ -14042,7 +14042,7 @@
      "metric": "adsWatched",
      "scenario": "orders-x1.5 + cap-60, quit x2",
      "profile": "twice",
-     "message": "2\u20133 ads a day from the second week: mean 8: 0.00, 9: 0.56, 10: 1.03, target \u2265 2.00 (missed in 3 of 3 days)",
+     "message": "2\u20133 ads a day from the second week: mean 8: 0.00, 9: 0.37, 10: 0.49, target \u2265 2.00 (missed in 3 of 3 days)",
      "evidence": {
       "target": {
        "metric": "adsWatched",
@@ -14062,11 +14062,11 @@
        ],
        [
         9,
-        0.56
+        0.37
        ],
        [
         10,
-        1.03
+        0.4897959183673469
        ]
       ],
       "clear": [
@@ -14076,11 +14076,11 @@
        ],
        [
         9,
-        0.56
+        0.37
        ],
        [
         10,
-        1.03
+        0.4897959183673469
        ]
       ],
       "borderline": []
@@ -14116,7 +14116,7 @@
        ],
        [
         9,
-        0.530666666666666
+        0.5298333333333326
        ]
       ],
       "clear": [
@@ -14126,7 +14126,7 @@
        ],
        [
         9,
-        0.530666666666666
+        0.5298333333333326
        ]
       ],
       "borderline": []
@@ -14296,7 +14296,7 @@
      "metric": "minFree",
      "scenario": "orders-x1.5 + cap-60, quit x2",
      "profile": "twice",
-     "message": "Board feels crowded from day 6: mean 6: 31.4, 7: 31.4, 8: 30.4, 9: 29.3, 10: 28.5, target \u2264 4.00 (missed in 5 of 5 days)",
+     "message": "Board feels crowded from day 6: mean 6: 31.4, 7: 31.4, 8: 30.4, 9: 29.4, 10: 28.4, target \u2264 4.00 (missed in 5 of 5 days)",
      "evidence": {
       "target": {
        "metric": "minFree",
@@ -14323,11 +14323,11 @@
        ],
        [
         9,
-        29.34
+        29.4
        ],
        [
         10,
-        28.47
+        28.357142857142858
        ]
       ],
       "clear": [
@@ -14345,11 +14345,11 @@
        ],
        [
         9,
-        29.34
+        29.4
        ],
        [
         10,
-        28.47
+        28.357142857142858
        ]
       ],
       "borderline": []
@@ -14368,9 +14368,9 @@
      "profile": "careless",
      "message": "Fewest empty cells falls by only 13.4% from the first third of days (33.5) to the last third (29.1); the design expects at least 25%",
      "evidence": {
-      "growth": 0.13370099865851848,
+      "growth": 0.13385005216872864,
       "first_third": 33.545,
-      "last_third": 29.06,
+      "last_third": 29.055,
       "values": [
        [
         3,
@@ -14398,16 +14398,16 @@
        ],
        [
         9,
-        29.54
+        29.48
        ],
        [
         10,
-        28.58
+        28.63
        ]
       ]
      },
      "before": 0.07571918318676402,
-     "after": 0.13370099865851848,
+     "after": 0.13385005216872864,
      "gauge": "growth"
     },
     {
@@ -14420,9 +14420,9 @@
      "profile": "efficient",
      "message": "Fewest empty cells falls by only 13.6% from the first third of days (33.3) to the last third (28.8); the design expects at least 25%",
      "evidence": {
-      "growth": 0.1361727654469108,
+      "growth": 0.13572285542891438,
       "first_third": 33.34,
-      "last_third": 28.799999999999997,
+      "last_third": 28.814999999999998,
       "values": [
        [
         3,
@@ -14450,16 +14450,16 @@
        ],
        [
         9,
-        29.27
+        29.24
        ],
        [
         10,
-        28.33
+        28.39
        ]
       ]
      },
      "before": 0.07528494301139786,
-     "after": 0.1361727654469108,
+     "after": 0.13572285542891438,
      "gauge": "growth"
     },
     {
@@ -14470,11 +14470,11 @@
      "metric": "minFree",
      "scenario": "orders-x1.5 + cap-60, quit x2",
      "profile": "twice",
-     "message": "Fewest empty cells falls by only 13.5% from the first third of days (33.4) to the last third (28.9); the design expects at least 25%",
+     "message": "Fewest empty cells falls by only 13.6% from the first third of days (33.4) to the last third (28.9); the design expects at least 25%",
      "evidence": {
-      "growth": 0.13548676536563484,
+      "growth": 0.1362772116473329,
       "first_third": 33.435,
-      "last_third": 28.905,
+      "last_third": 28.878571428571426,
       "values": [
        [
         3,
@@ -14502,16 +14502,16 @@
        ],
        [
         9,
-        29.34
+        29.4
        ],
        [
         10,
-        28.47
+        28.357142857142858
        ]
       ]
      },
      "before": 0.0753701211305519,
-     "after": 0.13548676536563484,
+     "after": 0.1362772116473329,
      "gauge": "growth"
     },
     {
@@ -14568,100 +14568,100 @@
      "metric": "taps",
      "profile": "careless",
      "base": 26.523750000000003,
-     "whatif": 41.84,
-     "change": 0.5774541684339506,
+     "whatif": 41.791250000000005,
+     "change": 0.5756161930345445,
      "base_first": 19.5,
      "base_last": 40.605000000000004,
      "whatif_first": 19.5,
-     "whatif_last": 80.525
+     "whatif_last": 80.33
     },
     {
      "metric": "taps",
      "profile": "twice",
      "base": 26.6075,
-     "whatif": 42.01375,
-     "change": 0.5790190735694822,
+     "whatif": 41.934719387755095,
+     "change": 0.5760488353943471,
      "base_first": 19.53,
      "base_last": 40.75,
      "whatif_first": 19.53,
-     "whatif_last": 81.05
+     "whatif_last": 80.73387755102041
     },
     {
      "metric": "energyShare",
      "profile": "careless",
      "base": 0.26523749999999996,
-     "whatif": 0.6973333333333334,
-     "change": 1.6290902807232517,
+     "whatif": 0.6965208333333335,
+     "change": 1.6260269883909084,
      "base_first": 0.195,
      "base_last": 0.4060499999999998,
      "whatif_first": 0.32500000000000007,
-     "whatif_last": 1.342083333333333
+     "whatif_last": 1.3388333333333333
     },
     {
      "metric": "energyShare",
      "profile": "twice",
      "base": 0.13303749999999995,
-     "whatif": 0.35011458333333345,
-     "change": 1.631698455949139,
+     "whatif": 0.34945599489795925,
+     "change": 1.6267480589905807,
      "base_first": 0.09765,
      "base_last": 0.20374999999999985,
      "whatif_first": 0.16275000000000006,
-     "whatif_last": 0.6754166666666668
+     "whatif_last": 0.67278231292517
     },
     {
      "metric": "minFree",
      "profile": "careless",
      "base": 32.475,
-     "whatif": 31.286249999999995,
-     "change": -0.03660508083140896,
+     "whatif": 31.284999999999997,
+     "change": -0.0366435719784451,
      "base_first": 33.545,
      "base_last": 31.005000000000003,
      "whatif_first": 33.545,
-     "whatif_last": 29.06
+     "whatif_last": 29.055
     },
     {
      "metric": "minFree",
      "profile": "twice",
      "base": 32.405,
-     "whatif": 31.15125,
-     "change": -0.0386900169726894,
+     "whatif": 31.14464285714286,
+     "change": -0.03889390967002444,
      "base_first": 33.435,
      "base_last": 30.915,
      "whatif_first": 33.435,
-     "whatif_last": 28.905
+     "whatif_last": 28.878571428571426
     },
     {
      "metric": "outOfEnergy",
      "profile": "careless",
      "base": 0.0,
-     "whatif": 0.3466666666666667,
+     "whatif": 0.47666666666666674,
      "change": null,
      "base_first": 0.0,
      "base_last": 0.0,
      "whatif_first": 0.0,
-     "whatif_last": 0.7
+     "whatif_last": 0.88
     },
     {
      "metric": "outOfEnergy",
      "profile": "twice",
      "base": 0.0,
-     "whatif": 0.34,
+     "whatif": 0.4758503401360545,
      "change": null,
      "base_first": 0.0,
      "base_last": 0.0,
      "whatif_first": 0.0,
-     "whatif_last": 0.66
+     "whatif_last": 0.8775510204081632
     },
     {
      "metric": "daysLate",
      "profile": "careless",
      "base": 0.0,
-     "whatif": 0.10200000000000001,
+     "whatif": 0.13999999999999999,
      "change": null,
      "base_first": 0.0,
      "base_last": 0.0,
      "whatif_first": 0.0,
-     "whatif_last": 0.34
+     "whatif_last": 0.4666666666666666
     },
     {
      "metric": "daysLate",
@@ -14678,23 +14678,23 @@
      "metric": "adsWatched",
      "profile": "careless",
      "base": 0.0,
-     "whatif": 0.195,
+     "whatif": 0.11125,
      "change": null,
      "base_first": 0.0,
      "base_last": 0.0,
      "whatif_first": 0.0,
-     "whatif_last": 0.78
+     "whatif_last": 0.445
     },
     {
      "metric": "adsWatched",
      "profile": "twice",
      "base": 0.0,
-     "whatif": 0.19875,
+     "whatif": 0.10747448979591837,
      "change": null,
      "base_first": 0.0,
      "base_last": 0.0,
      "whatif_first": 0.0,
-     "whatif_last": 0.795
+     "whatif_last": 0.42989795918367346
     }
    ],
    "groups": []
@@ -15557,7 +15557,7 @@
      "7": 0.0,
      "8": 0.0,
      "9": 0.0,
-     "10": 0.13
+     "10": 0.15
     },
     "adPrompts": {
      "1": 0.0,
@@ -15581,7 +15581,7 @@
      "7": 0.0,
      "8": 0.0,
      "9": 0.0,
-     "10": 0.11
+     "10": 0.09
     },
     "minFree": {
      "1": 36.33,
@@ -15617,7 +15617,7 @@
      "7": 0.0,
      "8": 0.0,
      "9": 0.0,
-     "10": 0.13
+     "10": 0.15
     },
     "played": {
      "1": 1.0,
@@ -15655,7 +15655,7 @@
      "7": 31.51,
      "8": 35.69,
      "9": 63.73,
-     "10": 98.69
+     "10": 98.71
     },
     "merges": {
      "1": 3.96,
@@ -15691,7 +15691,7 @@
      "7": 0.0,
      "8": 0.0,
      "9": 0.0,
-     "10": 0.13
+     "10": 0.2
     },
     "adPrompts": {
      "1": 0.0,
@@ -15715,7 +15715,7 @@
      "7": 0.0,
      "8": 0.0,
      "9": 0.0,
-     "10": 0.16
+     "10": 0.09
     },
     "minFree": {
      "1": 36.44,
@@ -15727,7 +15727,7 @@
      "7": 31.37,
      "8": 30.44,
      "9": 29.38,
-     "10": 28.55
+     "10": 28.54
     },
     "energyShare": {
      "1": 0.03635,
@@ -15739,7 +15739,7 @@
      "7": 0.15754999999999997,
      "8": 0.17845000000000003,
      "9": 0.3186499999999997,
-     "10": 0.49345000000000006
+     "10": 0.49355000000000004
     },
     "daysLate": {
      "1": 0.0,
@@ -15801,7 +15801,7 @@
      "7": 24.64,
      "8": 30.91,
      "9": 57.99,
-     "10": 93.22
+     "10": 93.24
     },
     "sells": {
      "1": 0.0,
@@ -15825,7 +15825,7 @@
      "7": 0.0,
      "8": 0.0,
      "9": 0.0,
-     "10": 0.11
+     "10": 0.19
     },
     "adPrompts": {
      "1": 0.0,
@@ -15849,7 +15849,7 @@
      "7": 0.0,
      "8": 0.0,
      "9": 0.0,
-     "10": 0.21
+     "10": 0.13
     },
     "minFree": {
      "1": 36.38,
@@ -16732,8 +16732,8 @@
      "6": 32.28,
      "7": 31.6,
      "8": 35.59,
-     "9": 63.74,
-     "10": 97.74
+     "9": 63.73,
+     "10": 97.73
     },
     "merges": {
      "1": 3.93,
@@ -16744,8 +16744,8 @@
      "6": 25.2,
      "7": 24.6,
      "8": 30.68,
-     "9": 57.6,
-     "10": 91.87
+     "9": 57.62,
+     "10": 91.82
     },
     "sells": {
      "1": 0.0,
@@ -16768,8 +16768,8 @@
      "6": 0.0,
      "7": 0.0,
      "8": 0.0,
-     "9": 0.34,
-     "10": 0.7
+     "9": 0.55,
+     "10": 0.88
     },
     "adPrompts": {
      "1": 0.0,
@@ -16781,7 +16781,7 @@
      "7": 0.0,
      "8": 0.0,
      "9": 0.91,
-     "10": 1.69
+     "10": 1.41
     },
     "adsWatched": {
      "1": 0.0,
@@ -16792,8 +16792,8 @@
      "6": 0.0,
      "7": 0.0,
      "8": 0.0,
-     "9": 0.57,
-     "10": 0.99
+     "9": 0.36,
+     "10": 0.53
     },
     "minFree": {
      "1": 36.33,
@@ -16804,8 +16804,8 @@
      "6": 31.58,
      "7": 31.51,
      "8": 30.54,
-     "9": 29.54,
-     "10": 28.56
+     "9": 29.48,
+     "10": 28.58
     },
     "energyShare": {
      "1": 0.12533333333333332,
@@ -16816,8 +16816,8 @@
      "6": 0.5380000000000009,
      "7": 0.5266666666666667,
      "8": 0.5931666666666666,
-     "9": 1.062333333333332,
-     "10": 1.6290000000000007
+     "9": 1.0621666666666654,
+     "10": 1.6288333333333345
     },
     "daysLate": {
      "1": 0.0,
@@ -16828,8 +16828,8 @@
      "6": 0.0,
      "7": 0.0,
      "8": 0.0,
-     "9": 0.34,
-     "10": 0.69
+     "9": 0.55,
+     "10": 0.87
     },
     "played": {
      "1": 1.0,
@@ -16866,8 +16866,8 @@
      "6": 32.38,
      "7": 31.51,
      "8": 35.69,
-     "9": 63.68,
-     "10": 98.42
+     "9": 63.63,
+     "10": 98.43434343434343
     },
     "merges": {
      "1": 3.96,
@@ -16878,8 +16878,8 @@
      "6": 25.39,
      "7": 24.59,
      "8": 30.68,
-     "9": 57.6,
-     "10": 92.42
+     "9": 57.54,
+     "10": 92.36363636363636
     },
     "sells": {
      "1": 0.0,
@@ -16902,8 +16902,8 @@
      "6": 0.0,
      "7": 0.0,
      "8": 0.0,
-     "9": 0.36,
-     "10": 0.66
+     "9": 0.55,
+     "10": 0.8787878787878788
     },
     "adPrompts": {
      "1": 0.0,
@@ -16915,7 +16915,7 @@
      "7": 0.0,
      "8": 0.0,
      "9": 0.92,
-     "10": 1.69
+     "10": 1.3636363636363635
     },
     "adsWatched": {
      "1": 0.0,
@@ -16926,8 +16926,8 @@
      "6": 0.0,
      "7": 0.0,
      "8": 0.0,
-     "9": 0.56,
-     "10": 1.03
+     "9": 0.37,
+     "10": 0.48484848484848486
     },
     "minFree": {
      "1": 36.44,
@@ -16938,8 +16938,8 @@
      "6": 31.35,
      "7": 31.37,
      "8": 30.44,
-     "9": 29.34,
-     "10": 28.47
+     "9": 29.38,
+     "10": 28.32323232323232
     },
     "energyShare": {
      "1": 0.06058333333333325,
@@ -16950,8 +16950,8 @@
      "6": 0.2698333333333338,
      "7": 0.2625833333333333,
      "8": 0.2974166666666668,
-     "9": 0.530666666666666,
-     "10": 0.8201666666666675
+     "9": 0.5302499999999992,
+     "10": 0.8202861952861958
     },
     "daysLate": {
      "1": 0.0,
@@ -16986,8 +16986,8 @@
      "6": 0.0,
      "7": 0.0,
      "8": 0.0,
-     "9": 0.0,
-     "10": 0.01
+     "9": 0.01,
+     "10": 0.010101010101010102
     }
    },
    "efficient": {
@@ -17001,7 +17001,7 @@
      "7": 31.74,
      "8": 35.8,
      "9": 63.95,
-     "10": 98.69
+     "10": 98.57
     },
     "merges": {
      "1": 3.88,
@@ -17012,8 +17012,8 @@
      "6": 25.3,
      "7": 24.64,
      "8": 30.91,
-     "9": 57.87,
-     "10": 92.64
+     "9": 57.83,
+     "10": 92.59
     },
     "sells": {
      "1": 0.0,
@@ -17036,8 +17036,8 @@
      "6": 0.0,
      "7": 0.0,
      "8": 0.0,
-     "9": 0.4,
-     "10": 0.64
+     "9": 0.55,
+     "10": 0.86
     },
     "adPrompts": {
      "1": 0.0,
@@ -17049,7 +17049,7 @@
      "7": 0.0,
      "8": 0.0,
      "9": 0.95,
-     "10": 1.73
+     "10": 1.49
     },
     "adsWatched": {
      "1": 0.0,
@@ -17060,8 +17060,8 @@
      "6": 0.0,
      "7": 0.0,
      "8": 0.0,
-     "9": 0.55,
-     "10": 1.09
+     "9": 0.4,
+     "10": 0.63
     },
     "minFree": {
      "1": 36.38,
@@ -17072,8 +17072,8 @@
      "6": 31.31,
      "7": 31.4,
      "8": 30.32,
-     "9": 29.27,
-     "10": 28.31
+     "9": 29.24,
+     "10": 28.37
     },
     "energyShare": {
      "1": 0.039555555555555504,
@@ -17085,7 +17085,7 @@
      "7": 0.1763333333333333,
      "8": 0.1988888888888889,
      "9": 0.3552777777777777,
-     "10": 0.548277777777778
+     "10": 0.5476111111111113
     },
     "daysLate": {
      "1": 0.0,
@@ -17136,8 +17136,8 @@
      "6": 32.28,
      "7": 31.6,
      "8": 35.59,
-     "9": 63.74,
-     "10": 97.8
+     "9": 63.73,
+     "10": 97.77
     },
     "merges": {
      "1": 3.93,
@@ -17148,8 +17148,8 @@
      "6": 25.2,
      "7": 24.6,
      "8": 30.68,
-     "9": 57.6,
-     "10": 91.9
+     "9": 57.62,
+     "10": 91.82
     },
     "sells": {
      "1": 0.0,
@@ -17172,8 +17172,8 @@
      "6": 0.0,
      "7": 0.0,
      "8": 0.0,
-     "9": 0.34,
-     "10": 0.65
+     "9": 0.55,
+     "10": 0.87
     },
     "adPrompts": {
      "1": 0.0,
@@ -17185,7 +17185,7 @@
      "7": 0.0,
      "8": 0.0,
      "9": 0.91,
-     "10": 1.59
+     "10": 1.35
     },
     "adsWatched": {
      "1": 0.0,
@@ -17196,8 +17196,8 @@
      "6": 0.0,
      "7": 0.0,
      "8": 0.0,
-     "9": 0.57,
-     "10": 0.94
+     "9": 0.36,
+     "10": 0.48
     },
     "minFree": {
      "1": 36.33,
@@ -17208,8 +17208,8 @@
      "6": 31.58,
      "7": 31.51,
      "8": 30.54,
-     "9": 29.54,
-     "10": 28.51
+     "9": 29.48,
+     "10": 28.64
     },
     "energyShare": {
      "1": 0.12533333333333332,
@@ -17220,8 +17220,8 @@
      "6": 0.5380000000000009,
      "7": 0.5266666666666667,
      "8": 0.5931666666666666,
-     "9": 1.062333333333332,
-     "10": 1.6300000000000008
+     "9": 1.0621666666666654,
+     "10": 1.6295000000000013
     },
     "daysLate": {
      "1": 0.0,
@@ -17232,8 +17232,8 @@
      "6": 0.0,
      "7": 0.0,
      "8": 0.0,
-     "9": 0.34,
-     "10": 0.64
+     "9": 0.55,
+     "10": 0.86
     },
     "played": {
      "1": 1.0,
@@ -17270,8 +17270,8 @@
      "6": 32.38,
      "7": 31.51,
      "8": 35.69,
-     "9": 63.68,
-     "10": 98.32
+     "9": 63.63,
+     "10": 98.39393939393939
     },
     "merges": {
      "1": 3.96,
@@ -17282,8 +17282,8 @@
      "6": 25.39,
      "7": 24.59,
      "8": 30.68,
-     "9": 57.6,
-     "10": 92.34
+     "9": 57.54,
+     "10": 92.35353535353535
     },
     "sells": {
      "1": 0.0,
@@ -17306,8 +17306,8 @@
      "6": 0.0,
      "7": 0.0,
      "8": 0.0,
-     "9": 0.36,
-     "10": 0.65
+     "9": 0.55,
+     "10": 0.8787878787878788
     },
     "adPrompts": {
      "1": 0.0,
@@ -17319,7 +17319,7 @@
      "7": 0.0,
      "8": 0.0,
      "9": 0.92,
-     "10": 1.58
+     "10": 1.3434343434343434
     },
     "adsWatched": {
      "1": 0.0,
@@ -17330,8 +17330,8 @@
      "6": 0.0,
      "7": 0.0,
      "8": 0.0,
-     "9": 0.56,
-     "10": 0.93
+     "9": 0.37,
+     "10": 0.46464646464646464
     },
     "minFree": {
      "1": 36.44,
@@ -17342,8 +17342,8 @@
      "6": 31.35,
      "7": 31.37,
      "8": 30.44,
-     "9": 29.34,
-     "10": 28.51
+     "9": 29.38,
+     "10": 28.393939393939394
     },
     "energyShare": {
      "1": 0.06058333333333325,
@@ -17354,8 +17354,8 @@
      "6": 0.2698333333333338,
      "7": 0.2625833333333333,
      "8": 0.2974166666666668,
-     "9": 0.530666666666666,
-     "10": 0.8193333333333341
+     "9": 0.5302499999999992,
+     "10": 0.8199494949494955
     },
     "daysLate": {
      "1": 0.0,
@@ -17390,8 +17390,8 @@
      "6": 0.0,
      "7": 0.0,
      "8": 0.0,
-     "9": 0.0,
-     "10": 0.01
+     "9": 0.01,
+     "10": 0.010101010101010102
     }
    },
    "efficient": {
@@ -17405,7 +17405,7 @@
      "7": 31.74,
      "8": 35.8,
      "9": 63.95,
-     "10": 98.93
+     "10": 98.77
     },
     "merges": {
      "1": 3.88,
@@ -17416,8 +17416,8 @@
      "6": 25.3,
      "7": 24.64,
      "8": 30.91,
-     "9": 57.87,
-     "10": 92.82
+     "9": 57.83,
+     "10": 92.74
     },
     "sells": {
      "1": 0.0,
@@ -17440,8 +17440,8 @@
      "6": 0.0,
      "7": 0.0,
      "8": 0.0,
-     "9": 0.4,
-     "10": 0.58
+     "9": 0.55,
+     "10": 0.82
     },
     "adPrompts": {
      "1": 0.0,
@@ -17453,7 +17453,7 @@
      "7": 0.0,
      "8": 0.0,
      "9": 0.95,
-     "10": 1.6
+     "10": 1.46
     },
     "adsWatched": {
      "1": 0.0,
@@ -17464,8 +17464,8 @@
      "6": 0.0,
      "7": 0.0,
      "8": 0.0,
-     "9": 0.55,
-     "10": 1.02
+     "9": 0.4,
+     "10": 0.64
     },
     "minFree": {
      "1": 36.38,
@@ -17476,8 +17476,8 @@
      "6": 31.31,
      "7": 31.4,
      "8": 30.32,
-     "9": 29.27,
-     "10": 28.3
+     "9": 29.24,
+     "10": 28.34
     },
     "energyShare": {
      "1": 0.039555555555555504,
@@ -17489,7 +17489,7 @@
      "7": 0.1763333333333333,
      "8": 0.1988888888888889,
      "9": 0.3552777777777777,
-     "10": 0.5496111111111116
+     "10": 0.5487222222222224
     },
     "daysLate": {
      "1": 0.0,
@@ -17540,8 +17540,8 @@
      "6": 32.28,
      "7": 31.6,
      "8": 35.59,
-     "9": 63.74,
-     "10": 97.31
+     "9": 63.73,
+     "10": 96.93
     },
     "merges": {
      "1": 3.93,
@@ -17552,8 +17552,8 @@
      "6": 25.2,
      "7": 24.6,
      "8": 30.68,
-     "9": 57.6,
-     "10": 91.44
+     "9": 57.62,
+     "10": 91.01
     },
     "sells": {
      "1": 0.0,
@@ -17576,8 +17576,8 @@
      "6": 0.0,
      "7": 0.0,
      "8": 0.0,
-     "9": 0.34,
-     "10": 0.7
+     "9": 0.55,
+     "10": 0.88
     },
     "adPrompts": {
      "1": 0.0,
@@ -17589,7 +17589,7 @@
      "7": 0.0,
      "8": 0.0,
      "9": 0.91,
-     "10": 1.69
+     "10": 1.41
     },
     "adsWatched": {
      "1": 0.0,
@@ -17600,8 +17600,8 @@
      "6": 0.0,
      "7": 0.0,
      "8": 0.0,
-     "9": 0.57,
-     "10": 0.99
+     "9": 0.36,
+     "10": 0.53
     },
     "minFree": {
      "1": 36.33,
@@ -17612,8 +17612,8 @@
      "6": 31.58,
      "7": 31.51,
      "8": 30.54,
-     "9": 29.54,
-     "10": 28.58
+     "9": 29.48,
+     "10": 28.63
     },
     "energyShare": {
      "1": 0.12533333333333332,
@@ -17624,8 +17624,8 @@
      "6": 0.5380000000000009,
      "7": 0.5266666666666667,
      "8": 0.5931666666666666,
-     "9": 1.062333333333332,
-     "10": 1.621833333333334
+     "9": 1.0621666666666654,
+     "10": 1.6155000000000013
     },
     "daysLate": {
      "1": 0.0,
@@ -17636,8 +17636,8 @@
      "6": 0.0,
      "7": 0.0,
      "8": 0.0,
-     "9": 0.34,
-     "10": 0.68
+     "9": 0.55,
+     "10": 0.85
     },
     "played": {
      "1": 1.0,
@@ -17661,7 +17661,7 @@
      "7": 0.0,
      "8": 0.0,
      "9": 0.0,
-     "10": 0.02
+     "10": 0.03
     }
    },
    "twice": {
@@ -17674,8 +17674,8 @@
      "6": 32.38,
      "7": 31.51,
      "8": 35.69,
-     "9": 63.68,
-     "10": 98.42
+     "9": 63.58,
+     "10": 97.88775510204081
     },
     "merges": {
      "1": 3.96,
@@ -17686,8 +17686,8 @@
      "6": 25.39,
      "7": 24.59,
      "8": 30.68,
-     "9": 57.6,
-     "10": 92.42
+     "9": 57.45,
+     "10": 91.74489795918367
     },
     "sells": {
      "1": 0.0,
@@ -17710,8 +17710,8 @@
      "6": 0.0,
      "7": 0.0,
      "8": 0.0,
-     "9": 0.36,
-     "10": 0.66
+     "9": 0.55,
+     "10": 0.8775510204081632
     },
     "adPrompts": {
      "1": 0.0,
@@ -17723,7 +17723,7 @@
      "7": 0.0,
      "8": 0.0,
      "9": 0.92,
-     "10": 1.69
+     "10": 1.3673469387755102
     },
     "adsWatched": {
      "1": 0.0,
@@ -17734,8 +17734,8 @@
      "6": 0.0,
      "7": 0.0,
      "8": 0.0,
-     "9": 0.56,
-     "10": 1.03
+     "9": 0.37,
+     "10": 0.4897959183673469
     },
     "minFree": {
      "1": 36.44,
@@ -17746,8 +17746,8 @@
      "6": 31.35,
      "7": 31.37,
      "8": 30.44,
-     "9": 29.34,
-     "10": 28.47
+     "9": 29.4,
+     "10": 28.357142857142858
     },
     "energyShare": {
      "1": 0.06058333333333325,
@@ -17758,8 +17758,8 @@
      "6": 0.2698333333333338,
      "7": 0.2625833333333333,
      "8": 0.2974166666666668,
-     "9": 0.530666666666666,
-     "10": 0.8201666666666675
+     "9": 0.5298333333333326,
+     "10": 0.8157312925170075
     },
     "daysLate": {
      "1": 0.0,
@@ -17794,8 +17794,8 @@
      "6": 0.0,
      "7": 0.0,
      "8": 0.0,
-     "9": 0.0,
-     "10": 0.01
+     "9": 0.02,
+     "10": 0.030612244897959183
     }
    },
    "efficient": {
@@ -17809,7 +17809,7 @@
      "7": 31.74,
      "8": 35.8,
      "9": 63.95,
-     "10": 98.51
+     "10": 98.39
     },
     "merges": {
      "1": 3.88,
@@ -17820,8 +17820,8 @@
      "6": 25.3,
      "7": 24.64,
      "8": 30.91,
-     "9": 57.87,
-     "10": 92.42
+     "9": 57.83,
+     "10": 92.37
     },
     "sells": {
      "1": 0.0,
@@ -17844,8 +17844,8 @@
      "6": 0.0,
      "7": 0.0,
      "8": 0.0,
-     "9": 0.4,
-     "10": 0.64
+     "9": 0.55,
+     "10": 0.86
     },
     "adPrompts": {
      "1": 0.0,
@@ -17857,7 +17857,7 @@
      "7": 0.0,
      "8": 0.0,
      "9": 0.95,
-     "10": 1.73
+     "10": 1.49
     },
     "adsWatched": {
      "1": 0.0,
@@ -17868,8 +17868,8 @@
      "6": 0.0,
      "7": 0.0,
      "8": 0.0,
-     "9": 0.55,
-     "10": 1.09
+     "9": 0.4,
+     "10": 0.63
     },
     "minFree": {
      "1": 36.38,
@@ -17880,8 +17880,8 @@
      "6": 31.31,
      "7": 31.4,
      "8": 30.32,
-     "9": 29.27,
-     "10": 28.33
+     "9": 29.24,
+     "10": 28.39
     },
     "energyShare": {
      "1": 0.039555555555555504,
@@ -17893,7 +17893,7 @@
      "7": 0.1763333333333333,
      "8": 0.1988888888888889,
      "9": 0.3552777777777777,
-     "10": 0.547277777777778
+     "10": 0.5466111111111113
     },
     "daysLate": {
      "1": 0.0,
