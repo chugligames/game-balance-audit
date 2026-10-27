@@ -36,6 +36,9 @@ folder.
 | `playGame(game, state, policies, rand)` | `play_game(…)` | Plays a game to the end (or a step limit) |
 | `decisionImpact(game, state, rand)` | `decision_impact(…)` | How much the choice at one moment changes the outcome |
 
+Name scenarios after the change they make (`'P2-a forwards 3/6/10% gone nightly'`), so the
+report can quote them. Don't put commas in names: `--scenario a,b` splits on them.
+
 `simulate` gives run *r* the same seed in every scenario and profile ("common random
 numbers"). A difference between the baseline and a what-if then comes from the change,
 not from luck. `--set key=value` makes a quick what-if from the command line and tags its

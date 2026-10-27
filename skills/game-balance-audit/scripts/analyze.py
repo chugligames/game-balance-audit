@@ -707,44 +707,58 @@ def write_markdown(data, flags, cmp, path):
 PALETTE = ["#0072B2", "#E69F00", "#009E73", "#CC79A7", "#D55E00", "#56B4E9", "#666666", "#8C6D31"]
 
 
-def svg_chart(title, segs, series, threshold=None, band=None, width=640, height=240):
-    """series: [(name, [(seg, value)], color, dashed)]. Inline SVG with point tooltips."""
+def nice_ticks(lo, hi, count=4):
+    """Round tick values (1, 2, 2.5 or 5 × a power of ten) covering lo..hi."""
+    span = (hi - lo) or abs(hi) or 1.0
+    raw = span / count
+    mag = 10 ** math.floor(math.log10(raw))
+    step = next(m * mag for m in (1, 2, 2.5, 5, 10) if m * mag >= raw)
+    start = math.floor(lo / step) * step
+    ticks = []
+    t = start
+    while t <= hi + step * 0.999:
+        ticks.append(round(t, 10))
+        t += step
+    return ticks
+
+
+def svg_chart(title, segs, series, threshold=None, bands=(), width=640, height=240):
+    """series: [(name, [(seg, value)], color, dashed)]; bands: [(first seg, last seg, min, max)].
+    Inline SVG with point tooltips."""
     pad_l, pad_r, pad_t, pad_b = 48, 12, 28, 28
     vals = [v for _, pts, _, _ in series for _, v in pts if v is not None]
     if threshold is not None:
         vals.append(threshold)
-    if band:
-        vals += [b for b in band[2:] if b is not None]
+    for b in bands:
+        vals += [x for x in b[2:] if x is not None]
     if not vals:
         return ""
     lo, hi = min(vals), max(vals)
-    if lo > 0 and lo < 0.4 * hi:
+    if lo >= 0 and lo < 0.4 * hi:
         lo = 0.0
+    ticks = nice_ticks(lo, hi)
+    lo, hi = ticks[0], ticks[-1]
     if hi == lo:
         hi = lo + 1
-    span = hi - lo
-    lo, hi = lo - 0.05 * span, hi + 0.05 * span
     n = len(segs)
     x = lambda i: pad_l + (width - pad_l - pad_r) * (i / max(1, n - 1))
     y = lambda v: pad_t + (height - pad_t - pad_b) * (1 - (v - lo) / (hi - lo))
     idx = {s: i for i, s in enumerate(segs)}
     out = ['<svg viewBox="0 0 %d %d" role="img" aria-label="%s">' % (width, height, html.escape(title))]
     out.append('<text x="%d" y="16" class="t">%s</text>' % (pad_l, html.escape(title)))
-    for k in range(5):
-        v = lo + (hi - lo) * k / 4
+    for v in ticks:
         out.append('<line x1="%d" x2="%d" y1="%.1f" y2="%.1f" class="g"/>' % (pad_l, width - pad_r, y(v), y(v)))
-        out.append('<text x="%d" y="%.1f" class="a" text-anchor="end">%s</text>' % (pad_l - 6, y(v) + 4, html.escape(fmt(v))))
+        out.append('<text x="%d" y="%.1f" class="a" text-anchor="end">%s</text>' % (pad_l - 6, y(v) + 4, ("%.2f" % v).rstrip("0").rstrip(".")))
     step = max(1, n // 12)
     for i, s in enumerate(segs):
         if i % step == 0 or i == n - 1:
             out.append('<text x="%.1f" y="%d" class="a" text-anchor="middle">%s</text>' % (x(i), height - 8, html.escape(str(s))))
-    if band:
-        b0, b1, bmin, bmax = band
+    for b0, b1, bmin, bmax in bands:
         i0 = idx.get(b0, 0)
         i1 = idx.get(b1, n - 1)
         top = y(bmax if bmax is not None else hi)
         bot = y(bmin if bmin is not None else lo)
-        out.append('<rect x="%.1f" y="%.1f" width="%.1f" height="%.1f" class="band"><title>target</title></rect>' % (x(i0), top, max(2, x(i1) - x(i0)), bot - top))
+        out.append('<rect x="%.1f" y="%.1f" width="%.1f" height="%.1f" class="band"><title>target %s–%s</title></rect>' % (x(i0) - 3, top, max(6, x(i1) - x(i0) + 6), bot - top, b0, b1))
     if threshold is not None:
         out.append('<line x1="%d" x2="%d" y1="%.1f" y2="%.1f" class="thr"><title>limit %s</title></line>' % (pad_l, width - pad_r, y(threshold), y(threshold), fmt(threshold)))
     for name, pts, color, dashed in series:
@@ -766,22 +780,25 @@ def write_charts(data, path):
         return False
     metrics = [m for m in cfg.get("metrics", {}) if m in data.metrics]
     focus = cfg.get("focus_profile") or data.profiles[0]
+    # Up to 8 lines stay readable: the baseline plus `chart_scenarios` from the config, else the first 7 what-ifs.
+    picked = [sc for sc in cfg.get("chart_scenarios", []) if sc in data.scenarios and sc != data.baseline]
+    shown = [data.baseline] + (picked or [sc for sc in data.scenarios if sc != data.baseline])[:7]
     parts = []
     for m in metrics:
         mcfg = cfg["metrics"][m]
         thr = parse_cond(mcfg["binds"])[1] if "binds" in mcfg else None
-        band = None
+        bands = []
         for t in cfg.get("targets", []):
-            if t["metric"] == m and t.get("stat", "mean") == "mean":
+            if t["metric"] == m and t.get("stat", "mean") == "mean" and t.get("profile") in (None, focus):
                 sg = data.segs_in(t.get("segments"))
                 if sg:
-                    band = (sg[0], sg[-1], t.get("min"), t.get("max"))
+                    bands.append((sg[0], sg[-1], t.get("min"), t.get("max")))
         label = mcfg.get("label", m)
         series = [(p, data.series(data.baseline, p, m, data.segments), PALETTE[i % len(PALETTE)], False) for i, p in enumerate(data.profiles)]
-        parts.append(svg_chart("%s · baseline, by player profile" % label, data.segments, series, thr, band))
-        if len(data.scenarios) > 1:
-            series = [(sc, data.series(sc, focus, m, data.segments), PALETTE[i % len(PALETTE)], i > 0) for i, sc in enumerate(data.scenarios[:8])]
-            parts.append(svg_chart("%s · what-ifs (%s player)" % (label, focus), data.segments, series, thr, band))
+        parts.append(svg_chart("%s · baseline, by player profile" % label, data.segments, series, thr, bands))
+        if len(shown) > 1:
+            series = [(sc, data.series(sc, focus, m, data.segments), PALETTE[i % len(PALETTE)], i > 0) for i, sc in enumerate(shown)]
+            parts.append(svg_chart("%s · what-ifs (%s player)" % (label, focus), data.segments, series, thr, bands))
     doc = """<!doctype html><html><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
 <title>%s balance charts</title><style>
 :root{--bg:#fff;--fg:#1d1d1f;--muted:#6e6e73;--grid:#e5e5ea;--band:rgba(0,158,115,.10)}

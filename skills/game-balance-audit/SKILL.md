@@ -90,8 +90,10 @@ Read `references/simulator.md` first. The essentials:
 
 Do these before any analysis, and write the results into `game-model.md`:
 
-1. **Replay.** Step one seeded run by hand (print the state every few actions) and check
-   it against the rules. Bugs here are the commonest source of false findings.
+1. **Replay.** Give the simulator a trace switch (e.g. `TRACE_DAY=8` prints every move of
+   day 8 with the board and open goals), step one seeded run and check each move against
+   the rules. Bugs here are the commonest source of false findings, and you'll use the
+   switch again whenever a number looks odd.
 2. **Known answers.** Anything the designer or the game's tests already know (level 1 is
    always won, a day takes about 40 taps, the first player wins about 52%) must come out
    right.
@@ -150,8 +152,10 @@ content or structure. Then **test each one**:
 3. Read its section under "What-ifs against the baseline": which flags it fixes, which it
    introduces, and how the key metrics move for each player type.
 
-A suggestion that doesn't move the problem's metric is not a suggestion. Replace it, or
-keep it only if it is worth recording that the obvious fix fails, and say so. Obvious fixes
+A suggestion that doesn't move the problem's metric is not a suggestion. Before dropping
+it, check whether you tested the right version or dose of it (raising the *biggest* order
+does far more than raising the smallest). Then replace it, or keep it only if it is worth
+recording that the obvious fix fails, and say so. Obvious fixes
 fail more often than you'd think. After picking one per area, run the picks **together** as
 one scenario: fixes interact. If a suggestion can't be simulated (feel, clarity,
 memory load), say so and give the playtest that would test it.

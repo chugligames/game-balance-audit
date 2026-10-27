@@ -37,6 +37,7 @@ in the report.
 | `baseline` | The scenario the others are compared with (default `baseline`) |
 | `profiles` | Order of player profiles in tables and charts |
 | `focus_profile` | The player the design is built around. The report leads with them |
+| `chart_scenarios` | Which what-ifs to draw against the baseline in `charts.html` (up to 7). Default: the first 7 |
 
 ## `metrics`: what each metric should do
 

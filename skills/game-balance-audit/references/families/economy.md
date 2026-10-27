@@ -64,6 +64,10 @@ Then run two passes:
 - **Inflation.** A currency piles up with nothing worth buying.
 - **Unequal paths.** One producer chain is ordered far more than another, so half the
   content barely matters.
+- **Things with no way out.** A new item that is never ordered (junk, blockers, spam)
+  piles up from segment to segment, so at almost any drop rate the board jams a few
+  segments later. Give it an exit (it clears at the end of a day, it can be merged away,
+  or it sells for something) and test the rate again.
 
 ## Levers (see also `references/suggestions.md`)
 
