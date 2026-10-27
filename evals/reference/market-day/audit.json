@@ -1,0 +1,18 @@
+{
+  "title": "Market Day",
+  "profiles": ["mirror-2p", "mirror-3p", "saffron-vs-steady", "hoarder-vs-steady", "quick-vs-steady"],
+  "focus_profile": "mirror-2p",
+  "metrics": {
+    "coins": { "label": "Final coins" },
+    "turns": { "label": "Turns taken" },
+    "halfLeaderWon": { "label": "Half-time leader goes on to win" }
+  },
+  "groups": [
+    { "metric": "won", "by": "seat", "profile": "mirror-2p", "fair": "even", "tolerance": 0.02, "label": "Seat advantage, 2 players" },
+    { "metric": "won", "by": "seat", "profile": "mirror-3p", "fair": "even", "tolerance": 0.03, "label": "Seat advantage, 3 players" },
+    { "metric": "won", "by": "strategy", "profiles": ["saffron-vs-steady", "hoarder-vs-steady", "quick-vs-steady"], "fair": 0.5, "tolerance": 0.05, "label": "Strategy against the steady player" }
+  ],
+  "targets": [
+    { "metric": "halfLeaderWon", "profile": "mirror-2p", "max": 0.75, "label": "Comebacks stay possible", "severity": "medium" }
+  ]
+}

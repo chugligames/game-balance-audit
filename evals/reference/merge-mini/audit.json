@@ -1,0 +1,17 @@
+{
+  "title": "Merge Mini",
+  "segment": "day",
+  "profiles": ["careless", "twice", "efficient"],
+  "focus_profile": "twice",
+  "metrics": {
+    "taps": { "label": "Energy spent", "expect": "rise", "segments": [3, 10] },
+    "energyShare": { "label": "Share of the day's free energy used", "expect": "rise", "segments": [3, 10] },
+    "minFree": { "label": "Fewest empty cells", "binds": "<= 0", "expect": "fall", "segments": [3, 10] },
+    "outOfEnergy": { "label": "Times out of energy", "binds": "> 0", "segments": [8, 10] },
+    "daysLate": { "label": "Days behind the calendar" }
+  },
+  "targets": [
+    { "metric": "energyShare", "segments": [8, 10], "profile": "twice", "min": 0.6, "label": "Twice-a-day player uses most of their energy on days 8–10" },
+    { "metric": "minFree", "segments": [6, 10], "profile": "twice", "max": 4, "label": "Board feels crowded from day 6" }
+  ]
+}

@@ -1,0 +1,15 @@
+{
+  "name": "chugligames",
+  "description": "Game design tools from Chugli Games.",
+  "owner": {
+    "name": "Chugli Games",
+    "email": "hello@chugligames.com"
+  },
+  "plugins": [
+    {
+      "name": "game-balance-audit",
+      "source": "./",
+      "description": "Audit a game's balance by simulation, with three tested suggestions per problem."
+    }
+  ]
+}

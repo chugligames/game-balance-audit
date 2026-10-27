@@ -1,0 +1,5001 @@
+{
+ "title": "Match-3 Mini",
+ "segment": "level",
+ "segments": [
+  1,
+  2,
+  3,
+  4,
+  5,
+  6,
+  7,
+  8,
+  9,
+  10,
+  11,
+  12,
+  13,
+  14,
+  15
+ ],
+ "scenarios": [
+  "baseline",
+  "L8-easier",
+  "L10-hard",
+  "L2-4-varied"
+ ],
+ "profiles": [
+  "novice",
+  "typical",
+  "expert"
+ ],
+ "flags": {
+  "baseline": [
+   {
+    "id": "off-target:won:Every level is winnable by a strong player:expert",
+    "part": "Every level is winnable by a strong player",
+    "kind": "off-target",
+    "severity": "high",
+    "metric": "won",
+    "scenario": "baseline",
+    "profile": "expert",
+    "message": "Every level is winnable by a strong player: mean 8: 0.02, target \u2265 0.15 (missed in 1 of 15 levels)",
+    "evidence": {
+     "target": {
+      "metric": "won",
+      "profile": "expert",
+      "min": 0.15,
+      "label": "Every level is winnable by a strong player",
+      "severity": "high"
+     },
+     "misses": [
+      [
+       8,
+       0.02
+      ]
+     ],
+     "clear": [
+      [
+       8,
+       0.02
+      ]
+     ],
+     "borderline": []
+    }
+   },
+   {
+    "id": "off-target:won:Levels 6\u20139:typical",
+    "part": "Levels 6\u20139",
+    "kind": "off-target",
+    "severity": "high",
+    "metric": "won",
+    "scenario": "baseline",
+    "profile": "typical",
+    "message": "Levels 6\u20139: mean 6: 0.99, 8: 0.00, target 0.55\u20130.92 (missed in 2 of 4 levels)",
+    "evidence": {
+     "target": {
+      "metric": "won",
+      "profile": "typical",
+      "segments": [
+       6,
+       9
+      ],
+      "min": 0.55,
+      "max": 0.92,
+      "label": "Levels 6\u20139"
+     },
+     "misses": [
+      [
+       6,
+       0.99
+      ],
+      [
+       8,
+       0.0
+      ]
+     ],
+     "clear": [
+      [
+       6,
+       0.99
+      ],
+      [
+       8,
+       0.0
+      ]
+     ],
+     "borderline": []
+    }
+   },
+   {
+    "id": "off-target:won:Hard level 10:typical",
+    "part": "Hard level 10",
+    "kind": "off-target",
+    "severity": "high",
+    "metric": "won",
+    "scenario": "baseline",
+    "profile": "typical",
+    "message": "Hard level 10: mean 10: 1.00, target 0.25\u20130.40 (missed in 1 of 1 levels)",
+    "evidence": {
+     "target": {
+      "metric": "won",
+      "profile": "typical",
+      "segments": [
+       10,
+       10
+      ],
+      "min": 0.25,
+      "max": 0.4,
+      "label": "Hard level 10"
+     },
+     "misses": [
+      [
+       10,
+       1.0
+      ]
+     ],
+     "clear": [
+      [
+       10,
+       1.0
+      ]
+     ],
+     "borderline": []
+    }
+   },
+   {
+    "id": "off-target:won:Levels 11\u201314:typical",
+    "part": "Levels 11\u201314",
+    "kind": "off-target",
+    "severity": "high",
+    "metric": "won",
+    "scenario": "baseline",
+    "profile": "typical",
+    "message": "Levels 11\u201314: mean 14: 0.14, target 0.45\u20130.85 (missed in 1 of 4 levels)",
+    "evidence": {
+     "target": {
+      "metric": "won",
+      "profile": "typical",
+      "segments": [
+       11,
+       14
+      ],
+      "min": 0.45,
+      "max": 0.85,
+      "label": "Levels 11\u201314"
+     },
+     "misses": [
+      [
+       14,
+       0.14
+      ]
+     ],
+     "clear": [
+      [
+       14,
+       0.14
+      ]
+     ],
+     "borderline": []
+    }
+   },
+   {
+    "id": "off-target:won:Hard level 15:typical",
+    "part": "Hard level 15",
+    "kind": "off-target",
+    "severity": "high",
+    "metric": "won",
+    "scenario": "baseline",
+    "profile": "typical",
+    "message": "Hard level 15: mean 15: 0.07, target 0.25\u20130.40 (missed in 1 of 1 levels)",
+    "evidence": {
+     "target": {
+      "metric": "won",
+      "profile": "typical",
+      "segments": [
+       15,
+       15
+      ],
+      "min": 0.25,
+      "max": 0.4,
+      "label": "Hard level 15"
+     },
+     "misses": [
+      [
+       15,
+       0.07
+      ]
+     ],
+     "clear": [
+      [
+       15,
+       0.07
+      ]
+     ],
+     "borderline": []
+    }
+   },
+   {
+    "id": "flat:won::expert",
+    "part": "",
+    "kind": "flat",
+    "severity": "medium",
+    "metric": "won",
+    "scenario": "baseline",
+    "profile": "expert",
+    "message": "Win rate falls by only 29.4% from the first third of levels (0.97) to the last third (0.69); the design expects at least 30%",
+    "evidence": {
+     "growth": 0.2936344969199179,
+     "first_third": 0.974,
+     "last_third": 0.688,
+     "values": [
+      [
+       1,
+       1.0
+      ],
+      [
+       2,
+       1.0
+      ],
+      [
+       3,
+       1.0
+      ],
+      [
+       4,
+       1.0
+      ],
+      [
+       5,
+       0.87
+      ],
+      [
+       6,
+       1.0
+      ],
+      [
+       7,
+       0.99
+      ],
+      [
+       8,
+       0.02
+      ],
+      [
+       9,
+       0.89
+      ],
+      [
+       10,
+       1.0
+      ],
+      [
+       11,
+       0.93
+      ],
+      [
+       12,
+       0.96
+      ],
+      [
+       13,
+       0.88
+      ],
+      [
+       14,
+       0.36
+      ],
+      [
+       15,
+       0.31
+      ]
+     ]
+    }
+   },
+   {
+    "id": "spike:won::expert",
+    "part": "",
+    "kind": "spike",
+    "severity": "medium",
+    "metric": "won",
+    "scenario": "baseline",
+    "profile": "expert",
+    "message": "Win rate drops sharply at levels 7\u21928 (0.99 \u2192 0.02), 13\u219214 (0.88 \u2192 0.36), more than 3\u00d7 a typical step",
+    "evidence": {
+     "jumps": [
+      "7\u21928 (0.99 \u2192 0.02)",
+      "13\u219214 (0.88 \u2192 0.36)"
+     ]
+    }
+   },
+   {
+    "id": "front-loaded:won::novice",
+    "part": "",
+    "kind": "front-loaded",
+    "severity": "medium",
+    "metric": "won",
+    "scenario": "baseline",
+    "profile": "novice",
+    "message": "Win rate: 93% of the whole change has happened by level 5, the first quarter",
+    "evidence": {
+     "share": 0.9263157894736842,
+     "values": [
+      [
+       1,
+       1.0
+      ],
+      [
+       2,
+       1.0
+      ],
+      [
+       3,
+       1.0
+      ],
+      [
+       4,
+       1.0
+      ],
+      [
+       5,
+       0.12
+      ],
+      [
+       6,
+       0.85
+      ],
+      [
+       7,
+       0.67
+      ],
+      [
+       8,
+       0.0
+      ],
+      [
+       9,
+       0.39
+      ],
+      [
+       10,
+       1.0
+      ],
+      [
+       11,
+       0.56
+      ],
+      [
+       12,
+       0.49
+      ],
+      [
+       13,
+       0.34
+      ],
+      [
+       14,
+       0.04
+      ],
+      [
+       15,
+       0.05
+      ]
+     ]
+    }
+   },
+   {
+    "id": "spike:won::novice",
+    "part": "",
+    "kind": "spike",
+    "severity": "medium",
+    "metric": "won",
+    "scenario": "baseline",
+    "profile": "novice",
+    "message": "Win rate drops sharply at levels 4\u21925 (1.00 \u2192 0.12), more than 3\u00d7 a typical step",
+    "evidence": {
+     "jumps": [
+      "4\u21925 (1.00 \u2192 0.12)"
+     ]
+    }
+   },
+   {
+    "id": "spike:won::typical",
+    "part": "",
+    "kind": "spike",
+    "severity": "medium",
+    "metric": "won",
+    "scenario": "baseline",
+    "profile": "typical",
+    "message": "Win rate drops sharply at levels 7\u21928 (0.80 \u2192 0.00), more than 3\u00d7 a typical step",
+    "evidence": {
+     "jumps": [
+      "7\u21928 (0.80 \u2192 0.00)"
+     ]
+    }
+   },
+   {
+    "id": "dips:won::expert",
+    "part": "",
+    "kind": "dips",
+    "severity": "low",
+    "metric": "won",
+    "scenario": "baseline",
+    "profile": "expert",
+    "message": "Win rate goes against the expected direction (fall) by more than 15% at levels 8\u21929 (0.02 \u2192 0.89)",
+    "evidence": {
+     "dips": [
+      "8\u21929 (0.02 \u2192 0.89)"
+     ]
+    }
+   },
+   {
+    "id": "plateau:won::expert",
+    "part": "",
+    "kind": "plateau",
+    "severity": "low",
+    "metric": "won",
+    "scenario": "baseline",
+    "profile": "expert",
+    "message": "Win rate barely changes for 4 levels in a row (1 to 4)",
+    "evidence": {
+     "length": 4
+    }
+   },
+   {
+    "id": "dips:won::novice",
+    "part": "",
+    "kind": "dips",
+    "severity": "low",
+    "metric": "won",
+    "scenario": "baseline",
+    "profile": "novice",
+    "message": "Win rate goes against the expected direction (fall) by more than 15% at levels 8\u21929 (0.00 \u2192 0.39), 9\u219210 (0.39 \u2192 1.00), 14\u219215 (0.04 \u2192 0.05)",
+    "evidence": {
+     "dips": [
+      "8\u21929 (0.00 \u2192 0.39)",
+      "9\u219210 (0.39 \u2192 1.00)",
+      "14\u219215 (0.04 \u2192 0.05)"
+     ]
+    }
+   },
+   {
+    "id": "plateau:won::novice",
+    "part": "",
+    "kind": "plateau",
+    "severity": "low",
+    "metric": "won",
+    "scenario": "baseline",
+    "profile": "novice",
+    "message": "Win rate barely changes for 4 levels in a row (1 to 4)",
+    "evidence": {
+     "length": 4
+    }
+   },
+   {
+    "id": "dips:won::typical",
+    "part": "",
+    "kind": "dips",
+    "severity": "low",
+    "metric": "won",
+    "scenario": "baseline",
+    "profile": "typical",
+    "message": "Win rate goes against the expected direction (fall) by more than 15% at levels 8\u21929 (0.00 \u2192 0.70), 9\u219210 (0.70 \u2192 1.00)",
+    "evidence": {
+     "dips": [
+      "8\u21929 (0.00 \u2192 0.70)",
+      "9\u219210 (0.70 \u2192 1.00)"
+     ]
+    }
+   },
+   {
+    "id": "plateau:won::typical",
+    "part": "",
+    "kind": "plateau",
+    "severity": "low",
+    "metric": "won",
+    "scenario": "baseline",
+    "profile": "typical",
+    "message": "Win rate barely changes for 4 levels in a row (1 to 4)",
+    "evidence": {
+     "length": 4
+    }
+   },
+   {
+    "id": "off-target:won:Hard level 5:typical",
+    "part": "Hard level 5",
+    "kind": "off-target",
+    "severity": "low",
+    "metric": "won",
+    "scenario": "baseline",
+    "profile": "typical",
+    "message": "Hard level 5: mean borderline (inside sampling noise, run more): 5: 0.47, target 0.25\u20130.40 (missed in 1 of 1 levels)",
+    "evidence": {
+     "target": {
+      "metric": "won",
+      "profile": "typical",
+      "segments": [
+       5,
+       5
+      ],
+      "min": 0.25,
+      "max": 0.4,
+      "label": "Hard level 5"
+     },
+     "misses": [
+      [
+       5,
+       0.47
+      ]
+     ],
+     "clear": [],
+     "borderline": [
+      [
+       5,
+       0.47
+      ]
+     ]
+    }
+   }
+  ],
+  "L8-easier": [
+   {
+    "id": "off-target:won:Levels 6\u20139:typical",
+    "part": "Levels 6\u20139",
+    "kind": "off-target",
+    "severity": "high",
+    "metric": "won",
+    "scenario": "L8-easier",
+    "profile": "typical",
+    "message": "Levels 6\u20139: mean 6: 0.99, target 0.55\u20130.92 (missed in 1 of 4 levels)",
+    "evidence": {
+     "target": {
+      "metric": "won",
+      "profile": "typical",
+      "segments": [
+       6,
+       9
+      ],
+      "min": 0.55,
+      "max": 0.92,
+      "label": "Levels 6\u20139"
+     },
+     "misses": [
+      [
+       6,
+       0.99
+      ]
+     ],
+     "clear": [
+      [
+       6,
+       0.99
+      ]
+     ],
+     "borderline": []
+    }
+   },
+   {
+    "id": "off-target:won:Hard level 10:typical",
+    "part": "Hard level 10",
+    "kind": "off-target",
+    "severity": "high",
+    "metric": "won",
+    "scenario": "L8-easier",
+    "profile": "typical",
+    "message": "Hard level 10: mean 10: 1.00, target 0.25\u20130.40 (missed in 1 of 1 levels)",
+    "evidence": {
+     "target": {
+      "metric": "won",
+      "profile": "typical",
+      "segments": [
+       10,
+       10
+      ],
+      "min": 0.25,
+      "max": 0.4,
+      "label": "Hard level 10"
+     },
+     "misses": [
+      [
+       10,
+       1.0
+      ]
+     ],
+     "clear": [
+      [
+       10,
+       1.0
+      ]
+     ],
+     "borderline": []
+    }
+   },
+   {
+    "id": "off-target:won:Levels 11\u201314:typical",
+    "part": "Levels 11\u201314",
+    "kind": "off-target",
+    "severity": "high",
+    "metric": "won",
+    "scenario": "L8-easier",
+    "profile": "typical",
+    "message": "Levels 11\u201314: mean 14: 0.14, target 0.45\u20130.85 (missed in 1 of 4 levels)",
+    "evidence": {
+     "target": {
+      "metric": "won",
+      "profile": "typical",
+      "segments": [
+       11,
+       14
+      ],
+      "min": 0.45,
+      "max": 0.85,
+      "label": "Levels 11\u201314"
+     },
+     "misses": [
+      [
+       14,
+       0.14
+      ]
+     ],
+     "clear": [
+      [
+       14,
+       0.14
+      ]
+     ],
+     "borderline": []
+    }
+   },
+   {
+    "id": "off-target:won:Hard level 15:typical",
+    "part": "Hard level 15",
+    "kind": "off-target",
+    "severity": "high",
+    "metric": "won",
+    "scenario": "L8-easier",
+    "profile": "typical",
+    "message": "Hard level 15: mean 15: 0.07, target 0.25\u20130.40 (missed in 1 of 1 levels)",
+    "evidence": {
+     "target": {
+      "metric": "won",
+      "profile": "typical",
+      "segments": [
+       15,
+       15
+      ],
+      "min": 0.25,
+      "max": 0.4,
+      "label": "Hard level 15"
+     },
+     "misses": [
+      [
+       15,
+       0.07
+      ]
+     ],
+     "clear": [
+      [
+       15,
+       0.07
+      ]
+     ],
+     "borderline": []
+    }
+   },
+   {
+    "id": "flat:won::expert",
+    "part": "",
+    "kind": "flat",
+    "severity": "medium",
+    "metric": "won",
+    "scenario": "L8-easier",
+    "profile": "expert",
+    "message": "Win rate falls by only 29.4% from the first third of levels (0.97) to the last third (0.69); the design expects at least 30%",
+    "evidence": {
+     "growth": 0.2936344969199179,
+     "first_third": 0.974,
+     "last_third": 0.688,
+     "values": [
+      [
+       1,
+       1.0
+      ],
+      [
+       2,
+       1.0
+      ],
+      [
+       3,
+       1.0
+      ],
+      [
+       4,
+       1.0
+      ],
+      [
+       5,
+       0.87
+      ],
+      [
+       6,
+       1.0
+      ],
+      [
+       7,
+       0.99
+      ],
+      [
+       8,
+       0.97
+      ],
+      [
+       9,
+       0.89
+      ],
+      [
+       10,
+       1.0
+      ],
+      [
+       11,
+       0.93
+      ],
+      [
+       12,
+       0.96
+      ],
+      [
+       13,
+       0.88
+      ],
+      [
+       14,
+       0.36
+      ],
+      [
+       15,
+       0.31
+      ]
+     ]
+    }
+   },
+   {
+    "id": "spike:won::expert",
+    "part": "",
+    "kind": "spike",
+    "severity": "medium",
+    "metric": "won",
+    "scenario": "L8-easier",
+    "profile": "expert",
+    "message": "Win rate drops sharply at levels 13\u219214 (0.88 \u2192 0.36), more than 3\u00d7 a typical step",
+    "evidence": {
+     "jumps": [
+      "13\u219214 (0.88 \u2192 0.36)"
+     ]
+    }
+   },
+   {
+    "id": "front-loaded:won::novice",
+    "part": "",
+    "kind": "front-loaded",
+    "severity": "medium",
+    "metric": "won",
+    "scenario": "L8-easier",
+    "profile": "novice",
+    "message": "Win rate: 93% of the whole change has happened by level 5, the first quarter",
+    "evidence": {
+     "share": 0.9263157894736842,
+     "values": [
+      [
+       1,
+       1.0
+      ],
+      [
+       2,
+       1.0
+      ],
+      [
+       3,
+       1.0
+      ],
+      [
+       4,
+       1.0
+      ],
+      [
+       5,
+       0.12
+      ],
+      [
+       6,
+       0.85
+      ],
+      [
+       7,
+       0.67
+      ],
+      [
+       8,
+       0.43
+      ],
+      [
+       9,
+       0.39
+      ],
+      [
+       10,
+       1.0
+      ],
+      [
+       11,
+       0.56
+      ],
+      [
+       12,
+       0.49
+      ],
+      [
+       13,
+       0.34
+      ],
+      [
+       14,
+       0.04
+      ],
+      [
+       15,
+       0.05
+      ]
+     ]
+    }
+   },
+   {
+    "id": "spike:won::novice",
+    "part": "",
+    "kind": "spike",
+    "severity": "medium",
+    "metric": "won",
+    "scenario": "L8-easier",
+    "profile": "novice",
+    "message": "Win rate drops sharply at levels 4\u21925 (1.00 \u2192 0.12), more than 3\u00d7 a typical step",
+    "evidence": {
+     "jumps": [
+      "4\u21925 (1.00 \u2192 0.12)"
+     ]
+    }
+   },
+   {
+    "id": "spike:won::typical",
+    "part": "",
+    "kind": "spike",
+    "severity": "medium",
+    "metric": "won",
+    "scenario": "L8-easier",
+    "profile": "typical",
+    "message": "Win rate drops sharply at levels 4\u21925 (1.00 \u2192 0.47), 13\u219214 (0.50 \u2192 0.14), more than 3\u00d7 a typical step",
+    "evidence": {
+     "jumps": [
+      "4\u21925 (1.00 \u2192 0.47)",
+      "13\u219214 (0.50 \u2192 0.14)"
+     ]
+    }
+   },
+   {
+    "id": "plateau:won::expert",
+    "part": "",
+    "kind": "plateau",
+    "severity": "low",
+    "metric": "won",
+    "scenario": "L8-easier",
+    "profile": "expert",
+    "message": "Win rate barely changes for 4 levels in a row (1 to 4)",
+    "evidence": {
+     "length": 4
+    }
+   },
+   {
+    "id": "dips:won::novice",
+    "part": "",
+    "kind": "dips",
+    "severity": "low",
+    "metric": "won",
+    "scenario": "L8-easier",
+    "profile": "novice",
+    "message": "Win rate goes against the expected direction (fall) by more than 15% at levels 9\u219210 (0.39 \u2192 1.00), 14\u219215 (0.04 \u2192 0.05)",
+    "evidence": {
+     "dips": [
+      "9\u219210 (0.39 \u2192 1.00)",
+      "14\u219215 (0.04 \u2192 0.05)"
+     ]
+    }
+   },
+   {
+    "id": "plateau:won::novice",
+    "part": "",
+    "kind": "plateau",
+    "severity": "low",
+    "metric": "won",
+    "scenario": "L8-easier",
+    "profile": "novice",
+    "message": "Win rate barely changes for 4 levels in a row (1 to 4)",
+    "evidence": {
+     "length": 4
+    }
+   },
+   {
+    "id": "dips:won::typical",
+    "part": "",
+    "kind": "dips",
+    "severity": "low",
+    "metric": "won",
+    "scenario": "L8-easier",
+    "profile": "typical",
+    "message": "Win rate goes against the expected direction (fall) by more than 15% at levels 9\u219210 (0.70 \u2192 1.00)",
+    "evidence": {
+     "dips": [
+      "9\u219210 (0.70 \u2192 1.00)"
+     ]
+    }
+   },
+   {
+    "id": "plateau:won::typical",
+    "part": "",
+    "kind": "plateau",
+    "severity": "low",
+    "metric": "won",
+    "scenario": "L8-easier",
+    "profile": "typical",
+    "message": "Win rate barely changes for 4 levels in a row (1 to 4)",
+    "evidence": {
+     "length": 4
+    }
+   },
+   {
+    "id": "off-target:won:Hard level 5:typical",
+    "part": "Hard level 5",
+    "kind": "off-target",
+    "severity": "low",
+    "metric": "won",
+    "scenario": "L8-easier",
+    "profile": "typical",
+    "message": "Hard level 5: mean borderline (inside sampling noise, run more): 5: 0.47, target 0.25\u20130.40 (missed in 1 of 1 levels)",
+    "evidence": {
+     "target": {
+      "metric": "won",
+      "profile": "typical",
+      "segments": [
+       5,
+       5
+      ],
+      "min": 0.25,
+      "max": 0.4,
+      "label": "Hard level 5"
+     },
+     "misses": [
+      [
+       5,
+       0.47
+      ]
+     ],
+     "clear": [],
+     "borderline": [
+      [
+       5,
+       0.47
+      ]
+     ]
+    }
+   }
+  ],
+  "L10-hard": [
+   {
+    "id": "off-target:won:Every level is winnable by a strong player:expert",
+    "part": "Every level is winnable by a strong player",
+    "kind": "off-target",
+    "severity": "high",
+    "metric": "won",
+    "scenario": "L10-hard",
+    "profile": "expert",
+    "message": "Every level is winnable by a strong player: mean 8: 0.02, target \u2265 0.15 (missed in 1 of 15 levels)",
+    "evidence": {
+     "target": {
+      "metric": "won",
+      "profile": "expert",
+      "min": 0.15,
+      "label": "Every level is winnable by a strong player",
+      "severity": "high"
+     },
+     "misses": [
+      [
+       8,
+       0.02
+      ]
+     ],
+     "clear": [
+      [
+       8,
+       0.02
+      ]
+     ],
+     "borderline": []
+    }
+   },
+   {
+    "id": "off-target:won:Levels 6\u20139:typical",
+    "part": "Levels 6\u20139",
+    "kind": "off-target",
+    "severity": "high",
+    "metric": "won",
+    "scenario": "L10-hard",
+    "profile": "typical",
+    "message": "Levels 6\u20139: mean 6: 0.99, 8: 0.00, target 0.55\u20130.92 (missed in 2 of 4 levels)",
+    "evidence": {
+     "target": {
+      "metric": "won",
+      "profile": "typical",
+      "segments": [
+       6,
+       9
+      ],
+      "min": 0.55,
+      "max": 0.92,
+      "label": "Levels 6\u20139"
+     },
+     "misses": [
+      [
+       6,
+       0.99
+      ],
+      [
+       8,
+       0.0
+      ]
+     ],
+     "clear": [
+      [
+       6,
+       0.99
+      ],
+      [
+       8,
+       0.0
+      ]
+     ],
+     "borderline": []
+    }
+   },
+   {
+    "id": "off-target:won:Hard level 10:typical",
+    "part": "Hard level 10",
+    "kind": "off-target",
+    "severity": "high",
+    "metric": "won",
+    "scenario": "L10-hard",
+    "profile": "typical",
+    "message": "Hard level 10: mean 10: 0.06, target 0.25\u20130.40 (missed in 1 of 1 levels)",
+    "evidence": {
+     "target": {
+      "metric": "won",
+      "profile": "typical",
+      "segments": [
+       10,
+       10
+      ],
+      "min": 0.25,
+      "max": 0.4,
+      "label": "Hard level 10"
+     },
+     "misses": [
+      [
+       10,
+       0.06
+      ]
+     ],
+     "clear": [
+      [
+       10,
+       0.06
+      ]
+     ],
+     "borderline": []
+    }
+   },
+   {
+    "id": "off-target:won:Levels 11\u201314:typical",
+    "part": "Levels 11\u201314",
+    "kind": "off-target",
+    "severity": "high",
+    "metric": "won",
+    "scenario": "L10-hard",
+    "profile": "typical",
+    "message": "Levels 11\u201314: mean 14: 0.14, target 0.45\u20130.85 (missed in 1 of 4 levels)",
+    "evidence": {
+     "target": {
+      "metric": "won",
+      "profile": "typical",
+      "segments": [
+       11,
+       14
+      ],
+      "min": 0.45,
+      "max": 0.85,
+      "label": "Levels 11\u201314"
+     },
+     "misses": [
+      [
+       14,
+       0.14
+      ]
+     ],
+     "clear": [
+      [
+       14,
+       0.14
+      ]
+     ],
+     "borderline": []
+    }
+   },
+   {
+    "id": "off-target:won:Hard level 15:typical",
+    "part": "Hard level 15",
+    "kind": "off-target",
+    "severity": "high",
+    "metric": "won",
+    "scenario": "L10-hard",
+    "profile": "typical",
+    "message": "Hard level 15: mean 15: 0.07, target 0.25\u20130.40 (missed in 1 of 1 levels)",
+    "evidence": {
+     "target": {
+      "metric": "won",
+      "profile": "typical",
+      "segments": [
+       15,
+       15
+      ],
+      "min": 0.25,
+      "max": 0.4,
+      "label": "Hard level 15"
+     },
+     "misses": [
+      [
+       15,
+       0.07
+      ]
+     ],
+     "clear": [
+      [
+       15,
+       0.07
+      ]
+     ],
+     "borderline": []
+    }
+   },
+   {
+    "id": "flat:won::expert",
+    "part": "",
+    "kind": "flat",
+    "severity": "medium",
+    "metric": "won",
+    "scenario": "L10-hard",
+    "profile": "expert",
+    "message": "Win rate falls by only 29.4% from the first third of levels (0.97) to the last third (0.69); the design expects at least 30%",
+    "evidence": {
+     "growth": 0.2936344969199179,
+     "first_third": 0.974,
+     "last_third": 0.688,
+     "values": [
+      [
+       1,
+       1.0
+      ],
+      [
+       2,
+       1.0
+      ],
+      [
+       3,
+       1.0
+      ],
+      [
+       4,
+       1.0
+      ],
+      [
+       5,
+       0.87
+      ],
+      [
+       6,
+       1.0
+      ],
+      [
+       7,
+       0.99
+      ],
+      [
+       8,
+       0.02
+      ],
+      [
+       9,
+       0.89
+      ],
+      [
+       10,
+       0.15
+      ],
+      [
+       11,
+       0.93
+      ],
+      [
+       12,
+       0.96
+      ],
+      [
+       13,
+       0.88
+      ],
+      [
+       14,
+       0.36
+      ],
+      [
+       15,
+       0.31
+      ]
+     ]
+    }
+   },
+   {
+    "id": "spike:won::expert",
+    "part": "",
+    "kind": "spike",
+    "severity": "medium",
+    "metric": "won",
+    "scenario": "L10-hard",
+    "profile": "expert",
+    "message": "Win rate drops sharply at levels 7\u21928 (0.99 \u2192 0.02), 9\u219210 (0.89 \u2192 0.15), 13\u219214 (0.88 \u2192 0.36), more than 3\u00d7 a typical step",
+    "evidence": {
+     "jumps": [
+      "7\u21928 (0.99 \u2192 0.02)",
+      "9\u219210 (0.89 \u2192 0.15)",
+      "13\u219214 (0.88 \u2192 0.36)"
+     ]
+    }
+   },
+   {
+    "id": "front-loaded:won::novice",
+    "part": "",
+    "kind": "front-loaded",
+    "severity": "medium",
+    "metric": "won",
+    "scenario": "L10-hard",
+    "profile": "novice",
+    "message": "Win rate: 93% of the whole change has happened by level 5, the first quarter",
+    "evidence": {
+     "share": 0.9263157894736842,
+     "values": [
+      [
+       1,
+       1.0
+      ],
+      [
+       2,
+       1.0
+      ],
+      [
+       3,
+       1.0
+      ],
+      [
+       4,
+       1.0
+      ],
+      [
+       5,
+       0.12
+      ],
+      [
+       6,
+       0.85
+      ],
+      [
+       7,
+       0.67
+      ],
+      [
+       8,
+       0.0
+      ],
+      [
+       9,
+       0.39
+      ],
+      [
+       10,
+       0.01
+      ],
+      [
+       11,
+       0.56
+      ],
+      [
+       12,
+       0.49
+      ],
+      [
+       13,
+       0.34
+      ],
+      [
+       14,
+       0.04
+      ],
+      [
+       15,
+       0.05
+      ]
+     ]
+    }
+   },
+   {
+    "id": "spike:won::novice",
+    "part": "",
+    "kind": "spike",
+    "severity": "medium",
+    "metric": "won",
+    "scenario": "L10-hard",
+    "profile": "novice",
+    "message": "Win rate drops sharply at levels 4\u21925 (1.00 \u2192 0.12), more than 3\u00d7 a typical step",
+    "evidence": {
+     "jumps": [
+      "4\u21925 (1.00 \u2192 0.12)"
+     ]
+    }
+   },
+   {
+    "id": "dips:won::expert",
+    "part": "",
+    "kind": "dips",
+    "severity": "low",
+    "metric": "won",
+    "scenario": "L10-hard",
+    "profile": "expert",
+    "message": "Win rate goes against the expected direction (fall) by more than 15% at levels 8\u21929 (0.02 \u2192 0.89)",
+    "evidence": {
+     "dips": [
+      "8\u21929 (0.02 \u2192 0.89)"
+     ]
+    }
+   },
+   {
+    "id": "plateau:won::expert",
+    "part": "",
+    "kind": "plateau",
+    "severity": "low",
+    "metric": "won",
+    "scenario": "L10-hard",
+    "profile": "expert",
+    "message": "Win rate barely changes for 4 levels in a row (1 to 4)",
+    "evidence": {
+     "length": 4
+    }
+   },
+   {
+    "id": "dips:won::novice",
+    "part": "",
+    "kind": "dips",
+    "severity": "low",
+    "metric": "won",
+    "scenario": "L10-hard",
+    "profile": "novice",
+    "message": "Win rate goes against the expected direction (fall) by more than 15% at levels 8\u21929 (0.00 \u2192 0.39), 14\u219215 (0.04 \u2192 0.05)",
+    "evidence": {
+     "dips": [
+      "8\u21929 (0.00 \u2192 0.39)",
+      "14\u219215 (0.04 \u2192 0.05)"
+     ]
+    }
+   },
+   {
+    "id": "plateau:won::novice",
+    "part": "",
+    "kind": "plateau",
+    "severity": "low",
+    "metric": "won",
+    "scenario": "L10-hard",
+    "profile": "novice",
+    "message": "Win rate barely changes for 4 levels in a row (1 to 4)",
+    "evidence": {
+     "length": 4
+    }
+   },
+   {
+    "id": "dips:won::typical",
+    "part": "",
+    "kind": "dips",
+    "severity": "low",
+    "metric": "won",
+    "scenario": "L10-hard",
+    "profile": "typical",
+    "message": "Win rate goes against the expected direction (fall) by more than 15% at levels 8\u21929 (0.00 \u2192 0.70)",
+    "evidence": {
+     "dips": [
+      "8\u21929 (0.00 \u2192 0.70)"
+     ]
+    }
+   },
+   {
+    "id": "plateau:won::typical",
+    "part": "",
+    "kind": "plateau",
+    "severity": "low",
+    "metric": "won",
+    "scenario": "L10-hard",
+    "profile": "typical",
+    "message": "Win rate barely changes for 4 levels in a row (1 to 4)",
+    "evidence": {
+     "length": 4
+    }
+   },
+   {
+    "id": "off-target:won:Hard level 5:typical",
+    "part": "Hard level 5",
+    "kind": "off-target",
+    "severity": "low",
+    "metric": "won",
+    "scenario": "L10-hard",
+    "profile": "typical",
+    "message": "Hard level 5: mean borderline (inside sampling noise, run more): 5: 0.47, target 0.25\u20130.40 (missed in 1 of 1 levels)",
+    "evidence": {
+     "target": {
+      "metric": "won",
+      "profile": "typical",
+      "segments": [
+       5,
+       5
+      ],
+      "min": 0.25,
+      "max": 0.4,
+      "label": "Hard level 5"
+     },
+     "misses": [
+      [
+       5,
+       0.47
+      ]
+     ],
+     "clear": [],
+     "borderline": [
+      [
+       5,
+       0.47
+      ]
+     ]
+    }
+   }
+  ],
+  "L2-4-varied": [
+   {
+    "id": "off-target:won:Every level is winnable by a strong player:expert",
+    "part": "Every level is winnable by a strong player",
+    "kind": "off-target",
+    "severity": "high",
+    "metric": "won",
+    "scenario": "L2-4-varied",
+    "profile": "expert",
+    "message": "Every level is winnable by a strong player: mean 8: 0.02, target \u2265 0.15 (missed in 1 of 15 levels)",
+    "evidence": {
+     "target": {
+      "metric": "won",
+      "profile": "expert",
+      "min": 0.15,
+      "label": "Every level is winnable by a strong player",
+      "severity": "high"
+     },
+     "misses": [
+      [
+       8,
+       0.02
+      ]
+     ],
+     "clear": [
+      [
+       8,
+       0.02
+      ]
+     ],
+     "borderline": []
+    }
+   },
+   {
+    "id": "off-target:won:Levels 6\u20139:typical",
+    "part": "Levels 6\u20139",
+    "kind": "off-target",
+    "severity": "high",
+    "metric": "won",
+    "scenario": "L2-4-varied",
+    "profile": "typical",
+    "message": "Levels 6\u20139: mean 6: 0.99, 8: 0.00, target 0.55\u20130.92 (missed in 2 of 4 levels)",
+    "evidence": {
+     "target": {
+      "metric": "won",
+      "profile": "typical",
+      "segments": [
+       6,
+       9
+      ],
+      "min": 0.55,
+      "max": 0.92,
+      "label": "Levels 6\u20139"
+     },
+     "misses": [
+      [
+       6,
+       0.99
+      ],
+      [
+       8,
+       0.0
+      ]
+     ],
+     "clear": [
+      [
+       6,
+       0.99
+      ],
+      [
+       8,
+       0.0
+      ]
+     ],
+     "borderline": []
+    }
+   },
+   {
+    "id": "off-target:won:Hard level 10:typical",
+    "part": "Hard level 10",
+    "kind": "off-target",
+    "severity": "high",
+    "metric": "won",
+    "scenario": "L2-4-varied",
+    "profile": "typical",
+    "message": "Hard level 10: mean 10: 1.00, target 0.25\u20130.40 (missed in 1 of 1 levels)",
+    "evidence": {
+     "target": {
+      "metric": "won",
+      "profile": "typical",
+      "segments": [
+       10,
+       10
+      ],
+      "min": 0.25,
+      "max": 0.4,
+      "label": "Hard level 10"
+     },
+     "misses": [
+      [
+       10,
+       1.0
+      ]
+     ],
+     "clear": [
+      [
+       10,
+       1.0
+      ]
+     ],
+     "borderline": []
+    }
+   },
+   {
+    "id": "off-target:won:Levels 11\u201314:typical",
+    "part": "Levels 11\u201314",
+    "kind": "off-target",
+    "severity": "high",
+    "metric": "won",
+    "scenario": "L2-4-varied",
+    "profile": "typical",
+    "message": "Levels 11\u201314: mean 14: 0.14, target 0.45\u20130.85 (missed in 1 of 4 levels)",
+    "evidence": {
+     "target": {
+      "metric": "won",
+      "profile": "typical",
+      "segments": [
+       11,
+       14
+      ],
+      "min": 0.45,
+      "max": 0.85,
+      "label": "Levels 11\u201314"
+     },
+     "misses": [
+      [
+       14,
+       0.14
+      ]
+     ],
+     "clear": [
+      [
+       14,
+       0.14
+      ]
+     ],
+     "borderline": []
+    }
+   },
+   {
+    "id": "off-target:won:Hard level 15:typical",
+    "part": "Hard level 15",
+    "kind": "off-target",
+    "severity": "high",
+    "metric": "won",
+    "scenario": "L2-4-varied",
+    "profile": "typical",
+    "message": "Hard level 15: mean 15: 0.07, target 0.25\u20130.40 (missed in 1 of 1 levels)",
+    "evidence": {
+     "target": {
+      "metric": "won",
+      "profile": "typical",
+      "segments": [
+       15,
+       15
+      ],
+      "min": 0.25,
+      "max": 0.4,
+      "label": "Hard level 15"
+     },
+     "misses": [
+      [
+       15,
+       0.07
+      ]
+     ],
+     "clear": [
+      [
+       15,
+       0.07
+      ]
+     ],
+     "borderline": []
+    }
+   },
+   {
+    "id": "flat:won::expert",
+    "part": "",
+    "kind": "flat",
+    "severity": "medium",
+    "metric": "won",
+    "scenario": "L2-4-varied",
+    "profile": "expert",
+    "message": "Win rate falls by only 29.4% from the first third of levels (0.97) to the last third (0.69); the design expects at least 30%",
+    "evidence": {
+     "growth": 0.2936344969199179,
+     "first_third": 0.974,
+     "last_third": 0.688,
+     "values": [
+      [
+       1,
+       1.0
+      ],
+      [
+       2,
+       1.0
+      ],
+      [
+       3,
+       1.0
+      ],
+      [
+       4,
+       1.0
+      ],
+      [
+       5,
+       0.87
+      ],
+      [
+       6,
+       1.0
+      ],
+      [
+       7,
+       0.99
+      ],
+      [
+       8,
+       0.02
+      ],
+      [
+       9,
+       0.89
+      ],
+      [
+       10,
+       1.0
+      ],
+      [
+       11,
+       0.93
+      ],
+      [
+       12,
+       0.96
+      ],
+      [
+       13,
+       0.88
+      ],
+      [
+       14,
+       0.36
+      ],
+      [
+       15,
+       0.31
+      ]
+     ]
+    }
+   },
+   {
+    "id": "spike:won::expert",
+    "part": "",
+    "kind": "spike",
+    "severity": "medium",
+    "metric": "won",
+    "scenario": "L2-4-varied",
+    "profile": "expert",
+    "message": "Win rate drops sharply at levels 7\u21928 (0.99 \u2192 0.02), 13\u219214 (0.88 \u2192 0.36), more than 3\u00d7 a typical step",
+    "evidence": {
+     "jumps": [
+      "7\u21928 (0.99 \u2192 0.02)",
+      "13\u219214 (0.88 \u2192 0.36)"
+     ]
+    }
+   },
+   {
+    "id": "front-loaded:won::novice",
+    "part": "",
+    "kind": "front-loaded",
+    "severity": "medium",
+    "metric": "won",
+    "scenario": "L2-4-varied",
+    "profile": "novice",
+    "message": "Win rate: 93% of the whole change has happened by level 5, the first quarter",
+    "evidence": {
+     "share": 0.9263157894736842,
+     "values": [
+      [
+       1,
+       1.0
+      ],
+      [
+       2,
+       0.99
+      ],
+      [
+       3,
+       0.96
+      ],
+      [
+       4,
+       1.0
+      ],
+      [
+       5,
+       0.12
+      ],
+      [
+       6,
+       0.85
+      ],
+      [
+       7,
+       0.67
+      ],
+      [
+       8,
+       0.0
+      ],
+      [
+       9,
+       0.39
+      ],
+      [
+       10,
+       1.0
+      ],
+      [
+       11,
+       0.56
+      ],
+      [
+       12,
+       0.49
+      ],
+      [
+       13,
+       0.34
+      ],
+      [
+       14,
+       0.04
+      ],
+      [
+       15,
+       0.05
+      ]
+     ]
+    }
+   },
+   {
+    "id": "spike:won::novice",
+    "part": "",
+    "kind": "spike",
+    "severity": "medium",
+    "metric": "won",
+    "scenario": "L2-4-varied",
+    "profile": "novice",
+    "message": "Win rate drops sharply at levels 4\u21925 (1.00 \u2192 0.12), more than 3\u00d7 a typical step",
+    "evidence": {
+     "jumps": [
+      "4\u21925 (1.00 \u2192 0.12)"
+     ]
+    }
+   },
+   {
+    "id": "spike:won::typical",
+    "part": "",
+    "kind": "spike",
+    "severity": "medium",
+    "metric": "won",
+    "scenario": "L2-4-varied",
+    "profile": "typical",
+    "message": "Win rate drops sharply at levels 7\u21928 (0.80 \u2192 0.00), more than 3\u00d7 a typical step",
+    "evidence": {
+     "jumps": [
+      "7\u21928 (0.80 \u2192 0.00)"
+     ]
+    }
+   },
+   {
+    "id": "dips:won::expert",
+    "part": "",
+    "kind": "dips",
+    "severity": "low",
+    "metric": "won",
+    "scenario": "L2-4-varied",
+    "profile": "expert",
+    "message": "Win rate goes against the expected direction (fall) by more than 15% at levels 8\u21929 (0.02 \u2192 0.89)",
+    "evidence": {
+     "dips": [
+      "8\u21929 (0.02 \u2192 0.89)"
+     ]
+    }
+   },
+   {
+    "id": "plateau:won::expert",
+    "part": "",
+    "kind": "plateau",
+    "severity": "low",
+    "metric": "won",
+    "scenario": "L2-4-varied",
+    "profile": "expert",
+    "message": "Win rate barely changes for 4 levels in a row (1 to 4)",
+    "evidence": {
+     "length": 4
+    }
+   },
+   {
+    "id": "dips:won::novice",
+    "part": "",
+    "kind": "dips",
+    "severity": "low",
+    "metric": "won",
+    "scenario": "L2-4-varied",
+    "profile": "novice",
+    "message": "Win rate goes against the expected direction (fall) by more than 15% at levels 8\u21929 (0.00 \u2192 0.39), 9\u219210 (0.39 \u2192 1.00), 14\u219215 (0.04 \u2192 0.05)",
+    "evidence": {
+     "dips": [
+      "8\u21929 (0.00 \u2192 0.39)",
+      "9\u219210 (0.39 \u2192 1.00)",
+      "14\u219215 (0.04 \u2192 0.05)"
+     ]
+    }
+   },
+   {
+    "id": "dips:won::typical",
+    "part": "",
+    "kind": "dips",
+    "severity": "low",
+    "metric": "won",
+    "scenario": "L2-4-varied",
+    "profile": "typical",
+    "message": "Win rate goes against the expected direction (fall) by more than 15% at levels 8\u21929 (0.00 \u2192 0.70), 9\u219210 (0.70 \u2192 1.00)",
+    "evidence": {
+     "dips": [
+      "8\u21929 (0.00 \u2192 0.70)",
+      "9\u219210 (0.70 \u2192 1.00)"
+     ]
+    }
+   },
+   {
+    "id": "plateau:won::typical",
+    "part": "",
+    "kind": "plateau",
+    "severity": "low",
+    "metric": "won",
+    "scenario": "L2-4-varied",
+    "profile": "typical",
+    "message": "Win rate barely changes for 4 levels in a row (1 to 4)",
+    "evidence": {
+     "length": 4
+    }
+   },
+   {
+    "id": "off-target:won:Hard level 5:typical",
+    "part": "Hard level 5",
+    "kind": "off-target",
+    "severity": "low",
+    "metric": "won",
+    "scenario": "L2-4-varied",
+    "profile": "typical",
+    "message": "Hard level 5: mean borderline (inside sampling noise, run more): 5: 0.47, target 0.25\u20130.40 (missed in 1 of 1 levels)",
+    "evidence": {
+     "target": {
+      "metric": "won",
+      "profile": "typical",
+      "segments": [
+       5,
+       5
+      ],
+      "min": 0.25,
+      "max": 0.4,
+      "label": "Hard level 5"
+     },
+     "misses": [
+      [
+       5,
+       0.47
+      ]
+     ],
+     "clear": [],
+     "borderline": [
+      [
+       5,
+       0.47
+      ]
+     ]
+    }
+   }
+  ]
+ },
+ "compare": {
+  "L8-easier": {
+   "fixed": [
+    {
+     "id": "off-target:won:Every level is winnable by a strong player:expert",
+     "part": "Every level is winnable by a strong player",
+     "kind": "off-target",
+     "severity": "high",
+     "metric": "won",
+     "scenario": "baseline",
+     "profile": "expert",
+     "message": "Every level is winnable by a strong player: mean 8: 0.02, target \u2265 0.15 (missed in 1 of 15 levels)",
+     "evidence": {
+      "target": {
+       "metric": "won",
+       "profile": "expert",
+       "min": 0.15,
+       "label": "Every level is winnable by a strong player",
+       "severity": "high"
+      },
+      "misses": [
+       [
+        8,
+        0.02
+       ]
+      ],
+      "clear": [
+       [
+        8,
+        0.02
+       ]
+      ],
+      "borderline": []
+     }
+    },
+    {
+     "id": "dips:won::expert",
+     "part": "",
+     "kind": "dips",
+     "severity": "low",
+     "metric": "won",
+     "scenario": "baseline",
+     "profile": "expert",
+     "message": "Win rate goes against the expected direction (fall) by more than 15% at levels 8\u21929 (0.02 \u2192 0.89)",
+     "evidence": {
+      "dips": [
+       "8\u21929 (0.02 \u2192 0.89)"
+      ]
+     }
+    }
+   ],
+   "new": [],
+   "still": [
+    {
+     "id": "off-target:won:Levels 6\u20139:typical",
+     "part": "Levels 6\u20139",
+     "kind": "off-target",
+     "severity": "high",
+     "metric": "won",
+     "scenario": "L8-easier",
+     "profile": "typical",
+     "message": "Levels 6\u20139: mean 6: 0.99, target 0.55\u20130.92 (missed in 1 of 4 levels)",
+     "evidence": {
+      "target": {
+       "metric": "won",
+       "profile": "typical",
+       "segments": [
+        6,
+        9
+       ],
+       "min": 0.55,
+       "max": 0.92,
+       "label": "Levels 6\u20139"
+      },
+      "misses": [
+       [
+        6,
+        0.99
+       ]
+      ],
+      "clear": [
+       [
+        6,
+        0.99
+       ]
+      ],
+      "borderline": []
+     },
+     "before": 2,
+     "after": 1,
+     "gauge": "clear misses"
+    },
+    {
+     "id": "off-target:won:Hard level 10:typical",
+     "part": "Hard level 10",
+     "kind": "off-target",
+     "severity": "high",
+     "metric": "won",
+     "scenario": "L8-easier",
+     "profile": "typical",
+     "message": "Hard level 10: mean 10: 1.00, target 0.25\u20130.40 (missed in 1 of 1 levels)",
+     "evidence": {
+      "target": {
+       "metric": "won",
+       "profile": "typical",
+       "segments": [
+        10,
+        10
+       ],
+       "min": 0.25,
+       "max": 0.4,
+       "label": "Hard level 10"
+      },
+      "misses": [
+       [
+        10,
+        1.0
+       ]
+      ],
+      "clear": [
+       [
+        10,
+        1.0
+       ]
+      ],
+      "borderline": []
+     },
+     "before": 1,
+     "after": 1,
+     "gauge": "clear misses"
+    },
+    {
+     "id": "off-target:won:Levels 11\u201314:typical",
+     "part": "Levels 11\u201314",
+     "kind": "off-target",
+     "severity": "high",
+     "metric": "won",
+     "scenario": "L8-easier",
+     "profile": "typical",
+     "message": "Levels 11\u201314: mean 14: 0.14, target 0.45\u20130.85 (missed in 1 of 4 levels)",
+     "evidence": {
+      "target": {
+       "metric": "won",
+       "profile": "typical",
+       "segments": [
+        11,
+        14
+       ],
+       "min": 0.45,
+       "max": 0.85,
+       "label": "Levels 11\u201314"
+      },
+      "misses": [
+       [
+        14,
+        0.14
+       ]
+      ],
+      "clear": [
+       [
+        14,
+        0.14
+       ]
+      ],
+      "borderline": []
+     },
+     "before": 1,
+     "after": 1,
+     "gauge": "clear misses"
+    },
+    {
+     "id": "off-target:won:Hard level 15:typical",
+     "part": "Hard level 15",
+     "kind": "off-target",
+     "severity": "high",
+     "metric": "won",
+     "scenario": "L8-easier",
+     "profile": "typical",
+     "message": "Hard level 15: mean 15: 0.07, target 0.25\u20130.40 (missed in 1 of 1 levels)",
+     "evidence": {
+      "target": {
+       "metric": "won",
+       "profile": "typical",
+       "segments": [
+        15,
+        15
+       ],
+       "min": 0.25,
+       "max": 0.4,
+       "label": "Hard level 15"
+      },
+      "misses": [
+       [
+        15,
+        0.07
+       ]
+      ],
+      "clear": [
+       [
+        15,
+        0.07
+       ]
+      ],
+      "borderline": []
+     },
+     "before": 1,
+     "after": 1,
+     "gauge": "clear misses"
+    },
+    {
+     "id": "flat:won::expert",
+     "part": "",
+     "kind": "flat",
+     "severity": "medium",
+     "metric": "won",
+     "scenario": "L8-easier",
+     "profile": "expert",
+     "message": "Win rate falls by only 29.4% from the first third of levels (0.97) to the last third (0.69); the design expects at least 30%",
+     "evidence": {
+      "growth": 0.2936344969199179,
+      "first_third": 0.974,
+      "last_third": 0.688,
+      "values": [
+       [
+        1,
+        1.0
+       ],
+       [
+        2,
+        1.0
+       ],
+       [
+        3,
+        1.0
+       ],
+       [
+        4,
+        1.0
+       ],
+       [
+        5,
+        0.87
+       ],
+       [
+        6,
+        1.0
+       ],
+       [
+        7,
+        0.99
+       ],
+       [
+        8,
+        0.97
+       ],
+       [
+        9,
+        0.89
+       ],
+       [
+        10,
+        1.0
+       ],
+       [
+        11,
+        0.93
+       ],
+       [
+        12,
+        0.96
+       ],
+       [
+        13,
+        0.88
+       ],
+       [
+        14,
+        0.36
+       ],
+       [
+        15,
+        0.31
+       ]
+      ]
+     },
+     "before": 0.2936344969199179,
+     "after": 0.2936344969199179,
+     "gauge": "growth"
+    },
+    {
+     "id": "spike:won::expert",
+     "part": "",
+     "kind": "spike",
+     "severity": "medium",
+     "metric": "won",
+     "scenario": "L8-easier",
+     "profile": "expert",
+     "message": "Win rate drops sharply at levels 13\u219214 (0.88 \u2192 0.36), more than 3\u00d7 a typical step",
+     "evidence": {
+      "jumps": [
+       "13\u219214 (0.88 \u2192 0.36)"
+      ]
+     },
+     "before": 2,
+     "after": 1,
+     "gauge": "jumps"
+    },
+    {
+     "id": "front-loaded:won::novice",
+     "part": "",
+     "kind": "front-loaded",
+     "severity": "medium",
+     "metric": "won",
+     "scenario": "L8-easier",
+     "profile": "novice",
+     "message": "Win rate: 93% of the whole change has happened by level 5, the first quarter",
+     "evidence": {
+      "share": 0.9263157894736842,
+      "values": [
+       [
+        1,
+        1.0
+       ],
+       [
+        2,
+        1.0
+       ],
+       [
+        3,
+        1.0
+       ],
+       [
+        4,
+        1.0
+       ],
+       [
+        5,
+        0.12
+       ],
+       [
+        6,
+        0.85
+       ],
+       [
+        7,
+        0.67
+       ],
+       [
+        8,
+        0.43
+       ],
+       [
+        9,
+        0.39
+       ],
+       [
+        10,
+        1.0
+       ],
+       [
+        11,
+        0.56
+       ],
+       [
+        12,
+        0.49
+       ],
+       [
+        13,
+        0.34
+       ],
+       [
+        14,
+        0.04
+       ],
+       [
+        15,
+        0.05
+       ]
+      ]
+     },
+     "before": null,
+     "after": null,
+     "gauge": null
+    },
+    {
+     "id": "spike:won::novice",
+     "part": "",
+     "kind": "spike",
+     "severity": "medium",
+     "metric": "won",
+     "scenario": "L8-easier",
+     "profile": "novice",
+     "message": "Win rate drops sharply at levels 4\u21925 (1.00 \u2192 0.12), more than 3\u00d7 a typical step",
+     "evidence": {
+      "jumps": [
+       "4\u21925 (1.00 \u2192 0.12)"
+      ]
+     },
+     "before": 1,
+     "after": 1,
+     "gauge": "jumps"
+    },
+    {
+     "id": "spike:won::typical",
+     "part": "",
+     "kind": "spike",
+     "severity": "medium",
+     "metric": "won",
+     "scenario": "L8-easier",
+     "profile": "typical",
+     "message": "Win rate drops sharply at levels 4\u21925 (1.00 \u2192 0.47), 13\u219214 (0.50 \u2192 0.14), more than 3\u00d7 a typical step",
+     "evidence": {
+      "jumps": [
+       "4\u21925 (1.00 \u2192 0.47)",
+       "13\u219214 (0.50 \u2192 0.14)"
+      ]
+     },
+     "before": 1,
+     "after": 2,
+     "gauge": "jumps"
+    },
+    {
+     "id": "plateau:won::expert",
+     "part": "",
+     "kind": "plateau",
+     "severity": "low",
+     "metric": "won",
+     "scenario": "L8-easier",
+     "profile": "expert",
+     "message": "Win rate barely changes for 4 levels in a row (1 to 4)",
+     "evidence": {
+      "length": 4
+     },
+     "before": null,
+     "after": null,
+     "gauge": null
+    },
+    {
+     "id": "dips:won::novice",
+     "part": "",
+     "kind": "dips",
+     "severity": "low",
+     "metric": "won",
+     "scenario": "L8-easier",
+     "profile": "novice",
+     "message": "Win rate goes against the expected direction (fall) by more than 15% at levels 9\u219210 (0.39 \u2192 1.00), 14\u219215 (0.04 \u2192 0.05)",
+     "evidence": {
+      "dips": [
+       "9\u219210 (0.39 \u2192 1.00)",
+       "14\u219215 (0.04 \u2192 0.05)"
+      ]
+     },
+     "before": 3,
+     "after": 2,
+     "gauge": "dips"
+    },
+    {
+     "id": "plateau:won::novice",
+     "part": "",
+     "kind": "plateau",
+     "severity": "low",
+     "metric": "won",
+     "scenario": "L8-easier",
+     "profile": "novice",
+     "message": "Win rate barely changes for 4 levels in a row (1 to 4)",
+     "evidence": {
+      "length": 4
+     },
+     "before": null,
+     "after": null,
+     "gauge": null
+    },
+    {
+     "id": "dips:won::typical",
+     "part": "",
+     "kind": "dips",
+     "severity": "low",
+     "metric": "won",
+     "scenario": "L8-easier",
+     "profile": "typical",
+     "message": "Win rate goes against the expected direction (fall) by more than 15% at levels 9\u219210 (0.70 \u2192 1.00)",
+     "evidence": {
+      "dips": [
+       "9\u219210 (0.70 \u2192 1.00)"
+      ]
+     },
+     "before": 2,
+     "after": 1,
+     "gauge": "dips"
+    },
+    {
+     "id": "plateau:won::typical",
+     "part": "",
+     "kind": "plateau",
+     "severity": "low",
+     "metric": "won",
+     "scenario": "L8-easier",
+     "profile": "typical",
+     "message": "Win rate barely changes for 4 levels in a row (1 to 4)",
+     "evidence": {
+      "length": 4
+     },
+     "before": null,
+     "after": null,
+     "gauge": null
+    },
+    {
+     "id": "off-target:won:Hard level 5:typical",
+     "part": "Hard level 5",
+     "kind": "off-target",
+     "severity": "low",
+     "metric": "won",
+     "scenario": "L8-easier",
+     "profile": "typical",
+     "message": "Hard level 5: mean borderline (inside sampling noise, run more): 5: 0.47, target 0.25\u20130.40 (missed in 1 of 1 levels)",
+     "evidence": {
+      "target": {
+       "metric": "won",
+       "profile": "typical",
+       "segments": [
+        5,
+        5
+       ],
+       "min": 0.25,
+       "max": 0.4,
+       "label": "Hard level 5"
+      },
+      "misses": [
+       [
+        5,
+        0.47
+       ]
+      ],
+      "clear": [],
+      "borderline": [
+       [
+        5,
+        0.47
+       ]
+      ]
+     },
+     "before": 0,
+     "after": 0,
+     "gauge": "clear misses"
+    }
+   ],
+   "moves": [
+    {
+     "metric": "won",
+     "profile": "novice",
+     "base": 0.5673333333333334,
+     "whatif": 0.596,
+     "change": 0.05052878965922435,
+     "base_first": 0.8240000000000001,
+     "base_last": 0.29600000000000004,
+     "whatif_first": 0.8240000000000001,
+     "whatif_last": 0.29600000000000004
+    },
+    {
+     "metric": "won",
+     "profile": "typical",
+     "base": 0.686,
+     "whatif": 0.7353333333333333,
+     "change": 0.07191448007774523,
+     "base_first": 0.8939999999999999,
+     "base_last": 0.466,
+     "whatif_first": 0.8939999999999999,
+     "whatif_last": 0.466
+    },
+    {
+     "metric": "won",
+     "profile": "expert",
+     "base": 0.8140000000000001,
+     "whatif": 0.8773333333333333,
+     "change": 0.07780507780507769,
+     "base_first": 0.974,
+     "base_last": 0.688,
+     "whatif_first": 0.974,
+     "whatif_last": 0.688
+    },
+    {
+     "metric": "movesLeft",
+     "profile": "novice",
+     "base": 5.116666666666668,
+     "whatif": 5.207333333333334,
+     "change": 0.01771986970684017,
+     "base_first": 10.23,
+     "base_last": 1.26,
+     "whatif_first": 10.23,
+     "whatif_last": 1.26
+    },
+    {
+     "metric": "movesLeft",
+     "profile": "typical",
+     "base": 6.470666666666667,
+     "whatif": 6.708,
+     "change": 0.03667834329280851,
+     "base_first": 11.749999999999998,
+     "base_last": 2.1739999999999995,
+     "whatif_first": 11.749999999999998,
+     "whatif_last": 2.1739999999999995
+    },
+    {
+     "metric": "movesLeft",
+     "profile": "expert",
+     "base": 8.609333333333332,
+     "whatif": 9.161999999999997,
+     "change": 0.06419389809509045,
+     "base_first": 13.595999999999998,
+     "base_last": 4.536,
+     "whatif_first": 13.595999999999998,
+     "whatif_last": 4.536
+    },
+    {
+     "metric": "goalDone",
+     "profile": "novice",
+     "base": 0.8880321234170575,
+     "whatif": 0.9158622361384746,
+     "change": 0.03133908333668118,
+     "base_first": 0.9669090909090909,
+     "base_last": 0.8435526175063325,
+     "whatif_first": 0.9669090909090909,
+     "whatif_last": 0.8435526175063325
+    },
+    {
+     "metric": "goalDone",
+     "profile": "typical",
+     "base": 0.9264775002062173,
+     "whatif": 0.9520097063253797,
+     "change": 0.027558366083881573,
+     "base_first": 0.986909090909091,
+     "base_last": 0.8877936391781593,
+     "whatif_first": 0.986909090909091,
+     "whatif_last": 0.8877936391781593
+    },
+    {
+     "metric": "goalDone",
+     "profile": "expert",
+     "base": 0.9606220434082376,
+     "whatif": 0.9804263912343247,
+     "change": 0.020616170492842617,
+     "base_first": 0.9978636363636364,
+     "base_last": 0.9483113706726709,
+     "whatif_first": 0.9978636363636364,
+     "whatif_last": 0.9483113706726709
+    }
+   ]
+  },
+  "L10-hard": {
+   "fixed": [
+    {
+     "id": "spike:won::typical",
+     "part": "",
+     "kind": "spike",
+     "severity": "medium",
+     "metric": "won",
+     "scenario": "baseline",
+     "profile": "typical",
+     "message": "Win rate drops sharply at levels 7\u21928 (0.80 \u2192 0.00), more than 3\u00d7 a typical step",
+     "evidence": {
+      "jumps": [
+       "7\u21928 (0.80 \u2192 0.00)"
+      ]
+     }
+    }
+   ],
+   "new": [],
+   "still": [
+    {
+     "id": "off-target:won:Every level is winnable by a strong player:expert",
+     "part": "Every level is winnable by a strong player",
+     "kind": "off-target",
+     "severity": "high",
+     "metric": "won",
+     "scenario": "L10-hard",
+     "profile": "expert",
+     "message": "Every level is winnable by a strong player: mean 8: 0.02, target \u2265 0.15 (missed in 1 of 15 levels)",
+     "evidence": {
+      "target": {
+       "metric": "won",
+       "profile": "expert",
+       "min": 0.15,
+       "label": "Every level is winnable by a strong player",
+       "severity": "high"
+      },
+      "misses": [
+       [
+        8,
+        0.02
+       ]
+      ],
+      "clear": [
+       [
+        8,
+        0.02
+       ]
+      ],
+      "borderline": []
+     },
+     "before": 1,
+     "after": 1,
+     "gauge": "clear misses"
+    },
+    {
+     "id": "off-target:won:Levels 6\u20139:typical",
+     "part": "Levels 6\u20139",
+     "kind": "off-target",
+     "severity": "high",
+     "metric": "won",
+     "scenario": "L10-hard",
+     "profile": "typical",
+     "message": "Levels 6\u20139: mean 6: 0.99, 8: 0.00, target 0.55\u20130.92 (missed in 2 of 4 levels)",
+     "evidence": {
+      "target": {
+       "metric": "won",
+       "profile": "typical",
+       "segments": [
+        6,
+        9
+       ],
+       "min": 0.55,
+       "max": 0.92,
+       "label": "Levels 6\u20139"
+      },
+      "misses": [
+       [
+        6,
+        0.99
+       ],
+       [
+        8,
+        0.0
+       ]
+      ],
+      "clear": [
+       [
+        6,
+        0.99
+       ],
+       [
+        8,
+        0.0
+       ]
+      ],
+      "borderline": []
+     },
+     "before": 2,
+     "after": 2,
+     "gauge": "clear misses"
+    },
+    {
+     "id": "off-target:won:Hard level 10:typical",
+     "part": "Hard level 10",
+     "kind": "off-target",
+     "severity": "high",
+     "metric": "won",
+     "scenario": "L10-hard",
+     "profile": "typical",
+     "message": "Hard level 10: mean 10: 0.06, target 0.25\u20130.40 (missed in 1 of 1 levels)",
+     "evidence": {
+      "target": {
+       "metric": "won",
+       "profile": "typical",
+       "segments": [
+        10,
+        10
+       ],
+       "min": 0.25,
+       "max": 0.4,
+       "label": "Hard level 10"
+      },
+      "misses": [
+       [
+        10,
+        0.06
+       ]
+      ],
+      "clear": [
+       [
+        10,
+        0.06
+       ]
+      ],
+      "borderline": []
+     },
+     "before": 1,
+     "after": 1,
+     "gauge": "clear misses"
+    },
+    {
+     "id": "off-target:won:Levels 11\u201314:typical",
+     "part": "Levels 11\u201314",
+     "kind": "off-target",
+     "severity": "high",
+     "metric": "won",
+     "scenario": "L10-hard",
+     "profile": "typical",
+     "message": "Levels 11\u201314: mean 14: 0.14, target 0.45\u20130.85 (missed in 1 of 4 levels)",
+     "evidence": {
+      "target": {
+       "metric": "won",
+       "profile": "typical",
+       "segments": [
+        11,
+        14
+       ],
+       "min": 0.45,
+       "max": 0.85,
+       "label": "Levels 11\u201314"
+      },
+      "misses": [
+       [
+        14,
+        0.14
+       ]
+      ],
+      "clear": [
+       [
+        14,
+        0.14
+       ]
+      ],
+      "borderline": []
+     },
+     "before": 1,
+     "after": 1,
+     "gauge": "clear misses"
+    },
+    {
+     "id": "off-target:won:Hard level 15:typical",
+     "part": "Hard level 15",
+     "kind": "off-target",
+     "severity": "high",
+     "metric": "won",
+     "scenario": "L10-hard",
+     "profile": "typical",
+     "message": "Hard level 15: mean 15: 0.07, target 0.25\u20130.40 (missed in 1 of 1 levels)",
+     "evidence": {
+      "target": {
+       "metric": "won",
+       "profile": "typical",
+       "segments": [
+        15,
+        15
+       ],
+       "min": 0.25,
+       "max": 0.4,
+       "label": "Hard level 15"
+      },
+      "misses": [
+       [
+        15,
+        0.07
+       ]
+      ],
+      "clear": [
+       [
+        15,
+        0.07
+       ]
+      ],
+      "borderline": []
+     },
+     "before": 1,
+     "after": 1,
+     "gauge": "clear misses"
+    },
+    {
+     "id": "flat:won::expert",
+     "part": "",
+     "kind": "flat",
+     "severity": "medium",
+     "metric": "won",
+     "scenario": "L10-hard",
+     "profile": "expert",
+     "message": "Win rate falls by only 29.4% from the first third of levels (0.97) to the last third (0.69); the design expects at least 30%",
+     "evidence": {
+      "growth": 0.2936344969199179,
+      "first_third": 0.974,
+      "last_third": 0.688,
+      "values": [
+       [
+        1,
+        1.0
+       ],
+       [
+        2,
+        1.0
+       ],
+       [
+        3,
+        1.0
+       ],
+       [
+        4,
+        1.0
+       ],
+       [
+        5,
+        0.87
+       ],
+       [
+        6,
+        1.0
+       ],
+       [
+        7,
+        0.99
+       ],
+       [
+        8,
+        0.02
+       ],
+       [
+        9,
+        0.89
+       ],
+       [
+        10,
+        0.15
+       ],
+       [
+        11,
+        0.93
+       ],
+       [
+        12,
+        0.96
+       ],
+       [
+        13,
+        0.88
+       ],
+       [
+        14,
+        0.36
+       ],
+       [
+        15,
+        0.31
+       ]
+      ]
+     },
+     "before": 0.2936344969199179,
+     "after": 0.2936344969199179,
+     "gauge": "growth"
+    },
+    {
+     "id": "spike:won::expert",
+     "part": "",
+     "kind": "spike",
+     "severity": "medium",
+     "metric": "won",
+     "scenario": "L10-hard",
+     "profile": "expert",
+     "message": "Win rate drops sharply at levels 7\u21928 (0.99 \u2192 0.02), 9\u219210 (0.89 \u2192 0.15), 13\u219214 (0.88 \u2192 0.36), more than 3\u00d7 a typical step",
+     "evidence": {
+      "jumps": [
+       "7\u21928 (0.99 \u2192 0.02)",
+       "9\u219210 (0.89 \u2192 0.15)",
+       "13\u219214 (0.88 \u2192 0.36)"
+      ]
+     },
+     "before": 2,
+     "after": 3,
+     "gauge": "jumps"
+    },
+    {
+     "id": "front-loaded:won::novice",
+     "part": "",
+     "kind": "front-loaded",
+     "severity": "medium",
+     "metric": "won",
+     "scenario": "L10-hard",
+     "profile": "novice",
+     "message": "Win rate: 93% of the whole change has happened by level 5, the first quarter",
+     "evidence": {
+      "share": 0.9263157894736842,
+      "values": [
+       [
+        1,
+        1.0
+       ],
+       [
+        2,
+        1.0
+       ],
+       [
+        3,
+        1.0
+       ],
+       [
+        4,
+        1.0
+       ],
+       [
+        5,
+        0.12
+       ],
+       [
+        6,
+        0.85
+       ],
+       [
+        7,
+        0.67
+       ],
+       [
+        8,
+        0.0
+       ],
+       [
+        9,
+        0.39
+       ],
+       [
+        10,
+        0.01
+       ],
+       [
+        11,
+        0.56
+       ],
+       [
+        12,
+        0.49
+       ],
+       [
+        13,
+        0.34
+       ],
+       [
+        14,
+        0.04
+       ],
+       [
+        15,
+        0.05
+       ]
+      ]
+     },
+     "before": null,
+     "after": null,
+     "gauge": null
+    },
+    {
+     "id": "spike:won::novice",
+     "part": "",
+     "kind": "spike",
+     "severity": "medium",
+     "metric": "won",
+     "scenario": "L10-hard",
+     "profile": "novice",
+     "message": "Win rate drops sharply at levels 4\u21925 (1.00 \u2192 0.12), more than 3\u00d7 a typical step",
+     "evidence": {
+      "jumps": [
+       "4\u21925 (1.00 \u2192 0.12)"
+      ]
+     },
+     "before": 1,
+     "after": 1,
+     "gauge": "jumps"
+    },
+    {
+     "id": "dips:won::expert",
+     "part": "",
+     "kind": "dips",
+     "severity": "low",
+     "metric": "won",
+     "scenario": "L10-hard",
+     "profile": "expert",
+     "message": "Win rate goes against the expected direction (fall) by more than 15% at levels 8\u21929 (0.02 \u2192 0.89)",
+     "evidence": {
+      "dips": [
+       "8\u21929 (0.02 \u2192 0.89)"
+      ]
+     },
+     "before": 1,
+     "after": 1,
+     "gauge": "dips"
+    },
+    {
+     "id": "plateau:won::expert",
+     "part": "",
+     "kind": "plateau",
+     "severity": "low",
+     "metric": "won",
+     "scenario": "L10-hard",
+     "profile": "expert",
+     "message": "Win rate barely changes for 4 levels in a row (1 to 4)",
+     "evidence": {
+      "length": 4
+     },
+     "before": null,
+     "after": null,
+     "gauge": null
+    },
+    {
+     "id": "dips:won::novice",
+     "part": "",
+     "kind": "dips",
+     "severity": "low",
+     "metric": "won",
+     "scenario": "L10-hard",
+     "profile": "novice",
+     "message": "Win rate goes against the expected direction (fall) by more than 15% at levels 8\u21929 (0.00 \u2192 0.39), 14\u219215 (0.04 \u2192 0.05)",
+     "evidence": {
+      "dips": [
+       "8\u21929 (0.00 \u2192 0.39)",
+       "14\u219215 (0.04 \u2192 0.05)"
+      ]
+     },
+     "before": 3,
+     "after": 2,
+     "gauge": "dips"
+    },
+    {
+     "id": "plateau:won::novice",
+     "part": "",
+     "kind": "plateau",
+     "severity": "low",
+     "metric": "won",
+     "scenario": "L10-hard",
+     "profile": "novice",
+     "message": "Win rate barely changes for 4 levels in a row (1 to 4)",
+     "evidence": {
+      "length": 4
+     },
+     "before": null,
+     "after": null,
+     "gauge": null
+    },
+    {
+     "id": "dips:won::typical",
+     "part": "",
+     "kind": "dips",
+     "severity": "low",
+     "metric": "won",
+     "scenario": "L10-hard",
+     "profile": "typical",
+     "message": "Win rate goes against the expected direction (fall) by more than 15% at levels 8\u21929 (0.00 \u2192 0.70)",
+     "evidence": {
+      "dips": [
+       "8\u21929 (0.00 \u2192 0.70)"
+      ]
+     },
+     "before": 2,
+     "after": 1,
+     "gauge": "dips"
+    },
+    {
+     "id": "plateau:won::typical",
+     "part": "",
+     "kind": "plateau",
+     "severity": "low",
+     "metric": "won",
+     "scenario": "L10-hard",
+     "profile": "typical",
+     "message": "Win rate barely changes for 4 levels in a row (1 to 4)",
+     "evidence": {
+      "length": 4
+     },
+     "before": null,
+     "after": null,
+     "gauge": null
+    },
+    {
+     "id": "off-target:won:Hard level 5:typical",
+     "part": "Hard level 5",
+     "kind": "off-target",
+     "severity": "low",
+     "metric": "won",
+     "scenario": "L10-hard",
+     "profile": "typical",
+     "message": "Hard level 5: mean borderline (inside sampling noise, run more): 5: 0.47, target 0.25\u20130.40 (missed in 1 of 1 levels)",
+     "evidence": {
+      "target": {
+       "metric": "won",
+       "profile": "typical",
+       "segments": [
+        5,
+        5
+       ],
+       "min": 0.25,
+       "max": 0.4,
+       "label": "Hard level 5"
+      },
+      "misses": [
+       [
+        5,
+        0.47
+       ]
+      ],
+      "clear": [],
+      "borderline": [
+       [
+        5,
+        0.47
+       ]
+      ]
+     },
+     "before": 0,
+     "after": 0,
+     "gauge": "clear misses"
+    }
+   ],
+   "moves": [
+    {
+     "metric": "won",
+     "profile": "novice",
+     "base": 0.5673333333333334,
+     "whatif": 0.5013333333333333,
+     "change": -0.1163337250293773,
+     "base_first": 0.8240000000000001,
+     "base_last": 0.29600000000000004,
+     "whatif_first": 0.8240000000000001,
+     "whatif_last": 0.29600000000000004
+    },
+    {
+     "metric": "won",
+     "profile": "typical",
+     "base": 0.686,
+     "whatif": 0.6233333333333333,
+     "change": -0.09135082604470372,
+     "base_first": 0.8939999999999999,
+     "base_last": 0.466,
+     "whatif_first": 0.8939999999999999,
+     "whatif_last": 0.466
+    },
+    {
+     "metric": "won",
+     "profile": "expert",
+     "base": 0.8140000000000001,
+     "whatif": 0.7573333333333333,
+     "change": -0.06961506961506972,
+     "base_first": 0.974,
+     "base_last": 0.688,
+     "whatif_first": 0.974,
+     "whatif_last": 0.688
+    },
+    {
+     "metric": "movesLeft",
+     "profile": "novice",
+     "base": 5.116666666666668,
+     "whatif": 4.4766666666666675,
+     "change": -0.1250814332247558,
+     "base_first": 10.23,
+     "base_last": 1.26,
+     "whatif_first": 10.23,
+     "whatif_last": 1.26
+    },
+    {
+     "metric": "movesLeft",
+     "profile": "typical",
+     "base": 6.470666666666667,
+     "whatif": 5.676666666666667,
+     "change": -0.12270760354419953,
+     "base_first": 11.749999999999998,
+     "base_last": 2.1739999999999995,
+     "whatif_first": 11.749999999999998,
+     "whatif_last": 2.1739999999999995
+    },
+    {
+     "metric": "movesLeft",
+     "profile": "expert",
+     "base": 8.609333333333332,
+     "whatif": 7.699333333333334,
+     "change": -0.10569924113365323,
+     "base_first": 13.595999999999998,
+     "base_last": 4.536,
+     "whatif_first": 13.595999999999998,
+     "whatif_last": 4.536
+    },
+    {
+     "metric": "goalDone",
+     "profile": "novice",
+     "base": 0.8880321234170575,
+     "whatif": 0.8673128251714436,
+     "change": -0.02333169904472392,
+     "base_first": 0.9669090909090909,
+     "base_last": 0.8435526175063325,
+     "whatif_first": 0.9669090909090909,
+     "whatif_last": 0.8435526175063325
+    },
+    {
+     "metric": "goalDone",
+     "profile": "typical",
+     "base": 0.9264775002062173,
+     "whatif": 0.9101090791535857,
+     "change": -0.017667370280431277,
+     "base_first": 0.986909090909091,
+     "base_last": 0.8877936391781593,
+     "whatif_first": 0.986909090909091,
+     "whatif_last": 0.8877936391781593
+    },
+    {
+     "metric": "goalDone",
+     "profile": "expert",
+     "base": 0.9606220434082376,
+     "whatif": 0.9483413416538518,
+     "change": -0.012784114042203937,
+     "base_first": 0.9978636363636364,
+     "base_last": 0.9483113706726709,
+     "whatif_first": 0.9978636363636364,
+     "whatif_last": 0.9483113706726709
+    }
+   ]
+  },
+  "L2-4-varied": {
+   "fixed": [
+    {
+     "id": "plateau:won::novice",
+     "part": "",
+     "kind": "plateau",
+     "severity": "low",
+     "metric": "won",
+     "scenario": "baseline",
+     "profile": "novice",
+     "message": "Win rate barely changes for 4 levels in a row (1 to 4)",
+     "evidence": {
+      "length": 4
+     }
+    }
+   ],
+   "new": [],
+   "still": [
+    {
+     "id": "off-target:won:Every level is winnable by a strong player:expert",
+     "part": "Every level is winnable by a strong player",
+     "kind": "off-target",
+     "severity": "high",
+     "metric": "won",
+     "scenario": "L2-4-varied",
+     "profile": "expert",
+     "message": "Every level is winnable by a strong player: mean 8: 0.02, target \u2265 0.15 (missed in 1 of 15 levels)",
+     "evidence": {
+      "target": {
+       "metric": "won",
+       "profile": "expert",
+       "min": 0.15,
+       "label": "Every level is winnable by a strong player",
+       "severity": "high"
+      },
+      "misses": [
+       [
+        8,
+        0.02
+       ]
+      ],
+      "clear": [
+       [
+        8,
+        0.02
+       ]
+      ],
+      "borderline": []
+     },
+     "before": 1,
+     "after": 1,
+     "gauge": "clear misses"
+    },
+    {
+     "id": "off-target:won:Levels 6\u20139:typical",
+     "part": "Levels 6\u20139",
+     "kind": "off-target",
+     "severity": "high",
+     "metric": "won",
+     "scenario": "L2-4-varied",
+     "profile": "typical",
+     "message": "Levels 6\u20139: mean 6: 0.99, 8: 0.00, target 0.55\u20130.92 (missed in 2 of 4 levels)",
+     "evidence": {
+      "target": {
+       "metric": "won",
+       "profile": "typical",
+       "segments": [
+        6,
+        9
+       ],
+       "min": 0.55,
+       "max": 0.92,
+       "label": "Levels 6\u20139"
+      },
+      "misses": [
+       [
+        6,
+        0.99
+       ],
+       [
+        8,
+        0.0
+       ]
+      ],
+      "clear": [
+       [
+        6,
+        0.99
+       ],
+       [
+        8,
+        0.0
+       ]
+      ],
+      "borderline": []
+     },
+     "before": 2,
+     "after": 2,
+     "gauge": "clear misses"
+    },
+    {
+     "id": "off-target:won:Hard level 10:typical",
+     "part": "Hard level 10",
+     "kind": "off-target",
+     "severity": "high",
+     "metric": "won",
+     "scenario": "L2-4-varied",
+     "profile": "typical",
+     "message": "Hard level 10: mean 10: 1.00, target 0.25\u20130.40 (missed in 1 of 1 levels)",
+     "evidence": {
+      "target": {
+       "metric": "won",
+       "profile": "typical",
+       "segments": [
+        10,
+        10
+       ],
+       "min": 0.25,
+       "max": 0.4,
+       "label": "Hard level 10"
+      },
+      "misses": [
+       [
+        10,
+        1.0
+       ]
+      ],
+      "clear": [
+       [
+        10,
+        1.0
+       ]
+      ],
+      "borderline": []
+     },
+     "before": 1,
+     "after": 1,
+     "gauge": "clear misses"
+    },
+    {
+     "id": "off-target:won:Levels 11\u201314:typical",
+     "part": "Levels 11\u201314",
+     "kind": "off-target",
+     "severity": "high",
+     "metric": "won",
+     "scenario": "L2-4-varied",
+     "profile": "typical",
+     "message": "Levels 11\u201314: mean 14: 0.14, target 0.45\u20130.85 (missed in 1 of 4 levels)",
+     "evidence": {
+      "target": {
+       "metric": "won",
+       "profile": "typical",
+       "segments": [
+        11,
+        14
+       ],
+       "min": 0.45,
+       "max": 0.85,
+       "label": "Levels 11\u201314"
+      },
+      "misses": [
+       [
+        14,
+        0.14
+       ]
+      ],
+      "clear": [
+       [
+        14,
+        0.14
+       ]
+      ],
+      "borderline": []
+     },
+     "before": 1,
+     "after": 1,
+     "gauge": "clear misses"
+    },
+    {
+     "id": "off-target:won:Hard level 15:typical",
+     "part": "Hard level 15",
+     "kind": "off-target",
+     "severity": "high",
+     "metric": "won",
+     "scenario": "L2-4-varied",
+     "profile": "typical",
+     "message": "Hard level 15: mean 15: 0.07, target 0.25\u20130.40 (missed in 1 of 1 levels)",
+     "evidence": {
+      "target": {
+       "metric": "won",
+       "profile": "typical",
+       "segments": [
+        15,
+        15
+       ],
+       "min": 0.25,
+       "max": 0.4,
+       "label": "Hard level 15"
+      },
+      "misses": [
+       [
+        15,
+        0.07
+       ]
+      ],
+      "clear": [
+       [
+        15,
+        0.07
+       ]
+      ],
+      "borderline": []
+     },
+     "before": 1,
+     "after": 1,
+     "gauge": "clear misses"
+    },
+    {
+     "id": "flat:won::expert",
+     "part": "",
+     "kind": "flat",
+     "severity": "medium",
+     "metric": "won",
+     "scenario": "L2-4-varied",
+     "profile": "expert",
+     "message": "Win rate falls by only 29.4% from the first third of levels (0.97) to the last third (0.69); the design expects at least 30%",
+     "evidence": {
+      "growth": 0.2936344969199179,
+      "first_third": 0.974,
+      "last_third": 0.688,
+      "values": [
+       [
+        1,
+        1.0
+       ],
+       [
+        2,
+        1.0
+       ],
+       [
+        3,
+        1.0
+       ],
+       [
+        4,
+        1.0
+       ],
+       [
+        5,
+        0.87
+       ],
+       [
+        6,
+        1.0
+       ],
+       [
+        7,
+        0.99
+       ],
+       [
+        8,
+        0.02
+       ],
+       [
+        9,
+        0.89
+       ],
+       [
+        10,
+        1.0
+       ],
+       [
+        11,
+        0.93
+       ],
+       [
+        12,
+        0.96
+       ],
+       [
+        13,
+        0.88
+       ],
+       [
+        14,
+        0.36
+       ],
+       [
+        15,
+        0.31
+       ]
+      ]
+     },
+     "before": 0.2936344969199179,
+     "after": 0.2936344969199179,
+     "gauge": "growth"
+    },
+    {
+     "id": "spike:won::expert",
+     "part": "",
+     "kind": "spike",
+     "severity": "medium",
+     "metric": "won",
+     "scenario": "L2-4-varied",
+     "profile": "expert",
+     "message": "Win rate drops sharply at levels 7\u21928 (0.99 \u2192 0.02), 13\u219214 (0.88 \u2192 0.36), more than 3\u00d7 a typical step",
+     "evidence": {
+      "jumps": [
+       "7\u21928 (0.99 \u2192 0.02)",
+       "13\u219214 (0.88 \u2192 0.36)"
+      ]
+     },
+     "before": 2,
+     "after": 2,
+     "gauge": "jumps"
+    },
+    {
+     "id": "front-loaded:won::novice",
+     "part": "",
+     "kind": "front-loaded",
+     "severity": "medium",
+     "metric": "won",
+     "scenario": "L2-4-varied",
+     "profile": "novice",
+     "message": "Win rate: 93% of the whole change has happened by level 5, the first quarter",
+     "evidence": {
+      "share": 0.9263157894736842,
+      "values": [
+       [
+        1,
+        1.0
+       ],
+       [
+        2,
+        0.99
+       ],
+       [
+        3,
+        0.96
+       ],
+       [
+        4,
+        1.0
+       ],
+       [
+        5,
+        0.12
+       ],
+       [
+        6,
+        0.85
+       ],
+       [
+        7,
+        0.67
+       ],
+       [
+        8,
+        0.0
+       ],
+       [
+        9,
+        0.39
+       ],
+       [
+        10,
+        1.0
+       ],
+       [
+        11,
+        0.56
+       ],
+       [
+        12,
+        0.49
+       ],
+       [
+        13,
+        0.34
+       ],
+       [
+        14,
+        0.04
+       ],
+       [
+        15,
+        0.05
+       ]
+      ]
+     },
+     "before": null,
+     "after": null,
+     "gauge": null
+    },
+    {
+     "id": "spike:won::novice",
+     "part": "",
+     "kind": "spike",
+     "severity": "medium",
+     "metric": "won",
+     "scenario": "L2-4-varied",
+     "profile": "novice",
+     "message": "Win rate drops sharply at levels 4\u21925 (1.00 \u2192 0.12), more than 3\u00d7 a typical step",
+     "evidence": {
+      "jumps": [
+       "4\u21925 (1.00 \u2192 0.12)"
+      ]
+     },
+     "before": 1,
+     "after": 1,
+     "gauge": "jumps"
+    },
+    {
+     "id": "spike:won::typical",
+     "part": "",
+     "kind": "spike",
+     "severity": "medium",
+     "metric": "won",
+     "scenario": "L2-4-varied",
+     "profile": "typical",
+     "message": "Win rate drops sharply at levels 7\u21928 (0.80 \u2192 0.00), more than 3\u00d7 a typical step",
+     "evidence": {
+      "jumps": [
+       "7\u21928 (0.80 \u2192 0.00)"
+      ]
+     },
+     "before": 1,
+     "after": 1,
+     "gauge": "jumps"
+    },
+    {
+     "id": "dips:won::expert",
+     "part": "",
+     "kind": "dips",
+     "severity": "low",
+     "metric": "won",
+     "scenario": "L2-4-varied",
+     "profile": "expert",
+     "message": "Win rate goes against the expected direction (fall) by more than 15% at levels 8\u21929 (0.02 \u2192 0.89)",
+     "evidence": {
+      "dips": [
+       "8\u21929 (0.02 \u2192 0.89)"
+      ]
+     },
+     "before": 1,
+     "after": 1,
+     "gauge": "dips"
+    },
+    {
+     "id": "plateau:won::expert",
+     "part": "",
+     "kind": "plateau",
+     "severity": "low",
+     "metric": "won",
+     "scenario": "L2-4-varied",
+     "profile": "expert",
+     "message": "Win rate barely changes for 4 levels in a row (1 to 4)",
+     "evidence": {
+      "length": 4
+     },
+     "before": null,
+     "after": null,
+     "gauge": null
+    },
+    {
+     "id": "dips:won::novice",
+     "part": "",
+     "kind": "dips",
+     "severity": "low",
+     "metric": "won",
+     "scenario": "L2-4-varied",
+     "profile": "novice",
+     "message": "Win rate goes against the expected direction (fall) by more than 15% at levels 8\u21929 (0.00 \u2192 0.39), 9\u219210 (0.39 \u2192 1.00), 14\u219215 (0.04 \u2192 0.05)",
+     "evidence": {
+      "dips": [
+       "8\u21929 (0.00 \u2192 0.39)",
+       "9\u219210 (0.39 \u2192 1.00)",
+       "14\u219215 (0.04 \u2192 0.05)"
+      ]
+     },
+     "before": 3,
+     "after": 3,
+     "gauge": "dips"
+    },
+    {
+     "id": "dips:won::typical",
+     "part": "",
+     "kind": "dips",
+     "severity": "low",
+     "metric": "won",
+     "scenario": "L2-4-varied",
+     "profile": "typical",
+     "message": "Win rate goes against the expected direction (fall) by more than 15% at levels 8\u21929 (0.00 \u2192 0.70), 9\u219210 (0.70 \u2192 1.00)",
+     "evidence": {
+      "dips": [
+       "8\u21929 (0.00 \u2192 0.70)",
+       "9\u219210 (0.70 \u2192 1.00)"
+      ]
+     },
+     "before": 2,
+     "after": 2,
+     "gauge": "dips"
+    },
+    {
+     "id": "plateau:won::typical",
+     "part": "",
+     "kind": "plateau",
+     "severity": "low",
+     "metric": "won",
+     "scenario": "L2-4-varied",
+     "profile": "typical",
+     "message": "Win rate barely changes for 4 levels in a row (1 to 4)",
+     "evidence": {
+      "length": 4
+     },
+     "before": null,
+     "after": null,
+     "gauge": null
+    },
+    {
+     "id": "off-target:won:Hard level 5:typical",
+     "part": "Hard level 5",
+     "kind": "off-target",
+     "severity": "low",
+     "metric": "won",
+     "scenario": "L2-4-varied",
+     "profile": "typical",
+     "message": "Hard level 5: mean borderline (inside sampling noise, run more): 5: 0.47, target 0.25\u20130.40 (missed in 1 of 1 levels)",
+     "evidence": {
+      "target": {
+       "metric": "won",
+       "profile": "typical",
+       "segments": [
+        5,
+        5
+       ],
+       "min": 0.25,
+       "max": 0.4,
+       "label": "Hard level 5"
+      },
+      "misses": [
+       [
+        5,
+        0.47
+       ]
+      ],
+      "clear": [],
+      "borderline": [
+       [
+        5,
+        0.47
+       ]
+      ]
+     },
+     "before": 0,
+     "after": 0,
+     "gauge": "clear misses"
+    }
+   ],
+   "moves": [
+    {
+     "metric": "won",
+     "profile": "novice",
+     "base": 0.5673333333333334,
+     "whatif": 0.564,
+     "change": -0.005875440658049489,
+     "base_first": 0.8240000000000001,
+     "base_last": 0.29600000000000004,
+     "whatif_first": 0.8140000000000001,
+     "whatif_last": 0.29600000000000004
+    },
+    {
+     "metric": "won",
+     "profile": "typical",
+     "base": 0.686,
+     "whatif": 0.6853333333333335,
+     "change": -0.0009718172983478035,
+     "base_first": 0.8939999999999999,
+     "base_last": 0.466,
+     "whatif_first": 0.892,
+     "whatif_last": 0.466
+    },
+    {
+     "metric": "won",
+     "profile": "expert",
+     "base": 0.8140000000000001,
+     "whatif": 0.8140000000000001,
+     "change": 0.0,
+     "base_first": 0.974,
+     "base_last": 0.688,
+     "whatif_first": 0.974,
+     "whatif_last": 0.688
+    },
+    {
+     "metric": "movesLeft",
+     "profile": "novice",
+     "base": 5.116666666666668,
+     "whatif": 4.608666666666666,
+     "change": -0.09928338762215017,
+     "base_first": 10.23,
+     "base_last": 1.26,
+     "whatif_first": 8.706,
+     "whatif_last": 1.26
+    },
+    {
+     "metric": "movesLeft",
+     "profile": "typical",
+     "base": 6.470666666666667,
+     "whatif": 6.050666666666667,
+     "change": -0.06490830414176796,
+     "base_first": 11.749999999999998,
+     "base_last": 2.1739999999999995,
+     "whatif_first": 10.489999999999998,
+     "whatif_last": 2.1739999999999995
+    },
+    {
+     "metric": "movesLeft",
+     "profile": "expert",
+     "base": 8.609333333333332,
+     "whatif": 8.183333333333334,
+     "change": -0.04948118321201778,
+     "base_first": 13.595999999999998,
+     "base_last": 4.536,
+     "whatif_first": 12.318000000000001,
+     "whatif_last": 4.536
+    },
+    {
+     "metric": "goalDone",
+     "profile": "novice",
+     "base": 0.8880321234170575,
+     "whatif": 0.887228551988486,
+     "change": -0.000904890045508036,
+     "base_first": 0.9669090909090909,
+     "base_last": 0.8435526175063325,
+     "whatif_first": 0.9644983766233768,
+     "whatif_last": 0.8435526175063325
+    },
+    {
+     "metric": "goalDone",
+     "profile": "typical",
+     "base": 0.9264775002062173,
+     "whatif": 0.926429881158598,
+     "change": -5.1397953656399634e-05,
+     "base_first": 0.986909090909091,
+     "base_last": 0.8877936391781593,
+     "whatif_first": 0.9867662337662338,
+     "whatif_last": 0.8877936391781593
+    },
+    {
+     "metric": "goalDone",
+     "profile": "expert",
+     "base": 0.9606220434082376,
+     "whatif": 0.9606220434082376,
+     "change": 0.0,
+     "base_first": 0.9978636363636364,
+     "base_last": 0.9483113706726709,
+     "whatif_first": 0.9978636363636364,
+     "whatif_last": 0.9483113706726709
+    }
+   ]
+  }
+ },
+ "means": {
+  "baseline": {
+   "novice": {
+    "won": {
+     "1": 1.0,
+     "2": 1.0,
+     "3": 1.0,
+     "4": 1.0,
+     "5": 0.12,
+     "6": 0.85,
+     "7": 0.67,
+     "8": 0.0,
+     "9": 0.39,
+     "10": 1.0,
+     "11": 0.56,
+     "12": 0.49,
+     "13": 0.34,
+     "14": 0.04,
+     "15": 0.05
+    },
+    "movesLeft": {
+     "1": 12.91,
+     "2": 12.8,
+     "3": 12.49,
+     "4": 12.63,
+     "5": 0.32,
+     "6": 5.43,
+     "7": 2.99,
+     "8": 0.0,
+     "9": 1.27,
+     "10": 9.61,
+     "11": 2.62,
+     "12": 1.99,
+     "13": 1.46,
+     "14": 0.14,
+     "15": 0.09
+    },
+    "goalDone": {
+     "1": 1.0,
+     "2": 1.0,
+     "3": 1.0,
+     "4": 1.0,
+     "5": 0.8345454545454551,
+     "6": 0.9672222222222223,
+     "7": 0.951875,
+     "8": 0.5128260869565217,
+     "9": 0.83625,
+     "10": 1.0,
+     "11": 0.9376470588235292,
+     "12": 0.9413157894736841,
+     "13": 0.9023684210526309,
+     "14": 0.6981818181818185,
+     "15": 0.7382500000000002
+    },
+    "cascades": {
+     "1": 8.81,
+     "2": 9.13,
+     "3": 9.01,
+     "4": 9.11,
+     "5": 10.71,
+     "6": 9.85,
+     "7": 10.63,
+     "8": 6.17,
+     "9": 11.48,
+     "10": 13.35,
+     "11": 12.52,
+     "12": 12.11,
+     "13": 13.0,
+     "14": 8.43,
+     "15": 8.14
+    },
+    "shuffles": {
+     "1": 0.0,
+     "2": 0.0,
+     "3": 0.0,
+     "4": 0.0,
+     "5": 0.0,
+     "6": 0.0,
+     "7": 0.0,
+     "8": 0.04,
+     "9": 0.0,
+     "10": 0.0,
+     "11": 0.02,
+     "12": 0.0,
+     "13": 0.0,
+     "14": 0.06,
+     "15": 0.12
+    }
+   },
+   "typical": {
+    "won": {
+     "1": 1.0,
+     "2": 1.0,
+     "3": 1.0,
+     "4": 1.0,
+     "5": 0.47,
+     "6": 0.99,
+     "7": 0.8,
+     "8": 0.0,
+     "9": 0.7,
+     "10": 1.0,
+     "11": 0.84,
+     "12": 0.78,
+     "13": 0.5,
+     "14": 0.14,
+     "15": 0.07
+    },
+    "movesLeft": {
+     "1": 14.66,
+     "2": 14.63,
+     "3": 14.19,
+     "4": 13.84,
+     "5": 1.43,
+     "6": 8.34,
+     "7": 4.42,
+     "8": 0.0,
+     "9": 2.65,
+     "10": 12.03,
+     "11": 5.44,
+     "12": 3.08,
+     "13": 1.79,
+     "14": 0.45,
+     "15": 0.11
+    },
+    "goalDone": {
+     "1": 1.0,
+     "2": 1.0,
+     "3": 1.0,
+     "4": 1.0,
+     "5": 0.9345454545454546,
+     "6": 0.9972222222222222,
+     "7": 0.9846875,
+     "8": 0.5917391304347825,
+     "9": 0.95,
+     "10": 1.0,
+     "11": 0.9814705882352942,
+     "12": 0.9797368421052631,
+     "13": 0.9415789473684208,
+     "14": 0.7331818181818184,
+     "15": 0.8030000000000004
+    },
+    "cascades": {
+     "1": 7.02,
+     "2": 7.53,
+     "3": 8.12,
+     "4": 7.06,
+     "5": 11.45,
+     "6": 9.08,
+     "7": 10.02,
+     "8": 6.28,
+     "9": 12.08,
+     "10": 10.86,
+     "11": 12.44,
+     "12": 11.53,
+     "13": 11.82,
+     "14": 7.63,
+     "15": 8.43
+    },
+    "shuffles": {
+     "1": 0.0,
+     "2": 0.0,
+     "3": 0.0,
+     "4": 0.0,
+     "5": 0.0,
+     "6": 0.0,
+     "7": 0.0,
+     "8": 0.04,
+     "9": 0.0,
+     "10": 0.0,
+     "11": 0.01,
+     "12": 0.0,
+     "13": 0.0,
+     "14": 0.08,
+     "15": 0.07
+    }
+   },
+   "expert": {
+    "won": {
+     "1": 1.0,
+     "2": 1.0,
+     "3": 1.0,
+     "4": 1.0,
+     "5": 0.87,
+     "6": 1.0,
+     "7": 0.99,
+     "8": 0.02,
+     "9": 0.89,
+     "10": 1.0,
+     "11": 0.93,
+     "12": 0.96,
+     "13": 0.88,
+     "14": 0.36,
+     "15": 0.31
+    },
+    "movesLeft": {
+     "1": 16.11,
+     "2": 16.21,
+     "3": 15.86,
+     "4": 16.14,
+     "5": 3.66,
+     "6": 10.74,
+     "7": 8.48,
+     "8": 0.04,
+     "9": 5.28,
+     "10": 13.94,
+     "11": 8.24,
+     "12": 7.14,
+     "13": 5.29,
+     "14": 1.14,
+     "15": 0.87
+    },
+    "goalDone": {
+     "1": 1.0,
+     "2": 1.0,
+     "3": 1.0,
+     "4": 1.0,
+     "5": 0.9893181818181819,
+     "6": 1.0,
+     "7": 0.9984375,
+     "8": 0.7004347826086957,
+     "9": 0.9795833333333335,
+     "10": 1.0,
+     "11": 0.9911764705882353,
+     "12": 0.9965789473684211,
+     "13": 0.9942105263157894,
+     "14": 0.8540909090909088,
+     "15": 0.9055000000000001
+    },
+    "cascades": {
+     "1": 9.84,
+     "2": 9.45,
+     "3": 9.71,
+     "4": 9.13,
+     "5": 16.41,
+     "6": 11.51,
+     "7": 13.29,
+     "8": 10.72,
+     "9": 15.43,
+     "10": 14.01,
+     "11": 15.4,
+     "12": 15.04,
+     "13": 16.67,
+     "14": 11.3,
+     "15": 12.66
+    },
+    "shuffles": {
+     "1": 0.0,
+     "2": 0.0,
+     "3": 0.0,
+     "4": 0.0,
+     "5": 0.0,
+     "6": 0.0,
+     "7": 0.0,
+     "8": 0.08,
+     "9": 0.0,
+     "10": 0.0,
+     "11": 0.0,
+     "12": 0.0,
+     "13": 0.0,
+     "14": 0.04,
+     "15": 0.08
+    }
+   }
+  },
+  "L8-easier": {
+   "novice": {
+    "won": {
+     "1": 1.0,
+     "2": 1.0,
+     "3": 1.0,
+     "4": 1.0,
+     "5": 0.12,
+     "6": 0.85,
+     "7": 0.67,
+     "8": 0.43,
+     "9": 0.39,
+     "10": 1.0,
+     "11": 0.56,
+     "12": 0.49,
+     "13": 0.34,
+     "14": 0.04,
+     "15": 0.05
+    },
+    "movesLeft": {
+     "1": 12.91,
+     "2": 12.8,
+     "3": 12.49,
+     "4": 12.63,
+     "5": 0.32,
+     "6": 5.43,
+     "7": 2.99,
+     "8": 1.36,
+     "9": 1.27,
+     "10": 9.61,
+     "11": 2.62,
+     "12": 1.99,
+     "13": 1.46,
+     "14": 0.14,
+     "15": 0.09
+    },
+    "goalDone": {
+     "1": 1.0,
+     "2": 1.0,
+     "3": 1.0,
+     "4": 1.0,
+     "5": 0.8345454545454551,
+     "6": 0.9672222222222223,
+     "7": 0.951875,
+     "8": 0.9302777777777778,
+     "9": 0.83625,
+     "10": 1.0,
+     "11": 0.9376470588235292,
+     "12": 0.9413157894736841,
+     "13": 0.9023684210526309,
+     "14": 0.6981818181818185,
+     "15": 0.7382500000000002
+    },
+    "cascades": {
+     "1": 8.81,
+     "2": 9.13,
+     "3": 9.01,
+     "4": 9.11,
+     "5": 10.71,
+     "6": 9.85,
+     "7": 10.63,
+     "8": 11.31,
+     "9": 11.48,
+     "10": 13.35,
+     "11": 12.52,
+     "12": 12.11,
+     "13": 13.0,
+     "14": 8.43,
+     "15": 8.14
+    },
+    "shuffles": {
+     "1": 0.0,
+     "2": 0.0,
+     "3": 0.0,
+     "4": 0.0,
+     "5": 0.0,
+     "6": 0.0,
+     "7": 0.0,
+     "8": 0.0,
+     "9": 0.0,
+     "10": 0.0,
+     "11": 0.02,
+     "12": 0.0,
+     "13": 0.0,
+     "14": 0.06,
+     "15": 0.12
+    }
+   },
+   "typical": {
+    "won": {
+     "1": 1.0,
+     "2": 1.0,
+     "3": 1.0,
+     "4": 1.0,
+     "5": 0.47,
+     "6": 0.99,
+     "7": 0.8,
+     "8": 0.74,
+     "9": 0.7,
+     "10": 1.0,
+     "11": 0.84,
+     "12": 0.78,
+     "13": 0.5,
+     "14": 0.14,
+     "15": 0.07
+    },
+    "movesLeft": {
+     "1": 14.66,
+     "2": 14.63,
+     "3": 14.19,
+     "4": 13.84,
+     "5": 1.43,
+     "6": 8.34,
+     "7": 4.42,
+     "8": 3.56,
+     "9": 2.65,
+     "10": 12.03,
+     "11": 5.44,
+     "12": 3.08,
+     "13": 1.79,
+     "14": 0.45,
+     "15": 0.11
+    },
+    "goalDone": {
+     "1": 1.0,
+     "2": 1.0,
+     "3": 1.0,
+     "4": 1.0,
+     "5": 0.9345454545454546,
+     "6": 0.9972222222222222,
+     "7": 0.9846875,
+     "8": 0.9747222222222222,
+     "9": 0.95,
+     "10": 1.0,
+     "11": 0.9814705882352942,
+     "12": 0.9797368421052631,
+     "13": 0.9415789473684208,
+     "14": 0.7331818181818184,
+     "15": 0.8030000000000004
+    },
+    "cascades": {
+     "1": 7.02,
+     "2": 7.53,
+     "3": 8.12,
+     "4": 7.06,
+     "5": 11.45,
+     "6": 9.08,
+     "7": 10.02,
+     "8": 10.8,
+     "9": 12.08,
+     "10": 10.86,
+     "11": 12.44,
+     "12": 11.53,
+     "13": 11.82,
+     "14": 7.63,
+     "15": 8.43
+    },
+    "shuffles": {
+     "1": 0.0,
+     "2": 0.0,
+     "3": 0.0,
+     "4": 0.0,
+     "5": 0.0,
+     "6": 0.0,
+     "7": 0.0,
+     "8": 0.0,
+     "9": 0.0,
+     "10": 0.0,
+     "11": 0.01,
+     "12": 0.0,
+     "13": 0.0,
+     "14": 0.08,
+     "15": 0.07
+    }
+   },
+   "expert": {
+    "won": {
+     "1": 1.0,
+     "2": 1.0,
+     "3": 1.0,
+     "4": 1.0,
+     "5": 0.87,
+     "6": 1.0,
+     "7": 0.99,
+     "8": 0.97,
+     "9": 0.89,
+     "10": 1.0,
+     "11": 0.93,
+     "12": 0.96,
+     "13": 0.88,
+     "14": 0.36,
+     "15": 0.31
+    },
+    "movesLeft": {
+     "1": 16.11,
+     "2": 16.21,
+     "3": 15.86,
+     "4": 16.14,
+     "5": 3.66,
+     "6": 10.74,
+     "7": 8.48,
+     "8": 8.33,
+     "9": 5.28,
+     "10": 13.94,
+     "11": 8.24,
+     "12": 7.14,
+     "13": 5.29,
+     "14": 1.14,
+     "15": 0.87
+    },
+    "goalDone": {
+     "1": 1.0,
+     "2": 1.0,
+     "3": 1.0,
+     "4": 1.0,
+     "5": 0.9893181818181819,
+     "6": 1.0,
+     "7": 0.9984375,
+     "8": 0.9975,
+     "9": 0.9795833333333335,
+     "10": 1.0,
+     "11": 0.9911764705882353,
+     "12": 0.9965789473684211,
+     "13": 0.9942105263157894,
+     "14": 0.8540909090909088,
+     "15": 0.9055000000000001
+    },
+    "cascades": {
+     "1": 9.84,
+     "2": 9.45,
+     "3": 9.71,
+     "4": 9.13,
+     "5": 16.41,
+     "6": 11.51,
+     "7": 13.29,
+     "8": 14.94,
+     "9": 15.43,
+     "10": 14.01,
+     "11": 15.4,
+     "12": 15.04,
+     "13": 16.67,
+     "14": 11.3,
+     "15": 12.66
+    },
+    "shuffles": {
+     "1": 0.0,
+     "2": 0.0,
+     "3": 0.0,
+     "4": 0.0,
+     "5": 0.0,
+     "6": 0.0,
+     "7": 0.0,
+     "8": 0.0,
+     "9": 0.0,
+     "10": 0.0,
+     "11": 0.0,
+     "12": 0.0,
+     "13": 0.0,
+     "14": 0.04,
+     "15": 0.08
+    }
+   }
+  },
+  "L10-hard": {
+   "novice": {
+    "won": {
+     "1": 1.0,
+     "2": 1.0,
+     "3": 1.0,
+     "4": 1.0,
+     "5": 0.12,
+     "6": 0.85,
+     "7": 0.67,
+     "8": 0.0,
+     "9": 0.39,
+     "10": 0.01,
+     "11": 0.56,
+     "12": 0.49,
+     "13": 0.34,
+     "14": 0.04,
+     "15": 0.05
+    },
+    "movesLeft": {
+     "1": 12.91,
+     "2": 12.8,
+     "3": 12.49,
+     "4": 12.63,
+     "5": 0.32,
+     "6": 5.43,
+     "7": 2.99,
+     "8": 0.0,
+     "9": 1.27,
+     "10": 0.01,
+     "11": 2.62,
+     "12": 1.99,
+     "13": 1.46,
+     "14": 0.14,
+     "15": 0.09
+    },
+    "goalDone": {
+     "1": 1.0,
+     "2": 1.0,
+     "3": 1.0,
+     "4": 1.0,
+     "5": 0.8345454545454551,
+     "6": 0.9672222222222223,
+     "7": 0.951875,
+     "8": 0.5128260869565217,
+     "9": 0.83625,
+     "10": 0.6892105263157898,
+     "11": 0.9376470588235292,
+     "12": 0.9413157894736841,
+     "13": 0.9023684210526309,
+     "14": 0.6981818181818185,
+     "15": 0.7382500000000002
+    },
+    "cascades": {
+     "1": 8.81,
+     "2": 9.13,
+     "3": 9.01,
+     "4": 9.11,
+     "5": 10.71,
+     "6": 9.85,
+     "7": 10.63,
+     "8": 6.17,
+     "9": 11.48,
+     "10": 7.14,
+     "11": 12.52,
+     "12": 12.11,
+     "13": 13.0,
+     "14": 8.43,
+     "15": 8.14
+    },
+    "shuffles": {
+     "1": 0.0,
+     "2": 0.0,
+     "3": 0.0,
+     "4": 0.0,
+     "5": 0.0,
+     "6": 0.0,
+     "7": 0.0,
+     "8": 0.04,
+     "9": 0.0,
+     "10": 0.1,
+     "11": 0.02,
+     "12": 0.0,
+     "13": 0.0,
+     "14": 0.06,
+     "15": 0.12
+    }
+   },
+   "typical": {
+    "won": {
+     "1": 1.0,
+     "2": 1.0,
+     "3": 1.0,
+     "4": 1.0,
+     "5": 0.47,
+     "6": 0.99,
+     "7": 0.8,
+     "8": 0.0,
+     "9": 0.7,
+     "10": 0.06,
+     "11": 0.84,
+     "12": 0.78,
+     "13": 0.5,
+     "14": 0.14,
+     "15": 0.07
+    },
+    "movesLeft": {
+     "1": 14.66,
+     "2": 14.63,
+     "3": 14.19,
+     "4": 13.84,
+     "5": 1.43,
+     "6": 8.34,
+     "7": 4.42,
+     "8": 0.0,
+     "9": 2.65,
+     "10": 0.12,
+     "11": 5.44,
+     "12": 3.08,
+     "13": 1.79,
+     "14": 0.45,
+     "15": 0.11
+    },
+    "goalDone": {
+     "1": 1.0,
+     "2": 1.0,
+     "3": 1.0,
+     "4": 1.0,
+     "5": 0.9345454545454546,
+     "6": 0.9972222222222222,
+     "7": 0.9846875,
+     "8": 0.5917391304347825,
+     "9": 0.95,
+     "10": 0.7544736842105267,
+     "11": 0.9814705882352942,
+     "12": 0.9797368421052631,
+     "13": 0.9415789473684208,
+     "14": 0.7331818181818184,
+     "15": 0.8030000000000004
+    },
+    "cascades": {
+     "1": 7.02,
+     "2": 7.53,
+     "3": 8.12,
+     "4": 7.06,
+     "5": 11.45,
+     "6": 9.08,
+     "7": 10.02,
+     "8": 6.28,
+     "9": 12.08,
+     "10": 7.34,
+     "11": 12.44,
+     "12": 11.53,
+     "13": 11.82,
+     "14": 7.63,
+     "15": 8.43
+    },
+    "shuffles": {
+     "1": 0.0,
+     "2": 0.0,
+     "3": 0.0,
+     "4": 0.0,
+     "5": 0.0,
+     "6": 0.0,
+     "7": 0.0,
+     "8": 0.04,
+     "9": 0.0,
+     "10": 0.04,
+     "11": 0.01,
+     "12": 0.0,
+     "13": 0.0,
+     "14": 0.08,
+     "15": 0.07
+    }
+   },
+   "expert": {
+    "won": {
+     "1": 1.0,
+     "2": 1.0,
+     "3": 1.0,
+     "4": 1.0,
+     "5": 0.87,
+     "6": 1.0,
+     "7": 0.99,
+     "8": 0.02,
+     "9": 0.89,
+     "10": 0.15,
+     "11": 0.93,
+     "12": 0.96,
+     "13": 0.88,
+     "14": 0.36,
+     "15": 0.31
+    },
+    "movesLeft": {
+     "1": 16.11,
+     "2": 16.21,
+     "3": 15.86,
+     "4": 16.14,
+     "5": 3.66,
+     "6": 10.74,
+     "7": 8.48,
+     "8": 0.04,
+     "9": 5.28,
+     "10": 0.29,
+     "11": 8.24,
+     "12": 7.14,
+     "13": 5.29,
+     "14": 1.14,
+     "15": 0.87
+    },
+    "goalDone": {
+     "1": 1.0,
+     "2": 1.0,
+     "3": 1.0,
+     "4": 1.0,
+     "5": 0.9893181818181819,
+     "6": 1.0,
+     "7": 0.9984375,
+     "8": 0.7004347826086957,
+     "9": 0.9795833333333335,
+     "10": 0.8157894736842107,
+     "11": 0.9911764705882353,
+     "12": 0.9965789473684211,
+     "13": 0.9942105263157894,
+     "14": 0.8540909090909088,
+     "15": 0.9055000000000001
+    },
+    "cascades": {
+     "1": 9.84,
+     "2": 9.45,
+     "3": 9.71,
+     "4": 9.13,
+     "5": 16.41,
+     "6": 11.51,
+     "7": 13.29,
+     "8": 10.72,
+     "9": 15.43,
+     "10": 10.64,
+     "11": 15.4,
+     "12": 15.04,
+     "13": 16.67,
+     "14": 11.3,
+     "15": 12.66
+    },
+    "shuffles": {
+     "1": 0.0,
+     "2": 0.0,
+     "3": 0.0,
+     "4": 0.0,
+     "5": 0.0,
+     "6": 0.0,
+     "7": 0.0,
+     "8": 0.08,
+     "9": 0.0,
+     "10": 0.04,
+     "11": 0.0,
+     "12": 0.0,
+     "13": 0.0,
+     "14": 0.04,
+     "15": 0.08
+    }
+   }
+  },
+  "L2-4-varied": {
+   "novice": {
+    "won": {
+     "1": 1.0,
+     "2": 0.99,
+     "3": 0.96,
+     "4": 1.0,
+     "5": 0.12,
+     "6": 0.85,
+     "7": 0.67,
+     "8": 0.0,
+     "9": 0.39,
+     "10": 1.0,
+     "11": 0.56,
+     "12": 0.49,
+     "13": 0.34,
+     "14": 0.04,
+     "15": 0.05
+    },
+    "movesLeft": {
+     "1": 12.91,
+     "2": 10.13,
+     "3": 8.63,
+     "4": 11.54,
+     "5": 0.32,
+     "6": 5.43,
+     "7": 2.99,
+     "8": 0.0,
+     "9": 1.27,
+     "10": 9.61,
+     "11": 2.62,
+     "12": 1.99,
+     "13": 1.46,
+     "14": 0.14,
+     "15": 0.09
+    },
+    "goalDone": {
+     "1": 1.0,
+     "2": 0.999375,
+     "3": 0.9885714285714287,
+     "4": 1.0,
+     "5": 0.8345454545454551,
+     "6": 0.9672222222222223,
+     "7": 0.951875,
+     "8": 0.5128260869565217,
+     "9": 0.83625,
+     "10": 1.0,
+     "11": 0.9376470588235292,
+     "12": 0.9413157894736841,
+     "13": 0.9023684210526309,
+     "14": 0.6981818181818185,
+     "15": 0.7382500000000002
+    },
+    "cascades": {
+     "1": 8.81,
+     "2": 9.63,
+     "3": 8.38,
+     "4": 8.27,
+     "5": 10.71,
+     "6": 9.85,
+     "7": 10.63,
+     "8": 6.17,
+     "9": 11.48,
+     "10": 13.35,
+     "11": 12.52,
+     "12": 12.11,
+     "13": 13.0,
+     "14": 8.43,
+     "15": 8.14
+    },
+    "shuffles": {
+     "1": 0.0,
+     "2": 0.0,
+     "3": 0.0,
+     "4": 0.0,
+     "5": 0.0,
+     "6": 0.0,
+     "7": 0.0,
+     "8": 0.04,
+     "9": 0.0,
+     "10": 0.0,
+     "11": 0.02,
+     "12": 0.0,
+     "13": 0.0,
+     "14": 0.06,
+     "15": 0.12
+    }
+   },
+   "typical": {
+    "won": {
+     "1": 1.0,
+     "2": 1.0,
+     "3": 0.99,
+     "4": 1.0,
+     "5": 0.47,
+     "6": 0.99,
+     "7": 0.8,
+     "8": 0.0,
+     "9": 0.7,
+     "10": 1.0,
+     "11": 0.84,
+     "12": 0.78,
+     "13": 0.5,
+     "14": 0.14,
+     "15": 0.07
+    },
+    "movesLeft": {
+     "1": 14.66,
+     "2": 12.03,
+     "3": 11.25,
+     "4": 13.08,
+     "5": 1.43,
+     "6": 8.34,
+     "7": 4.42,
+     "8": 0.0,
+     "9": 2.65,
+     "10": 12.03,
+     "11": 5.44,
+     "12": 3.08,
+     "13": 1.79,
+     "14": 0.45,
+     "15": 0.11
+    },
+    "goalDone": {
+     "1": 1.0,
+     "2": 1.0,
+     "3": 0.9992857142857143,
+     "4": 1.0,
+     "5": 0.9345454545454546,
+     "6": 0.9972222222222222,
+     "7": 0.9846875,
+     "8": 0.5917391304347825,
+     "9": 0.95,
+     "10": 1.0,
+     "11": 0.9814705882352942,
+     "12": 0.9797368421052631,
+     "13": 0.9415789473684208,
+     "14": 0.7331818181818184,
+     "15": 0.8030000000000004
+    },
+    "cascades": {
+     "1": 7.02,
+     "2": 8.25,
+     "3": 7.15,
+     "4": 6.05,
+     "5": 11.45,
+     "6": 9.08,
+     "7": 10.02,
+     "8": 6.28,
+     "9": 12.08,
+     "10": 10.86,
+     "11": 12.44,
+     "12": 11.53,
+     "13": 11.82,
+     "14": 7.63,
+     "15": 8.43
+    },
+    "shuffles": {
+     "1": 0.0,
+     "2": 0.0,
+     "3": 0.0,
+     "4": 0.0,
+     "5": 0.0,
+     "6": 0.0,
+     "7": 0.0,
+     "8": 0.04,
+     "9": 0.0,
+     "10": 0.0,
+     "11": 0.01,
+     "12": 0.0,
+     "13": 0.0,
+     "14": 0.08,
+     "15": 0.07
+    }
+   },
+   "expert": {
+    "won": {
+     "1": 1.0,
+     "2": 1.0,
+     "3": 1.0,
+     "4": 1.0,
+     "5": 0.87,
+     "6": 1.0,
+     "7": 0.99,
+     "8": 0.02,
+     "9": 0.89,
+     "10": 1.0,
+     "11": 0.93,
+     "12": 0.96,
+     "13": 0.88,
+     "14": 0.36,
+     "15": 0.31
+    },
+    "movesLeft": {
+     "1": 16.11,
+     "2": 13.99,
+     "3": 13.16,
+     "4": 14.67,
+     "5": 3.66,
+     "6": 10.74,
+     "7": 8.48,
+     "8": 0.04,
+     "9": 5.28,
+     "10": 13.94,
+     "11": 8.24,
+     "12": 7.14,
+     "13": 5.29,
+     "14": 1.14,
+     "15": 0.87
+    },
+    "goalDone": {
+     "1": 1.0,
+     "2": 1.0,
+     "3": 1.0,
+     "4": 1.0,
+     "5": 0.9893181818181819,
+     "6": 1.0,
+     "7": 0.9984375,
+     "8": 0.7004347826086957,
+     "9": 0.9795833333333335,
+     "10": 1.0,
+     "11": 0.9911764705882353,
+     "12": 0.9965789473684211,
+     "13": 0.9942105263157894,
+     "14": 0.8540909090909088,
+     "15": 0.9055000000000001
+    },
+    "cascades": {
+     "1": 9.84,
+     "2": 10.17,
+     "3": 9.45,
+     "4": 8.41,
+     "5": 16.41,
+     "6": 11.51,
+     "7": 13.29,
+     "8": 10.72,
+     "9": 15.43,
+     "10": 14.01,
+     "11": 15.4,
+     "12": 15.04,
+     "13": 16.67,
+     "14": 11.3,
+     "15": 12.66
+    },
+    "shuffles": {
+     "1": 0.0,
+     "2": 0.0,
+     "3": 0.0,
+     "4": 0.0,
+     "5": 0.0,
+     "6": 0.0,
+     "7": 0.0,
+     "8": 0.08,
+     "9": 0.0,
+     "10": 0.0,
+     "11": 0.0,
+     "12": 0.0,
+     "13": 0.0,
+     "14": 0.04,
+     "15": 0.08
+    }
+   }
+  }
+ }
+}

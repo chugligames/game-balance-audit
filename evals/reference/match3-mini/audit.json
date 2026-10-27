@@ -1,0 +1,21 @@
+{
+  "title": "Match-3 Mini",
+  "segment": "level",
+  "profiles": ["novice", "typical", "expert"],
+  "focus_profile": "typical",
+  "metrics": {
+    "won": { "label": "Win rate", "expect": "fall", "min_growth": 0.3, "breathers": [6, 11] },
+    "movesLeft": { "label": "Moves left at the end" },
+    "goalDone": { "label": "Share of the goal done" }
+  },
+  "targets": [
+    { "metric": "won", "profile": "typical", "segments": [1, 4], "min": 0.8, "label": "Early levels are easy" },
+    { "metric": "won", "profile": "typical", "segments": [5, 5], "min": 0.25, "max": 0.4, "label": "Hard level 5" },
+    { "metric": "won", "profile": "typical", "segments": [6, 9], "min": 0.55, "max": 0.92, "label": "Levels 6–9" },
+    { "metric": "won", "profile": "typical", "segments": [10, 10], "min": 0.25, "max": 0.4, "label": "Hard level 10" },
+    { "metric": "won", "profile": "typical", "segments": [11, 14], "min": 0.45, "max": 0.85, "label": "Levels 11–14" },
+    { "metric": "won", "profile": "typical", "segments": [15, 15], "min": 0.25, "max": 0.4, "label": "Hard level 15" },
+    { "metric": "won", "profile": "expert", "min": 0.15, "label": "Every level is winnable by a strong player", "severity": "high" }
+  ],
+  "skill": { "metric": "won", "strong": "expert", "weak": "novice", "min_gap": 0.1 }
+}

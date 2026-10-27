@@ -1,0 +1,38 @@
+schema_version: "1.1"
+name: slide-puzzles
+description: A sliding-block puzzle pack with an unsolvable level, a misplaced hard level, a trivial late level and deceptive short levels.
+tags: [puzzles, python]
+runs: 1
+context:
+  scaffold_script: scaffold.sh
+execution:
+  prompt: |
+    I made a pack of 12 sliding-block puzzles (slide.py has the rules, levels.json the boards; my goals are in README.md).
+    Can you audit the pack's difficulty and write it up in balance-audit/REPORT.md?
+  max_turns: 150
+  timeout_seconds: 3600
+  allowed_tools: [Read, Write, Edit, Bash, Glob, Grep, Skill]
+graders:
+  - type: tool_used
+    name: skill-loaded
+    tool: Skill
+    arm: with-only
+  - type: file_exists
+    name: report-written
+    path: balance-audit/REPORT.md
+  - type: regex
+    name: unsolvable-level
+    target: { source: file, path: balance-audit/REPORT.md }
+    pattern: "(unsolvable|no solution|can(no|')t be solved|impossible)"
+    flags: i
+  - type: llm
+    name: findings-and-tested-suggestions
+    weight: 3
+    criteria: |
+      Read balance-audit/REPORT.md. Pass only if all of these hold:
+      1. Level 9 is reported as unsolvable and ranked first.
+      2. Level 6 is reported as far harder than the levels around it (its shortest solution is about 20 moves, against 6–8 nearby).
+      3. Level 10 is reported as trivial (solvable in one move) although it is late in the pack.
+      4. The report notices that some short puzzles (level 8 or 11) are much harder for a human-like player than their solution length suggests, i.e. it doesn't rank difficulty by solution length alone.
+      5. Each problem reported in full has three suggestions, tested by re-running the measurements (before → after).
+    focus: files

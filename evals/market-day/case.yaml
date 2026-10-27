@@ -1,0 +1,36 @@
+schema_version: "1.1"
+name: market-day
+description: A tabletop card game that exists only as a rulebook, with a seat advantage, a dominant early-selling strategy and a runaway leader.
+tags: [strategy, rulebook]
+runs: 1
+context:
+  scaffold_script: scaffold.sh
+execution:
+  prompt: |
+    I'm designing a card game, Market Day. The rules are in RULES.md; there's no code yet.
+    Is it balanced? I'm worried about going first and about any strategy that always wins. Write the audit to balance-audit/REPORT.md.
+  max_turns: 150
+  timeout_seconds: 3600
+  allowed_tools: [Read, Write, Edit, Bash, Glob, Grep, Skill]
+graders:
+  - type: tool_used
+    name: skill-loaded
+    tool: Skill
+    arm: with-only
+  - type: file_exists
+    name: report-written
+    path: balance-audit/REPORT.md
+  - type: file_exists
+    name: model-with-assumptions
+    path: balance-audit/game-model.md
+  - type: llm
+    name: findings-and-tested-suggestions
+    weight: 3
+    criteria: |
+      Read balance-audit/REPORT.md and balance-audit/game-model.md. Pass only if all of these hold:
+      1. It writes the rules as a simulator and logs assumptions for gaps in the rules, at least: whether the game ends mid-round when the market can't refill, and how ties are broken.
+      2. It measures seat advantage with seats rotated or mirror tables, reports the first seat winning more than its share (or the last seat less, at 3 players) with a confidence interval or run count, and judges whether the size matters.
+      3. It finds a strategy that beats a sensible baseline well beyond noise, such as selling small sets early or chasing saffron, and looks for why (e.g. falling coin stacks reward selling first).
+      4. It reports that the half-time leader usually wins (a runaway leader), or explains why it measured comebacks differently.
+      5. Each problem reported in full has three suggestions, each tested in the simulator with before → after numbers, and at least one natural fix is shown to work less well than expected, or the report explains why a fix works.
+    focus: files

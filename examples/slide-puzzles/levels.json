@@ -1,0 +1,14 @@
+[
+  {"level": 1, "rows": ["......", ".DDDCC", "..XXF.", ".BB.FA", ".....A", "...EE."]},
+  {"level": 2, "rows": [".IA...", ".IA.JG", ".XX.JG", "EHBCCC", "EHBDD.", "..B.FF"]},
+  {"level": 3, "rows": ["J.DD.L", "J..IEL", "XX.IE.", "KK.BBH", "FGA..H", "FGACCH"]},
+  {"level": 4, "rows": ["G.AA.J", "G..HHJ", "XX.KC.", "DB.KC.", "DBEEEI", "DFF..I"]},
+  {"level": 5, "rows": [".E..DD", ".E...B", "..XX.B", "..FF.B", "..CAAA", "..C..."]},
+  {"level": 6, "rows": [".B.JLL", "KB.JFF", "K.XXG.", "I.DDGC", "I.AHHC", "EEA..C"]},
+  {"level": 7, "rows": [".AALLI", "H.BBFI", "HXX.FI", "EEE.KK", ".JJCC.", "DD..GG"]},
+  {"level": 8, "rows": ["AELLJ.", "AEF.JD", "XXF.JD", "BB.KKD", "GGII..", "..CCHH"]},
+  {"level": 9, "rows": ["DDFFF.", "JJJ...", ".XXBC.", "IEEBC.", "IAAHC.", "IGGH.."]},
+  {"level": 10, "rows": ["IDFF..", "ID.CCC", "..XX..", "GEEEA.", "GBB.AH", ".....H"]},
+  {"level": 11, "rows": [".FF.IL", "..CCIL", "DBXXAE", "DBJJAE", "..GKK.", "..G.HH"]},
+  {"level": 12, "rows": ["J..EE.", "J.AAFF", "XXDG..", "..DGHC", ".IBBHC", ".I...C"]}
+]

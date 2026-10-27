@@ -1,0 +1,41 @@
+schema_version: "1.1"
+name: merge-mini
+description: A merge-2 economy whose later days get easier, whose board never fills and whose energy never runs out.
+tags: [economy, javascript]
+runs: 1
+context:
+  scaffold_script: scaffold.sh
+execution:
+  prompt: |
+    This folder holds the rules of a small merge game (game.mjs) and the designer's notes (README.md).
+    Audit its balance against what the designer wants, and write the audit to balance-audit/REPORT.md.
+  max_turns: 150
+  timeout_seconds: 3600
+  allowed_tools: [Read, Write, Edit, Bash, Glob, Grep, Skill]
+graders:
+  - type: tool_used
+    name: skill-loaded
+    tool: Skill
+    arm: with-only
+  - type: file_exists
+    name: report-written
+    path: balance-audit/REPORT.md
+  - type: file_exists
+    name: intent-as-checks
+    path: balance-audit/audit.json
+  - type: regex
+    name: board-finding
+    target: { source: file, path: balance-audit/REPORT.md }
+    pattern: "(board|cells?)[^\\n]{0,120}(never|rarely)[^\\n]{0,60}(full|crowd|fill|tight)|(never|rarely)[^\\n]{0,60}(full|crowd|fill)[^\\n]{0,80}board"
+    flags: i
+  - type: llm
+    name: findings-and-tested-suggestions
+    weight: 3
+    criteria: |
+      Read balance-audit/REPORT.md. Pass only if all of these hold:
+      1. It reports that the board never gets crowded (free cells stay far above zero), against the designer's wish that it feel crowded from about day 6.
+      2. It reports that energy never runs out, or that days 8–10 use far less of a twice-a-day player's energy than the designer wants.
+      3. It reports that days 6–8 ask for less effort than day 5 (the curve dips instead of rising).
+      4. Each problem it reports in full has three suggestions, and each suggestion shows a before → after number from a simulation run.
+      5. Numbers name the kind of player they describe (e.g. careless, typical, twice a day).
+    focus: files

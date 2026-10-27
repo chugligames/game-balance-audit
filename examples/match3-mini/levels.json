@@ -1,0 +1,17 @@
+[
+  { "level": 1, "moves": 20, "colors": 4, "goals": { "red": 15 } },
+  { "level": 2, "moves": 20, "colors": 4, "goals": { "blue": 15 } },
+  { "level": 3, "moves": 20, "colors": 4, "goals": { "green": 15 } },
+  { "level": 4, "moves": 20, "colors": 4, "goals": { "yellow": 15 } },
+  { "level": 5, "moves": 18, "colors": 5, "goals": { "red": 22, "blue": 22 } },
+  { "level": 6, "moves": 22, "colors": 5, "goals": { "green": 18 } },
+  { "level": 7, "moves": 20, "colors": 5, "goals": { "red": 20, "yellow": 12 } },
+  { "level": 8, "moves": 16, "colors": 6, "goals": { "blue": 26, "purple": 20 } },
+  { "level": 9, "moves": 20, "colors": 5, "goals": { "green": 24 } },
+  { "level": 10, "moves": 20, "colors": 4, "goals": { "red": 22 } },
+  { "level": 11, "moves": 22, "colors": 5, "goals": { "yellow": 24, "blue": 10 } },
+  { "level": 12, "moves": 20, "colors": 5, "goals": { "red": 22, "green": 16 } },
+  { "level": 13, "moves": 20, "colors": 5, "goals": { "purple": 26, "red": 12 } },
+  { "level": 14, "moves": 20, "colors": 6, "goals": { "blue": 22 } },
+  { "level": 15, "moves": 20, "colors": 6, "goals": { "red": 20, "green": 20 } }
+]

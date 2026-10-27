@@ -1,0 +1,39 @@
+schema_version: "1.1"
+name: match3-mini
+description: A match-3 level list with an unwinnable level, a hard level that isn't, identical early levels and an accidental spike.
+tags: [levels, javascript]
+runs: 1
+context:
+  scaffold_script: scaffold.sh
+execution:
+  prompt: |
+    Here's my match-3 prototype: the rules are in match3.mjs, the levels in levels.json, and what I want is in README.md.
+    Where is the difficulty curve wrong, and what should I change? Put the audit in balance-audit/REPORT.md.
+  max_turns: 150
+  timeout_seconds: 3600
+  allowed_tools: [Read, Write, Edit, Bash, Glob, Grep, Skill]
+graders:
+  - type: tool_used
+    name: skill-loaded
+    tool: Skill
+    arm: with-only
+  - type: file_exists
+    name: report-written
+    path: balance-audit/REPORT.md
+  - type: regex
+    name: level-8
+    target: { source: file, path: balance-audit/REPORT.md }
+    pattern: "level\\s*8"
+    flags: i
+  - type: llm
+    name: findings-and-tested-suggestions
+    weight: 3
+    criteria: |
+      Read balance-audit/REPORT.md. Pass only if all of these hold:
+      1. Level 8 is reported as (nearly) unwinnable, even for a strong player, and ranked as the most serious problem.
+      2. Level 10 is reported as not hard, although the designer wants every fifth level to be hard.
+      3. Levels 1–4 are reported as playing alike (no variety, all near 100% wins).
+      4. Level 14 or 15 is reported as harder than intended for a typical player.
+      5. Each problem reported in full has three suggestions, each with a before → after win rate from a simulation.
+      6. The report says bot win rates are relative difficulty, not promises about human pass rates (or that calibration with real data is needed).
+    focus: files

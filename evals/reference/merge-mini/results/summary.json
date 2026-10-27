@@ -1,0 +1,5526 @@
+{
+ "title": "Merge Mini",
+ "segment": "day",
+ "segments": [
+  1,
+  2,
+  3,
+  4,
+  5,
+  6,
+  7,
+  8,
+  9,
+  10
+ ],
+ "scenarios": [
+  "baseline",
+  "smaller-board",
+  "orders-x1.5-from-6",
+  "slower-regen"
+ ],
+ "profiles": [
+  "careless",
+  "twice",
+  "efficient"
+ ],
+ "flags": {
+  "baseline": [
+   {
+    "id": "off-target:energyShare:twice",
+    "kind": "off-target",
+    "severity": "high",
+    "metric": "energyShare",
+    "scenario": "baseline",
+    "profile": "twice",
+    "message": "Twice-a-day player uses most of their energy on days 8\u201310 (mean) misses the target \u2265 0.60 in 3 of 3 days: 8: 0.11, 9: 0.16, 10: 0.25",
+    "evidence": {
+     "target": {
+      "metric": "energyShare",
+      "segments": [
+       8,
+       10
+      ],
+      "profile": "twice",
+      "min": 0.6,
+      "label": "Twice-a-day player uses most of their energy on days 8\u201310"
+     },
+     "misses": [
+      [
+       8,
+       0.10695000000000014
+      ],
+      [
+       9,
+       0.15954999999999986
+      ],
+      [
+       10,
+       0.24794999999999984
+      ]
+     ]
+    }
+   },
+   {
+    "id": "never-binds:minFree:careless",
+    "kind": "never-binds",
+    "severity": "high",
+    "metric": "minFree",
+    "scenario": "baseline",
+    "profile": "careless",
+    "message": "Fewest empty cells <= 0 never happens in any of the days, so this limit puts no pressure on the player (closest it gets: 30.0)",
+    "evidence": {
+     "rate": 0.0,
+     "closest": 30.0,
+     "per_segment": [
+      [
+       3,
+       0.0
+      ],
+      [
+       4,
+       0.0
+      ],
+      [
+       5,
+       0.0
+      ],
+      [
+       6,
+       0.0
+      ],
+      [
+       7,
+       0.0
+      ],
+      [
+       8,
+       0.0
+      ],
+      [
+       9,
+       0.0
+      ],
+      [
+       10,
+       0.0
+      ]
+     ]
+    }
+   },
+   {
+    "id": "never-binds:minFree:efficient",
+    "kind": "never-binds",
+    "severity": "high",
+    "metric": "minFree",
+    "scenario": "baseline",
+    "profile": "efficient",
+    "message": "Fewest empty cells <= 0 never happens in any of the days, so this limit puts no pressure on the player (closest it gets: 30.0)",
+    "evidence": {
+     "rate": 0.0,
+     "closest": 30.0,
+     "per_segment": [
+      [
+       3,
+       0.0
+      ],
+      [
+       4,
+       0.0
+      ],
+      [
+       5,
+       0.0
+      ],
+      [
+       6,
+       0.0
+      ],
+      [
+       7,
+       0.0
+      ],
+      [
+       8,
+       0.0
+      ],
+      [
+       9,
+       0.0
+      ],
+      [
+       10,
+       0.0
+      ]
+     ]
+    }
+   },
+   {
+    "id": "never-binds:minFree:twice",
+    "kind": "never-binds",
+    "severity": "high",
+    "metric": "minFree",
+    "scenario": "baseline",
+    "profile": "twice",
+    "message": "Fewest empty cells <= 0 never happens in any of the days, so this limit puts no pressure on the player (closest it gets: 30.0)",
+    "evidence": {
+     "rate": 0.0,
+     "closest": 30.0,
+     "per_segment": [
+      [
+       3,
+       0.0
+      ],
+      [
+       4,
+       0.0
+      ],
+      [
+       5,
+       0.0
+      ],
+      [
+       6,
+       0.0
+      ],
+      [
+       7,
+       0.0
+      ],
+      [
+       8,
+       0.0
+      ],
+      [
+       9,
+       0.0
+      ],
+      [
+       10,
+       0.0
+      ]
+     ]
+    }
+   },
+   {
+    "id": "off-target:minFree:twice",
+    "kind": "off-target",
+    "severity": "high",
+    "metric": "minFree",
+    "scenario": "baseline",
+    "profile": "twice",
+    "message": "Board feels crowded from day 6 (mean) misses the target \u2264 4.00 in 5 of 5 days: 6: 33.4, 7: 33.5, 8: 32.3, 9: 31.4, 10: 30.4",
+    "evidence": {
+     "target": {
+      "metric": "minFree",
+      "segments": [
+       6,
+       10
+      ],
+      "profile": "twice",
+      "max": 4,
+      "label": "Board feels crowded from day 6"
+     },
+     "misses": [
+      [
+       6,
+       33.4
+      ],
+      [
+       7,
+       33.45
+      ],
+      [
+       8,
+       32.32
+      ],
+      [
+       9,
+       31.4
+      ],
+      [
+       10,
+       30.43
+      ]
+     ]
+    }
+   },
+   {
+    "id": "never-binds:outOfEnergy:careless",
+    "kind": "never-binds",
+    "severity": "high",
+    "metric": "outOfEnergy",
+    "scenario": "baseline",
+    "profile": "careless",
+    "message": "Times out of energy > 0 never happens in any of the days, so this limit puts no pressure on the player (closest it gets: 0.00)",
+    "evidence": {
+     "rate": 0.0,
+     "closest": 0.0,
+     "per_segment": [
+      [
+       8,
+       0.0
+      ],
+      [
+       9,
+       0.0
+      ],
+      [
+       10,
+       0.0
+      ]
+     ]
+    }
+   },
+   {
+    "id": "never-binds:outOfEnergy:efficient",
+    "kind": "never-binds",
+    "severity": "high",
+    "metric": "outOfEnergy",
+    "scenario": "baseline",
+    "profile": "efficient",
+    "message": "Times out of energy > 0 never happens in any of the days, so this limit puts no pressure on the player (closest it gets: 0.00)",
+    "evidence": {
+     "rate": 0.0,
+     "closest": 0.0,
+     "per_segment": [
+      [
+       8,
+       0.0
+      ],
+      [
+       9,
+       0.0
+      ],
+      [
+       10,
+       0.0
+      ]
+     ]
+    }
+   },
+   {
+    "id": "never-binds:outOfEnergy:twice",
+    "kind": "never-binds",
+    "severity": "high",
+    "metric": "outOfEnergy",
+    "scenario": "baseline",
+    "profile": "twice",
+    "message": "Times out of energy > 0 never happens in any of the days, so this limit puts no pressure on the player (closest it gets: 0.00)",
+    "evidence": {
+     "rate": 0.0,
+     "closest": 0.0,
+     "per_segment": [
+      [
+       8,
+       0.0
+      ],
+      [
+       9,
+       0.0
+      ],
+      [
+       10,
+       0.0
+      ]
+     ]
+    }
+   },
+   {
+    "id": "flat:minFree:careless",
+    "kind": "flat",
+    "severity": "medium",
+    "metric": "minFree",
+    "scenario": "baseline",
+    "profile": "careless",
+    "message": "Fewest empty cells falls by only 8% from the first third of days (33.5) to the last third (31.0); the design expects at least 25%",
+    "evidence": {
+     "growth": 0.07571918318676402,
+     "first_third": 33.545,
+     "last_third": 31.005000000000003,
+     "values": [
+      [
+       3,
+       33.56
+      ],
+      [
+       4,
+       33.53
+      ],
+      [
+       5,
+       31.45
+      ],
+      [
+       6,
+       33.44
+      ],
+      [
+       7,
+       33.41
+      ],
+      [
+       8,
+       32.4
+      ],
+      [
+       9,
+       31.44
+      ],
+      [
+       10,
+       30.57
+      ]
+     ]
+    }
+   },
+   {
+    "id": "flat:minFree:efficient",
+    "kind": "flat",
+    "severity": "medium",
+    "metric": "minFree",
+    "scenario": "baseline",
+    "profile": "efficient",
+    "message": "Fewest empty cells falls by only 8% from the first third of days (33.3) to the last third (30.8); the design expects at least 25%",
+    "evidence": {
+     "growth": 0.07528494301139786,
+     "first_third": 33.34,
+     "last_third": 30.83,
+     "values": [
+      [
+       3,
+       33.22
+      ],
+      [
+       4,
+       33.46
+      ],
+      [
+       5,
+       31.28
+      ],
+      [
+       6,
+       33.32
+      ],
+      [
+       7,
+       33.27
+      ],
+      [
+       8,
+       32.51
+      ],
+      [
+       9,
+       31.33
+      ],
+      [
+       10,
+       30.33
+      ]
+     ]
+    }
+   },
+   {
+    "id": "flat:minFree:twice",
+    "kind": "flat",
+    "severity": "medium",
+    "metric": "minFree",
+    "scenario": "baseline",
+    "profile": "twice",
+    "message": "Fewest empty cells falls by only 8% from the first third of days (33.4) to the last third (30.9); the design expects at least 25%",
+    "evidence": {
+     "growth": 0.0753701211305519,
+     "first_third": 33.435,
+     "last_third": 30.915,
+     "values": [
+      [
+       3,
+       33.45
+      ],
+      [
+       4,
+       33.42
+      ],
+      [
+       5,
+       31.37
+      ],
+      [
+       6,
+       33.4
+      ],
+      [
+       7,
+       33.45
+      ],
+      [
+       8,
+       32.32
+      ],
+      [
+       9,
+       31.4
+      ],
+      [
+       10,
+       30.43
+      ]
+     ]
+    }
+   },
+   {
+    "id": "dips:energyShare:careless",
+    "kind": "dips",
+    "severity": "low",
+    "metric": "energyShare",
+    "scenario": "baseline",
+    "profile": "careless",
+    "message": "Share of the day's free energy used goes the wrong way by more than 15% between days 5\u21926 \u221249%",
+    "evidence": {
+     "dips": [
+      "5\u21926 \u221249%"
+     ]
+    }
+   },
+   {
+    "id": "dips:energyShare:efficient",
+    "kind": "dips",
+    "severity": "low",
+    "metric": "energyShare",
+    "scenario": "baseline",
+    "profile": "efficient",
+    "message": "Share of the day's free energy used goes the wrong way by more than 15% between days 5\u21926 \u221250%",
+    "evidence": {
+     "dips": [
+      "5\u21926 \u221250%"
+     ]
+    }
+   },
+   {
+    "id": "dips:energyShare:twice",
+    "kind": "dips",
+    "severity": "low",
+    "metric": "energyShare",
+    "scenario": "baseline",
+    "profile": "twice",
+    "message": "Share of the day's free energy used goes the wrong way by more than 15% between days 5\u21926 \u221249%",
+    "evidence": {
+     "dips": [
+      "5\u21926 \u221249%"
+     ]
+    }
+   },
+   {
+    "id": "dips:taps:careless",
+    "kind": "dips",
+    "severity": "low",
+    "metric": "taps",
+    "scenario": "baseline",
+    "profile": "careless",
+    "message": "Energy spent goes the wrong way by more than 15% between days 5\u21926 \u221249%",
+    "evidence": {
+     "dips": [
+      "5\u21926 \u221249%"
+     ]
+    }
+   },
+   {
+    "id": "dips:taps:efficient",
+    "kind": "dips",
+    "severity": "low",
+    "metric": "taps",
+    "scenario": "baseline",
+    "profile": "efficient",
+    "message": "Energy spent goes the wrong way by more than 15% between days 5\u21926 \u221250%",
+    "evidence": {
+     "dips": [
+      "5\u21926 \u221250%"
+     ]
+    }
+   },
+   {
+    "id": "dips:taps:twice",
+    "kind": "dips",
+    "severity": "low",
+    "metric": "taps",
+    "scenario": "baseline",
+    "profile": "twice",
+    "message": "Energy spent goes the wrong way by more than 15% between days 5\u21926 \u221249%",
+    "evidence": {
+     "dips": [
+      "5\u21926 \u221249%"
+     ]
+    }
+   },
+   {
+    "id": "constant:daysLate:all",
+    "kind": "constant",
+    "severity": "info",
+    "metric": "daysLate",
+    "scenario": "baseline",
+    "profile": null,
+    "message": "Days behind the calendar is 0.00 in every row: either it measures nothing here, or something never happens (which may be a finding)",
+    "evidence": {
+     "value": 0.0
+    }
+   },
+   {
+    "id": "constant:outOfEnergy:all",
+    "kind": "constant",
+    "severity": "info",
+    "metric": "outOfEnergy",
+    "scenario": "baseline",
+    "profile": null,
+    "message": "Times out of energy is 0.00 in every row: either it measures nothing here, or something never happens (which may be a finding)",
+    "evidence": {
+     "value": 0.0
+    }
+   },
+   {
+    "id": "constant:sells:all",
+    "kind": "constant",
+    "severity": "info",
+    "metric": "sells",
+    "scenario": "baseline",
+    "profile": null,
+    "message": "sells is 0.00 in every row: either it measures nothing here, or something never happens (which may be a finding)",
+    "evidence": {
+     "value": 0.0
+    }
+   }
+  ],
+  "smaller-board": [
+   {
+    "id": "off-target:energyShare:twice",
+    "kind": "off-target",
+    "severity": "high",
+    "metric": "energyShare",
+    "scenario": "smaller-board",
+    "profile": "twice",
+    "message": "Twice-a-day player uses most of their energy on days 8\u201310 (mean) misses the target \u2265 0.60 in 3 of 3 days: 8: 0.11, 9: 0.16, 10: 0.25",
+    "evidence": {
+     "target": {
+      "metric": "energyShare",
+      "segments": [
+       8,
+       10
+      ],
+      "profile": "twice",
+      "min": 0.6,
+      "label": "Twice-a-day player uses most of their energy on days 8\u201310"
+     },
+     "misses": [
+      [
+       8,
+       0.10695000000000014
+      ],
+      [
+       9,
+       0.15954999999999986
+      ],
+      [
+       10,
+       0.24794999999999984
+      ]
+     ]
+    }
+   },
+   {
+    "id": "never-binds:minFree:careless",
+    "kind": "never-binds",
+    "severity": "high",
+    "metric": "minFree",
+    "scenario": "smaller-board",
+    "profile": "careless",
+    "message": "Fewest empty cells <= 0 never happens in any of the days, so this limit puts no pressure on the player (closest it gets: 12.0)",
+    "evidence": {
+     "rate": 0.0,
+     "closest": 12.0,
+     "per_segment": [
+      [
+       3,
+       0.0
+      ],
+      [
+       4,
+       0.0
+      ],
+      [
+       5,
+       0.0
+      ],
+      [
+       6,
+       0.0
+      ],
+      [
+       7,
+       0.0
+      ],
+      [
+       8,
+       0.0
+      ],
+      [
+       9,
+       0.0
+      ],
+      [
+       10,
+       0.0
+      ]
+     ]
+    }
+   },
+   {
+    "id": "never-binds:minFree:efficient",
+    "kind": "never-binds",
+    "severity": "high",
+    "metric": "minFree",
+    "scenario": "smaller-board",
+    "profile": "efficient",
+    "message": "Fewest empty cells <= 0 never happens in any of the days, so this limit puts no pressure on the player (closest it gets: 12.0)",
+    "evidence": {
+     "rate": 0.0,
+     "closest": 12.0,
+     "per_segment": [
+      [
+       3,
+       0.0
+      ],
+      [
+       4,
+       0.0
+      ],
+      [
+       5,
+       0.0
+      ],
+      [
+       6,
+       0.0
+      ],
+      [
+       7,
+       0.0
+      ],
+      [
+       8,
+       0.0
+      ],
+      [
+       9,
+       0.0
+      ],
+      [
+       10,
+       0.0
+      ]
+     ]
+    }
+   },
+   {
+    "id": "never-binds:minFree:twice",
+    "kind": "never-binds",
+    "severity": "high",
+    "metric": "minFree",
+    "scenario": "smaller-board",
+    "profile": "twice",
+    "message": "Fewest empty cells <= 0 never happens in any of the days, so this limit puts no pressure on the player (closest it gets: 12.0)",
+    "evidence": {
+     "rate": 0.0,
+     "closest": 12.0,
+     "per_segment": [
+      [
+       3,
+       0.0
+      ],
+      [
+       4,
+       0.0
+      ],
+      [
+       5,
+       0.0
+      ],
+      [
+       6,
+       0.0
+      ],
+      [
+       7,
+       0.0
+      ],
+      [
+       8,
+       0.0
+      ],
+      [
+       9,
+       0.0
+      ],
+      [
+       10,
+       0.0
+      ]
+     ]
+    }
+   },
+   {
+    "id": "off-target:minFree:twice",
+    "kind": "off-target",
+    "severity": "high",
+    "metric": "minFree",
+    "scenario": "smaller-board",
+    "profile": "twice",
+    "message": "Board feels crowded from day 6 (mean) misses the target \u2264 4.00 in 5 of 5 days: 6: 15.4, 7: 15.4, 8: 14.3, 9: 13.4, 10: 12.4",
+    "evidence": {
+     "target": {
+      "metric": "minFree",
+      "segments": [
+       6,
+       10
+      ],
+      "profile": "twice",
+      "max": 4,
+      "label": "Board feels crowded from day 6"
+     },
+     "misses": [
+      [
+       6,
+       15.4
+      ],
+      [
+       7,
+       15.45
+      ],
+      [
+       8,
+       14.32
+      ],
+      [
+       9,
+       13.4
+      ],
+      [
+       10,
+       12.43
+      ]
+     ]
+    }
+   },
+   {
+    "id": "never-binds:outOfEnergy:careless",
+    "kind": "never-binds",
+    "severity": "high",
+    "metric": "outOfEnergy",
+    "scenario": "smaller-board",
+    "profile": "careless",
+    "message": "Times out of energy > 0 never happens in any of the days, so this limit puts no pressure on the player (closest it gets: 0.00)",
+    "evidence": {
+     "rate": 0.0,
+     "closest": 0.0,
+     "per_segment": [
+      [
+       8,
+       0.0
+      ],
+      [
+       9,
+       0.0
+      ],
+      [
+       10,
+       0.0
+      ]
+     ]
+    }
+   },
+   {
+    "id": "never-binds:outOfEnergy:efficient",
+    "kind": "never-binds",
+    "severity": "high",
+    "metric": "outOfEnergy",
+    "scenario": "smaller-board",
+    "profile": "efficient",
+    "message": "Times out of energy > 0 never happens in any of the days, so this limit puts no pressure on the player (closest it gets: 0.00)",
+    "evidence": {
+     "rate": 0.0,
+     "closest": 0.0,
+     "per_segment": [
+      [
+       8,
+       0.0
+      ],
+      [
+       9,
+       0.0
+      ],
+      [
+       10,
+       0.0
+      ]
+     ]
+    }
+   },
+   {
+    "id": "never-binds:outOfEnergy:twice",
+    "kind": "never-binds",
+    "severity": "high",
+    "metric": "outOfEnergy",
+    "scenario": "smaller-board",
+    "profile": "twice",
+    "message": "Times out of energy > 0 never happens in any of the days, so this limit puts no pressure on the player (closest it gets: 0.00)",
+    "evidence": {
+     "rate": 0.0,
+     "closest": 0.0,
+     "per_segment": [
+      [
+       8,
+       0.0
+      ],
+      [
+       9,
+       0.0
+      ],
+      [
+       10,
+       0.0
+      ]
+     ]
+    }
+   },
+   {
+    "id": "flat:minFree:careless",
+    "kind": "flat",
+    "severity": "medium",
+    "metric": "minFree",
+    "scenario": "smaller-board",
+    "profile": "careless",
+    "message": "Fewest empty cells falls by only 16% from the first third of days (15.5) to the last third (13.0); the design expects at least 25%",
+    "evidence": {
+     "growth": 0.16339659054358321,
+     "first_third": 15.545,
+     "last_third": 13.004999999999999,
+     "values": [
+      [
+       3,
+       15.56
+      ],
+      [
+       4,
+       15.53
+      ],
+      [
+       5,
+       13.45
+      ],
+      [
+       6,
+       15.44
+      ],
+      [
+       7,
+       15.41
+      ],
+      [
+       8,
+       14.4
+      ],
+      [
+       9,
+       13.44
+      ],
+      [
+       10,
+       12.57
+      ]
+     ]
+    }
+   },
+   {
+    "id": "flat:minFree:efficient",
+    "kind": "flat",
+    "severity": "medium",
+    "metric": "minFree",
+    "scenario": "smaller-board",
+    "profile": "efficient",
+    "message": "Fewest empty cells falls by only 16% from the first third of days (15.3) to the last third (12.8); the design expects at least 25%",
+    "evidence": {
+     "growth": 0.16362451108213819,
+     "first_third": 15.34,
+     "last_third": 12.83,
+     "values": [
+      [
+       3,
+       15.22
+      ],
+      [
+       4,
+       15.46
+      ],
+      [
+       5,
+       13.28
+      ],
+      [
+       6,
+       15.32
+      ],
+      [
+       7,
+       15.27
+      ],
+      [
+       8,
+       14.51
+      ],
+      [
+       9,
+       13.33
+      ],
+      [
+       10,
+       12.33
+      ]
+     ]
+    }
+   },
+   {
+    "id": "flat:minFree:twice",
+    "kind": "flat",
+    "severity": "medium",
+    "metric": "minFree",
+    "scenario": "smaller-board",
+    "profile": "twice",
+    "message": "Fewest empty cells falls by only 16% from the first third of days (15.4) to the last third (12.9); the design expects at least 25%",
+    "evidence": {
+     "growth": 0.16326530612244897,
+     "first_third": 15.434999999999999,
+     "last_third": 12.915,
+     "values": [
+      [
+       3,
+       15.45
+      ],
+      [
+       4,
+       15.42
+      ],
+      [
+       5,
+       13.37
+      ],
+      [
+       6,
+       15.4
+      ],
+      [
+       7,
+       15.45
+      ],
+      [
+       8,
+       14.32
+      ],
+      [
+       9,
+       13.4
+      ],
+      [
+       10,
+       12.43
+      ]
+     ]
+    }
+   },
+   {
+    "id": "dips:energyShare:careless",
+    "kind": "dips",
+    "severity": "low",
+    "metric": "energyShare",
+    "scenario": "smaller-board",
+    "profile": "careless",
+    "message": "Share of the day's free energy used goes the wrong way by more than 15% between days 5\u21926 \u221249%",
+    "evidence": {
+     "dips": [
+      "5\u21926 \u221249%"
+     ]
+    }
+   },
+   {
+    "id": "dips:energyShare:efficient",
+    "kind": "dips",
+    "severity": "low",
+    "metric": "energyShare",
+    "scenario": "smaller-board",
+    "profile": "efficient",
+    "message": "Share of the day's free energy used goes the wrong way by more than 15% between days 5\u21926 \u221250%",
+    "evidence": {
+     "dips": [
+      "5\u21926 \u221250%"
+     ]
+    }
+   },
+   {
+    "id": "dips:energyShare:twice",
+    "kind": "dips",
+    "severity": "low",
+    "metric": "energyShare",
+    "scenario": "smaller-board",
+    "profile": "twice",
+    "message": "Share of the day's free energy used goes the wrong way by more than 15% between days 5\u21926 \u221249%",
+    "evidence": {
+     "dips": [
+      "5\u21926 \u221249%"
+     ]
+    }
+   },
+   {
+    "id": "dips:minFree:efficient",
+    "kind": "dips",
+    "severity": "low",
+    "metric": "minFree",
+    "scenario": "smaller-board",
+    "profile": "efficient",
+    "message": "Fewest empty cells goes the wrong way by more than 15% between days 5\u21926 \u221215%",
+    "evidence": {
+     "dips": [
+      "5\u21926 \u221215%"
+     ]
+    }
+   },
+   {
+    "id": "dips:minFree:twice",
+    "kind": "dips",
+    "severity": "low",
+    "metric": "minFree",
+    "scenario": "smaller-board",
+    "profile": "twice",
+    "message": "Fewest empty cells goes the wrong way by more than 15% between days 5\u21926 \u221215%",
+    "evidence": {
+     "dips": [
+      "5\u21926 \u221215%"
+     ]
+    }
+   },
+   {
+    "id": "dips:taps:careless",
+    "kind": "dips",
+    "severity": "low",
+    "metric": "taps",
+    "scenario": "smaller-board",
+    "profile": "careless",
+    "message": "Energy spent goes the wrong way by more than 15% between days 5\u21926 \u221249%",
+    "evidence": {
+     "dips": [
+      "5\u21926 \u221249%"
+     ]
+    }
+   },
+   {
+    "id": "dips:taps:efficient",
+    "kind": "dips",
+    "severity": "low",
+    "metric": "taps",
+    "scenario": "smaller-board",
+    "profile": "efficient",
+    "message": "Energy spent goes the wrong way by more than 15% between days 5\u21926 \u221250%",
+    "evidence": {
+     "dips": [
+      "5\u21926 \u221250%"
+     ]
+    }
+   },
+   {
+    "id": "dips:taps:twice",
+    "kind": "dips",
+    "severity": "low",
+    "metric": "taps",
+    "scenario": "smaller-board",
+    "profile": "twice",
+    "message": "Energy spent goes the wrong way by more than 15% between days 5\u21926 \u221249%",
+    "evidence": {
+     "dips": [
+      "5\u21926 \u221249%"
+     ]
+    }
+   },
+   {
+    "id": "constant:daysLate:all",
+    "kind": "constant",
+    "severity": "info",
+    "metric": "daysLate",
+    "scenario": "smaller-board",
+    "profile": null,
+    "message": "Days behind the calendar is 0.00 in every row: either it measures nothing here, or something never happens (which may be a finding)",
+    "evidence": {
+     "value": 0.0
+    }
+   },
+   {
+    "id": "constant:outOfEnergy:all",
+    "kind": "constant",
+    "severity": "info",
+    "metric": "outOfEnergy",
+    "scenario": "smaller-board",
+    "profile": null,
+    "message": "Times out of energy is 0.00 in every row: either it measures nothing here, or something never happens (which may be a finding)",
+    "evidence": {
+     "value": 0.0
+    }
+   },
+   {
+    "id": "constant:sells:all",
+    "kind": "constant",
+    "severity": "info",
+    "metric": "sells",
+    "scenario": "smaller-board",
+    "profile": null,
+    "message": "sells is 0.00 in every row: either it measures nothing here, or something never happens (which may be a finding)",
+    "evidence": {
+     "value": 0.0
+    }
+   }
+  ],
+  "orders-x1.5-from-6": [
+   {
+    "id": "off-target:energyShare:twice",
+    "kind": "off-target",
+    "severity": "high",
+    "metric": "energyShare",
+    "scenario": "orders-x1.5-from-6",
+    "profile": "twice",
+    "message": "Twice-a-day player uses most of their energy on days 8\u201310 (mean) misses the target \u2265 0.60 in 3 of 3 days: 8: 0.18, 9: 0.32, 10: 0.49",
+    "evidence": {
+     "target": {
+      "metric": "energyShare",
+      "segments": [
+       8,
+       10
+      ],
+      "profile": "twice",
+      "min": 0.6,
+      "label": "Twice-a-day player uses most of their energy on days 8\u201310"
+     },
+     "misses": [
+      [
+       8,
+       0.17845000000000003
+      ],
+      [
+       9,
+       0.3186499999999997
+      ],
+      [
+       10,
+       0.49370000000000014
+      ]
+     ]
+    }
+   },
+   {
+    "id": "never-binds:minFree:careless",
+    "kind": "never-binds",
+    "severity": "high",
+    "metric": "minFree",
+    "scenario": "orders-x1.5-from-6",
+    "profile": "careless",
+    "message": "Fewest empty cells <= 0 never happens in any of the days, so this limit puts no pressure on the player (closest it gets: 28.0)",
+    "evidence": {
+     "rate": 0.0,
+     "closest": 28.0,
+     "per_segment": [
+      [
+       3,
+       0.0
+      ],
+      [
+       4,
+       0.0
+      ],
+      [
+       5,
+       0.0
+      ],
+      [
+       6,
+       0.0
+      ],
+      [
+       7,
+       0.0
+      ],
+      [
+       8,
+       0.0
+      ],
+      [
+       9,
+       0.0
+      ],
+      [
+       10,
+       0.0
+      ]
+     ]
+    }
+   },
+   {
+    "id": "never-binds:minFree:efficient",
+    "kind": "never-binds",
+    "severity": "high",
+    "metric": "minFree",
+    "scenario": "orders-x1.5-from-6",
+    "profile": "efficient",
+    "message": "Fewest empty cells <= 0 never happens in any of the days, so this limit puts no pressure on the player (closest it gets: 28.0)",
+    "evidence": {
+     "rate": 0.0,
+     "closest": 28.0,
+     "per_segment": [
+      [
+       3,
+       0.0
+      ],
+      [
+       4,
+       0.0
+      ],
+      [
+       5,
+       0.0
+      ],
+      [
+       6,
+       0.0
+      ],
+      [
+       7,
+       0.0
+      ],
+      [
+       8,
+       0.0
+      ],
+      [
+       9,
+       0.0
+      ],
+      [
+       10,
+       0.0
+      ]
+     ]
+    }
+   },
+   {
+    "id": "never-binds:minFree:twice",
+    "kind": "never-binds",
+    "severity": "high",
+    "metric": "minFree",
+    "scenario": "orders-x1.5-from-6",
+    "profile": "twice",
+    "message": "Fewest empty cells <= 0 never happens in any of the days, so this limit puts no pressure on the player (closest it gets: 28.0)",
+    "evidence": {
+     "rate": 0.0,
+     "closest": 28.0,
+     "per_segment": [
+      [
+       3,
+       0.0
+      ],
+      [
+       4,
+       0.0
+      ],
+      [
+       5,
+       0.0
+      ],
+      [
+       6,
+       0.0
+      ],
+      [
+       7,
+       0.0
+      ],
+      [
+       8,
+       0.0
+      ],
+      [
+       9,
+       0.0
+      ],
+      [
+       10,
+       0.0
+      ]
+     ]
+    }
+   },
+   {
+    "id": "off-target:minFree:twice",
+    "kind": "off-target",
+    "severity": "high",
+    "metric": "minFree",
+    "scenario": "orders-x1.5-from-6",
+    "profile": "twice",
+    "message": "Board feels crowded from day 6 (mean) misses the target \u2264 4.00 in 5 of 5 days: 6: 31.4, 7: 31.4, 8: 30.4, 9: 29.4, 10: 28.5",
+    "evidence": {
+     "target": {
+      "metric": "minFree",
+      "segments": [
+       6,
+       10
+      ],
+      "profile": "twice",
+      "max": 4,
+      "label": "Board feels crowded from day 6"
+     },
+     "misses": [
+      [
+       6,
+       31.35
+      ],
+      [
+       7,
+       31.37
+      ],
+      [
+       8,
+       30.44
+      ],
+      [
+       9,
+       29.38
+      ],
+      [
+       10,
+       28.49
+      ]
+     ]
+    }
+   },
+   {
+    "id": "spike:energyShare:careless",
+    "kind": "spike",
+    "severity": "medium",
+    "metric": "energyShare",
+    "scenario": "orders-x1.5-from-6",
+    "profile": "careless",
+    "message": "Share of the day's free energy used jumps sharply between days 4\u21925 +66%, 8\u21929 +79%, 9\u219210 +54% (more than 3\u00d7 a typical step)",
+    "evidence": {
+     "jumps": [
+      "4\u21925 +66%",
+      "8\u21929 +79%",
+      "9\u219210 +54%"
+     ]
+    }
+   },
+   {
+    "id": "spike:energyShare:efficient",
+    "kind": "spike",
+    "severity": "medium",
+    "metric": "energyShare",
+    "scenario": "orders-x1.5-from-6",
+    "profile": "efficient",
+    "message": "Share of the day's free energy used jumps sharply between days 4\u21925 +68%, 8\u21929 +79%, 9\u219210 +55% (more than 3\u00d7 a typical step)",
+    "evidence": {
+     "jumps": [
+      "4\u21925 +68%",
+      "8\u21929 +79%",
+      "9\u219210 +55%"
+     ]
+    }
+   },
+   {
+    "id": "spike:energyShare:twice",
+    "kind": "spike",
+    "severity": "medium",
+    "metric": "energyShare",
+    "scenario": "orders-x1.5-from-6",
+    "profile": "twice",
+    "message": "Share of the day's free energy used jumps sharply between days 4\u21925 +66%, 8\u21929 +79%, 9\u219210 +55% (more than 3\u00d7 a typical step)",
+    "evidence": {
+     "jumps": [
+      "4\u21925 +66%",
+      "8\u21929 +79%",
+      "9\u219210 +55%"
+     ]
+    }
+   },
+   {
+    "id": "flat:minFree:careless",
+    "kind": "flat",
+    "severity": "medium",
+    "metric": "minFree",
+    "scenario": "orders-x1.5-from-6",
+    "profile": "careless",
+    "message": "Fewest empty cells falls by only 14% from the first third of days (33.5) to the last third (29.0); the design expects at least 25%",
+    "evidence": {
+     "growth": 0.13668206886272175,
+     "first_third": 33.545,
+     "last_third": 28.96,
+     "values": [
+      [
+       3,
+       33.56
+      ],
+      [
+       4,
+       33.53
+      ],
+      [
+       5,
+       31.45
+      ],
+      [
+       6,
+       31.58
+      ],
+      [
+       7,
+       31.51
+      ],
+      [
+       8,
+       30.54
+      ],
+      [
+       9,
+       29.45
+      ],
+      [
+       10,
+       28.47
+      ]
+     ]
+    }
+   },
+   {
+    "id": "flat:minFree:efficient",
+    "kind": "flat",
+    "severity": "medium",
+    "metric": "minFree",
+    "scenario": "orders-x1.5-from-6",
+    "profile": "efficient",
+    "message": "Fewest empty cells falls by only 14% from the first third of days (33.3) to the last third (28.8); the design expects at least 25%",
+    "evidence": {
+     "growth": 0.1366226754649071,
+     "first_third": 33.34,
+     "last_third": 28.785,
+     "values": [
+      [
+       3,
+       33.22
+      ],
+      [
+       4,
+       33.46
+      ],
+      [
+       5,
+       31.28
+      ],
+      [
+       6,
+       31.31
+      ],
+      [
+       7,
+       31.4
+      ],
+      [
+       8,
+       30.32
+      ],
+      [
+       9,
+       29.22
+      ],
+      [
+       10,
+       28.35
+      ]
+     ]
+    }
+   },
+   {
+    "id": "flat:minFree:twice",
+    "kind": "flat",
+    "severity": "medium",
+    "metric": "minFree",
+    "scenario": "orders-x1.5-from-6",
+    "profile": "twice",
+    "message": "Fewest empty cells falls by only 13% from the first third of days (33.4) to the last third (28.9); the design expects at least 25%",
+    "evidence": {
+     "growth": 0.13458950201884262,
+     "first_third": 33.435,
+     "last_third": 28.935,
+     "values": [
+      [
+       3,
+       33.45
+      ],
+      [
+       4,
+       33.42
+      ],
+      [
+       5,
+       31.37
+      ],
+      [
+       6,
+       31.35
+      ],
+      [
+       7,
+       31.37
+      ],
+      [
+       8,
+       30.44
+      ],
+      [
+       9,
+       29.38
+      ],
+      [
+       10,
+       28.49
+      ]
+     ]
+    }
+   },
+   {
+    "id": "spike:taps:careless",
+    "kind": "spike",
+    "severity": "medium",
+    "metric": "taps",
+    "scenario": "orders-x1.5-from-6",
+    "profile": "careless",
+    "message": "Energy spent jumps sharply between days 4\u21925 +66%, 8\u21929 +79%, 9\u219210 +54% (more than 3\u00d7 a typical step)",
+    "evidence": {
+     "jumps": [
+      "4\u21925 +66%",
+      "8\u21929 +79%",
+      "9\u219210 +54%"
+     ]
+    }
+   },
+   {
+    "id": "spike:taps:efficient",
+    "kind": "spike",
+    "severity": "medium",
+    "metric": "taps",
+    "scenario": "orders-x1.5-from-6",
+    "profile": "efficient",
+    "message": "Energy spent jumps sharply between days 4\u21925 +68%, 8\u21929 +79%, 9\u219210 +55% (more than 3\u00d7 a typical step)",
+    "evidence": {
+     "jumps": [
+      "4\u21925 +68%",
+      "8\u21929 +79%",
+      "9\u219210 +55%"
+     ]
+    }
+   },
+   {
+    "id": "spike:taps:twice",
+    "kind": "spike",
+    "severity": "medium",
+    "metric": "taps",
+    "scenario": "orders-x1.5-from-6",
+    "profile": "twice",
+    "message": "Energy spent jumps sharply between days 4\u21925 +66%, 8\u21929 +79%, 9\u219210 +55% (more than 3\u00d7 a typical step)",
+    "evidence": {
+     "jumps": [
+      "4\u21925 +66%",
+      "8\u21929 +79%",
+      "9\u219210 +55%"
+     ]
+    }
+   },
+   {
+    "id": "plateau:minFree:twice",
+    "kind": "plateau",
+    "severity": "low",
+    "metric": "minFree",
+    "scenario": "orders-x1.5-from-6",
+    "profile": "twice",
+    "message": "Fewest empty cells barely changes for 4 days in a row (5 to 8)",
+    "evidence": {
+     "length": 4
+    }
+   },
+   {
+    "id": "constant:sells:all",
+    "kind": "constant",
+    "severity": "info",
+    "metric": "sells",
+    "scenario": "orders-x1.5-from-6",
+    "profile": null,
+    "message": "sells is 0.00 in every row: either it measures nothing here, or something never happens (which may be a finding)",
+    "evidence": {
+     "value": 0.0
+    }
+   }
+  ],
+  "slower-regen": [
+   {
+    "id": "off-target:energyShare:twice",
+    "kind": "off-target",
+    "severity": "high",
+    "metric": "energyShare",
+    "scenario": "slower-regen",
+    "profile": "twice",
+    "message": "Twice-a-day player uses most of their energy on days 8\u201310 (mean) misses the target \u2265 0.60 in 3 of 3 days: 8: 0.11, 9: 0.16, 10: 0.25",
+    "evidence": {
+     "target": {
+      "metric": "energyShare",
+      "segments": [
+       8,
+       10
+      ],
+      "profile": "twice",
+      "min": 0.6,
+      "label": "Twice-a-day player uses most of their energy on days 8\u201310"
+     },
+     "misses": [
+      [
+       8,
+       0.10695000000000014
+      ],
+      [
+       9,
+       0.15954999999999986
+      ],
+      [
+       10,
+       0.24794999999999984
+      ]
+     ]
+    }
+   },
+   {
+    "id": "never-binds:minFree:careless",
+    "kind": "never-binds",
+    "severity": "high",
+    "metric": "minFree",
+    "scenario": "slower-regen",
+    "profile": "careless",
+    "message": "Fewest empty cells <= 0 never happens in any of the days, so this limit puts no pressure on the player (closest it gets: 30.0)",
+    "evidence": {
+     "rate": 0.0,
+     "closest": 30.0,
+     "per_segment": [
+      [
+       3,
+       0.0
+      ],
+      [
+       4,
+       0.0
+      ],
+      [
+       5,
+       0.0
+      ],
+      [
+       6,
+       0.0
+      ],
+      [
+       7,
+       0.0
+      ],
+      [
+       8,
+       0.0
+      ],
+      [
+       9,
+       0.0
+      ],
+      [
+       10,
+       0.0
+      ]
+     ]
+    }
+   },
+   {
+    "id": "never-binds:minFree:efficient",
+    "kind": "never-binds",
+    "severity": "high",
+    "metric": "minFree",
+    "scenario": "slower-regen",
+    "profile": "efficient",
+    "message": "Fewest empty cells <= 0 never happens in any of the days, so this limit puts no pressure on the player (closest it gets: 30.0)",
+    "evidence": {
+     "rate": 0.0,
+     "closest": 30.0,
+     "per_segment": [
+      [
+       3,
+       0.0
+      ],
+      [
+       4,
+       0.0
+      ],
+      [
+       5,
+       0.0
+      ],
+      [
+       6,
+       0.0
+      ],
+      [
+       7,
+       0.0
+      ],
+      [
+       8,
+       0.0
+      ],
+      [
+       9,
+       0.0
+      ],
+      [
+       10,
+       0.0
+      ]
+     ]
+    }
+   },
+   {
+    "id": "never-binds:minFree:twice",
+    "kind": "never-binds",
+    "severity": "high",
+    "metric": "minFree",
+    "scenario": "slower-regen",
+    "profile": "twice",
+    "message": "Fewest empty cells <= 0 never happens in any of the days, so this limit puts no pressure on the player (closest it gets: 30.0)",
+    "evidence": {
+     "rate": 0.0,
+     "closest": 30.0,
+     "per_segment": [
+      [
+       3,
+       0.0
+      ],
+      [
+       4,
+       0.0
+      ],
+      [
+       5,
+       0.0
+      ],
+      [
+       6,
+       0.0
+      ],
+      [
+       7,
+       0.0
+      ],
+      [
+       8,
+       0.0
+      ],
+      [
+       9,
+       0.0
+      ],
+      [
+       10,
+       0.0
+      ]
+     ]
+    }
+   },
+   {
+    "id": "off-target:minFree:twice",
+    "kind": "off-target",
+    "severity": "high",
+    "metric": "minFree",
+    "scenario": "slower-regen",
+    "profile": "twice",
+    "message": "Board feels crowded from day 6 (mean) misses the target \u2264 4.00 in 5 of 5 days: 6: 33.4, 7: 33.5, 8: 32.3, 9: 31.4, 10: 30.4",
+    "evidence": {
+     "target": {
+      "metric": "minFree",
+      "segments": [
+       6,
+       10
+      ],
+      "profile": "twice",
+      "max": 4,
+      "label": "Board feels crowded from day 6"
+     },
+     "misses": [
+      [
+       6,
+       33.4
+      ],
+      [
+       7,
+       33.45
+      ],
+      [
+       8,
+       32.32
+      ],
+      [
+       9,
+       31.4
+      ],
+      [
+       10,
+       30.43
+      ]
+     ]
+    }
+   },
+   {
+    "id": "never-binds:outOfEnergy:careless",
+    "kind": "never-binds",
+    "severity": "high",
+    "metric": "outOfEnergy",
+    "scenario": "slower-regen",
+    "profile": "careless",
+    "message": "Times out of energy > 0 never happens in any of the days, so this limit puts no pressure on the player (closest it gets: 0.00)",
+    "evidence": {
+     "rate": 0.0,
+     "closest": 0.0,
+     "per_segment": [
+      [
+       8,
+       0.0
+      ],
+      [
+       9,
+       0.0
+      ],
+      [
+       10,
+       0.0
+      ]
+     ]
+    }
+   },
+   {
+    "id": "never-binds:outOfEnergy:efficient",
+    "kind": "never-binds",
+    "severity": "high",
+    "metric": "outOfEnergy",
+    "scenario": "slower-regen",
+    "profile": "efficient",
+    "message": "Times out of energy > 0 never happens in any of the days, so this limit puts no pressure on the player (closest it gets: 0.00)",
+    "evidence": {
+     "rate": 0.0,
+     "closest": 0.0,
+     "per_segment": [
+      [
+       8,
+       0.0
+      ],
+      [
+       9,
+       0.0
+      ],
+      [
+       10,
+       0.0
+      ]
+     ]
+    }
+   },
+   {
+    "id": "never-binds:outOfEnergy:twice",
+    "kind": "never-binds",
+    "severity": "high",
+    "metric": "outOfEnergy",
+    "scenario": "slower-regen",
+    "profile": "twice",
+    "message": "Times out of energy > 0 never happens in any of the days, so this limit puts no pressure on the player (closest it gets: 0.00)",
+    "evidence": {
+     "rate": 0.0,
+     "closest": 0.0,
+     "per_segment": [
+      [
+       8,
+       0.0
+      ],
+      [
+       9,
+       0.0
+      ],
+      [
+       10,
+       0.0
+      ]
+     ]
+    }
+   },
+   {
+    "id": "flat:minFree:careless",
+    "kind": "flat",
+    "severity": "medium",
+    "metric": "minFree",
+    "scenario": "slower-regen",
+    "profile": "careless",
+    "message": "Fewest empty cells falls by only 8% from the first third of days (33.5) to the last third (31.0); the design expects at least 25%",
+    "evidence": {
+     "growth": 0.07571918318676402,
+     "first_third": 33.545,
+     "last_third": 31.005000000000003,
+     "values": [
+      [
+       3,
+       33.56
+      ],
+      [
+       4,
+       33.53
+      ],
+      [
+       5,
+       31.45
+      ],
+      [
+       6,
+       33.44
+      ],
+      [
+       7,
+       33.41
+      ],
+      [
+       8,
+       32.4
+      ],
+      [
+       9,
+       31.44
+      ],
+      [
+       10,
+       30.57
+      ]
+     ]
+    }
+   },
+   {
+    "id": "flat:minFree:efficient",
+    "kind": "flat",
+    "severity": "medium",
+    "metric": "minFree",
+    "scenario": "slower-regen",
+    "profile": "efficient",
+    "message": "Fewest empty cells falls by only 8% from the first third of days (33.3) to the last third (30.8); the design expects at least 25%",
+    "evidence": {
+     "growth": 0.07528494301139786,
+     "first_third": 33.34,
+     "last_third": 30.83,
+     "values": [
+      [
+       3,
+       33.22
+      ],
+      [
+       4,
+       33.46
+      ],
+      [
+       5,
+       31.28
+      ],
+      [
+       6,
+       33.32
+      ],
+      [
+       7,
+       33.27
+      ],
+      [
+       8,
+       32.51
+      ],
+      [
+       9,
+       31.33
+      ],
+      [
+       10,
+       30.33
+      ]
+     ]
+    }
+   },
+   {
+    "id": "flat:minFree:twice",
+    "kind": "flat",
+    "severity": "medium",
+    "metric": "minFree",
+    "scenario": "slower-regen",
+    "profile": "twice",
+    "message": "Fewest empty cells falls by only 8% from the first third of days (33.4) to the last third (30.9); the design expects at least 25%",
+    "evidence": {
+     "growth": 0.0753701211305519,
+     "first_third": 33.435,
+     "last_third": 30.915,
+     "values": [
+      [
+       3,
+       33.45
+      ],
+      [
+       4,
+       33.42
+      ],
+      [
+       5,
+       31.37
+      ],
+      [
+       6,
+       33.4
+      ],
+      [
+       7,
+       33.45
+      ],
+      [
+       8,
+       32.32
+      ],
+      [
+       9,
+       31.4
+      ],
+      [
+       10,
+       30.43
+      ]
+     ]
+    }
+   },
+   {
+    "id": "dips:energyShare:careless",
+    "kind": "dips",
+    "severity": "low",
+    "metric": "energyShare",
+    "scenario": "slower-regen",
+    "profile": "careless",
+    "message": "Share of the day's free energy used goes the wrong way by more than 15% between days 5\u21926 \u221249%",
+    "evidence": {
+     "dips": [
+      "5\u21926 \u221249%"
+     ]
+    }
+   },
+   {
+    "id": "dips:energyShare:efficient",
+    "kind": "dips",
+    "severity": "low",
+    "metric": "energyShare",
+    "scenario": "slower-regen",
+    "profile": "efficient",
+    "message": "Share of the day's free energy used goes the wrong way by more than 15% between days 5\u21926 \u221250%",
+    "evidence": {
+     "dips": [
+      "5\u21926 \u221250%"
+     ]
+    }
+   },
+   {
+    "id": "dips:energyShare:twice",
+    "kind": "dips",
+    "severity": "low",
+    "metric": "energyShare",
+    "scenario": "slower-regen",
+    "profile": "twice",
+    "message": "Share of the day's free energy used goes the wrong way by more than 15% between days 5\u21926 \u221249%",
+    "evidence": {
+     "dips": [
+      "5\u21926 \u221249%"
+     ]
+    }
+   },
+   {
+    "id": "dips:taps:careless",
+    "kind": "dips",
+    "severity": "low",
+    "metric": "taps",
+    "scenario": "slower-regen",
+    "profile": "careless",
+    "message": "Energy spent goes the wrong way by more than 15% between days 5\u21926 \u221249%",
+    "evidence": {
+     "dips": [
+      "5\u21926 \u221249%"
+     ]
+    }
+   },
+   {
+    "id": "dips:taps:efficient",
+    "kind": "dips",
+    "severity": "low",
+    "metric": "taps",
+    "scenario": "slower-regen",
+    "profile": "efficient",
+    "message": "Energy spent goes the wrong way by more than 15% between days 5\u21926 \u221250%",
+    "evidence": {
+     "dips": [
+      "5\u21926 \u221250%"
+     ]
+    }
+   },
+   {
+    "id": "dips:taps:twice",
+    "kind": "dips",
+    "severity": "low",
+    "metric": "taps",
+    "scenario": "slower-regen",
+    "profile": "twice",
+    "message": "Energy spent goes the wrong way by more than 15% between days 5\u21926 \u221249%",
+    "evidence": {
+     "dips": [
+      "5\u21926 \u221249%"
+     ]
+    }
+   },
+   {
+    "id": "constant:daysLate:all",
+    "kind": "constant",
+    "severity": "info",
+    "metric": "daysLate",
+    "scenario": "slower-regen",
+    "profile": null,
+    "message": "Days behind the calendar is 0.00 in every row: either it measures nothing here, or something never happens (which may be a finding)",
+    "evidence": {
+     "value": 0.0
+    }
+   },
+   {
+    "id": "constant:outOfEnergy:all",
+    "kind": "constant",
+    "severity": "info",
+    "metric": "outOfEnergy",
+    "scenario": "slower-regen",
+    "profile": null,
+    "message": "Times out of energy is 0.00 in every row: either it measures nothing here, or something never happens (which may be a finding)",
+    "evidence": {
+     "value": 0.0
+    }
+   },
+   {
+    "id": "constant:sells:all",
+    "kind": "constant",
+    "severity": "info",
+    "metric": "sells",
+    "scenario": "slower-regen",
+    "profile": null,
+    "message": "sells is 0.00 in every row: either it measures nothing here, or something never happens (which may be a finding)",
+    "evidence": {
+     "value": 0.0
+    }
+   }
+  ]
+ },
+ "compare": {
+  "smaller-board": {
+   "fixed": [],
+   "new": [
+    {
+     "id": "dips:minFree:efficient",
+     "kind": "dips",
+     "severity": "low",
+     "metric": "minFree",
+     "scenario": "smaller-board",
+     "profile": "efficient",
+     "message": "Fewest empty cells goes the wrong way by more than 15% between days 5\u21926 \u221215%",
+     "evidence": {
+      "dips": [
+       "5\u21926 \u221215%"
+      ]
+     }
+    },
+    {
+     "id": "dips:minFree:twice",
+     "kind": "dips",
+     "severity": "low",
+     "metric": "minFree",
+     "scenario": "smaller-board",
+     "profile": "twice",
+     "message": "Fewest empty cells goes the wrong way by more than 15% between days 5\u21926 \u221215%",
+     "evidence": {
+      "dips": [
+       "5\u21926 \u221215%"
+      ]
+     }
+    }
+   ],
+   "still": [
+    {
+     "id": "off-target:energyShare:twice",
+     "kind": "off-target",
+     "severity": "high",
+     "metric": "energyShare",
+     "scenario": "smaller-board",
+     "profile": "twice",
+     "message": "Twice-a-day player uses most of their energy on days 8\u201310 (mean) misses the target \u2265 0.60 in 3 of 3 days: 8: 0.11, 9: 0.16, 10: 0.25",
+     "evidence": {
+      "target": {
+       "metric": "energyShare",
+       "segments": [
+        8,
+        10
+       ],
+       "profile": "twice",
+       "min": 0.6,
+       "label": "Twice-a-day player uses most of their energy on days 8\u201310"
+      },
+      "misses": [
+       [
+        8,
+        0.10695000000000014
+       ],
+       [
+        9,
+        0.15954999999999986
+       ],
+       [
+        10,
+        0.24794999999999984
+       ]
+      ]
+     }
+    },
+    {
+     "id": "never-binds:minFree:careless",
+     "kind": "never-binds",
+     "severity": "high",
+     "metric": "minFree",
+     "scenario": "smaller-board",
+     "profile": "careless",
+     "message": "Fewest empty cells <= 0 never happens in any of the days, so this limit puts no pressure on the player (closest it gets: 12.0)",
+     "evidence": {
+      "rate": 0.0,
+      "closest": 12.0,
+      "per_segment": [
+       [
+        3,
+        0.0
+       ],
+       [
+        4,
+        0.0
+       ],
+       [
+        5,
+        0.0
+       ],
+       [
+        6,
+        0.0
+       ],
+       [
+        7,
+        0.0
+       ],
+       [
+        8,
+        0.0
+       ],
+       [
+        9,
+        0.0
+       ],
+       [
+        10,
+        0.0
+       ]
+      ]
+     }
+    },
+    {
+     "id": "never-binds:minFree:efficient",
+     "kind": "never-binds",
+     "severity": "high",
+     "metric": "minFree",
+     "scenario": "smaller-board",
+     "profile": "efficient",
+     "message": "Fewest empty cells <= 0 never happens in any of the days, so this limit puts no pressure on the player (closest it gets: 12.0)",
+     "evidence": {
+      "rate": 0.0,
+      "closest": 12.0,
+      "per_segment": [
+       [
+        3,
+        0.0
+       ],
+       [
+        4,
+        0.0
+       ],
+       [
+        5,
+        0.0
+       ],
+       [
+        6,
+        0.0
+       ],
+       [
+        7,
+        0.0
+       ],
+       [
+        8,
+        0.0
+       ],
+       [
+        9,
+        0.0
+       ],
+       [
+        10,
+        0.0
+       ]
+      ]
+     }
+    },
+    {
+     "id": "never-binds:minFree:twice",
+     "kind": "never-binds",
+     "severity": "high",
+     "metric": "minFree",
+     "scenario": "smaller-board",
+     "profile": "twice",
+     "message": "Fewest empty cells <= 0 never happens in any of the days, so this limit puts no pressure on the player (closest it gets: 12.0)",
+     "evidence": {
+      "rate": 0.0,
+      "closest": 12.0,
+      "per_segment": [
+       [
+        3,
+        0.0
+       ],
+       [
+        4,
+        0.0
+       ],
+       [
+        5,
+        0.0
+       ],
+       [
+        6,
+        0.0
+       ],
+       [
+        7,
+        0.0
+       ],
+       [
+        8,
+        0.0
+       ],
+       [
+        9,
+        0.0
+       ],
+       [
+        10,
+        0.0
+       ]
+      ]
+     }
+    },
+    {
+     "id": "off-target:minFree:twice",
+     "kind": "off-target",
+     "severity": "high",
+     "metric": "minFree",
+     "scenario": "smaller-board",
+     "profile": "twice",
+     "message": "Board feels crowded from day 6 (mean) misses the target \u2264 4.00 in 5 of 5 days: 6: 15.4, 7: 15.4, 8: 14.3, 9: 13.4, 10: 12.4",
+     "evidence": {
+      "target": {
+       "metric": "minFree",
+       "segments": [
+        6,
+        10
+       ],
+       "profile": "twice",
+       "max": 4,
+       "label": "Board feels crowded from day 6"
+      },
+      "misses": [
+       [
+        6,
+        15.4
+       ],
+       [
+        7,
+        15.45
+       ],
+       [
+        8,
+        14.32
+       ],
+       [
+        9,
+        13.4
+       ],
+       [
+        10,
+        12.43
+       ]
+      ]
+     }
+    },
+    {
+     "id": "never-binds:outOfEnergy:careless",
+     "kind": "never-binds",
+     "severity": "high",
+     "metric": "outOfEnergy",
+     "scenario": "smaller-board",
+     "profile": "careless",
+     "message": "Times out of energy > 0 never happens in any of the days, so this limit puts no pressure on the player (closest it gets: 0.00)",
+     "evidence": {
+      "rate": 0.0,
+      "closest": 0.0,
+      "per_segment": [
+       [
+        8,
+        0.0
+       ],
+       [
+        9,
+        0.0
+       ],
+       [
+        10,
+        0.0
+       ]
+      ]
+     }
+    },
+    {
+     "id": "never-binds:outOfEnergy:efficient",
+     "kind": "never-binds",
+     "severity": "high",
+     "metric": "outOfEnergy",
+     "scenario": "smaller-board",
+     "profile": "efficient",
+     "message": "Times out of energy > 0 never happens in any of the days, so this limit puts no pressure on the player (closest it gets: 0.00)",
+     "evidence": {
+      "rate": 0.0,
+      "closest": 0.0,
+      "per_segment": [
+       [
+        8,
+        0.0
+       ],
+       [
+        9,
+        0.0
+       ],
+       [
+        10,
+        0.0
+       ]
+      ]
+     }
+    },
+    {
+     "id": "never-binds:outOfEnergy:twice",
+     "kind": "never-binds",
+     "severity": "high",
+     "metric": "outOfEnergy",
+     "scenario": "smaller-board",
+     "profile": "twice",
+     "message": "Times out of energy > 0 never happens in any of the days, so this limit puts no pressure on the player (closest it gets: 0.00)",
+     "evidence": {
+      "rate": 0.0,
+      "closest": 0.0,
+      "per_segment": [
+       [
+        8,
+        0.0
+       ],
+       [
+        9,
+        0.0
+       ],
+       [
+        10,
+        0.0
+       ]
+      ]
+     }
+    },
+    {
+     "id": "flat:minFree:careless",
+     "kind": "flat",
+     "severity": "medium",
+     "metric": "minFree",
+     "scenario": "smaller-board",
+     "profile": "careless",
+     "message": "Fewest empty cells falls by only 16% from the first third of days (15.5) to the last third (13.0); the design expects at least 25%",
+     "evidence": {
+      "growth": 0.16339659054358321,
+      "first_third": 15.545,
+      "last_third": 13.004999999999999,
+      "values": [
+       [
+        3,
+        15.56
+       ],
+       [
+        4,
+        15.53
+       ],
+       [
+        5,
+        13.45
+       ],
+       [
+        6,
+        15.44
+       ],
+       [
+        7,
+        15.41
+       ],
+       [
+        8,
+        14.4
+       ],
+       [
+        9,
+        13.44
+       ],
+       [
+        10,
+        12.57
+       ]
+      ]
+     }
+    },
+    {
+     "id": "flat:minFree:efficient",
+     "kind": "flat",
+     "severity": "medium",
+     "metric": "minFree",
+     "scenario": "smaller-board",
+     "profile": "efficient",
+     "message": "Fewest empty cells falls by only 16% from the first third of days (15.3) to the last third (12.8); the design expects at least 25%",
+     "evidence": {
+      "growth": 0.16362451108213819,
+      "first_third": 15.34,
+      "last_third": 12.83,
+      "values": [
+       [
+        3,
+        15.22
+       ],
+       [
+        4,
+        15.46
+       ],
+       [
+        5,
+        13.28
+       ],
+       [
+        6,
+        15.32
+       ],
+       [
+        7,
+        15.27
+       ],
+       [
+        8,
+        14.51
+       ],
+       [
+        9,
+        13.33
+       ],
+       [
+        10,
+        12.33
+       ]
+      ]
+     }
+    },
+    {
+     "id": "flat:minFree:twice",
+     "kind": "flat",
+     "severity": "medium",
+     "metric": "minFree",
+     "scenario": "smaller-board",
+     "profile": "twice",
+     "message": "Fewest empty cells falls by only 16% from the first third of days (15.4) to the last third (12.9); the design expects at least 25%",
+     "evidence": {
+      "growth": 0.16326530612244897,
+      "first_third": 15.434999999999999,
+      "last_third": 12.915,
+      "values": [
+       [
+        3,
+        15.45
+       ],
+       [
+        4,
+        15.42
+       ],
+       [
+        5,
+        13.37
+       ],
+       [
+        6,
+        15.4
+       ],
+       [
+        7,
+        15.45
+       ],
+       [
+        8,
+        14.32
+       ],
+       [
+        9,
+        13.4
+       ],
+       [
+        10,
+        12.43
+       ]
+      ]
+     }
+    },
+    {
+     "id": "dips:energyShare:careless",
+     "kind": "dips",
+     "severity": "low",
+     "metric": "energyShare",
+     "scenario": "smaller-board",
+     "profile": "careless",
+     "message": "Share of the day's free energy used goes the wrong way by more than 15% between days 5\u21926 \u221249%",
+     "evidence": {
+      "dips": [
+       "5\u21926 \u221249%"
+      ]
+     }
+    },
+    {
+     "id": "dips:energyShare:efficient",
+     "kind": "dips",
+     "severity": "low",
+     "metric": "energyShare",
+     "scenario": "smaller-board",
+     "profile": "efficient",
+     "message": "Share of the day's free energy used goes the wrong way by more than 15% between days 5\u21926 \u221250%",
+     "evidence": {
+      "dips": [
+       "5\u21926 \u221250%"
+      ]
+     }
+    },
+    {
+     "id": "dips:energyShare:twice",
+     "kind": "dips",
+     "severity": "low",
+     "metric": "energyShare",
+     "scenario": "smaller-board",
+     "profile": "twice",
+     "message": "Share of the day's free energy used goes the wrong way by more than 15% between days 5\u21926 \u221249%",
+     "evidence": {
+      "dips": [
+       "5\u21926 \u221249%"
+      ]
+     }
+    },
+    {
+     "id": "dips:taps:careless",
+     "kind": "dips",
+     "severity": "low",
+     "metric": "taps",
+     "scenario": "smaller-board",
+     "profile": "careless",
+     "message": "Energy spent goes the wrong way by more than 15% between days 5\u21926 \u221249%",
+     "evidence": {
+      "dips": [
+       "5\u21926 \u221249%"
+      ]
+     }
+    },
+    {
+     "id": "dips:taps:efficient",
+     "kind": "dips",
+     "severity": "low",
+     "metric": "taps",
+     "scenario": "smaller-board",
+     "profile": "efficient",
+     "message": "Energy spent goes the wrong way by more than 15% between days 5\u21926 \u221250%",
+     "evidence": {
+      "dips": [
+       "5\u21926 \u221250%"
+      ]
+     }
+    },
+    {
+     "id": "dips:taps:twice",
+     "kind": "dips",
+     "severity": "low",
+     "metric": "taps",
+     "scenario": "smaller-board",
+     "profile": "twice",
+     "message": "Energy spent goes the wrong way by more than 15% between days 5\u21926 \u221249%",
+     "evidence": {
+      "dips": [
+       "5\u21926 \u221249%"
+      ]
+     }
+    }
+   ],
+   "moves": [
+    {
+     "metric": "taps",
+     "profile": "careless",
+     "base": 26.523750000000003,
+     "whatif": 26.523750000000003,
+     "change": 0.0,
+     "base_first": 19.5,
+     "base_last": 40.605000000000004,
+     "whatif_first": 19.5,
+     "whatif_last": 40.605000000000004
+    },
+    {
+     "metric": "taps",
+     "profile": "twice",
+     "base": 26.6075,
+     "whatif": 26.6075,
+     "change": 0.0,
+     "base_first": 19.53,
+     "base_last": 40.75,
+     "whatif_first": 19.53,
+     "whatif_last": 40.75
+    },
+    {
+     "metric": "taps",
+     "profile": "efficient",
+     "base": 26.59875,
+     "whatif": 26.59875,
+     "change": 0.0,
+     "base_first": 19.43,
+     "base_last": 40.755,
+     "whatif_first": 19.43,
+     "whatif_last": 40.755
+    },
+    {
+     "metric": "energyShare",
+     "profile": "careless",
+     "base": 0.26523749999999996,
+     "whatif": 0.26523749999999996,
+     "change": 0.0,
+     "base_first": 0.195,
+     "base_last": 0.4060499999999998,
+     "whatif_first": 0.195,
+     "whatif_last": 0.4060499999999998
+    },
+    {
+     "metric": "energyShare",
+     "profile": "twice",
+     "base": 0.13303749999999995,
+     "whatif": 0.13303749999999995,
+     "change": 0.0,
+     "base_first": 0.09765,
+     "base_last": 0.20374999999999985,
+     "whatif_first": 0.09765,
+     "whatif_last": 0.20374999999999985
+    },
+    {
+     "metric": "energyShare",
+     "profile": "efficient",
+     "base": 0.08866249999999995,
+     "whatif": 0.08866249999999995,
+     "change": 0.0,
+     "base_first": 0.06476666666666661,
+     "base_last": 0.13584999999999997,
+     "whatif_first": 0.06476666666666661,
+     "whatif_last": 0.13584999999999997
+    },
+    {
+     "metric": "minFree",
+     "profile": "careless",
+     "base": 32.475,
+     "whatif": 14.475000000000001,
+     "change": -0.5542725173210161,
+     "base_first": 33.545,
+     "base_last": 31.005000000000003,
+     "whatif_first": 15.545,
+     "whatif_last": 13.004999999999999
+    },
+    {
+     "metric": "minFree",
+     "profile": "twice",
+     "base": 32.405,
+     "whatif": 14.405000000000001,
+     "change": -0.5554698349020213,
+     "base_first": 33.435,
+     "base_last": 30.915,
+     "whatif_first": 15.434999999999999,
+     "whatif_last": 12.915
+    },
+    {
+     "metric": "minFree",
+     "profile": "efficient",
+     "base": 32.339999999999996,
+     "whatif": 14.34,
+     "change": -0.5565862708719851,
+     "base_first": 33.34,
+     "base_last": 30.83,
+     "whatif_first": 15.34,
+     "whatif_last": 12.83
+    },
+    {
+     "metric": "outOfEnergy",
+     "profile": "careless",
+     "base": 0.0,
+     "whatif": 0.0,
+     "change": null,
+     "base_first": 0.0,
+     "base_last": 0.0,
+     "whatif_first": 0.0,
+     "whatif_last": 0.0
+    },
+    {
+     "metric": "outOfEnergy",
+     "profile": "twice",
+     "base": 0.0,
+     "whatif": 0.0,
+     "change": null,
+     "base_first": 0.0,
+     "base_last": 0.0,
+     "whatif_first": 0.0,
+     "whatif_last": 0.0
+    },
+    {
+     "metric": "outOfEnergy",
+     "profile": "efficient",
+     "base": 0.0,
+     "whatif": 0.0,
+     "change": null,
+     "base_first": 0.0,
+     "base_last": 0.0,
+     "whatif_first": 0.0,
+     "whatif_last": 0.0
+    },
+    {
+     "metric": "daysLate",
+     "profile": "careless",
+     "base": 0.0,
+     "whatif": 0.0,
+     "change": null,
+     "base_first": 0.0,
+     "base_last": 0.0,
+     "whatif_first": 0.0,
+     "whatif_last": 0.0
+    },
+    {
+     "metric": "daysLate",
+     "profile": "twice",
+     "base": 0.0,
+     "whatif": 0.0,
+     "change": null,
+     "base_first": 0.0,
+     "base_last": 0.0,
+     "whatif_first": 0.0,
+     "whatif_last": 0.0
+    },
+    {
+     "metric": "daysLate",
+     "profile": "efficient",
+     "base": 0.0,
+     "whatif": 0.0,
+     "change": null,
+     "base_first": 0.0,
+     "base_last": 0.0,
+     "whatif_first": 0.0,
+     "whatif_last": 0.0
+    }
+   ]
+  },
+  "orders-x1.5-from-6": {
+   "fixed": [
+    {
+     "id": "never-binds:outOfEnergy:careless",
+     "kind": "never-binds",
+     "severity": "high",
+     "metric": "outOfEnergy",
+     "scenario": "baseline",
+     "profile": "careless",
+     "message": "Times out of energy > 0 never happens in any of the days, so this limit puts no pressure on the player (closest it gets: 0.00)",
+     "evidence": {
+      "rate": 0.0,
+      "closest": 0.0,
+      "per_segment": [
+       [
+        8,
+        0.0
+       ],
+       [
+        9,
+        0.0
+       ],
+       [
+        10,
+        0.0
+       ]
+      ]
+     }
+    },
+    {
+     "id": "never-binds:outOfEnergy:efficient",
+     "kind": "never-binds",
+     "severity": "high",
+     "metric": "outOfEnergy",
+     "scenario": "baseline",
+     "profile": "efficient",
+     "message": "Times out of energy > 0 never happens in any of the days, so this limit puts no pressure on the player (closest it gets: 0.00)",
+     "evidence": {
+      "rate": 0.0,
+      "closest": 0.0,
+      "per_segment": [
+       [
+        8,
+        0.0
+       ],
+       [
+        9,
+        0.0
+       ],
+       [
+        10,
+        0.0
+       ]
+      ]
+     }
+    },
+    {
+     "id": "never-binds:outOfEnergy:twice",
+     "kind": "never-binds",
+     "severity": "high",
+     "metric": "outOfEnergy",
+     "scenario": "baseline",
+     "profile": "twice",
+     "message": "Times out of energy > 0 never happens in any of the days, so this limit puts no pressure on the player (closest it gets: 0.00)",
+     "evidence": {
+      "rate": 0.0,
+      "closest": 0.0,
+      "per_segment": [
+       [
+        8,
+        0.0
+       ],
+       [
+        9,
+        0.0
+       ],
+       [
+        10,
+        0.0
+       ]
+      ]
+     }
+    },
+    {
+     "id": "dips:energyShare:careless",
+     "kind": "dips",
+     "severity": "low",
+     "metric": "energyShare",
+     "scenario": "baseline",
+     "profile": "careless",
+     "message": "Share of the day's free energy used goes the wrong way by more than 15% between days 5\u21926 \u221249%",
+     "evidence": {
+      "dips": [
+       "5\u21926 \u221249%"
+      ]
+     }
+    },
+    {
+     "id": "dips:energyShare:efficient",
+     "kind": "dips",
+     "severity": "low",
+     "metric": "energyShare",
+     "scenario": "baseline",
+     "profile": "efficient",
+     "message": "Share of the day's free energy used goes the wrong way by more than 15% between days 5\u21926 \u221250%",
+     "evidence": {
+      "dips": [
+       "5\u21926 \u221250%"
+      ]
+     }
+    },
+    {
+     "id": "dips:energyShare:twice",
+     "kind": "dips",
+     "severity": "low",
+     "metric": "energyShare",
+     "scenario": "baseline",
+     "profile": "twice",
+     "message": "Share of the day's free energy used goes the wrong way by more than 15% between days 5\u21926 \u221249%",
+     "evidence": {
+      "dips": [
+       "5\u21926 \u221249%"
+      ]
+     }
+    },
+    {
+     "id": "dips:taps:careless",
+     "kind": "dips",
+     "severity": "low",
+     "metric": "taps",
+     "scenario": "baseline",
+     "profile": "careless",
+     "message": "Energy spent goes the wrong way by more than 15% between days 5\u21926 \u221249%",
+     "evidence": {
+      "dips": [
+       "5\u21926 \u221249%"
+      ]
+     }
+    },
+    {
+     "id": "dips:taps:efficient",
+     "kind": "dips",
+     "severity": "low",
+     "metric": "taps",
+     "scenario": "baseline",
+     "profile": "efficient",
+     "message": "Energy spent goes the wrong way by more than 15% between days 5\u21926 \u221250%",
+     "evidence": {
+      "dips": [
+       "5\u21926 \u221250%"
+      ]
+     }
+    },
+    {
+     "id": "dips:taps:twice",
+     "kind": "dips",
+     "severity": "low",
+     "metric": "taps",
+     "scenario": "baseline",
+     "profile": "twice",
+     "message": "Energy spent goes the wrong way by more than 15% between days 5\u21926 \u221249%",
+     "evidence": {
+      "dips": [
+       "5\u21926 \u221249%"
+      ]
+     }
+    }
+   ],
+   "new": [
+    {
+     "id": "spike:energyShare:careless",
+     "kind": "spike",
+     "severity": "medium",
+     "metric": "energyShare",
+     "scenario": "orders-x1.5-from-6",
+     "profile": "careless",
+     "message": "Share of the day's free energy used jumps sharply between days 4\u21925 +66%, 8\u21929 +79%, 9\u219210 +54% (more than 3\u00d7 a typical step)",
+     "evidence": {
+      "jumps": [
+       "4\u21925 +66%",
+       "8\u21929 +79%",
+       "9\u219210 +54%"
+      ]
+     }
+    },
+    {
+     "id": "spike:energyShare:efficient",
+     "kind": "spike",
+     "severity": "medium",
+     "metric": "energyShare",
+     "scenario": "orders-x1.5-from-6",
+     "profile": "efficient",
+     "message": "Share of the day's free energy used jumps sharply between days 4\u21925 +68%, 8\u21929 +79%, 9\u219210 +55% (more than 3\u00d7 a typical step)",
+     "evidence": {
+      "jumps": [
+       "4\u21925 +68%",
+       "8\u21929 +79%",
+       "9\u219210 +55%"
+      ]
+     }
+    },
+    {
+     "id": "spike:energyShare:twice",
+     "kind": "spike",
+     "severity": "medium",
+     "metric": "energyShare",
+     "scenario": "orders-x1.5-from-6",
+     "profile": "twice",
+     "message": "Share of the day's free energy used jumps sharply between days 4\u21925 +66%, 8\u21929 +79%, 9\u219210 +55% (more than 3\u00d7 a typical step)",
+     "evidence": {
+      "jumps": [
+       "4\u21925 +66%",
+       "8\u21929 +79%",
+       "9\u219210 +55%"
+      ]
+     }
+    },
+    {
+     "id": "spike:taps:careless",
+     "kind": "spike",
+     "severity": "medium",
+     "metric": "taps",
+     "scenario": "orders-x1.5-from-6",
+     "profile": "careless",
+     "message": "Energy spent jumps sharply between days 4\u21925 +66%, 8\u21929 +79%, 9\u219210 +54% (more than 3\u00d7 a typical step)",
+     "evidence": {
+      "jumps": [
+       "4\u21925 +66%",
+       "8\u21929 +79%",
+       "9\u219210 +54%"
+      ]
+     }
+    },
+    {
+     "id": "spike:taps:efficient",
+     "kind": "spike",
+     "severity": "medium",
+     "metric": "taps",
+     "scenario": "orders-x1.5-from-6",
+     "profile": "efficient",
+     "message": "Energy spent jumps sharply between days 4\u21925 +68%, 8\u21929 +79%, 9\u219210 +55% (more than 3\u00d7 a typical step)",
+     "evidence": {
+      "jumps": [
+       "4\u21925 +68%",
+       "8\u21929 +79%",
+       "9\u219210 +55%"
+      ]
+     }
+    },
+    {
+     "id": "spike:taps:twice",
+     "kind": "spike",
+     "severity": "medium",
+     "metric": "taps",
+     "scenario": "orders-x1.5-from-6",
+     "profile": "twice",
+     "message": "Energy spent jumps sharply between days 4\u21925 +66%, 8\u21929 +79%, 9\u219210 +55% (more than 3\u00d7 a typical step)",
+     "evidence": {
+      "jumps": [
+       "4\u21925 +66%",
+       "8\u21929 +79%",
+       "9\u219210 +55%"
+      ]
+     }
+    },
+    {
+     "id": "plateau:minFree:twice",
+     "kind": "plateau",
+     "severity": "low",
+     "metric": "minFree",
+     "scenario": "orders-x1.5-from-6",
+     "profile": "twice",
+     "message": "Fewest empty cells barely changes for 4 days in a row (5 to 8)",
+     "evidence": {
+      "length": 4
+     }
+    }
+   ],
+   "still": [
+    {
+     "id": "off-target:energyShare:twice",
+     "kind": "off-target",
+     "severity": "high",
+     "metric": "energyShare",
+     "scenario": "orders-x1.5-from-6",
+     "profile": "twice",
+     "message": "Twice-a-day player uses most of their energy on days 8\u201310 (mean) misses the target \u2265 0.60 in 3 of 3 days: 8: 0.18, 9: 0.32, 10: 0.49",
+     "evidence": {
+      "target": {
+       "metric": "energyShare",
+       "segments": [
+        8,
+        10
+       ],
+       "profile": "twice",
+       "min": 0.6,
+       "label": "Twice-a-day player uses most of their energy on days 8\u201310"
+      },
+      "misses": [
+       [
+        8,
+        0.17845000000000003
+       ],
+       [
+        9,
+        0.3186499999999997
+       ],
+       [
+        10,
+        0.49370000000000014
+       ]
+      ]
+     }
+    },
+    {
+     "id": "never-binds:minFree:careless",
+     "kind": "never-binds",
+     "severity": "high",
+     "metric": "minFree",
+     "scenario": "orders-x1.5-from-6",
+     "profile": "careless",
+     "message": "Fewest empty cells <= 0 never happens in any of the days, so this limit puts no pressure on the player (closest it gets: 28.0)",
+     "evidence": {
+      "rate": 0.0,
+      "closest": 28.0,
+      "per_segment": [
+       [
+        3,
+        0.0
+       ],
+       [
+        4,
+        0.0
+       ],
+       [
+        5,
+        0.0
+       ],
+       [
+        6,
+        0.0
+       ],
+       [
+        7,
+        0.0
+       ],
+       [
+        8,
+        0.0
+       ],
+       [
+        9,
+        0.0
+       ],
+       [
+        10,
+        0.0
+       ]
+      ]
+     }
+    },
+    {
+     "id": "never-binds:minFree:efficient",
+     "kind": "never-binds",
+     "severity": "high",
+     "metric": "minFree",
+     "scenario": "orders-x1.5-from-6",
+     "profile": "efficient",
+     "message": "Fewest empty cells <= 0 never happens in any of the days, so this limit puts no pressure on the player (closest it gets: 28.0)",
+     "evidence": {
+      "rate": 0.0,
+      "closest": 28.0,
+      "per_segment": [
+       [
+        3,
+        0.0
+       ],
+       [
+        4,
+        0.0
+       ],
+       [
+        5,
+        0.0
+       ],
+       [
+        6,
+        0.0
+       ],
+       [
+        7,
+        0.0
+       ],
+       [
+        8,
+        0.0
+       ],
+       [
+        9,
+        0.0
+       ],
+       [
+        10,
+        0.0
+       ]
+      ]
+     }
+    },
+    {
+     "id": "never-binds:minFree:twice",
+     "kind": "never-binds",
+     "severity": "high",
+     "metric": "minFree",
+     "scenario": "orders-x1.5-from-6",
+     "profile": "twice",
+     "message": "Fewest empty cells <= 0 never happens in any of the days, so this limit puts no pressure on the player (closest it gets: 28.0)",
+     "evidence": {
+      "rate": 0.0,
+      "closest": 28.0,
+      "per_segment": [
+       [
+        3,
+        0.0
+       ],
+       [
+        4,
+        0.0
+       ],
+       [
+        5,
+        0.0
+       ],
+       [
+        6,
+        0.0
+       ],
+       [
+        7,
+        0.0
+       ],
+       [
+        8,
+        0.0
+       ],
+       [
+        9,
+        0.0
+       ],
+       [
+        10,
+        0.0
+       ]
+      ]
+     }
+    },
+    {
+     "id": "off-target:minFree:twice",
+     "kind": "off-target",
+     "severity": "high",
+     "metric": "minFree",
+     "scenario": "orders-x1.5-from-6",
+     "profile": "twice",
+     "message": "Board feels crowded from day 6 (mean) misses the target \u2264 4.00 in 5 of 5 days: 6: 31.4, 7: 31.4, 8: 30.4, 9: 29.4, 10: 28.5",
+     "evidence": {
+      "target": {
+       "metric": "minFree",
+       "segments": [
+        6,
+        10
+       ],
+       "profile": "twice",
+       "max": 4,
+       "label": "Board feels crowded from day 6"
+      },
+      "misses": [
+       [
+        6,
+        31.35
+       ],
+       [
+        7,
+        31.37
+       ],
+       [
+        8,
+        30.44
+       ],
+       [
+        9,
+        29.38
+       ],
+       [
+        10,
+        28.49
+       ]
+      ]
+     }
+    },
+    {
+     "id": "flat:minFree:careless",
+     "kind": "flat",
+     "severity": "medium",
+     "metric": "minFree",
+     "scenario": "orders-x1.5-from-6",
+     "profile": "careless",
+     "message": "Fewest empty cells falls by only 14% from the first third of days (33.5) to the last third (29.0); the design expects at least 25%",
+     "evidence": {
+      "growth": 0.13668206886272175,
+      "first_third": 33.545,
+      "last_third": 28.96,
+      "values": [
+       [
+        3,
+        33.56
+       ],
+       [
+        4,
+        33.53
+       ],
+       [
+        5,
+        31.45
+       ],
+       [
+        6,
+        31.58
+       ],
+       [
+        7,
+        31.51
+       ],
+       [
+        8,
+        30.54
+       ],
+       [
+        9,
+        29.45
+       ],
+       [
+        10,
+        28.47
+       ]
+      ]
+     }
+    },
+    {
+     "id": "flat:minFree:efficient",
+     "kind": "flat",
+     "severity": "medium",
+     "metric": "minFree",
+     "scenario": "orders-x1.5-from-6",
+     "profile": "efficient",
+     "message": "Fewest empty cells falls by only 14% from the first third of days (33.3) to the last third (28.8); the design expects at least 25%",
+     "evidence": {
+      "growth": 0.1366226754649071,
+      "first_third": 33.34,
+      "last_third": 28.785,
+      "values": [
+       [
+        3,
+        33.22
+       ],
+       [
+        4,
+        33.46
+       ],
+       [
+        5,
+        31.28
+       ],
+       [
+        6,
+        31.31
+       ],
+       [
+        7,
+        31.4
+       ],
+       [
+        8,
+        30.32
+       ],
+       [
+        9,
+        29.22
+       ],
+       [
+        10,
+        28.35
+       ]
+      ]
+     }
+    },
+    {
+     "id": "flat:minFree:twice",
+     "kind": "flat",
+     "severity": "medium",
+     "metric": "minFree",
+     "scenario": "orders-x1.5-from-6",
+     "profile": "twice",
+     "message": "Fewest empty cells falls by only 13% from the first third of days (33.4) to the last third (28.9); the design expects at least 25%",
+     "evidence": {
+      "growth": 0.13458950201884262,
+      "first_third": 33.435,
+      "last_third": 28.935,
+      "values": [
+       [
+        3,
+        33.45
+       ],
+       [
+        4,
+        33.42
+       ],
+       [
+        5,
+        31.37
+       ],
+       [
+        6,
+        31.35
+       ],
+       [
+        7,
+        31.37
+       ],
+       [
+        8,
+        30.44
+       ],
+       [
+        9,
+        29.38
+       ],
+       [
+        10,
+        28.49
+       ]
+      ]
+     }
+    }
+   ],
+   "moves": [
+    {
+     "metric": "taps",
+     "profile": "careless",
+     "base": 26.523750000000003,
+     "whatif": 41.946250000000006,
+     "change": 0.5814600122531693,
+     "base_first": 19.5,
+     "base_last": 40.605000000000004,
+     "whatif_first": 19.5,
+     "whatif_last": 80.95
+    },
+    {
+     "metric": "taps",
+     "profile": "twice",
+     "base": 26.6075,
+     "whatif": 42.059999999999995,
+     "change": 0.58075730527107,
+     "base_first": 19.53,
+     "base_last": 40.75,
+     "whatif_first": 19.53,
+     "whatif_last": 81.235
+    },
+    {
+     "metric": "taps",
+     "profile": "efficient",
+     "base": 26.59875,
+     "whatif": 42.153749999999995,
+     "change": 0.5848019173833355,
+     "base_first": 19.43,
+     "base_last": 40.755,
+     "whatif_first": 19.43,
+     "whatif_last": 81.635
+    },
+    {
+     "metric": "energyShare",
+     "profile": "careless",
+     "base": 0.26523749999999996,
+     "whatif": 0.41946249999999996,
+     "change": 0.5814600122531695,
+     "base_first": 0.195,
+     "base_last": 0.4060499999999998,
+     "whatif_first": 0.195,
+     "whatif_last": 0.8094999999999999
+    },
+    {
+     "metric": "energyShare",
+     "profile": "twice",
+     "base": 0.13303749999999995,
+     "whatif": 0.2103,
+     "change": 0.5807573052710707,
+     "base_first": 0.09765,
+     "base_last": 0.20374999999999985,
+     "whatif_first": 0.09765,
+     "whatif_last": 0.40617499999999995
+    },
+    {
+     "metric": "energyShare",
+     "profile": "efficient",
+     "base": 0.08866249999999995,
+     "whatif": 0.14051249999999993,
+     "change": 0.5848019173833358,
+     "base_first": 0.06476666666666661,
+     "base_last": 0.13584999999999997,
+     "whatif_first": 0.06476666666666661,
+     "whatif_last": 0.27211666666666645
+    },
+    {
+     "metric": "minFree",
+     "profile": "careless",
+     "base": 32.475,
+     "whatif": 31.261249999999997,
+     "change": -0.037374903772132546,
+     "base_first": 33.545,
+     "base_last": 31.005000000000003,
+     "whatif_first": 33.545,
+     "whatif_last": 28.96
+    },
+    {
+     "metric": "minFree",
+     "profile": "twice",
+     "base": 32.405,
+     "whatif": 31.15875,
+     "change": -0.038458571208146886,
+     "base_first": 33.435,
+     "base_last": 30.915,
+     "whatif_first": 33.435,
+     "whatif_last": 28.935
+    },
+    {
+     "metric": "minFree",
+     "profile": "efficient",
+     "base": 32.339999999999996,
+     "whatif": 31.07,
+     "change": -0.03927025355596772,
+     "base_first": 33.34,
+     "base_last": 30.83,
+     "whatif_first": 33.34,
+     "whatif_last": 28.785
+    },
+    {
+     "metric": "outOfEnergy",
+     "profile": "careless",
+     "base": 0.0,
+     "whatif": 0.08,
+     "change": null,
+     "base_first": 0.0,
+     "base_last": 0.0,
+     "whatif_first": 0.0,
+     "whatif_last": 0.24
+    },
+    {
+     "metric": "outOfEnergy",
+     "profile": "twice",
+     "base": 0.0,
+     "whatif": 0.09666666666666666,
+     "change": null,
+     "base_first": 0.0,
+     "base_last": 0.0,
+     "whatif_first": 0.0,
+     "whatif_last": 0.29
+    },
+    {
+     "metric": "outOfEnergy",
+     "profile": "efficient",
+     "base": 0.0,
+     "whatif": 0.10666666666666667,
+     "change": null,
+     "base_first": 0.0,
+     "base_last": 0.0,
+     "whatif_first": 0.0,
+     "whatif_last": 0.32
+    },
+    {
+     "metric": "daysLate",
+     "profile": "careless",
+     "base": 0.0,
+     "whatif": 0.024,
+     "change": null,
+     "base_first": 0.0,
+     "base_last": 0.0,
+     "whatif_first": 0.0,
+     "whatif_last": 0.08
+    },
+    {
+     "metric": "daysLate",
+     "profile": "twice",
+     "base": 0.0,
+     "whatif": 0.0,
+     "change": null,
+     "base_first": 0.0,
+     "base_last": 0.0,
+     "whatif_first": 0.0,
+     "whatif_last": 0.0
+    },
+    {
+     "metric": "daysLate",
+     "profile": "efficient",
+     "base": 0.0,
+     "whatif": 0.0,
+     "change": null,
+     "base_first": 0.0,
+     "base_last": 0.0,
+     "whatif_first": 0.0,
+     "whatif_last": 0.0
+    }
+   ]
+  },
+  "slower-regen": {
+   "fixed": [],
+   "new": [],
+   "still": [
+    {
+     "id": "off-target:energyShare:twice",
+     "kind": "off-target",
+     "severity": "high",
+     "metric": "energyShare",
+     "scenario": "slower-regen",
+     "profile": "twice",
+     "message": "Twice-a-day player uses most of their energy on days 8\u201310 (mean) misses the target \u2265 0.60 in 3 of 3 days: 8: 0.11, 9: 0.16, 10: 0.25",
+     "evidence": {
+      "target": {
+       "metric": "energyShare",
+       "segments": [
+        8,
+        10
+       ],
+       "profile": "twice",
+       "min": 0.6,
+       "label": "Twice-a-day player uses most of their energy on days 8\u201310"
+      },
+      "misses": [
+       [
+        8,
+        0.10695000000000014
+       ],
+       [
+        9,
+        0.15954999999999986
+       ],
+       [
+        10,
+        0.24794999999999984
+       ]
+      ]
+     }
+    },
+    {
+     "id": "never-binds:minFree:careless",
+     "kind": "never-binds",
+     "severity": "high",
+     "metric": "minFree",
+     "scenario": "slower-regen",
+     "profile": "careless",
+     "message": "Fewest empty cells <= 0 never happens in any of the days, so this limit puts no pressure on the player (closest it gets: 30.0)",
+     "evidence": {
+      "rate": 0.0,
+      "closest": 30.0,
+      "per_segment": [
+       [
+        3,
+        0.0
+       ],
+       [
+        4,
+        0.0
+       ],
+       [
+        5,
+        0.0
+       ],
+       [
+        6,
+        0.0
+       ],
+       [
+        7,
+        0.0
+       ],
+       [
+        8,
+        0.0
+       ],
+       [
+        9,
+        0.0
+       ],
+       [
+        10,
+        0.0
+       ]
+      ]
+     }
+    },
+    {
+     "id": "never-binds:minFree:efficient",
+     "kind": "never-binds",
+     "severity": "high",
+     "metric": "minFree",
+     "scenario": "slower-regen",
+     "profile": "efficient",
+     "message": "Fewest empty cells <= 0 never happens in any of the days, so this limit puts no pressure on the player (closest it gets: 30.0)",
+     "evidence": {
+      "rate": 0.0,
+      "closest": 30.0,
+      "per_segment": [
+       [
+        3,
+        0.0
+       ],
+       [
+        4,
+        0.0
+       ],
+       [
+        5,
+        0.0
+       ],
+       [
+        6,
+        0.0
+       ],
+       [
+        7,
+        0.0
+       ],
+       [
+        8,
+        0.0
+       ],
+       [
+        9,
+        0.0
+       ],
+       [
+        10,
+        0.0
+       ]
+      ]
+     }
+    },
+    {
+     "id": "never-binds:minFree:twice",
+     "kind": "never-binds",
+     "severity": "high",
+     "metric": "minFree",
+     "scenario": "slower-regen",
+     "profile": "twice",
+     "message": "Fewest empty cells <= 0 never happens in any of the days, so this limit puts no pressure on the player (closest it gets: 30.0)",
+     "evidence": {
+      "rate": 0.0,
+      "closest": 30.0,
+      "per_segment": [
+       [
+        3,
+        0.0
+       ],
+       [
+        4,
+        0.0
+       ],
+       [
+        5,
+        0.0
+       ],
+       [
+        6,
+        0.0
+       ],
+       [
+        7,
+        0.0
+       ],
+       [
+        8,
+        0.0
+       ],
+       [
+        9,
+        0.0
+       ],
+       [
+        10,
+        0.0
+       ]
+      ]
+     }
+    },
+    {
+     "id": "off-target:minFree:twice",
+     "kind": "off-target",
+     "severity": "high",
+     "metric": "minFree",
+     "scenario": "slower-regen",
+     "profile": "twice",
+     "message": "Board feels crowded from day 6 (mean) misses the target \u2264 4.00 in 5 of 5 days: 6: 33.4, 7: 33.5, 8: 32.3, 9: 31.4, 10: 30.4",
+     "evidence": {
+      "target": {
+       "metric": "minFree",
+       "segments": [
+        6,
+        10
+       ],
+       "profile": "twice",
+       "max": 4,
+       "label": "Board feels crowded from day 6"
+      },
+      "misses": [
+       [
+        6,
+        33.4
+       ],
+       [
+        7,
+        33.45
+       ],
+       [
+        8,
+        32.32
+       ],
+       [
+        9,
+        31.4
+       ],
+       [
+        10,
+        30.43
+       ]
+      ]
+     }
+    },
+    {
+     "id": "never-binds:outOfEnergy:careless",
+     "kind": "never-binds",
+     "severity": "high",
+     "metric": "outOfEnergy",
+     "scenario": "slower-regen",
+     "profile": "careless",
+     "message": "Times out of energy > 0 never happens in any of the days, so this limit puts no pressure on the player (closest it gets: 0.00)",
+     "evidence": {
+      "rate": 0.0,
+      "closest": 0.0,
+      "per_segment": [
+       [
+        8,
+        0.0
+       ],
+       [
+        9,
+        0.0
+       ],
+       [
+        10,
+        0.0
+       ]
+      ]
+     }
+    },
+    {
+     "id": "never-binds:outOfEnergy:efficient",
+     "kind": "never-binds",
+     "severity": "high",
+     "metric": "outOfEnergy",
+     "scenario": "slower-regen",
+     "profile": "efficient",
+     "message": "Times out of energy > 0 never happens in any of the days, so this limit puts no pressure on the player (closest it gets: 0.00)",
+     "evidence": {
+      "rate": 0.0,
+      "closest": 0.0,
+      "per_segment": [
+       [
+        8,
+        0.0
+       ],
+       [
+        9,
+        0.0
+       ],
+       [
+        10,
+        0.0
+       ]
+      ]
+     }
+    },
+    {
+     "id": "never-binds:outOfEnergy:twice",
+     "kind": "never-binds",
+     "severity": "high",
+     "metric": "outOfEnergy",
+     "scenario": "slower-regen",
+     "profile": "twice",
+     "message": "Times out of energy > 0 never happens in any of the days, so this limit puts no pressure on the player (closest it gets: 0.00)",
+     "evidence": {
+      "rate": 0.0,
+      "closest": 0.0,
+      "per_segment": [
+       [
+        8,
+        0.0
+       ],
+       [
+        9,
+        0.0
+       ],
+       [
+        10,
+        0.0
+       ]
+      ]
+     }
+    },
+    {
+     "id": "flat:minFree:careless",
+     "kind": "flat",
+     "severity": "medium",
+     "metric": "minFree",
+     "scenario": "slower-regen",
+     "profile": "careless",
+     "message": "Fewest empty cells falls by only 8% from the first third of days (33.5) to the last third (31.0); the design expects at least 25%",
+     "evidence": {
+      "growth": 0.07571918318676402,
+      "first_third": 33.545,
+      "last_third": 31.005000000000003,
+      "values": [
+       [
+        3,
+        33.56
+       ],
+       [
+        4,
+        33.53
+       ],
+       [
+        5,
+        31.45
+       ],
+       [
+        6,
+        33.44
+       ],
+       [
+        7,
+        33.41
+       ],
+       [
+        8,
+        32.4
+       ],
+       [
+        9,
+        31.44
+       ],
+       [
+        10,
+        30.57
+       ]
+      ]
+     }
+    },
+    {
+     "id": "flat:minFree:efficient",
+     "kind": "flat",
+     "severity": "medium",
+     "metric": "minFree",
+     "scenario": "slower-regen",
+     "profile": "efficient",
+     "message": "Fewest empty cells falls by only 8% from the first third of days (33.3) to the last third (30.8); the design expects at least 25%",
+     "evidence": {
+      "growth": 0.07528494301139786,
+      "first_third": 33.34,
+      "last_third": 30.83,
+      "values": [
+       [
+        3,
+        33.22
+       ],
+       [
+        4,
+        33.46
+       ],
+       [
+        5,
+        31.28
+       ],
+       [
+        6,
+        33.32
+       ],
+       [
+        7,
+        33.27
+       ],
+       [
+        8,
+        32.51
+       ],
+       [
+        9,
+        31.33
+       ],
+       [
+        10,
+        30.33
+       ]
+      ]
+     }
+    },
+    {
+     "id": "flat:minFree:twice",
+     "kind": "flat",
+     "severity": "medium",
+     "metric": "minFree",
+     "scenario": "slower-regen",
+     "profile": "twice",
+     "message": "Fewest empty cells falls by only 8% from the first third of days (33.4) to the last third (30.9); the design expects at least 25%",
+     "evidence": {
+      "growth": 0.0753701211305519,
+      "first_third": 33.435,
+      "last_third": 30.915,
+      "values": [
+       [
+        3,
+        33.45
+       ],
+       [
+        4,
+        33.42
+       ],
+       [
+        5,
+        31.37
+       ],
+       [
+        6,
+        33.4
+       ],
+       [
+        7,
+        33.45
+       ],
+       [
+        8,
+        32.32
+       ],
+       [
+        9,
+        31.4
+       ],
+       [
+        10,
+        30.43
+       ]
+      ]
+     }
+    },
+    {
+     "id": "dips:energyShare:careless",
+     "kind": "dips",
+     "severity": "low",
+     "metric": "energyShare",
+     "scenario": "slower-regen",
+     "profile": "careless",
+     "message": "Share of the day's free energy used goes the wrong way by more than 15% between days 5\u21926 \u221249%",
+     "evidence": {
+      "dips": [
+       "5\u21926 \u221249%"
+      ]
+     }
+    },
+    {
+     "id": "dips:energyShare:efficient",
+     "kind": "dips",
+     "severity": "low",
+     "metric": "energyShare",
+     "scenario": "slower-regen",
+     "profile": "efficient",
+     "message": "Share of the day's free energy used goes the wrong way by more than 15% between days 5\u21926 \u221250%",
+     "evidence": {
+      "dips": [
+       "5\u21926 \u221250%"
+      ]
+     }
+    },
+    {
+     "id": "dips:energyShare:twice",
+     "kind": "dips",
+     "severity": "low",
+     "metric": "energyShare",
+     "scenario": "slower-regen",
+     "profile": "twice",
+     "message": "Share of the day's free energy used goes the wrong way by more than 15% between days 5\u21926 \u221249%",
+     "evidence": {
+      "dips": [
+       "5\u21926 \u221249%"
+      ]
+     }
+    },
+    {
+     "id": "dips:taps:careless",
+     "kind": "dips",
+     "severity": "low",
+     "metric": "taps",
+     "scenario": "slower-regen",
+     "profile": "careless",
+     "message": "Energy spent goes the wrong way by more than 15% between days 5\u21926 \u221249%",
+     "evidence": {
+      "dips": [
+       "5\u21926 \u221249%"
+      ]
+     }
+    },
+    {
+     "id": "dips:taps:efficient",
+     "kind": "dips",
+     "severity": "low",
+     "metric": "taps",
+     "scenario": "slower-regen",
+     "profile": "efficient",
+     "message": "Energy spent goes the wrong way by more than 15% between days 5\u21926 \u221250%",
+     "evidence": {
+      "dips": [
+       "5\u21926 \u221250%"
+      ]
+     }
+    },
+    {
+     "id": "dips:taps:twice",
+     "kind": "dips",
+     "severity": "low",
+     "metric": "taps",
+     "scenario": "slower-regen",
+     "profile": "twice",
+     "message": "Energy spent goes the wrong way by more than 15% between days 5\u21926 \u221249%",
+     "evidence": {
+      "dips": [
+       "5\u21926 \u221249%"
+      ]
+     }
+    }
+   ],
+   "moves": [
+    {
+     "metric": "taps",
+     "profile": "careless",
+     "base": 26.523750000000003,
+     "whatif": 26.523750000000003,
+     "change": 0.0,
+     "base_first": 19.5,
+     "base_last": 40.605000000000004,
+     "whatif_first": 19.5,
+     "whatif_last": 40.605000000000004
+    },
+    {
+     "metric": "taps",
+     "profile": "twice",
+     "base": 26.6075,
+     "whatif": 26.6075,
+     "change": 0.0,
+     "base_first": 19.53,
+     "base_last": 40.75,
+     "whatif_first": 19.53,
+     "whatif_last": 40.75
+    },
+    {
+     "metric": "taps",
+     "profile": "efficient",
+     "base": 26.59875,
+     "whatif": 26.59875,
+     "change": 0.0,
+     "base_first": 19.43,
+     "base_last": 40.755,
+     "whatif_first": 19.43,
+     "whatif_last": 40.755
+    },
+    {
+     "metric": "energyShare",
+     "profile": "careless",
+     "base": 0.26523749999999996,
+     "whatif": 0.26523749999999996,
+     "change": 0.0,
+     "base_first": 0.195,
+     "base_last": 0.4060499999999998,
+     "whatif_first": 0.195,
+     "whatif_last": 0.4060499999999998
+    },
+    {
+     "metric": "energyShare",
+     "profile": "twice",
+     "base": 0.13303749999999995,
+     "whatif": 0.13303749999999995,
+     "change": 0.0,
+     "base_first": 0.09765,
+     "base_last": 0.20374999999999985,
+     "whatif_first": 0.09765,
+     "whatif_last": 0.20374999999999985
+    },
+    {
+     "metric": "energyShare",
+     "profile": "efficient",
+     "base": 0.08866249999999995,
+     "whatif": 0.09672272727272724,
+     "change": 0.09090909090909113,
+     "base_first": 0.06476666666666661,
+     "base_last": 0.13584999999999997,
+     "whatif_first": 0.07065454545454547,
+     "whatif_last": 0.1481999999999998
+    },
+    {
+     "metric": "minFree",
+     "profile": "careless",
+     "base": 32.475,
+     "whatif": 32.475,
+     "change": 0.0,
+     "base_first": 33.545,
+     "base_last": 31.005000000000003,
+     "whatif_first": 33.545,
+     "whatif_last": 31.005000000000003
+    },
+    {
+     "metric": "minFree",
+     "profile": "twice",
+     "base": 32.405,
+     "whatif": 32.405,
+     "change": 0.0,
+     "base_first": 33.435,
+     "base_last": 30.915,
+     "whatif_first": 33.435,
+     "whatif_last": 30.915
+    },
+    {
+     "metric": "minFree",
+     "profile": "efficient",
+     "base": 32.339999999999996,
+     "whatif": 32.339999999999996,
+     "change": 0.0,
+     "base_first": 33.34,
+     "base_last": 30.83,
+     "whatif_first": 33.34,
+     "whatif_last": 30.83
+    },
+    {
+     "metric": "outOfEnergy",
+     "profile": "careless",
+     "base": 0.0,
+     "whatif": 0.0,
+     "change": null,
+     "base_first": 0.0,
+     "base_last": 0.0,
+     "whatif_first": 0.0,
+     "whatif_last": 0.0
+    },
+    {
+     "metric": "outOfEnergy",
+     "profile": "twice",
+     "base": 0.0,
+     "whatif": 0.0,
+     "change": null,
+     "base_first": 0.0,
+     "base_last": 0.0,
+     "whatif_first": 0.0,
+     "whatif_last": 0.0
+    },
+    {
+     "metric": "outOfEnergy",
+     "profile": "efficient",
+     "base": 0.0,
+     "whatif": 0.0,
+     "change": null,
+     "base_first": 0.0,
+     "base_last": 0.0,
+     "whatif_first": 0.0,
+     "whatif_last": 0.0
+    },
+    {
+     "metric": "daysLate",
+     "profile": "careless",
+     "base": 0.0,
+     "whatif": 0.0,
+     "change": null,
+     "base_first": 0.0,
+     "base_last": 0.0,
+     "whatif_first": 0.0,
+     "whatif_last": 0.0
+    },
+    {
+     "metric": "daysLate",
+     "profile": "twice",
+     "base": 0.0,
+     "whatif": 0.0,
+     "change": null,
+     "base_first": 0.0,
+     "base_last": 0.0,
+     "whatif_first": 0.0,
+     "whatif_last": 0.0
+    },
+    {
+     "metric": "daysLate",
+     "profile": "efficient",
+     "base": 0.0,
+     "whatif": 0.0,
+     "change": null,
+     "base_first": 0.0,
+     "base_last": 0.0,
+     "whatif_first": 0.0,
+     "whatif_last": 0.0
+    }
+   ]
+  }
+ },
+ "means": {
+  "baseline": {
+   "careless": {
+    "taps": {
+     "1": 7.52,
+     "2": 10.56,
+     "3": 17.79,
+     "4": 21.21,
+     "5": 35.2,
+     "6": 17.95,
+     "7": 17.53,
+     "8": 21.3,
+     "9": 31.96,
+     "10": 49.25
+    },
+    "merges": {
+     "1": 3.93,
+     "2": 6.66,
+     "3": 13.78,
+     "4": 17.26,
+     "5": 31.22,
+     "6": 13.88,
+     "7": 13.55,
+     "8": 18.32,
+     "9": 28.88,
+     "10": 46.39
+    },
+    "sells": {
+     "1": 0.0,
+     "2": 0.0,
+     "3": 0.0,
+     "4": 0.0,
+     "5": 0.0,
+     "6": 0.0,
+     "7": 0.0,
+     "8": 0.0,
+     "9": 0.0,
+     "10": 0.0
+    },
+    "outOfEnergy": {
+     "1": 0.0,
+     "2": 0.0,
+     "3": 0.0,
+     "4": 0.0,
+     "5": 0.0,
+     "6": 0.0,
+     "7": 0.0,
+     "8": 0.0,
+     "9": 0.0,
+     "10": 0.0
+    },
+    "minFree": {
+     "1": 36.33,
+     "2": 35.42,
+     "3": 33.56,
+     "4": 33.53,
+     "5": 31.45,
+     "6": 33.44,
+     "7": 33.41,
+     "8": 32.4,
+     "9": 31.44,
+     "10": 30.57
+    },
+    "energyShare": {
+     "1": 0.07519999999999999,
+     "2": 0.10560000000000003,
+     "3": 0.17789999999999975,
+     "4": 0.21210000000000023,
+     "5": 0.35200000000000026,
+     "6": 0.17949999999999974,
+     "7": 0.1752999999999998,
+     "8": 0.21300000000000022,
+     "9": 0.31959999999999966,
+     "10": 0.4925
+    },
+    "daysLate": {
+     "1": 0.0,
+     "2": 0.0,
+     "3": 0.0,
+     "4": 0.0,
+     "5": 0.0,
+     "6": 0.0,
+     "7": 0.0,
+     "8": 0.0,
+     "9": 0.0,
+     "10": 0.0
+    }
+   },
+   "twice": {
+    "taps": {
+     "1": 7.27,
+     "2": 10.8,
+     "3": 17.8,
+     "4": 21.26,
+     "5": 35.37,
+     "6": 17.88,
+     "7": 17.66,
+     "8": 21.39,
+     "9": 31.91,
+     "10": 49.59
+    },
+    "merges": {
+     "1": 3.96,
+     "2": 6.76,
+     "3": 13.78,
+     "4": 17.36,
+     "5": 31.26,
+     "6": 13.87,
+     "7": 13.81,
+     "8": 18.32,
+     "9": 28.89,
+     "10": 46.65
+    },
+    "sells": {
+     "1": 0.0,
+     "2": 0.0,
+     "3": 0.0,
+     "4": 0.0,
+     "5": 0.0,
+     "6": 0.0,
+     "7": 0.0,
+     "8": 0.0,
+     "9": 0.0,
+     "10": 0.0
+    },
+    "outOfEnergy": {
+     "1": 0.0,
+     "2": 0.0,
+     "3": 0.0,
+     "4": 0.0,
+     "5": 0.0,
+     "6": 0.0,
+     "7": 0.0,
+     "8": 0.0,
+     "9": 0.0,
+     "10": 0.0
+    },
+    "minFree": {
+     "1": 36.44,
+     "2": 35.35,
+     "3": 33.45,
+     "4": 33.42,
+     "5": 31.37,
+     "6": 33.4,
+     "7": 33.45,
+     "8": 32.32,
+     "9": 31.4,
+     "10": 30.43
+    },
+    "energyShare": {
+     "1": 0.03635,
+     "2": 0.05400000000000001,
+     "3": 0.08899999999999988,
+     "4": 0.10630000000000012,
+     "5": 0.17685000000000003,
+     "6": 0.08939999999999987,
+     "7": 0.08829999999999993,
+     "8": 0.10695000000000014,
+     "9": 0.15954999999999986,
+     "10": 0.24794999999999984
+    },
+    "daysLate": {
+     "1": 0.0,
+     "2": 0.0,
+     "3": 0.0,
+     "4": 0.0,
+     "5": 0.0,
+     "6": 0.0,
+     "7": 0.0,
+     "8": 0.0,
+     "9": 0.0,
+     "10": 0.0
+    }
+   },
+   "efficient": {
+    "taps": {
+     "1": 7.12,
+     "2": 10.76,
+     "3": 17.75,
+     "4": 21.11,
+     "5": 35.37,
+     "6": 17.76,
+     "7": 17.79,
+     "8": 21.5,
+     "9": 31.73,
+     "10": 49.78
+    },
+    "merges": {
+     "1": 3.88,
+     "2": 6.79,
+     "3": 13.71,
+     "4": 17.14,
+     "5": 31.32,
+     "6": 13.87,
+     "7": 13.73,
+     "8": 18.49,
+     "9": 28.85,
+     "10": 46.6
+    },
+    "sells": {
+     "1": 0.0,
+     "2": 0.0,
+     "3": 0.0,
+     "4": 0.0,
+     "5": 0.0,
+     "6": 0.0,
+     "7": 0.0,
+     "8": 0.0,
+     "9": 0.0,
+     "10": 0.0
+    },
+    "outOfEnergy": {
+     "1": 0.0,
+     "2": 0.0,
+     "3": 0.0,
+     "4": 0.0,
+     "5": 0.0,
+     "6": 0.0,
+     "7": 0.0,
+     "8": 0.0,
+     "9": 0.0,
+     "10": 0.0
+    },
+    "minFree": {
+     "1": 36.38,
+     "2": 35.38,
+     "3": 33.22,
+     "4": 33.46,
+     "5": 31.28,
+     "6": 33.32,
+     "7": 33.27,
+     "8": 32.51,
+     "9": 31.33,
+     "10": 30.33
+    },
+    "energyShare": {
+     "1": 0.023733333333333363,
+     "2": 0.03586666666666666,
+     "3": 0.05916666666666667,
+     "4": 0.07036666666666655,
+     "5": 0.11789999999999992,
+     "6": 0.059200000000000016,
+     "7": 0.05930000000000003,
+     "8": 0.07166666666666656,
+     "9": 0.10576666666666668,
+     "10": 0.16593333333333324
+    },
+    "daysLate": {
+     "1": 0.0,
+     "2": 0.0,
+     "3": 0.0,
+     "4": 0.0,
+     "5": 0.0,
+     "6": 0.0,
+     "7": 0.0,
+     "8": 0.0,
+     "9": 0.0,
+     "10": 0.0
+    }
+   }
+  },
+  "smaller-board": {
+   "careless": {
+    "taps": {
+     "1": 7.52,
+     "2": 10.56,
+     "3": 17.79,
+     "4": 21.21,
+     "5": 35.2,
+     "6": 17.95,
+     "7": 17.53,
+     "8": 21.3,
+     "9": 31.96,
+     "10": 49.25
+    },
+    "merges": {
+     "1": 3.93,
+     "2": 6.66,
+     "3": 13.78,
+     "4": 17.26,
+     "5": 31.22,
+     "6": 13.88,
+     "7": 13.55,
+     "8": 18.32,
+     "9": 28.88,
+     "10": 46.39
+    },
+    "sells": {
+     "1": 0.0,
+     "2": 0.0,
+     "3": 0.0,
+     "4": 0.0,
+     "5": 0.0,
+     "6": 0.0,
+     "7": 0.0,
+     "8": 0.0,
+     "9": 0.0,
+     "10": 0.0
+    },
+    "outOfEnergy": {
+     "1": 0.0,
+     "2": 0.0,
+     "3": 0.0,
+     "4": 0.0,
+     "5": 0.0,
+     "6": 0.0,
+     "7": 0.0,
+     "8": 0.0,
+     "9": 0.0,
+     "10": 0.0
+    },
+    "minFree": {
+     "1": 18.33,
+     "2": 17.42,
+     "3": 15.56,
+     "4": 15.53,
+     "5": 13.45,
+     "6": 15.44,
+     "7": 15.41,
+     "8": 14.4,
+     "9": 13.44,
+     "10": 12.57
+    },
+    "energyShare": {
+     "1": 0.07519999999999999,
+     "2": 0.10560000000000003,
+     "3": 0.17789999999999975,
+     "4": 0.21210000000000023,
+     "5": 0.35200000000000026,
+     "6": 0.17949999999999974,
+     "7": 0.1752999999999998,
+     "8": 0.21300000000000022,
+     "9": 0.31959999999999966,
+     "10": 0.4925
+    },
+    "daysLate": {
+     "1": 0.0,
+     "2": 0.0,
+     "3": 0.0,
+     "4": 0.0,
+     "5": 0.0,
+     "6": 0.0,
+     "7": 0.0,
+     "8": 0.0,
+     "9": 0.0,
+     "10": 0.0
+    }
+   },
+   "twice": {
+    "taps": {
+     "1": 7.27,
+     "2": 10.8,
+     "3": 17.8,
+     "4": 21.26,
+     "5": 35.37,
+     "6": 17.88,
+     "7": 17.66,
+     "8": 21.39,
+     "9": 31.91,
+     "10": 49.59
+    },
+    "merges": {
+     "1": 3.96,
+     "2": 6.76,
+     "3": 13.78,
+     "4": 17.36,
+     "5": 31.26,
+     "6": 13.87,
+     "7": 13.81,
+     "8": 18.32,
+     "9": 28.89,
+     "10": 46.65
+    },
+    "sells": {
+     "1": 0.0,
+     "2": 0.0,
+     "3": 0.0,
+     "4": 0.0,
+     "5": 0.0,
+     "6": 0.0,
+     "7": 0.0,
+     "8": 0.0,
+     "9": 0.0,
+     "10": 0.0
+    },
+    "outOfEnergy": {
+     "1": 0.0,
+     "2": 0.0,
+     "3": 0.0,
+     "4": 0.0,
+     "5": 0.0,
+     "6": 0.0,
+     "7": 0.0,
+     "8": 0.0,
+     "9": 0.0,
+     "10": 0.0
+    },
+    "minFree": {
+     "1": 18.44,
+     "2": 17.35,
+     "3": 15.45,
+     "4": 15.42,
+     "5": 13.37,
+     "6": 15.4,
+     "7": 15.45,
+     "8": 14.32,
+     "9": 13.4,
+     "10": 12.43
+    },
+    "energyShare": {
+     "1": 0.03635,
+     "2": 0.05400000000000001,
+     "3": 0.08899999999999988,
+     "4": 0.10630000000000012,
+     "5": 0.17685000000000003,
+     "6": 0.08939999999999987,
+     "7": 0.08829999999999993,
+     "8": 0.10695000000000014,
+     "9": 0.15954999999999986,
+     "10": 0.24794999999999984
+    },
+    "daysLate": {
+     "1": 0.0,
+     "2": 0.0,
+     "3": 0.0,
+     "4": 0.0,
+     "5": 0.0,
+     "6": 0.0,
+     "7": 0.0,
+     "8": 0.0,
+     "9": 0.0,
+     "10": 0.0
+    }
+   },
+   "efficient": {
+    "taps": {
+     "1": 7.12,
+     "2": 10.76,
+     "3": 17.75,
+     "4": 21.11,
+     "5": 35.37,
+     "6": 17.76,
+     "7": 17.79,
+     "8": 21.5,
+     "9": 31.73,
+     "10": 49.78
+    },
+    "merges": {
+     "1": 3.88,
+     "2": 6.79,
+     "3": 13.71,
+     "4": 17.14,
+     "5": 31.32,
+     "6": 13.87,
+     "7": 13.73,
+     "8": 18.49,
+     "9": 28.85,
+     "10": 46.6
+    },
+    "sells": {
+     "1": 0.0,
+     "2": 0.0,
+     "3": 0.0,
+     "4": 0.0,
+     "5": 0.0,
+     "6": 0.0,
+     "7": 0.0,
+     "8": 0.0,
+     "9": 0.0,
+     "10": 0.0
+    },
+    "outOfEnergy": {
+     "1": 0.0,
+     "2": 0.0,
+     "3": 0.0,
+     "4": 0.0,
+     "5": 0.0,
+     "6": 0.0,
+     "7": 0.0,
+     "8": 0.0,
+     "9": 0.0,
+     "10": 0.0
+    },
+    "minFree": {
+     "1": 18.38,
+     "2": 17.38,
+     "3": 15.22,
+     "4": 15.46,
+     "5": 13.28,
+     "6": 15.32,
+     "7": 15.27,
+     "8": 14.51,
+     "9": 13.33,
+     "10": 12.33
+    },
+    "energyShare": {
+     "1": 0.023733333333333363,
+     "2": 0.03586666666666666,
+     "3": 0.05916666666666667,
+     "4": 0.07036666666666655,
+     "5": 0.11789999999999992,
+     "6": 0.059200000000000016,
+     "7": 0.05930000000000003,
+     "8": 0.07166666666666656,
+     "9": 0.10576666666666668,
+     "10": 0.16593333333333324
+    },
+    "daysLate": {
+     "1": 0.0,
+     "2": 0.0,
+     "3": 0.0,
+     "4": 0.0,
+     "5": 0.0,
+     "6": 0.0,
+     "7": 0.0,
+     "8": 0.0,
+     "9": 0.0,
+     "10": 0.0
+    }
+   }
+  },
+  "orders-x1.5-from-6": {
+   "careless": {
+    "taps": {
+     "1": 7.52,
+     "2": 10.56,
+     "3": 17.79,
+     "4": 21.21,
+     "5": 35.2,
+     "6": 32.28,
+     "7": 31.6,
+     "8": 35.59,
+     "9": 63.67,
+     "10": 98.23
+    },
+    "merges": {
+     "1": 3.93,
+     "2": 6.66,
+     "3": 13.78,
+     "4": 17.26,
+     "5": 31.22,
+     "6": 25.2,
+     "7": 24.6,
+     "8": 30.68,
+     "9": 57.63,
+     "10": 92.19
+    },
+    "sells": {
+     "1": 0.0,
+     "2": 0.0,
+     "3": 0.0,
+     "4": 0.0,
+     "5": 0.0,
+     "6": 0.0,
+     "7": 0.0,
+     "8": 0.0,
+     "9": 0.0,
+     "10": 0.0
+    },
+    "outOfEnergy": {
+     "1": 0.0,
+     "2": 0.0,
+     "3": 0.0,
+     "4": 0.0,
+     "5": 0.0,
+     "6": 0.0,
+     "7": 0.0,
+     "8": 0.0,
+     "9": 0.0,
+     "10": 0.24
+    },
+    "minFree": {
+     "1": 36.33,
+     "2": 35.42,
+     "3": 33.56,
+     "4": 33.53,
+     "5": 31.45,
+     "6": 31.58,
+     "7": 31.51,
+     "8": 30.54,
+     "9": 29.45,
+     "10": 28.47
+    },
+    "energyShare": {
+     "1": 0.07519999999999999,
+     "2": 0.10560000000000003,
+     "3": 0.17789999999999975,
+     "4": 0.21210000000000023,
+     "5": 0.35200000000000026,
+     "6": 0.32279999999999975,
+     "7": 0.31599999999999984,
+     "8": 0.35590000000000005,
+     "9": 0.6366999999999997,
+     "10": 0.9823
+    },
+    "daysLate": {
+     "1": 0.0,
+     "2": 0.0,
+     "3": 0.0,
+     "4": 0.0,
+     "5": 0.0,
+     "6": 0.0,
+     "7": 0.0,
+     "8": 0.0,
+     "9": 0.0,
+     "10": 0.24
+    }
+   },
+   "twice": {
+    "taps": {
+     "1": 7.27,
+     "2": 10.8,
+     "3": 17.8,
+     "4": 21.26,
+     "5": 35.37,
+     "6": 32.38,
+     "7": 31.51,
+     "8": 35.69,
+     "9": 63.73,
+     "10": 98.74
+    },
+    "merges": {
+     "1": 3.96,
+     "2": 6.76,
+     "3": 13.78,
+     "4": 17.36,
+     "5": 31.26,
+     "6": 25.39,
+     "7": 24.59,
+     "8": 30.68,
+     "9": 57.75,
+     "10": 92.7
+    },
+    "sells": {
+     "1": 0.0,
+     "2": 0.0,
+     "3": 0.0,
+     "4": 0.0,
+     "5": 0.0,
+     "6": 0.0,
+     "7": 0.0,
+     "8": 0.0,
+     "9": 0.0,
+     "10": 0.0
+    },
+    "outOfEnergy": {
+     "1": 0.0,
+     "2": 0.0,
+     "3": 0.0,
+     "4": 0.0,
+     "5": 0.0,
+     "6": 0.0,
+     "7": 0.0,
+     "8": 0.0,
+     "9": 0.0,
+     "10": 0.29
+    },
+    "minFree": {
+     "1": 36.44,
+     "2": 35.35,
+     "3": 33.45,
+     "4": 33.42,
+     "5": 31.37,
+     "6": 31.35,
+     "7": 31.37,
+     "8": 30.44,
+     "9": 29.38,
+     "10": 28.49
+    },
+    "energyShare": {
+     "1": 0.03635,
+     "2": 0.05400000000000001,
+     "3": 0.08899999999999988,
+     "4": 0.10630000000000012,
+     "5": 0.17685000000000003,
+     "6": 0.16189999999999988,
+     "7": 0.15754999999999997,
+     "8": 0.17845000000000003,
+     "9": 0.3186499999999997,
+     "10": 0.49370000000000014
+    },
+    "daysLate": {
+     "1": 0.0,
+     "2": 0.0,
+     "3": 0.0,
+     "4": 0.0,
+     "5": 0.0,
+     "6": 0.0,
+     "7": 0.0,
+     "8": 0.0,
+     "9": 0.0,
+     "10": 0.0
+    }
+   },
+   "efficient": {
+    "taps": {
+     "1": 7.12,
+     "2": 10.76,
+     "3": 17.75,
+     "4": 21.11,
+     "5": 35.37,
+     "6": 32.19,
+     "7": 31.74,
+     "8": 35.8,
+     "9": 64.01,
+     "10": 99.26
+    },
+    "merges": {
+     "1": 3.88,
+     "2": 6.79,
+     "3": 13.71,
+     "4": 17.14,
+     "5": 31.32,
+     "6": 25.3,
+     "7": 24.64,
+     "8": 30.91,
+     "9": 57.99,
+     "10": 93.23
+    },
+    "sells": {
+     "1": 0.0,
+     "2": 0.0,
+     "3": 0.0,
+     "4": 0.0,
+     "5": 0.0,
+     "6": 0.0,
+     "7": 0.0,
+     "8": 0.0,
+     "9": 0.0,
+     "10": 0.0
+    },
+    "outOfEnergy": {
+     "1": 0.0,
+     "2": 0.0,
+     "3": 0.0,
+     "4": 0.0,
+     "5": 0.0,
+     "6": 0.0,
+     "7": 0.0,
+     "8": 0.0,
+     "9": 0.0,
+     "10": 0.32
+    },
+    "minFree": {
+     "1": 36.38,
+     "2": 35.38,
+     "3": 33.22,
+     "4": 33.46,
+     "5": 31.28,
+     "6": 31.31,
+     "7": 31.4,
+     "8": 30.32,
+     "9": 29.22,
+     "10": 28.35
+    },
+    "energyShare": {
+     "1": 0.023733333333333363,
+     "2": 0.03586666666666666,
+     "3": 0.05916666666666667,
+     "4": 0.07036666666666655,
+     "5": 0.11789999999999992,
+     "6": 0.10730000000000003,
+     "7": 0.10579999999999995,
+     "8": 0.11933333333333335,
+     "9": 0.2133666666666666,
+     "10": 0.3308666666666663
+    },
+    "daysLate": {
+     "1": 0.0,
+     "2": 0.0,
+     "3": 0.0,
+     "4": 0.0,
+     "5": 0.0,
+     "6": 0.0,
+     "7": 0.0,
+     "8": 0.0,
+     "9": 0.0,
+     "10": 0.0
+    }
+   }
+  },
+  "slower-regen": {
+   "careless": {
+    "taps": {
+     "1": 7.52,
+     "2": 10.56,
+     "3": 17.79,
+     "4": 21.21,
+     "5": 35.2,
+     "6": 17.95,
+     "7": 17.53,
+     "8": 21.3,
+     "9": 31.96,
+     "10": 49.25
+    },
+    "merges": {
+     "1": 3.93,
+     "2": 6.66,
+     "3": 13.78,
+     "4": 17.26,
+     "5": 31.22,
+     "6": 13.88,
+     "7": 13.55,
+     "8": 18.32,
+     "9": 28.88,
+     "10": 46.39
+    },
+    "sells": {
+     "1": 0.0,
+     "2": 0.0,
+     "3": 0.0,
+     "4": 0.0,
+     "5": 0.0,
+     "6": 0.0,
+     "7": 0.0,
+     "8": 0.0,
+     "9": 0.0,
+     "10": 0.0
+    },
+    "outOfEnergy": {
+     "1": 0.0,
+     "2": 0.0,
+     "3": 0.0,
+     "4": 0.0,
+     "5": 0.0,
+     "6": 0.0,
+     "7": 0.0,
+     "8": 0.0,
+     "9": 0.0,
+     "10": 0.0
+    },
+    "minFree": {
+     "1": 36.33,
+     "2": 35.42,
+     "3": 33.56,
+     "4": 33.53,
+     "5": 31.45,
+     "6": 33.44,
+     "7": 33.41,
+     "8": 32.4,
+     "9": 31.44,
+     "10": 30.57
+    },
+    "energyShare": {
+     "1": 0.07519999999999999,
+     "2": 0.10560000000000003,
+     "3": 0.17789999999999975,
+     "4": 0.21210000000000023,
+     "5": 0.35200000000000026,
+     "6": 0.17949999999999974,
+     "7": 0.1752999999999998,
+     "8": 0.21300000000000022,
+     "9": 0.31959999999999966,
+     "10": 0.4925
+    },
+    "daysLate": {
+     "1": 0.0,
+     "2": 0.0,
+     "3": 0.0,
+     "4": 0.0,
+     "5": 0.0,
+     "6": 0.0,
+     "7": 0.0,
+     "8": 0.0,
+     "9": 0.0,
+     "10": 0.0
+    }
+   },
+   "twice": {
+    "taps": {
+     "1": 7.27,
+     "2": 10.8,
+     "3": 17.8,
+     "4": 21.26,
+     "5": 35.37,
+     "6": 17.88,
+     "7": 17.66,
+     "8": 21.39,
+     "9": 31.91,
+     "10": 49.59
+    },
+    "merges": {
+     "1": 3.96,
+     "2": 6.76,
+     "3": 13.78,
+     "4": 17.36,
+     "5": 31.26,
+     "6": 13.87,
+     "7": 13.81,
+     "8": 18.32,
+     "9": 28.89,
+     "10": 46.65
+    },
+    "sells": {
+     "1": 0.0,
+     "2": 0.0,
+     "3": 0.0,
+     "4": 0.0,
+     "5": 0.0,
+     "6": 0.0,
+     "7": 0.0,
+     "8": 0.0,
+     "9": 0.0,
+     "10": 0.0
+    },
+    "outOfEnergy": {
+     "1": 0.0,
+     "2": 0.0,
+     "3": 0.0,
+     "4": 0.0,
+     "5": 0.0,
+     "6": 0.0,
+     "7": 0.0,
+     "8": 0.0,
+     "9": 0.0,
+     "10": 0.0
+    },
+    "minFree": {
+     "1": 36.44,
+     "2": 35.35,
+     "3": 33.45,
+     "4": 33.42,
+     "5": 31.37,
+     "6": 33.4,
+     "7": 33.45,
+     "8": 32.32,
+     "9": 31.4,
+     "10": 30.43
+    },
+    "energyShare": {
+     "1": 0.03635,
+     "2": 0.05400000000000001,
+     "3": 0.08899999999999988,
+     "4": 0.10630000000000012,
+     "5": 0.17685000000000003,
+     "6": 0.08939999999999987,
+     "7": 0.08829999999999993,
+     "8": 0.10695000000000014,
+     "9": 0.15954999999999986,
+     "10": 0.24794999999999984
+    },
+    "daysLate": {
+     "1": 0.0,
+     "2": 0.0,
+     "3": 0.0,
+     "4": 0.0,
+     "5": 0.0,
+     "6": 0.0,
+     "7": 0.0,
+     "8": 0.0,
+     "9": 0.0,
+     "10": 0.0
+    }
+   },
+   "efficient": {
+    "taps": {
+     "1": 7.12,
+     "2": 10.76,
+     "3": 17.75,
+     "4": 21.11,
+     "5": 35.37,
+     "6": 17.76,
+     "7": 17.79,
+     "8": 21.5,
+     "9": 31.73,
+     "10": 49.78
+    },
+    "merges": {
+     "1": 3.88,
+     "2": 6.79,
+     "3": 13.71,
+     "4": 17.14,
+     "5": 31.32,
+     "6": 13.87,
+     "7": 13.73,
+     "8": 18.49,
+     "9": 28.85,
+     "10": 46.6
+    },
+    "sells": {
+     "1": 0.0,
+     "2": 0.0,
+     "3": 0.0,
+     "4": 0.0,
+     "5": 0.0,
+     "6": 0.0,
+     "7": 0.0,
+     "8": 0.0,
+     "9": 0.0,
+     "10": 0.0
+    },
+    "outOfEnergy": {
+     "1": 0.0,
+     "2": 0.0,
+     "3": 0.0,
+     "4": 0.0,
+     "5": 0.0,
+     "6": 0.0,
+     "7": 0.0,
+     "8": 0.0,
+     "9": 0.0,
+     "10": 0.0
+    },
+    "minFree": {
+     "1": 36.38,
+     "2": 35.38,
+     "3": 33.22,
+     "4": 33.46,
+     "5": 31.28,
+     "6": 33.32,
+     "7": 33.27,
+     "8": 32.51,
+     "9": 31.33,
+     "10": 30.33
+    },
+    "energyShare": {
+     "1": 0.025890909090909124,
+     "2": 0.039127272727272705,
+     "3": 0.06454545454545456,
+     "4": 0.0767636363636364,
+     "5": 0.12861818181818185,
+     "6": 0.0645818181818182,
+     "7": 0.06469090909090913,
+     "8": 0.0781818181818182,
+     "9": 0.11538181818181796,
+     "10": 0.18101818181818163
+    },
+    "daysLate": {
+     "1": 0.0,
+     "2": 0.0,
+     "3": 0.0,
+     "4": 0.0,
+     "5": 0.0,
+     "6": 0.0,
+     "7": 0.0,
+     "8": 0.0,
+     "9": 0.0,
+     "10": 0.0
+    }
+   }
+  }
+ }
+}
