@@ -1,7 +1,7 @@
 schema_version: "1.1"
 name: market-day
 description: A tabletop card game that exists only as a rulebook, with a seat advantage, a dominant early-selling strategy and a runaway leader.
-tags: [strategy, rulebook]
+tags: [strategy, rulebook, showcase]
 runs: 1
 context:
   scaffold_script: scaffold.sh
@@ -9,6 +9,7 @@ execution:
   prompt: |
     I'm designing a card game, Market Day. The rules are in RULES.md; there's no code yet.
     Is it balanced? I'm worried about going first and about any strategy that always wins. Write the audit to balance-audit/REPORT.md.
+    Keep the whole job under 45 minutes.
   max_turns: 150
   timeout_seconds: 3600
   allowed_tools: [Read, Write, Edit, Bash, Glob, Grep, Skill]

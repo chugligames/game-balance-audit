@@ -1,0 +1,122 @@
+{
+ "title": "Spice Route: Royal Chest",
+ "segment": null,
+ "segments": [
+  "all"
+ ],
+ "scenarios": [
+  "baseline"
+ ],
+ "profiles": [
+  "one player"
+ ],
+ "scorecard": {
+  "goals": [],
+  "constraints": [
+   {
+    "name": "Rates screen: 1.6% overall (62.5 pulls)",
+    "metric": "pullsPerLegendary",
+    "min": 61.5,
+    "max": 63.5
+   },
+   {
+    "name": "Rates screen: guaranteed within 90 pulls",
+    "metric": "beyond90",
+    "max": 0
+   },
+   {
+    "name": "Rates screen: an epic or better within 10 pulls",
+    "metric": "epicGapMax",
+    "aggregate": "max",
+    "max": 10
+   }
+  ],
+  "rows": [
+   {
+    "scenario": "baseline",
+    "goals": [],
+    "constraints": [
+     {
+      "name": "Rates screen: 1.6% overall (62.5 pulls)",
+      "value": 69.37045357674121,
+      "pm": 0.13197912442030194,
+      "ok": false
+     },
+     {
+      "name": "Rates screen: guaranteed within 90 pulls",
+      "value": 0.0004523301833138629,
+      "pm": 0.00012679964721017117,
+      "ok": false
+     },
+     {
+      "name": "Rates screen: an epic or better within 10 pulls",
+      "value": 10.0,
+      "pm": 0.0,
+      "ok": true
+     }
+    ],
+    "ok": false,
+    "score": 0.0,
+    "pareto": false
+   }
+  ]
+ },
+ "exact": [
+  {
+   "name": "Mean pulls per legendary",
+   "scenario": "baseline",
+   "exact": 69.49953706,
+   "simulated": 69.37045357674121,
+   "pm": 0.13197912442030194,
+   "n": 400,
+   "agrees": true,
+   "note": "renewal process, exact fractions"
+  },
+  {
+   "name": "Share of streaks that need pull 91",
+   "scenario": "baseline",
+   "exact": 0.00041218,
+   "simulated": 0.0004523301833138629,
+   "pm": 0.00012679964721017117,
+   "n": 400,
+   "agrees": true,
+   "note": "1 in 2426"
+  }
+ ],
+ "flags": {
+  "baseline": [
+   {
+    "id": "constant:epicGapMax::all",
+    "part": "",
+    "kind": "constant",
+    "severity": "info",
+    "metric": "epicGapMax",
+    "scenario": "baseline",
+    "profile": null,
+    "message": "Longest gap between epics or better is 10.0 in every row: either it measures nothing here, or something never happens (which may be a finding)",
+    "evidence": {
+     "value": 10.0
+    }
+   }
+  ]
+ },
+ "compare": {},
+ "means": {
+  "baseline": {
+   "one player": {
+    "pullsPerLegendary": {
+     "all": 69.37045357674121
+    },
+    "beyond90": {
+     "all": 0.0004523301833138629
+    },
+    "epicGapMax": {
+     "all": 10.0
+    },
+    "legendaries": {
+     "all": 287.8575
+    }
+   }
+  }
+ }
+}

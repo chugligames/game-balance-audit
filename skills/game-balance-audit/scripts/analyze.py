@@ -655,6 +655,25 @@ def scorecard(data):
     return {"goals": goals, "constraints": limits, "rows": rows}
 
 
+def exact_checks(data):
+    """audit.json `exact`: values known exactly (enumerated, or from a Markov chain) that the
+    simulation must reproduce. Each is measured like a goal; it agrees when the 95% interval
+    of the simulated value contains the exact one (or within `tolerance` when no interval
+    applies). A disagreement means the simulator, or its reading of the rules, is wrong."""
+    out = []
+    for e in data.cfg.get("exact", []):
+        sc = e.get("scenario", data.baseline)
+        if sc not in data.scenarios:
+            continue
+        v, pm, n = measure(data, sc, e)
+        if v is None:
+            continue
+        tol = pm if pm else e.get("tolerance", 0.0)
+        out.append({"name": e["name"], "scenario": sc, "exact": e["value"], "simulated": v, "pm": pm, "n": n,
+                    "agrees": abs(v - e["value"]) <= tol, "note": e.get("note", "")})
+    return out
+
+
 # ── Comparing what-ifs with the baseline ─────────────────────────────────────
 
 
@@ -828,7 +847,7 @@ def md_scorecard(card):
     return "\n".join(L) + "\n"
 
 
-def write_markdown(data, flags, cmp, path, card=None):
+def write_markdown(data, flags, cmp, path, card=None, exact=None):
     cfg = data.cfg
     runs = {}
     for (sc, p, _), rs in data.cells.items():
@@ -837,6 +856,14 @@ def write_markdown(data, flags, cmp, path, card=None):
     L = ["# Balance summary: %s" % cfg.get("title", "game"), ""]
     L.append("%d rows · baseline `%s` + %d what-if scenario(s) · player profiles: %s · %s runs each"
              % (len(data.rows), data.baseline, len(data.scenarios) - 1, ", ".join(data.profiles), "/".join(map(str, nruns))))
+    if exact:
+        L += ["", "## Exact answers against the simulation", "",
+              "Each exact value is computed without sampling (enumeration, or a Markov chain); the simulation "
+              "should land within its 95% interval of it. A ✗ means the simulator, or its reading of the rules, is wrong.", "",
+              "| Quantity | Exact | Simulated (95% interval) | Samples | Agrees |", "|---|---|---|---|---|"]
+        for e in exact:
+            L.append("| %s | %s | %s%s | %d | %s |" % (e["name"], fmt(e["exact"], 6), fmt(e["simulated"], 6),
+                     "" if e["pm"] is None else " ± %s" % fmt(e["pm"], 6), e["n"], "✓" if e["agrees"] else "✗"))
     if card:
         L += ["", "## Scenarios against the design goals", "",
               "Each goal is measured per player over the segments it names, then averaged over runs (± is a 95% interval). "
@@ -1103,8 +1130,14 @@ def main():
     flags = OrderedDict((sc, run_checks(data, sc)) for sc in data.scenarios)
     cmp = compare(data, flags)
     card = scorecard(data)
+    exact = exact_checks(data)
+    for e in exact:
+        if not e["agrees"]:
+            flag(flags[e["scenario"]], "exact-mismatch", "high", e["name"], e["scenario"], None,
+                 "%s: the simulation gives %s ± %s but the exact value is %s. Fix the simulator before trusting anything else"
+                 % (e["name"], fmt(e["simulated"], 6), fmt(e["pm"] or 0, 6), fmt(e["exact"], 6)), value=e["simulated"], exact=e["exact"])
     os.makedirs(a.out, exist_ok=True)
-    write_markdown(data, flags, cmp, os.path.join(a.out, "summary.md"), card)
+    write_markdown(data, flags, cmp, os.path.join(a.out, "summary.md"), card, exact)
     charts = write_charts(data, os.path.join(a.out, "charts.html"), card)
     summary = {
         "title": cfg.get("title"),
@@ -1113,6 +1146,7 @@ def main():
         "scenarios": data.scenarios,
         "profiles": data.profiles,
         "scorecard": card,
+        "exact": exact,
         "flags": flags,
         "compare": cmp,
         "means": {
@@ -1122,6 +1156,9 @@ def main():
     }
     with open(os.path.join(a.out, "summary.json"), "w") as f:
         json.dump(summary, f, indent=1, default=str)
+    for e in exact:
+        print("exact check %s: %s, simulated %s%s %s" % (e["name"], fmt(e["exact"], 6), fmt(e["simulated"], 6),
+              "" if e["pm"] is None else " ± %s" % fmt(e["pm"], 6), "agrees" if e["agrees"] else "DISAGREES"))
     base = [f for f in flags[data.baseline] if f["severity"] != "info"]
     print("%d rows, %d scenario(s), %d profile(s), %d segment(s)" % (len(data.rows), len(data.scenarios), len(data.profiles), len(data.segments)))
     print("baseline flags: %d (%s)" % (len(base), ", ".join("%d %s" % (sum(1 for f in base if f["severity"] == s), s) for s in ("high", "medium", "low") if any(f["severity"] == s for f in base)) or "none"))

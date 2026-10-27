@@ -1,0 +1,34 @@
+name: tests
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  test:
+    runs-on: ubuntu-22.04
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          - python: "3.8"
+            node: "18"
+          - python: "3.12"
+            node: "22"
+    name: Python ${{ matrix.python }}, Node ${{ matrix.node }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: ${{ matrix.python }}
+      - uses: actions/setup-node@v4
+        with:
+          node-version: ${{ matrix.node }}
+      - name: Python tests (analyser, toolkit, exact answers vs simulation)
+        run: python -m unittest discover -s tests -v
+      - name: Node tests (toolkit)
+        run: node --test tests/sim-kit.test.mjs

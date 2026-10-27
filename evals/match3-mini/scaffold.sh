@@ -3,3 +3,4 @@
 set -euo pipefail
 HERE="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 cp -R "$HERE/../../examples/match3-mini/." .
+rm -rf audits

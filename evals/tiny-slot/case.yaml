@@ -1,0 +1,39 @@
+schema_version: "1.1"
+name: tiny-slot
+description: A social-casino slot given as two spreadsheets, whose stated 96% RTP is really 449/432 (103.9%).
+tags: [chance, spreadsheet, showcase]
+runs: 1
+context:
+  scaffold_script: scaffold.sh
+execution:
+  prompt: |
+    This is the maths for a slot in our social casino app: the reel strips are in reels.csv and the paytable in
+    paytable.csv, and README.md says what we want. Is it balanced the way we want? Write your audit to
+    balance-audit/REPORT.md. Keep the whole job under 45 minutes.
+  max_turns: 150
+  timeout_seconds: 3600
+  allowed_tools: [Read, Write, Edit, Bash, Glob, Grep, Skill]
+graders:
+  - type: tool_used
+    name: skill-loaded
+    tool: Skill
+    arm: with-only
+  - type: file_exists
+    name: report-written
+    path: balance-audit/REPORT.md
+  - type: regex
+    name: true-rtp
+    target: { source: file, path: balance-audit/REPORT.md }
+    pattern: "(103\\.9|1\\.039|449\\s*/\\s*432)"
+  - type: llm
+    name: findings
+    weight: 3
+    criteria: |
+      Read balance-audit/REPORT.md. Pass only if all of these hold:
+      1. It finds the true RTP is about 103.9% (exactly 449/432), not the 96% the sheet states.
+      2. It explains why the sheet is wrong: its probabilities treat every reel as if it were reel 1 (or otherwise ignore that the three reels differ).
+      3. It says what an RTP above 100% means for this business: play coins are created by spinning, so balances grow and players don't need to buy coins.
+      4. It confirms the hit rate (about 31%) and gives the big-win frequency (about 1 in 346 spins).
+      5. Each fix it proposes comes with the recomputed RTP (exact, or simulated with an interval), and at least one fix lands within about 95–97%.
+      6. Simulated numbers state their size (spins or runs) and an interval or error margin, or are backed by exact enumeration.
+    focus: files

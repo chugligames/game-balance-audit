@@ -1,0 +1,17 @@
+{
+  "title": "Spice Route: Royal Chest",
+  "metrics": {
+    "pullsPerLegendary": { "label": "Pulls per legendary" },
+    "beyond90": { "label": "Streaks that need pull 91" },
+    "epicGapMax": { "label": "Longest gap between epics or better" }
+  },
+  "exact": [
+    { "name": "Mean pulls per legendary", "metric": "pullsPerLegendary", "value": 69.49953706, "note": "renewal process, exact fractions" },
+    { "name": "Share of streaks that need pull 91", "metric": "beyond90", "value": 0.00041218, "note": "1 in 2426" }
+  ],
+  "constraints": [
+    { "name": "Rates screen: 1.6% overall (62.5 pulls)", "metric": "pullsPerLegendary", "min": 61.5, "max": 63.5 },
+    { "name": "Rates screen: guaranteed within 90 pulls", "metric": "beyond90", "max": 0 },
+    { "name": "Rates screen: an epic or better within 10 pulls", "metric": "epicGapMax", "aggregate": "max", "max": 10 }
+  ]
+}

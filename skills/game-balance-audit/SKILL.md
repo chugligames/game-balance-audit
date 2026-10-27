@@ -1,11 +1,11 @@
 ---
 name: game-balance-audit
-description: "Audits a game's balance by simulation, against what the designer optimises for: ad or purchase revenue and engagement in free-to-play, completion in premium games, fairness and tension in tabletop. Reads the game's code or a rulebook (or drives a running web build), builds a simulator that plays it with bots from careless to expert over hundreds of seeded runs, checks difficulty curves, walls and monetisation moments, win rate per level, seat advantage, dominant strategies and luck versus skill, and writes an audit with three suggestions per problem, each tested in the simulator and scored on the designer's goals. For merge-2 and energy economies, match-3 and level-based games, logic puzzles, and strategy, board and card games. Use when someone asks for a balance or economy audit, says a game is too easy or too hard, wants bots to playtest it, or asks about difficulty, monetisation pressure, first-player advantage or a dominant strategy."
+description: "Audits a game's balance by simulation, against what the designer optimises for: ad or purchase revenue and engagement in free-to-play, completion in premium games, fairness and tension in tabletop. Reads the game's code, a spreadsheet or a rulebook (or a running web build), simulates it with bots from careless to expert over hundreds of seeded runs, checks difficulty curves, walls and monetisation moments, win rate per level, seat advantage, dominant strategies and luck versus skill, and writes an audit with three suggestions per problem, each tested in the simulator and scored on the designer's goals. For merge-2 and energy economies, match-3 and level-based games, logic puzzles, strategy, board and card games, and chance systems (slots, loot tables, gacha), with exact odds where possible. Use when someone wants a balance or economy audit, says a game is too easy or too hard, wants bots to playtest it, or asks about difficulty, monetisation, odds, first-player advantage or a dominant strategy."
 license: MIT
 compatibility: "Simulations run on Node 18+ or Python 3.7+ with the standard library only. Works from source code, a rulebook, or a running web build."
 metadata:
   author: Chugli Games
-  version: "0.2.0"
+  version: "0.3.0"
 ---
 
 # Game balance audit
@@ -49,9 +49,11 @@ new branch. If a simulation needs a hook inside the game (see GUI mode), ask fir
   libraries, "watch an ad" strings, energy and ad caps, a component list in a rulebook),
   then confirm in one short question. If nobody can answer, use the lens's defaults and say
   so at the top of the report.
-- **Source.** Code you can import (best), a rulebook or design document (write the rules
-  as code, see `references/rulebook-mode.md`), or only a running build (drive it in a
-  browser, see `references/gui-mode.md`).
+- **Source.** Code you can import (best), a code snippet (a drop or damage formula), a
+  spreadsheet (reel strips, paytables, drop tables, economy sheets: recompute every derived
+  column yourself), a rulebook or design document (write the rules as code, see
+  `references/rulebook-mode.md`), or only a running build (drive it in a browser, see
+  `references/gui-mode.md`).
 - **Family.** It decides what to measure. Read the matching reference before going on:
 
   | Family | Examples | Read |
@@ -60,6 +62,7 @@ new branch. If a simulation needs a hook inside the game (see GUI mode), ask fir
   | Level-based puzzles | match-3, bubble shooters, move-limited or score-target levels | `references/families/levels.md` |
   | Logic puzzles | sliding blocks, Sokoban-likes, nonograms, puzzle packs with one solution | `references/families/puzzles.md` |
   | Strategy, board and card games | 2–5 players, drafting, deckbuilders, race and area games | `references/families/strategy.md` |
+  | Chance systems | slots and paytables, loot tables and gacha with pity, dice and card odds | `references/families/chance.md` |
 
   A game can belong to two families (a merge-2 game with levels). Read both.
 - **The intended experience.** Beyond the business goals: which days or levels should
@@ -199,6 +202,14 @@ suggestions with their before → after results. End with what the simulator can
 you and the playtest that would.
 
 ## Rules that keep an audit honest
+
+- **Exact before estimated.** When the outcomes can be enumerated (reels, dice, a deck) or
+  form a simple chain (pity counters), compute the exact answer as fractions, then simulate
+  anyway and put the exact values under `exact` in `audit.json`. The analyser checks that the
+  simulation's 95% interval contains them. Report both. Agreement is what lets a reader
+  trust the rest; disagreement means the simulator is wrong, and it comes first.
+- **Reproducible by anyone.** State the seed, the number of runs or iterations, and a 95%
+  interval for every simulated number. Hand back the commands that regenerate it.
 
 - **Goals before verdicts.** Every problem and recommendation names the goal it serves.
   When goals pull against each other (more ad views, more players quitting), show the

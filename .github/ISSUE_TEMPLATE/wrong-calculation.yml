@@ -1,0 +1,55 @@
+name: Report a wrong calculation
+description: A number the skill, its scripts or an example report got wrong
+title: "Wrong calculation: "
+labels: ["wrong calculation"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Correctness is the point of this skill, so thank you. The most useful reports show
+        the right number and how you know it's right.
+  - type: textarea
+    id: what
+    attributes:
+      label: What was calculated
+      description: The quantity, and where it appeared (an audit report, summary.md, a script's output, an example).
+      placeholder: e.g. "RTP of the example slot in summary.md"
+    validations:
+      required: true
+  - type: input
+    id: got
+    attributes:
+      label: What it said
+      placeholder: e.g. 1.0374 ± 0.0115
+    validations:
+      required: true
+  - type: textarea
+    id: expected
+    attributes:
+      label: What it should be, and how you know
+      description: Exact maths, a known source, a spreadsheet, or an independent simulation (say its seed and number of runs).
+    validations:
+      required: true
+  - type: textarea
+    id: reproduce
+    attributes:
+      label: How to reproduce
+      description: The commands you ran, with the audit.json and the simulator if you can share them (or a cut-down version).
+      render: shell
+  - type: input
+    id: version
+    attributes:
+      label: Skill version
+      description: From SKILL.md's metadata, or the release tag.
+      placeholder: e.g. 0.3.0
+  - type: dropdown
+    id: where
+    attributes:
+      label: Which part
+      options:
+        - analyze.py (statistics, flags, scorecard)
+        - sim-kit.mjs or sim_kit.py (toolkit)
+        - An example's answer key or exact maths
+        - A report written by the skill
+        - A benchmark in references/benchmarks.md
+        - Not sure

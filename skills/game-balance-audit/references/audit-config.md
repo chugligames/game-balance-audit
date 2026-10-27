@@ -74,6 +74,20 @@ interval, its change from the baseline (▲/▼ when beyond noise) and each cons
 **Best trade-off** marks scenarios that keep every constraint and that no other such
 scenario beats on every goal. `charts.html` draws one bar chart per goal.
 
+## `exact`: values the simulation must reproduce
+
+```json
+"exact": [
+  { "name": "RTP", "metric": "rtp", "value": 1.0393518518518519, "note": "449/432 by enumerating 1,728 outcomes" }
+]
+```
+
+For anything you computed exactly (enumeration, a Markov chain), give the value and how to
+measure it, with the same keys as a goal (`profile`, `where`, `aggregate`, `per`, `stat`,
+`scenario`, default the baseline). The analyser checks that the simulation's 95% interval
+contains it (or is within `tolerance` when there is no interval). It writes a table at the
+top of `summary.md`, and an *exact-mismatch* flag (high) when they disagree.
+
 ## `metrics`: what each metric should do
 
 Keyed by row field. All keys are optional except the field name itself.
