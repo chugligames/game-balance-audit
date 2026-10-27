@@ -21,11 +21,11 @@ jobs:
             node: "22"
     name: Python ${{ matrix.python }}, Node ${{ matrix.node }}
     steps:
-      - uses: actions/checkout@v4
-      - uses: actions/setup-python@v5
+      - uses: actions/checkout@v7
+      - uses: actions/setup-python@v7
         with:
           python-version: ${{ matrix.python }}
-      - uses: actions/setup-node@v4
+      - uses: actions/setup-node@v7
         with:
           node-version: ${{ matrix.node }}
       - name: Python tests (analyser, toolkit, exact answers vs simulation)
